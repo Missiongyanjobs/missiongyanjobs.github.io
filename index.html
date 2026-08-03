@@ -51,6 +51,35 @@
         .footer-telegram {display: inline-block; margin-top: 12px; background: #229ED9; color: #fff !important; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 16px; text-decoration: none !important; box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4); transition: 0.3s;}
         .footer-telegram:hover {transform: scale(1.04); text-decoration: none !important;}
         .box-full {grid-column: 1 / -1;}
+        
+        /* ===== MOCK TEST PREMIUM BAR ===== */
+        .mock-premium-bar {
+            background: linear-gradient(90deg, #0f172a, #1e293b, #dc2626, #0f172a);
+            background-size: 400% 400%;
+            color: white;
+            text-align: center;
+            padding: 18px 15px;
+            margin: 25px 15px 0 15px;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 18px;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+            animation: gradientMove 4s ease infinite, glow 2s ease-in-out infinite alternate;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            border: 3px solid #fbbf24;
+            position: relative;
+            overflow: hidden;
+        }
+        .mock-premium-bar::before {content: "🔥"; position: absolute; left: 15px; font-size: 22px; animation: bounce 1s infinite;}
+        .mock-premium-bar::after {content: "🔥"; position: absolute; right: 15px; font-size: 22px; animation: bounce 1s infinite;}
+        .mock-premium-bar:hover {transform: translateY(-3px) scale(1.01);}
+        .mock-premium-bar .badge {background: #fbbf24; color: #0f172a; padding: 5px 12px; border-radius: 6px; margin-left: 10px; font-size: 14px; animation: blink 1.5s infinite;}
+        @keyframes gradientMove {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}}
+        @keyframes glow {from {box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);} to {box-shadow: 0 8px 35px rgba(251, 191, 36, 0.8);}}
+        @keyframes bounce {0%, 100% {transform: translateY(0);} 50% {transform: translateY(-5px);}}
+        
         @media (max-width: 600px) {.pro-header {flex-direction: column; align-items: stretch; text-align: center;} .header-left {justify-content: center;} .offline-btn {text-align: center;} .header-text h1 {font-size: 20px;} .telegram-float {padding: 10px 16px; font-size: 13px; bottom: 12px; right: 12px;}}
     </style>
 </head>
@@ -170,6 +199,12 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- ========== ARMY MOCK TEST PREMIUM BAR ========== -->
+            <a href="https://forms.gle/TeraGoogleFormLinkYahaDaal" target="_blank" class="mock-premium-bar">
+                🇮🇳 ARMY CSBO / AGNIVEER MOCK TEST 2026
+                Free 100 Qs + Answer Key <span class="badge">START NOW</span>
+            </a>
 
             <!-- ========== ABOUT ========== -->
             <div class="box about-box box-full">
