@@ -1,1 +1,1 @@
-Sitemap: https://missiongyanjobs.github.io/sitemap-main.xml
+Sitemap: https://missiongyanjobs.github.io/sitemap.xml
