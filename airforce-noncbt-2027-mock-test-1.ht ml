@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 1 | Mission Gyan Jobs</title>
+<meta name="description" content="Airforce Non-Combatant 2027 GK Mock Test 1 Free. भारत में प्रथम महिला, प्रथम पुरुष एवं सबसे बड़ा. 25 Questions with Answer.">
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
+body{background:#eef2f7; padding:15px}
+.container{max-width:850px; margin:auto; background:white; padding:25px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+.header{text-align:center; border-bottom:3px solid #003366; padding-bottom:15px; margin-bottom:20px}
+.header h1{color:#003366; font-size:22px}
+.header p{color:#555; margin-top:5px}
+.timer{font-size:18px; font-weight:bold; color:red; text-align:right; margin-bottom:15px}
+.question-box{margin-bottom:25px; padding:18px; border:1px solid #ddd; border-radius:10px; background:#fafafa}
+.q-no{font-weight:bold; color:#003366; margin-bottom:8px}
+.q-text{font-size:16px; margin-bottom:12px}
+.q-text span{display:block; font-size:14px; color:#666; margin-top:4px}
+.options label{display:block; padding:10px; margin:6px 0; background:white; border:1px solid #ccc; border-radius:6px; cursor:pointer}
+.options input{margin-right:8px}
+.btn{background:#003366; color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto}
+.btn:hover{background:#001f4d}
+#result{font-size:22px; font-weight:bold; text-align:center; margin:20px 0; color:green}
+.correct{border-left:5px solid green !important}
+.wrong{border-left:5px solid red !important}
+.answer{color:green; font-weight:bold; margin-top:8px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1 id="test-title"></h1>
+<p id="test-subject"></p>
+</div>
+<div class="timer" id="timer">Time Left: 20:00</div>
+<form id="quiz-form"></form>
+<button class="btn" onclick="submitTest()">Submit Test</button>
+<div id="result"></div>
+</div>
+
+<script>
+// 👇 TUMHARA PURA JSON YAHI HAI
+const testData = {
+  "title": "AIR FORCE NON-COMBATANT 01/2027 - GK TEST (1)",
+  "subject": "भारत में प्रथम महिला, प्रथम पुरुष एवं भारत में सबसे बड़ा",
+  "questions": [
+    {
+      "id": 1,
+      "question_hindi": "भारत की प्रथम महिला राष्ट्रपति कौन थीं?",
+      "question_english": "Who was the first Woman President of India?",
+      "options": {"A": "इंदिरा गांधी (Indira Gandhi)", "B": "प्रतिभा पाटिल (Pratibha Patil)", "C": "मीरा कुमार (Meira Kumar)", "D": "सरोजिनी नायडू (Sarojini Naidu)"},
+      "answer": "B"
+    },
+    {
+      "id": 2,
+      "question_hindi": "भारत के प्रथम राष्ट्रपति कौन थे?",
+      "question_english": "Who was the first President of India?",
+      "options": {"A": "डॉ. राजेन्द्र प्रसाद (Dr. Rajendra Prasad)", "B": "डॉ. राधाकृष्णन (Dr. Radhakrishnan)", "C": "डॉ. जाकिर हुसैन (Dr. Zakir Husain)", "D": "वी.वी. गिरि (V.V. Giri)"},
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "question_hindi": "भारत की प्रथम महिला प्रधानमंत्री कौन थीं?",
+      "question_english": "Who was the first Woman Prime Minister of India?",
+      "options": {"A": "सोनिया गांधी (Sonia Gandhi)", "B": "प्रतिभा पाटिल (Pratibha Patil)", "C": "इंदिरा गांधी (Indira Gandhi)", "D": "सरोजिनी नायडू (Sarojini Naidu)"},
+      "answer": "C"
+    },
+    {
+      "id": 4,
+      "question_hindi": "भारत के प्रथम प्रधानमंत्री कौन थे?",
+      "question_english": "Who was the first Prime Minister of India?",
+      "options": {"A": "महात्मा गांधी (Mahatma Gandhi)", "B": "जवाहरलाल नेहरू (Jawaharlal Nehru)", "C": "सरदार पटेल (Sardar Patel)", "D": "लाल बहादुर शास्त्री (Lal Bahadur Shastri)"},
+      "answer": "B"
+    },
+    {
+      "id": 5,
+      "question_hindi": "भारत की प्रथम महिला IPS अधिकारी कौन थीं?",
+      "question_english": "Who was the first Woman IPS Officer of India?",
+      "options": {"A": "किरण बेदी (Kiran Bedi)", "B": "अन्ना राजम मल्होत्रा (Anna Rajam Malhotra)", "C": "दुर्गा शक्ति नागपाल (Durga Shakti Nagpal)", "D": "अरुणा बहुगुणा (Aruna Bahuguna)"},
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "question_hindi": "भारत की प्रथम महिला IAS अधिकारी कौन थीं?",
+      "question_english": "Who was the first Woman IAS Officer of India?",
+      "options": {"A": "किरण बेदी (Kiran Bedi)", "B": "अन्ना राजम मल्होत्रा (Anna Rajam Malhotra)", "C": "इंदिरा गांधी (Indira Gandhi)", "D": "सरोजिनी नायडू (Sarojini Naidu)"},
+      "answer": "B"
+    },
+    {
+      "id": 7,
+      "question_hindi": "भारत की प्रथम महिला मुख्यमंत्री कौन थीं?",
+      "question_english": "Who was the first Woman Chief Minister of India?",
+      "options": {"A": "जयलिता (Jayalithaa)", "B": "मायावती (Mayawati)", "C": "सुचेता कृपलानी (Sucheta Kriplani)", "D": "ममता बनर्जी (Mamata Banerjee)"},
+      "answer": "C"
+    },
+    {
+      "id": 8,
+      "question_hindi": "लोकसभा की प्रथम महिला अध्यक्ष कौन थीं?",
+      "question_english": "Who was the first Woman Speaker of Lok Sabha?",
+      "options": {"A": "प्रतिभा पाटिल (Pratibha Patil)", "B": "सुमित्रा महाजन (Sumitra Mahajan)", "C": "मीरा कुमार (Meira Kumar)", "D": "सरोजिनी नायडू (Sarojini Naidu)"},
+      "answer": "C"
+    },
+    {
+      "id": 9,
+      "question_hindi": "अंतरिक्ष में जाने वाले प्रथम भारतीय कौन थे?",
+      "question_english": "Who was the first Indian in Space?",
+      "options": {"A": "राकेश शर्मा (Rakesh Sharma)", "B": "रविश मल्होत्रा (Ravish Malhotra)", "C": "कल्पना चावला (Kalpana Chawla)", "D": "सुनीता विलियम्स (Sunita Williams)"},
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "question_hindi": "अंतरिक्ष में जाने वाली प्रथम भारतीय महिला कौन थीं?",
+      "question_english": "Who was the first Indian Woman in Space?",
+      "options": {"A": "कल्पना चावला (Kalpana Chawla)", "B": "सुनीता विलियम्स (Sunita Williams)", "C": "बछेंद्री पाल (Bachendri Pal)", "D": "हरिता कौर देओल (Harita Kaur Deol)"},
+      "answer": "A"
+    },
+    {
+      "id": 11,
+      "question_hindi": "एवरेस्ट पर पहुँचने वाली प्रथम भारतीय महिला कौन थीं?",
+      "question_english": "Who was the first Indian Woman to climb Mount Everest?",
+      "options": {"A": "संतोष यादव (Santosh Yadav)", "B": "अरुणिमा सिन्हा (Arunima Sinha)", "C": "बछेंद्री पाल (Bachendri Pal)", "D": "प्रेमलता अग्रवाल (Premlata Agrawal)"},
+      "answer": "C"
+    },
+    {
+      "id": 12,
+      "question_hindi": "भारत का सर्वोच्च नागरिक सम्मान कौन सा है?",
+      "question_english": "Which is the highest civilian award of India?",
+      "options": {"A": "पद्म भूषण (Padma Bhushan)", "B": "पद्म विभूषण (Padma Vibhushan)", "C": "परमवीर चक्र (Param Vir Chakra)", "D": "भारत रत्न (Bharat Ratna)"},
+      "answer": "D"
+    },
+    {
+      "id": 13,
+      "question_hindi": "भारत रत्न की शुरुआत कब हुई?",
+      "question_english": "When was Bharat Ratna started?",
+      "options": {"A": "1950", "B": "1952", "C": "1954", "D": "1956"},
+      "answer": "C"
+    },
+    {
+      "id": 14,
+      "question_hindi": "नोबेल पुरस्कार पाने वाले प्रथम भारतीय कौन थे?",
+      "question_english": "Who was the first Indian Nobel Prize Winner?",
+      "options": {"A": "सी.वी. रमन (C.V. Raman)", "B": "अमर्त्य सेन (Amartya Sen)", "C": "रवीन्द्रनाथ टैगोर (Rabindranath Tagore)", "D": "मदर टेरेसा (Mother Teresa)"},
+      "answer": "C"
+    },
+    {
+      "id": 15,
+      "question_hindi": "भारत की सबसे लंबी नदी कौन सी है?",
+      "question_english": "Which is the longest river in India?",
+      "options": {"A": "यमुना (Yamuna)", "B": "गंगा (Ganga)", "C": "गोदावरी (Godavari)", "D": "ब्रह्मपुत्र (Brahmaputra)"},
+      "answer": "B"
+    },
+    {
+      "id": 16,
+      "question_hindi": "दक्षिण भारत की सबसे लंबी नदी कौन सी है?",
+      "question_english": "Which is the longest river in South India?",
+      "options": {"A": "कृष्णा (Krishna)", "B": "कावेरी (Kaveri)", "C": "गोदावरी (Godavari)", "D": "महानदी (Mahanadi)"},
+      "answer": "C"
+    },
+    {
+      "id": 17,
+      "question_hindi": "भारत की सबसे लंबी सहायक नदी कौन सी है?",
+      "question_english": "Which is the longest tributary river in India?",
+      "options": {"A": "चंबल (Chambal)", "B": "बेतवा (Betwa)", "C": "यमुना (Yamuna)", "D": "कोसी (Kosi)"},
+      "answer": "C"
+    },
+    {
+      "id": 18,
+      "question_hindi": "भारत में सबसे लंबी तटरेखा वाला राज्य कौन सा है?",
+      "question_english": "Which state has the longest coastline in India?",
+      "options": {"A": "महाराष्ट्र (Maharashtra)", "B": "गुजरात (Gujarat)", "C": "तमिलनाडु (Tamil Nadu)", "D": "केरल (Kerala)"},
+      "answer": "B"
+    },
+    {
+      "id": 19,
+      "question_hindi": "भारत में सर्वाधिक वन क्षेत्र वाला राज्य कौन सा है?",
+      "question_english": "Which state has the largest forest area in India?",
+      "options": {"A": "महाराष्ट्र (Maharashtra)", "B": "छत्तीसगढ़ (Chhattisgarh)", "C": "मध्य प्रदेश (Madhya Pradesh)", "D": "ओडिशा (Odisha)"},
+      "answer": "C"
+    },
+    {
+      "id": 20,
+      "question_hindi": "भारत में सर्वाधिक वर्षा कहाँ होती है?",
+      "question_english": "Which place receives the highest rainfall in India?",
+      "options": {"A": "चेरापूंजी (Cherrapunji)", "B": "शिलांग (Shillong)", "C": "गंगटोक (Gangtok)", "D": "मासिनराम (Mawsynram)"},
+      "answer": "D"
+    },
+    {
+      "id": 21,
+      "question_hindi": "भारत की सबसे बड़ी खारे पानी की झील कौन सी है?",
+      "question_english": "Which is the largest saltwater lake in India?",
+      "options": {"A": "सांभर झील (Sambhar Lake)", "B": "वूलर झील (Wular Lake)", "C": "चिल्का झील (Chilika Lake)", "D": "लोकटक झील (Loktak Lake)"},
+      "answer": "C"
+    },
+    {
+      "id": 22,
+      "question_hindi": "भारत के प्रथम मुख्य न्यायाधीश कौन थे?",
+      "question_english": "Who was the first Chief Justice of India?",
+      "options": {"A": "ए.एन. रे (A.N. Ray)", "B": "हीराल जे. कानिया (H.J. Kania)", "C": "एम.सी. छागला (M.C. Chagla)", "D": "पी.एन. भगवती (P.N. Bhagwati)"},
+      "answer": "B"
+    },
+    {
+      "id": 23,
+      "question_hindi": "भारत के प्रथम चुनाव आयुक्त कौन थे?",
+      "question_english": "Who was the first Chief Election Commissioner of India?",
+      "options": {"A": "टी.एन. शेषन (T.N. Seshan)", "B": "एस.वाई. कुरैशी (S.Y. Quraishi)", "C": "सुकुमार सेन (Sukumar Sen)", "D": "राजीव कुमार (Rajiv Kumar)"},
+      "answer": "C"
+    },
+    {
+      "id": 24,
+      "question_hindi": "भारत के प्रथम फील्ड मार्शल कौन थे?",
+      "question_english": "Who was the first Field Marshal of India?",
+      "options": {"A": "के.एम. करियप्पा (K.M. Cariappa)", "B": "सैम मानेकशॉ (Sam Manekshaw)", "C": "बिपिन रावत (Bipin Rawat)", "D": "सुंदरजी (Sundarji)"},
+      "answer": "B"
+    },
+    {
+      "id": 25,
+      "question_hindi": "ब्रिटिश संसद के प्रथम भारतीय सदस्य कौन थे?",
+      "question_english": "Who was the first Indian member of the British Parliament?",
+      "options": {"A": "गोपाल कृष्ण गोखले (G.K. Gokhale)", "B": "महात्मा गांधी (Mahatma Gandhi)", "C": "दादाभाई नौरोजी (Dadabhai Naoroji)", "D": "जवाहरलाल नेहरू (Jawaharlal Nehru)"},
+      "answer": "C"
+    }
+  ]
+};
+
+// CODE START
+document.getElementById('test-title').innerText = testData.title;
+document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
+
+let quizHTML = '';
+testData.questions.forEach((q) => {
+  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
+  quizHTML += `<div class="q-no">Question ${q.id}</div>`;
+  quizHTML += `<div class="q-text">${q.question_hindi}<span>${q.question_english}</span></div>`;
+  quizHTML += `<div class="options">`;
+  for(let key in q.options){
+    quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}"> ${key}. ${q.options[key]}</label>`;
+  }
+  quizHTML += `</div></div>`;
+});
+document.getElementById('quiz-form').innerHTML = quizHTML;
+
+// TIMER 20 MIN
+let time = 20 * 60;
+let timerInterval = setInterval(()=>{
+  let m = Math.floor(time/60), s = time%60;
+  document.getElementById('timer').innerText = `Time Left: ${m}:${s<10?'0':''}${s}`;
+  if(time <= 0){ clearInterval(timerInterval); submitTest(); }
+  time--;
+},1000);
+
+function submitTest(){
+  clearInterval(timerInterval);
+  let score = 0;
+  testData.questions.forEach((q) => {
+    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+    let qbox = document.getElementById(`qbox${q.id}`);
+    if(selected){
+      if(selected.value === q.answer){ score++; qbox.classList.add('correct'); }
+      else{ qbox.classList.add('wrong'); }
+    }else{ qbox.classList.add('wrong'); }
+    qbox.innerHTML += `<div class="answer">Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
+  });
+  document.getElementById('result').innerText = `Final Score: ${score} / ${testData.questions.length}`;
+  document.querySelector('.btn').style.display = 'none';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
