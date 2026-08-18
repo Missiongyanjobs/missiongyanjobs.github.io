@@ -13,21 +13,17 @@ body{background:#1a0000; padding:15px}
 .timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
 @keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
 .question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
-.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px} /* RED TAG */
+.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
 .q-text{font-size:16px; margin-bottom:12px; font-weight:600}
 .options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
-.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)} /* HOVER HILNA */
+.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
 .btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
 .btn:hover{transform:scale(1.05)}
 #result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
-
-/* SUBMIT KE BAAD WALE COLOR */
-.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold} /* GREEN BOX = SAHI */
-.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold} /* RED BOX = GALAT */
+.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
+.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
 .answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
-
-/* PASSWORD BOX */
-#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
+#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
 .pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
 .pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
 .pass-box p{color:white; margin-bottom:15px}
@@ -39,7 +35,6 @@ body{background:#1a0000; padding:15px}
 </head>
 <body>
 
-<!-- PASSWORD SCREEN -->
 <div id="password-screen">
   <div class="pass-box">
     <h2>🔥 TEST LOCKED 🔥</h2>
@@ -50,7 +45,6 @@ body{background:#1a0000; padding:15px}
   </div>
 </div>
 
-<!-- MAIN TEST CONTAINER -->
 <div class="container" id="main-test" style="display:none;">
 <div class="header">
 <h1 id="test-title"></h1>
@@ -63,7 +57,6 @@ body{background:#1a0000; padding:15px}
 </div>
 
 <script>
-// PASSWORD CHECK
 const correctPass = "MGE@77";
 function checkPassword(){
   let pass = document.getElementById('passInput').value;
@@ -76,401 +69,40 @@ function checkPassword(){
   }
 }
 
-// TUMHARA 30 QUESTIONS
 const testData = {
   "title": "AIR FORCE NON-COMBATANT 01/2027 - GK TEST (2)",
   "subject": "complete gk class test",
   "questions": [ 
-  {
-    "id": 1,
-    "question_hi": "ऑस्ट्रेलिया की संसद किस शहर में स्थित है?",
-    "question_en": "Where is the Parliament of Australia located?",
-    "options": {
-      "A": "सिडनी (Sydney)",
-      "B": "मेलबर्न (Melbourne)",
-      "C": "कैनबरा (Canberra)",
-      "D": "पर्थ (Perth)"
-    },
-    "answer": "C",
-    "correct_answer": "कैनबरा (Canberra)"
-  },
-  {
-    "id": 2,
-    "question_hi": "यदि किसी देश की मुद्रा 'रूबल' है, तो वह देश कौन-सा है?",
-    "question_en": "Which country uses the currency 'Ruble'?",
-    "options": {
-      "A": "जापान (Japan)",
-      "B": "रूस (Russia)",
-      "C": "फ्रांस (France)",
-      "D": "चीन (China)"
-    },
-    "answer": "B",
-    "correct_answer": "रूस (Russia)"
-  },
-  {
-    "id": 3,
-    "question_hi": "भारत के पहले प्रधानमंत्री के रूप में किसने कार्यभार संभाला?",
-    "question_en": "Who assumed office as the first Prime Minister of India?",
-    "options": {
-      "A": "डॉ. राजेंद्र प्रसाद",
-      "B": "सरदार पटेल",
-      "C": "जवाहरलाल नेहरू",
-      "D": "लाल बहादुर शास्त्री"
-    },
-    "answer": "C",
-    "correct_answer": "जवाहरलाल नेहरू"
-  },
-  {
-    "id": 4,
-    "question_hi": "सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",
-    "question_en": "Which planet is the largest in the Solar System?",
-    "options": {
-      "A": "शनि",
-      "B": "पृथ्वी",
-      "C": "मंगल",
-      "D": "बृहस्पति"
-    },
-    "answer": "D",
-    "correct_answer": "बृहस्पति (Jupiter)"
-  },
-  {
-    "id": 5,
-    "question_hi": "रतौंधी किस विटामिन की कमी से होती है?",
-    "question_en": "Night Blindness occurs due to deficiency of which vitamin?",
-    "options": {
-      "A": "Vitamin B",
-      "B": "Vitamin C",
-      "C": "Vitamin A",
-      "D": "Vitamin D"
-    },
-    "answer": "C",
-    "correct_answer": "Vitamin A"
-  },
-  {
-    "id": 6,
-    "question_hi": "भारतीय संविधान के प्रमुख शिल्पकार किसे कहा जाता है?",
-    "question_en": "Who is regarded as the chief architect of the Indian Constitution?",
-    "options": {
-      "A": "बी. एन. राव",
-      "B": "डॉ. बी. आर. अंबेडकर",
-      "C": "महात्मा गांधी",
-      "D": "जवाहरलाल नेहरू"
-    },
-    "answer": "B",
-    "correct_answer": "डॉ. बी. आर. अंबेडकर"
-  },
-  {
-    "id": 7,
-    "question_hi": "सूर्य के सबसे निकट स्थित ग्रह कौन-सा है?",
-    "question_en": "Which planet lies nearest to the Sun?",
-    "options": {
-      "A": "शुक्र",
-      "B": "बुध",
-      "C": "पृथ्वी",
-      "D": "मंगल"
-    },
-    "answer": "B",
-    "correct_answer": "बुध (Mercury)"
-  },
-  {
-    "id": 8,
-    "question_hi": "भारत का सबसे ऊँचा बाँध कौन-सा है?",
-    "question_en": "Which is the highest dam in India?",
-    "options": {
-      "A": "हीराकुंड",
-      "B": "सरदार सरोवर",
-      "C": "टिहरी",
-      "D": "भाखड़ा नांगल"
-    },
-    "answer": "C",
-    "correct_answer": "टिहरी बाँध (Tehri Dam)"
-  },
-  {
-    "id": 9,
-    "question_hi": "मानव शरीर की सबसे लंबी हड्डी कौन-सी है?",
-    "question_en": "Name the longest bone in the human body.",
-    "options": {
-      "A": "टिबिया",
-      "B": "फीमर",
-      "C": "रेडियस",
-      "D": "स्टेपीज़"
-    },
-    "answer": "B",
-    "correct_answer": "फीमर (Femur)"
-  },
-  {
-    "id": 10,
-    "question_hi": "विद्युत धारा की SI इकाई क्या है?",
-    "question_en": "What is the SI unit of electric current?",
-    "options": {
-      "A": "वोल्ट",
-      "B": "वॉट",
-      "C": "ओम",
-      "D": "एम्पीयर"
-    },
-    "answer": "D",
-    "correct_answer": "एम्पीयर (Ampere)"
-  },
-  {
-    "id": 11,
-    "question_hi": "काजीरंगा राष्ट्रीय उद्यान किस जीव के लिए प्रसिद्ध है?",
-    "question_en": "Kaziranga National Park is mainly famous for conserving which animal?",
-    "options": {
-      "A": "बाघ",
-      "B": "हाथी",
-      "C": "एक सींग वाला गैंडा",
-      "D": "एशियाई शेर"
-    },
-    "answer": "C",
-    "correct_answer": "एक सींग वाला गैंडा"
-  },
-  {
-    "id": 12,
-    "question_hi": "'वंदे मातरम्' की रचना किसने की?",
-    "question_en": "Who composed 'Vande Mataram'?",
-    "options": {
-      "A": "रवींद्रनाथ टैगोर",
-      "B": "बंकिम चंद्र चटर्जी",
-      "C": "सरोजिनी नायडू",
-      "D": "महात्मा गांधी"
-    },
-    "answer": "B",
-    "correct_answer": "बंकिम चंद्र चटर्जी"
-  },
-  {
-    "id": 13,
-    "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?",
-    "question_en": "Which is India's smallest state by area?",
-    "options": {
-      "A": "त्रिपुरा",
-      "B": "सिक्किम",
-      "C": "गोवा",
-      "D": "मिजोरम"
-    },
-    "answer": "C",
-    "correct_answer": "गोवा (Goa)"
-  },
-  {
-    "id": 14,
-    "question_hi": "'लाल ग्रह' किसे कहा जाता है?",
-    "question_en": "Which planet is popularly known as the Red Planet?",
-    "options": {
-      "A": "मंगल",
-      "B": "शुक्र",
-      "C": "शनि",
-      "D": "बृहस्पति"
-    },
-    "answer": "A",
-    "correct_answer": "मंगल (Mars)"
-  },
-  {
-    "id": 15,
-    "question_hi": "अंतरिक्ष की यात्रा करने वाले प्रथम भारतीय कौन थे?",
-    "question_en": "Who became the first Indian to travel into space?",
-    "options": {
-      "A": "कल्पना चावला",
-      "B": "राकेश शर्मा",
-      "C": "विक्रम साराभाई",
-      "D": "सतीश धवन"
-    },
-    "answer": "B",
-    "correct_answer": "राकेश शर्मा"
-  },
-  {
-    "id": 16,
-    "question_hi": "भारत के पहले नोबेल पुरस्कार विजेता कौन थे?",
-    "question_en": "Who was the first Nobel Prize winner from India?",
-    "options": {
-      "A": "सी. वी. रमन",
-      "B": "मदर टेरेसा",
-      "C": "रवींद्रनाथ टैगोर",
-      "D": "हरगोविंद खुराना"
-    },
-    "answer": "C",
-    "correct_answer": "रवींद्रनाथ टैगोर"
-  },
-  {
-    "id": 17,
-    "question_hi": "जल का रासायनिक सूत्र क्या है?",
-    "question_en": "Which is the chemical formula of water?",
-    "options": {
-      "A": "CO₂",
-      "B": "H₂O",
-      "C": "NaCl",
-      "D": "O₂"
-    },
-    "answer": "B",
-    "correct_answer": "H₂O"
-  },
-  {
-    "id": 18,
-    "question_hi": "विश्व का सबसे बड़ा महासागर कौन-सा है?",
-    "question_en": "Which is the largest ocean on Earth?",
-    "options": {
-      "A": "हिंद महासागर",
-      "B": "अटलांटिक महासागर",
-      "C": "प्रशांत महासागर",
-      "D": "आर्कटिक महासागर"
-    },
-    "answer": "C",
-    "correct_answer": "प्रशांत महासागर (Pacific Ocean)"
-  },
-  {
-    "id": 19,
-    "question_hi": "हम्पी के प्रसिद्ध खंडहर किस राज्य में स्थित हैं?",
-    "question_en": "The famous ruins of Hampi are situated in which state?",
-    "options": {
-      "A": "महाराष्ट्र",
-      "B": "तमिलनाडु",
-      "C": "कर्नाटक",
-      "D": "आंध्र प्रदेश"
-    },
-    "answer": "C",
-    "correct_answer": "कर्नाटक (Karnataka)"
-  },
-  {
-    "id": 20,
-    "question_hi": "फ्रांस की राजधानी क्या है?",
-    "question_en": "What is the capital city of France?",
-    "options": {
-      "A": "रोम",
-      "B": "पेरिस",
-      "C": "बर्लिन",
-      "D": "मैड्रिड"
-    },
-    "answer": "B",
-    "correct_answer": "पेरिस (Paris)"
-  },
-  {
-    "id": 21,
-    "question_hi": "भारत के वर्तमान रक्षा मंत्री कौन हैं?",
-    "question_en": "Who is the current Defence Minister of India?",
-    "options": {
-      "A": "अमित शाह",
-      "B": "एस. जयशंकर",
-      "C": "राजनाथ सिंह",
-      "D": "निर्मला सीतारमण"
-    },
-    "answer": "C",
-    "correct_answer": "राजनाथ सिंह"
-  },
-  {
-    "id": 22,
-    "question_hi": "'गरबा' किस राज्य का प्रसिद्ध लोकनृत्य है?",
-    "question_en": "Garba is a famous folk dance of which state?",
-    "options": {
-      "A": "पंजाब",
-      "B": "राजस्थान",
-      "C": "गुजरात",
-      "D": "हरियाणा"
-    },
-    "answer": "C",
-    "correct_answer": "गुजरात (Gujarat)"
-  },
-  {
-    "id": 23,
-    "question_hi": "भारत में हरित क्रांति के जनक किसे कहा जाता है?",
-    "question_en": "Who is known as the Father of Green Revolution in India?",
-    "options": {
-      "A": "वर्गीज कुरियन",
-      "B": "एम. एस. स्वामीनाथन",
-      "C": "नॉर्मन बोरलॉग",
-      "D": "सी. सुब्रमण्यम"
-    },
-    "answer": "B",
-    "correct_answer": "डॉ. एम. एस. स्वामीनाथन"
-  },
-  {
-    "id": 24,
-    "question_hi": "'नीली क्रांति' किससे संबंधित है?",
-    "question_en": "Blue Revolution is related to which sector?",
-    "options": {
-      "A": "कृषि उत्पादन",
-      "B": "दुग्ध उत्पादन",
-      "C": "मत्स्य उत्पादन",
-      "D": "अंडा उत्पादन"
-    },
-    "answer": "C",
-    "correct_answer": "मत्स्य उत्पादन (Fish Production)"
-  },
-  {
-    "id": 25,
-    "question_hi": "भारत की सबसे लंबी अंतरराष्ट्रीय सीमा किस देश के साथ है?",
-    "question_en": "India shares its longest international border with which country?",
-    "options": {
-      "A": "चीन",
-      "B": "नेपाल",
-      "C": "पाकिस्तान",
-      "D": "बांग्लादेश"
-    },
-    "answer": "D",
-    "correct_answer": "बांग्लादेश (Bangladesh)"
-  },
-  {
-    "id": 26,
-    "question_hi": "'मालाबार' नौसैनिक अभ्यास में भारत, अमेरिका और जापान के साथ कौन-सा देश भाग लेता है?",
-    "question_en": "Which country joins India, USA and Japan in the Malabar Naval Exercise?",
-    "options": {
-      "A": "फ्रांस",
-      "B": "ऑस्ट्रेलिया",
-      "C": "ब्रिटेन",
-      "D": "रूस"
-    },
-    "answer": "B",
-    "correct_answer": "ऑस्ट्रेलिया (Australia)"
-  },
-  {
-    "id": 27,
-    "question_hi": "ISRO का मुख्यालय कहाँ स्थित है?",
-    "question_en": "ISRO Headquarters is located in which city?",
-    "options": {
-      "A": "नई दिल्ली",
-      "B": "हैदराबाद",
-      "C": "बेंगलुरु",
-      "D": "मुंबई"
-    },
-    "answer": "C",
-    "correct_answer": "बेंगलुरु (Bengaluru)"
-  },
-  {
-    "id": 28,
-    "question_hi": "विश्व स्वास्थ्य दिवस कब मनाया जाता है?",
-    "question_en": "World Health Day is celebrated every year on?",
-    "options": {
-      "A": "1 मई",
-      "B": "7 अप्रैल",
-      "C": "11 जुलाई",
-      "D": "1 दिसंबर"
-    },
-    "answer": "B",
-    "correct_answer": "7 अप्रैल"
-  },
-  {
-    "id": 29,
-    "question_hi": "'दक्षिण गंगा' किस नदी को कहा जाता है?",
-    "question_en": "Which river is known as the 'Dakshin Ganga'?",
-    "options": {
-      "A": "नर्मदा",
-      "B": "कृष्णा",
-      "C": "गोदावरी",
-      "D": "कावेरी"
-    },
-    "answer": "C",
-    "correct_answer": "गोदावरी (Godavari)"
-  },
-  {
-    "id": 30,
-    "question_hi": "भारतीय सेना में सबसे प्रारंभिक कमीशंड अधिकारी रैंक कौन-सी है?",
-    "question_en": "Which is the entry-level commissioned rank in the Indian Army?",
-    "options": {
-      "A": "कैप्टन",
-      "B": "मेजर",
-      "C": "लेफ्टिनेंट",
-      "D": "सूबेदार"
-    },
-    "answer": "C",
-    "correct_answer": "लेफ्टिनेंट (Lieutenant)"
-  }
+  {"id": 1, "question_hi": "ऑस्ट्रेलिया की संसद किस शहर में स्थित है?", "question_en": "Where is the Parliament of Australia located?", "options": {"A": "सिडनी (Sydney)", "B": "मेलबर्न (Melbourne)", "C": "कैनबरा (Canberra)", "D": "पर्थ (Perth)"}, "answer": "C", "correct_answer": "कैनबरा (Canberra)"},
+  {"id": 2, "question_hi": "यदि किसी देश की मुद्रा 'रूबल' है, तो वह देश कौन-सा है?", "question_en": "Which country uses the currency 'Ruble'?", "options": {"A": "जापान (Japan)", "B": "रूस (Russia)", "C": "फ्रांस (France)", "D": "चीन (China)"}, "answer": "B", "correct_answer": "रूस (Russia)"},
+  {"id": 3, "question_hi": "भारत के पहले प्रधानमंत्री के रूप में किसने कार्यभार संभाला?", "question_en": "Who assumed office as the first Prime Minister of India?", "options": {"A": "डॉ. राजेंद्र प्रसाद", "B": "सरदार पटेल", "C": "जवाहरलाल नेहरू", "D": "लाल बहादुर शास्त्री"}, "answer": "C", "correct_answer": "जवाहरलाल नेहरू"},
+  {"id": 4, "question_hi": "सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?", "question_en": "Which planet is the largest in the Solar System?", "options": {"A": "शनि", "B": "पृथ्वी", "C": "मंगल", "D": "बृहस्पति"}, "answer": "D", "correct_answer": "बृहस्पति (Jupiter)"},
+  {"id": 5, "question_hi": "रतौंधी किस विटामिन की कमी से होती है?", "question_en": "Night Blindness occurs due to deficiency of which vitamin?", "options": {"A": "Vitamin B", "B": "Vitamin C", "C": "Vitamin A", "D": "Vitamin D"}, "answer": "C", "correct_answer": "Vitamin A"},
+  {"id": 6, "question_hi": "भारतीय संविधान के प्रमुख शिल्पकार किसे कहा जाता है?", "question_en": "Who is regarded as the chief architect of the Indian Constitution?", "options": {"A": "बी. एन. राव", "B": "डॉ. बी. आर. अंबेडकर", "C": "महात्मा गांधी", "D": "जवाहरलाल नेहरू"}, "answer": "B", "correct_answer": "डॉ. बी. आर. अंबेडकर"},
+  {"id": 7, "question_hi": "सूर्य के सबसे निकट स्थित ग्रह कौन-सा है?", "question_en": "Which planet lies nearest to the Sun?", "options": {"A": "शुक्र", "B": "बुध", "C": "पृथ्वी", "D": "मंगल"}, "answer": "B", "correct_answer": "बुध (Mercury)"},
+  {"id": 8, "question_hi": "भारत का सबसे ऊँचा बाँध कौन-सा है?", "question_en": "Which is the highest dam in India?", "options": {"A": "हीराकुंड", "B": "सरदार सरोवर", "C": "टिहरी", "D": "भाखड़ा नांगल"}, "answer": "C", "correct_answer": "टिहरी बाँध (Tehri Dam)"},
+  {"id": 9, "question_hi": "मानव शरीर की सबसे लंबी हड्डी कौन-सी है?", "question_en": "Name the longest bone in the human body.", "options": {"A": "टिबिया", "B": "फीमर", "C": "रेडियस", "D": "स्टेपीज़"}, "answer": "B", "correct_answer": "फीमर (Femur)"},
+  {"id": 10, "question_hi": "विद्युत धारा की SI इकाई क्या है?", "question_en": "What is the SI unit of electric current?", "options": {"A": "वोल्ट", "B": "वॉट", "C": "ओम", "D": "एम्पीयर"}, "answer": "D", "correct_answer": "एम्पीयर (Ampere)"},
+  {"id": 11, "question_hi": "काजीरंगा राष्ट्रीय उद्यान किस जीव के लिए प्रसिद्ध है?", "question_en": "Kaziranga National Park is mainly famous for conserving which animal?", "options": {"A": "बाघ", "B": "हाथी", "C": "एक सींग वाला गैंडा", "D": "एशियाई शेर"}, "answer": "C", "correct_answer": "एक सींग वाला गैंडा"},
+  {"id": 12, "question_hi": "'वंदे मातरम्' की रचना किसने की?", "question_en": "Who composed 'Vande Mataram'?", "options": {"A": "रवींद्रनाथ टैगोर", "B": "बंकिम चंद्र चटर्जी", "C": "सरोजिनी नायडू", "D": "महात्मा गांधी"}, "answer": "B", "correct_answer": "बंकिम चंद्र चटर्जी"},
+  {"id": 13, "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?", "question_en": "Which is India's smallest state by area?", "options": {"A": "त्रिपुरा", "B": "सिक्किम", "C": "गोवा", "D": "मिजोरम"}, "answer": "C", "correct_answer": "गोवा (Goa)"},
+  {"id": 14, "question_hi": "'लाल ग्रह' किसे कहा जाता है?", "question_en": "Which planet is popularly known as the Red Planet?", "options": {"A": "मंगल", "B": "शुक्र", "C": "शनि", "D": "बृहस्पति"}, "answer": "A", "correct_answer": "मंगल (Mars)"},
+  {"id": 15, "question_hi": "अंतरिक्ष की यात्रा करने वाले प्रथम भारतीय कौन थे?", "question_en": "Who became the first Indian to travel into space?", "options": {"A": "कल्पना चावला", "B": "राकेश शर्मा", "C": "विक्रम साराभाई", "D": "सतीश धवन"}, "answer": "B", "correct_answer": "राकेश शर्मा"},
+  {"id": 16, "question_hi": "भारत के पहले नोबेल पुरस्कार विजेता कौन थे?", "question_en": "Who was the first Nobel Prize winner from India?", "options": {"A": "सी. वी. रमन", "B": "मदर टेरेसा", "C": "रवींद्रनाथ टैगोर", "D": "हरगोविंद खुराना"}, "answer": "C", "correct_answer": "रवींद्रनाथ टैगोर"},
+  {"id": 17, "question_hi": "जल का रासायनिक सूत्र क्या है?", "question_en": "Which is the chemical formula of water?", "options": {"A": "CO₂", "B": "H₂O", "C": "NaCl", "D": "O₂"}, "answer": "B", "correct_answer": "H₂O"},
+  {"id": 18, "question_hi": "विश्व का सबसे बड़ा महासागर कौन-सा है?", "question_en": "Which is the largest ocean on Earth?", "options": {"A": "हिंद महासागर", "B": "अटलांटिक महासागर", "C": "प्रशांत महासागर", "D": "आर्कटिक महासागर"}, "answer": "C", "correct_answer": "प्रशांत महासागर (Pacific Ocean)"},
+  {"id": 19, "question_hi": "हम्पी के प्रसिद्ध खंडहर किस राज्य में स्थित हैं?", "question_en": "The famous ruins of Hampi are situated in which state?", "options": {"A": "महाराष्ट्र", "B": "तमिलनाडु", "C": "कर्नाटक", "D": "आंध्र प्रदेश"}, "answer": "C", "correct_answer": "कर्नाटक (Karnataka)"},
+  {"id": 20, "question_hi": "फ्रांस की राजधानी क्या है?", "question_en": "What is the capital city of France?", "options": {"A": "रोम", "B": "पेरिस", "C": "बर्लिन", "D": "मैड्रिड"}, "answer": "B", "correct_answer": "पेरिस (Paris)"},
+  {"id": 21, "question_hi": "भारत के वर्तमान रक्षा मंत्री कौन हैं?", "question_en": "Who is the current Defence Minister of India?", "options": {"A": "अमित शाह", "B": "एस. जयशंकर", "C": "राजनाथ सिंह", "D": "निर्मला सीतारमण"}, "answer": "C", "correct_answer": "राजनाथ सिंह"},
+  {"id": 22, "question_hi": "'गरबा' किस राज्य का प्रसिद्ध लोकनृत्य है?", "question_en": "Garba is a famous folk dance of which state?", "options": {"A": "पंजाब", "B": "राजस्थान", "C": "गुजरात", "D": "हरियाणा"}, "answer": "C", "correct_answer": "गुजरात (Gujarat)"},
+  {"id": 23, "question_hi": "भारत में हरित क्रांति के जनक किसे कहा जाता है?", "question_en": "Who is known as the Father of Green Revolution in India?", "options": {"A": "वर्गीज कुरियन", "B": "एम. एस. स्वामीनाथन", "C": "नॉर्मन बोरलॉग", "D": "सी. सुब्रमण्यम"}, "answer": "B", "correct_answer": "डॉ. एम. एस. स्वामीनाथन"},
+  {"id": 24, "question_hi": "'नीली क्रांति' किससे संबंधित है?", "question_en": "Blue Revolution is related to which sector?", "options": {"A": "कृषि उत्पादन", "B": "दुग्ध उत्पादन", "C": "मत्स्य उत्पादन", "D": "अंडा उत्पादन"}, "answer": "C", "correct_answer": "मत्स्य उत्पादन (Fish Production)"},
+  {"id": 25, "question_hi": "भारत की सबसे लंबी अंतरराष्ट्रीय सीमा किस देश के साथ है?", "question_en": "India shares its longest international border with which country?", "options": {"A": "चीन", "B": "नेपाल", "C": "पाकिस्तान", "D": "बांग्लादेश"}, "answer": "D", "correct_answer": "बांग्लादेश (Bangladesh)"},
+  {"id": 26, "question_hi": "'मालाबार' नौसैनिक अभ्यास में भारत, अमेरिका और जापान के साथ कौन-सा देश भाग लेता है?", "question_en": "Which country joins India, USA and Japan in the Malabar Naval Exercise?", "options": {"A": "फ्रांस", "B": "ऑस्ट्रेलिया", "C": "ब्रिटेन", "D": "रूस"}, "answer": "B", "correct_answer": "ऑस्ट्रेलिया (Australia)"},
+  {"id": 27, "question_hi": "ISRO का मुख्यालय कहाँ स्थित है?", "question_en": "ISRO Headquarters is located in which city?", "options": {"A": "नई दिल्ली", "B": "हैदराबाद", "C": "बेंगलुरु", "D": "मुंबई"}, "answer": "C", "correct_answer": "बेंगलुरु (Bengaluru)"},
+  {"id": 28, "question_hi": "विश्व स्वास्थ्य दिवस कब मनाया जाता है?", "question_en": "World Health Day is celebrated every year on?", "options": {"A": "1 मई", "B": "7 अप्रैल", "C": "11 जुलाई", "D": "1 दिसंबर"}, "answer": "B", "correct_answer": "7 अप्रैल"},
+  {"id": 29, "question_hi": "'दक्षिण गंगा' किस नदी को कहा जाता है?", "question_en": "Which river is known as the 'Dakshin Ganga'?", "options": {"A": "नर्मदा", "B": "कृष्णा", "C": "गोदावरी", "D": "कावेरी"}, "answer": "C", "correct_answer": "गोदावरी (Godavari)"},
+  {"id": 30, "question_hi": "भारतीय सेना में सबसे प्रारंभिक कमीशंड अधिकारी रैंक कौन-सी है?", "question_en": "Which is the entry-level commissioned rank in the Indian Army?", "options": {"A": "कैप्टन", "B": "मेजर", "C": "लेफ्टिनेंट", "D": "सूबेदार"}, "answer": "C", "correct_answer": "लेफ्टिनेंट (Lieutenant)"}
  ]
 };
 
@@ -481,7 +113,7 @@ let quizHTML = '';
 testData.questions.forEach((q) => {
   quizHTML += `<div class="question-box" id="qbox${q.id}">`;
   quizHTML += `<div class="q-no">Question ${q.id}</div>`;
-  quizHTML += `<div class="q-text">${q.question_hindi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_english}</span></div>`;
+  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`; // ✅ YE SAHI KIYA
   quizHTML += `<div class="options">`;
   for(let key in q.options){
     quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`;
@@ -490,7 +122,6 @@ testData.questions.forEach((q) => {
 });
 document.getElementById('quiz-form').innerHTML = quizHTML;
 
-// TIMER 20 MIN
 let time = 20 * 60; let timerInterval;
 function startTimer(){
   timerInterval = setInterval(()=>{
@@ -501,7 +132,6 @@ function startTimer(){
   },1000);
 }
 
-// FINAL SUBMIT FUNCTION - COLOR LOGIC
 function submitTest(){
   clearInterval(timerInterval);
   let score = 0;
@@ -512,20 +142,15 @@ function submitTest(){
 
     allLabels.forEach(label => {
         let input = label.querySelector('input');
-        // 1. Sahi Answer = Green Box
         if(input.value === q.answer){
             label.classList.add('correct-option');
         }
-        // 2. Tumhara Galat Option = Red Box
         if(selected && input.value === selected.value && selected.value !== q.answer){
             label.classList.add('wrong-option');
         }
     });
 
-    if(selected && selected.value === q.answer){ 
-        score++; 
-    }
-    
+    if(selected && selected.value === q.answer){ score++; }
     qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
   });
   document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
