@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 3 | Mission Gyan Jobs</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
+body{background:#1a0000; padding:15px}
+.container{max-width:850px; margin:auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 20px rgba(255,0,0,0.5); border:2px solid #ff0000}
+.header{text-align:center; border-bottom:3px solid #ff0000; padding:15px; margin-bottom:20px; background:linear-gradient(90deg, #8B0000, #ff0000); color:white; border-radius:8px}
+.header h1{font-size:22px; text-shadow:0 0 5px #fff}
+.timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
+@keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
+.question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
+.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
+.q-text{font-size:16px; margin-bottom:12px; font-weight:600}
+.options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
+.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
+.btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
+.btn:hover{transform:scale(1.05)}
+#result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
+.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
+.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
+.answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
+#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
+.pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
+.pass-box p{color:white; margin-bottom:15px}
+.pass-box input{width:100%; padding:12px; font-size:16px; border:3px solid yellow; border-radius:6px; margin-bottom:15px; text-align:center; font-weight:bold}
+.pass-box button{width:100%; padding:12px; background:yellow; color:#8B0000; border:none; border-radius:6px; font-size:17px; cursor:pointer; font-weight:bold}
+.pass-box button:hover{background:#fff}
+.error{color:yellow; margin-top:10px; display:none; font-weight:bold}
+</style>
+</head>
+<body>
+
+<div id="password-screen">
+  <div class="pass-box">
+    <h2>🔥 TEST LOCKED 🔥</h2>
+    <p>Test start karne ke liye password dalo</p>
+    <input type="password" id="passInput" placeholder="Password">
+    <button onclick="checkPassword()">START TEST NOW</button>
+    <p class="error" id="errorMsg">❌ Galat Password! try again</p>
+  </div>
+</div>
+
+<div class="container" id="main-test" style="display:none;">
+<div class="header">
+<h1 id="test-title"></h1>
+<p id="test-subject"></p>
+</div>
+<div class="timer" id="timer">⏰ Time Left: 20:00</div>
+<form id="quiz-form"></form>
+<button class="btn" onclick="submitTest()">🔥 SUBMIT TEST 🔥</button>
+<div id="result"></div>
+</div>
+
+<script>
+const correctPass = "MGE@77";
+function checkPassword(){
+  let pass = document.getElementById('passInput').value;
+  if(pass === correctPass){
+    document.getElementById('password-screen').style.display = 'none';
+    document.getElementById('main-test').style.display = 'block';
+    startTimer();
+  }else{
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+}
+
+const testData = {
+  "title": "AIR FORCE NON-COMBATANT 01/2027 - GK TEST (3)",
+  "subject": "complete gk class test",
+  "questions": [    
+  {"id": 1, "question_hi": "भारतीय वायु सेना के पहले भारतीय वायु सेनाध्यक्ष कौन थे?", "question_en": "Who was the first Indian Chief of the Air Staff?", "options": {"A": "अर्जन सिंह (Arjan Singh)", "B": "सुब्रतो मुखर्जी (Subroto Mukerjee)", "C": "प्रताप चंद्र लाल (Pratap Chandra Lal)", "D": "राकेश शर्मा (Rakesh Sharma)"}, "answer": "B"},
+  {"id": 2, "question_hi": "भारत का सर्वोच्च वीरता पुरस्कार किसे माना जाता है?", "question_en": "Which is the highest gallantry award of India?", "options": {"A": "महावीर चक्र (Maha Vir Chakra)", "B": "अशोक चक्र (Ashoka Chakra)", "C": "परमवीर चक्र (Param Vir Chakra)", "D": "शौर्य चक्र (Shaurya Chakra)"}, "answer": "C"},
+  {"id": 3, "question_hi": "प्रकाश वर्ष किसकी इकाई है?", "question_en": "Light Year is the unit of:", "options": {"A": "समय (Time)", "B": "दूरी (Distance)", "C": "गति (Speed)", "D": "ऊर्जा (Energy)"}, "answer": "B"},
+  {"id": 4, "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?", "question_en": "Which is the smallest state of India by area?", "options": {"A": "त्रिपुरा (Tripura)", "B": "सिक्किम (Sikkim)", "C": "गोवा (Goa)", "D": "मिजोरम (Mizoram)"}, "answer": "C"},
+  {"id": 5, "question_hi": "पानीपत का प्रथम युद्ध किस वर्ष लड़ा गया था?", "question_en": "The First Battle of Panipat was fought in:", "options": {"A": "1526", "B": "1556", "C": "1761", "D": "1757"}, "answer": "A"},
+  {"id": 6, "question_hi": "भारत के राष्ट्रपति का कार्यकाल कितना होता है?", "question_en": "What is the tenure of the President of India?", "options": {"A": "4 वर्ष (4 Years)", "B": "5 वर्ष (5 Years)", "C": "6 वर्ष (6 Years)", "D": "7 वर्ष (7 Years)"}, "answer": "B"},
+  {"id": 7, "question_hi": "राष्ट्रीय रक्षा अकादमी (NDA) कहाँ स्थित है?", "question_en": "Where is the National Defence Academy located?", "options": {"A": "देहरादून (Dehradun)", "B": "पुणे (खड़कवासला) (Pune Khadakwasla)", "C": "नई दिल्ली (New Delhi)", "D": "चेन्नई (Chennai)"}, "answer": "B"},
+  {"id": 8, "question_hi": "ध्वनि किस माध्यम में संचरित नहीं हो सकती?", "question_en": "Sound cannot travel through:", "options": {"A": "ठोस (Solid)", "B": "द्रव (Liquid)", "C": "गैस (Gas)", "D": "निर्वात (Vacuum)"}, "answer": "D"},
+  {"id": 9, "question_hi": "'Discovery of India' पुस्तक के लेखक कौन हैं?", "question_en": "Who is the author of 'Discovery of India'?", "options": {"A": "महात्मा गांधी (Mahatma Gandhi)", "B": "जवाहरलाल नेहरू (Jawaharlal Nehru)", "C": "सुभाष चंद्र बोस (Subhas Chandra Bose)", "D": "भगत सिंह (Bhagat Singh)"}, "answer": "B"},
+  {"id": 10, "question_hi": "ओलंपिक ध्वज में कुल कितने छल्ले होते हैं?", "question_en": "How many rings are there in the Olympic Flag?", "options": {"A": "4", "B": "5", "C": "6", "D": "7"}, "answer": "B"},
+  {"id": 11, "question_hi": "मानव शरीर की सबसे बड़ी कोशिका कौन-सी है?", "question_en": "Which is the largest cell in the human body?", "options": {"A": "लाल रक्त कोशिका (RBC)", "B": "श्वेत रक्त कोशिका (WBC)", "C": "न्यूरॉन (Neuron)", "D": "अंडाणु (Ovum)"}, "answer": "D"},
+  {"id": 12, "question_hi": "जल का अधिकतम घनत्व किस तापमान पर होता है?", "question_en": "Water attains maximum density at:", "options": {"A": "0°C", "B": "2°C", "C": "4°C", "D": "10°C"}, "answer": "C"},
+  {"id": 13, "question_hi": "नाइट्रोजन, मैग्नीशियम के साथ प्रतिक्रिया कर कौन-सा यौगिक बनाती है?", "question_en": "Nitrogen reacts with Magnesium to form:", "options": {"A": "मैग्नीशियम ऑक्साइड (Magnesium Oxide)", "B": "मैग्नीशियम सल्फाइड (Magnesium Sulphide)", "C": "मैग्नीशियम नाइट्राइड (Magnesium Nitride)", "D": "मैग्नीशियम क्लोराइड (Magnesium Chloride)"}, "answer": "C"},
+  {"id": 14, "question_hi": "जल का रासायनिक सूत्र क्या है?", "question_en": "What is the chemical formula of water?", "options": {"A": "CO₂", "B": "H₂O", "C": "O₂", "D": "NaCl"}, "answer": "B"},
+  {"id": 15, "question_hi": "बिजली की धारा मापने के लिए किस यंत्र का प्रयोग किया जाता है?", "question_en": "Which instrument measures electric current?", "options": {"A": "वोल्टमीटर (Voltmeter)", "B": "एमीटर (Ammeter)", "C": "बैरोमीटर (Barometer)", "D": "हाइग्रोमीटर (Hygrometer)"}, "answer": "B"},
+  {"id": 16, "question_hi": "संविधान के किस अनुच्छेद में राज्यसभा का प्रावधान है?", "question_en": "Rajya Sabha is provided under which Article?", "options":{"A":"अनुच्छेद 79 (Article 79)","B":"अनुच्छेद 80 (Article 80)","C":"अनुच्छेद 81 (Article 81)","D":"अनुच्छेद 82 (Article 82)"}, "answer":"B"},
+  {"id":17, "question_hi":"भारतीय संसद का स्थायी सदन कौन-सा है?", "question_en":"Which is the permanent House of Parliament?", "options":{"A":"लोकसभा (Lok Sabha)","B":"राज्यसभा (Rajya Sabha)","C":"विधानसभा (Legislative Assembly)","D":"विधान परिषद (Legislative Council)"}, "answer":"B"},
+  {"id":18, "question_hi":"भारत के राज्यपाल की नियुक्ति कौन करता है?", "question_en":"Who appoints the Governor of a State?", "options":{"A":"प्रधानमंत्री (Prime Minister)","B":"राष्ट्रपति (President)","C":"मुख्य न्यायाधीश (Chief Justice)","D":"मुख्यमंत्री (Chief Minister)"}, "answer":"B"},
+  {"id":19, "question_hi":"राज्यपाल बनने की न्यूनतम आयु कितनी है?", "question_en":"Minimum age to become Governor is:", "options":{"A":"30 वर्ष (30 Years)","B":"35 वर्ष (35 Years)","C":"40 वर्ष (40 Years)","D":"45 वर्ष (45 Years)"}, "answer":"B"},
+  {"id":20, "question_hi":"भारतीय संविधान में हिंदी को किस रूप में मान्यता प्राप्त है?", "question_en":"Hindi is recognized as India's:", "options":{"A":"राष्ट्रभाषा (National Language)","B":"राष्ट्रीय भाषा (National Language)","C":"राजभाषा (Official Language)","D":"संपर्क भाषा (Link Language)"}, "answer":"C"},
+  {"id":21, "question_hi":"भारत की स्वतंत्रता के समय वायसराय कौन थे?", "question_en":"Who was the Viceroy of India at Independence?", "options":{"A":"लॉर्ड कर्जन (Lord Curzon)","B":"लॉर्ड वेवेल (Lord Wavell)","C":"लॉर्ड माउंटबेटन (Lord Mountbatten)","D":"लॉर्ड रिपन (Lord Ripon)"}, "answer":"C"},
+  {"id":22, "question_hi":"'भारतीय अशांति का जनक' किसे कहा जाता है?", "question_en":"Who is known as the Father of Indian Unrest?", "options":{"A":"महात्मा गांधी (Mahatma Gandhi)","B":"बाल गंगाधर तिलक (Bal Gangadhar Tilak)","C":"गोपाल कृष्ण गोखले (Gopal Krishna Gokhale)","D":"लाला लाजपत राय (Lala Lajpat Rai)"}, "answer":"B"},
+  {"id":23, "question_hi":"दांडी मार्च के समय गांधी जी के साथ कितने स्वयंसेवक थे?", "question_en":"How many volunteers accompanied Gandhi during the Dandi March?", "options":{"A":"60","B":"72","C":"78","D":"100"}, "answer":"C"},
+  {"id":24, "question_hi":"विजयनगर साम्राज्य की स्थापना किसने की?", "question_en":"Who founded the Vijayanagara Empire?", "options":{"A":"कृष्णदेवराय (Krishnadevaraya)","B":"हरिहर एवं बुक्का (Harihara and Bukka)","C":"विद्यारण्य (Vidyaranya)","D":"देवराय प्रथम (Devaraya I)"}, "answer":"B"},
+  {"id":25, "question_hi":"राष्ट्रीय कैडेट कोर (NCC) की स्थापना कब हुई?", "question_en":"NCC was established in:", "options":{"A":"1947","B":"1948","C":"195
