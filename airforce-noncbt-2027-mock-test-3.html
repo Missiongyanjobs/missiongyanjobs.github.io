@@ -23,7 +23,7 @@ body{background:#1a0000; padding:15px}
 .correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
 .wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
 .answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
-#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
+#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999} /* ✅ FIX KIYA */
 .pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
 .pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
 .pass-box p{color:white; margin-bottom:15px}
@@ -97,4 +97,66 @@ const testData = {
   {"id":22, "question_hi":"'भारतीय अशांति का जनक' किसे कहा जाता है?", "question_en":"Who is known as the Father of Indian Unrest?", "options":{"A":"महात्मा गांधी (Mahatma Gandhi)","B":"बाल गंगाधर तिलक (Bal Gangadhar Tilak)","C":"गोपाल कृष्ण गोखले (Gopal Krishna Gokhale)","D":"लाला लाजपत राय (Lala Lajpat Rai)"}, "answer":"B"},
   {"id":23, "question_hi":"दांडी मार्च के समय गांधी जी के साथ कितने स्वयंसेवक थे?", "question_en":"How many volunteers accompanied Gandhi during the Dandi March?", "options":{"A":"60","B":"72","C":"78","D":"100"}, "answer":"C"},
   {"id":24, "question_hi":"विजयनगर साम्राज्य की स्थापना किसने की?", "question_en":"Who founded the Vijayanagara Empire?", "options":{"A":"कृष्णदेवराय (Krishnadevaraya)","B":"हरिहर एवं बुक्का (Harihara and Bukka)","C":"विद्यारण्य (Vidyaranya)","D":"देवराय प्रथम (Devaraya I)"}, "answer":"B"},
-  {"id":25, "question_hi":"राष्ट्रीय कैडेट कोर (NCC) की स्थापना कब हुई?", "question_en":"NCC was established in:", "options":{"A":"1947","B":"1948","C":"195
+  {"id":25, "question_hi":"राष्ट्रीय कैडेट कोर (NCC) की स्थापना कब हुई?", "question_en":"NCC was established in:", "options":{"A":"1947","B":"1948","C":"1950","D":"1952"}, "answer":"B"},
+  {"id":26, "question_hi":"सीमा सुरक्षा बल (BSF) की स्थापना किस वर्ष हुई?", "question_en":"BSF was established in:", "options":{"A":"1962","B":"1963","C":"1965","D":"1971"}, "answer":"C"},
+  {"id":27, "question_hi":"भारतीय तटरक्षक दिवस कब मनाया जाता है?", "question_en":"Indian Coast Guard Day is observed on:", "options":{"A":"1 फरवरी (1 February)","B":"15 जनवरी (15 January)","C":"4 दिसंबर (4 December)","D":"8 अक्टूबर (8 October)"}, "answer":"A"},
+  {"id":28, "question_hi":"DRDO की स्थापना किस वर्ष हुई थी?", "question_en":"DRDO was established in:", "options":{"A":"1947","B":"1958","C":"1969","D":"1998"}, "answer":"B"},
+  {"id":29, "question_hi":"'लाल ग्रह' किस ग्रह को कहा जाता है?", "question_en":"Which planet is known as the Red Planet?", "options":{"A":"बृहस्पति (Jupiter)","B":"मंगल (Mars)","C":"शुक्र (Venus)","D":"शनि (Saturn)"}, "answer":"B"},
+  {"id":30, "question_hi":"लोकसभा का सदस्य बनने की न्यूनतम आयु क्या है?", "question_en":"Minimum age to become a Member of Lok Sabha is:", "options":{"A":"18 वर्ष (18 Years)","B":"21 वर्ष (21 Years)","C":"25 वर्ष (25 Years)","D":"30 वर्ष (30 Years)"}, "answer":"C"}
+ ]
+};
+
+document.getElementById('test-title').innerText = testData.title;
+document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
+
+let quizHTML = '';
+testData.questions.forEach((q) => {
+  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
+  quizHTML += `<div class="q-no">Question ${q.id}</div>`;
+  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`;
+  quizHTML += `<div class="options">`;
+  for(let key in q.options){
+    quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`;
+  }
+  quizHTML += `</div></div>`;
+});
+document.getElementById('quiz-form').innerHTML = quizHTML;
+
+let time = 20 * 60; let timerInterval;
+function startTimer(){
+  timerInterval = setInterval(()=>{
+    let m = Math.floor(time/60), s = time%60;
+    document.getElementById('timer').innerText = `⏰ Time Left: ${m}:${s<10?'0':''}${s}`;
+    if(time <= 0){ clearInterval(timerInterval); submitTest(); }
+    time--;
+  },1000);
+}
+
+function submitTest(){
+  clearInterval(timerInterval);
+  let score = 0;
+  testData.questions.forEach((q) => {
+    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+    let qbox = document.getElementById(`qbox${q.id}`);
+    let allLabels = qbox.querySelectorAll('label');
+
+    allLabels.forEach(label => {
+        let input = label.querySelector('input');
+        if(input.value === q.answer){
+            label.classList.add('correct-option');
+        }
+        if(selected && input.value === selected.value && selected.value !== q.answer){
+            label.classList.add('wrong-option');
+        }
+    });
+
+    if(selected && selected.value === q.answer){ score++; }
+    qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
+  });
+  document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
+  document.querySelector('.btn').style.display = 'none';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
