@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 5 | Mission Gyan Jobs</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
+body{background:#1a0000; padding:15px}
+.container{max-width:850px; margin:auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 20px rgba(255,0,0,0.5); border:2px solid #ff0000}
+.header{text-align:center; border-bottom:3px solid #ff0000; padding:15px; margin-bottom:20px; background:linear-gradient(90deg, #8B0000, #ff0000); color:white; border-radius:8px}
+.header h1{font-size:20px; text-shadow:0 0 5px #fff}
+.timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
+@keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
+.question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
+.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
+.q-text{font-size:16px; margin-bottom:12px; font-weight:600}
+.options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
+.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
+.btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
+.btn:hover{transform:scale(1.05)}
+#result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
+.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
+.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
+.answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
+#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
+.pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
+.pass-box p{color:white; margin-bottom:15px}
+.pass-box input{width:100%; padding:12px; font-size:16px; border:3px solid yellow; border-radius:6px; margin-bottom:15px; text-align:center; font-weight:bold}
+.pass-box button{width:100%; padding:12px; background:yellow; color:#8B0000; border:none; border-radius:6px; font-size:17px; cursor:pointer; font-weight:bold}
+.pass-box button:hover{background:#fff}
+.error{color:yellow; margin-top:10px; display:none; font-weight:bold}
+</style>
+</head>
+<body>
+
+<div id="password-screen">
+  <div class="pass-box">
+    <h2>🔥 TEST LOCKED 🔥</h2>
+    <p>Test start karne ke liye password dalo</p>
+    <input type="password" id="passInput" placeholder="Password">
+    <button onclick="checkPassword()">START TEST NOW</button>
+    <p class="error" id="errorMsg">❌ Galat Password! try again</p>
+  </div>
+</div>
+
+<div class="container" id="main-test" style="display:none;">
+<div class="header">
+<h1 id="test-title"></h1>
+<p id="test-subject"></p>
+</div>
+<div class="timer" id="timer">⏰ Time Left: 20:00</div>
+<form id="quiz-form"></form>
+<button class="btn" onclick="submitTest()">🔥 SUBMIT TEST 🔥</button>
+<div id="result"></div>
+</div>
+
+<script>
+const correctPass = "MGE@77";
+function checkPassword(){
+  let pass = document.getElementById('passInput').value;
+  if(pass === correctPass){
+    document.getElementById('password-screen').style.display = 'none';
+    document.getElementById('main-test').style.display = 'block';
+    startTimer();
+  }else{
+    document.getElementById('errorMsg').style.display = 'block';
+  }
+}
+
+const testData = {
+  "title": "AIR FORCE NON-COMBATANT 01/2027 - Class 4 Model Paper",
+  "subject": "भारत के राज्य, राजधानियाँ एवं महत्वपूर्ण पुरस्कार",
+  "questions": [
+    {"id": 1, "question_hi": "भारत के राज्यों में क्षेत्रफल की दृष्टि से सबसे बड़ा राज्य कौन-सा है?", "question_en": "Which is the largest Indian state in terms of area?", "options": {"A": "महाराष्ट्र / Maharashtra", "B": "राजस्थान / Rajasthan", "C": "मध्य प्रदेश / Madhya Pradesh", "D": "उत्तर प्रदेश / Uttar Pradesh"}, "answer": "B"},
+    {"id": 2, "question_hi": "भारत में सर्वाधिक जनसंख्या वाला राज्य कौन-सा है?", "question_en": "Which is the most populous state in India?", "options": {"A": "बिहार / Bihar", "B": "महाराष्ट्र / Maharashtra", "C": "उत्तर प्रदेश / Uttar Pradesh", "D": "पश्चिम बंगाल / West Bengal"}, "answer": "C"},
+    {"id": 3, "question_hi": "'भारत का हृदय प्रदेश' किस राज्य को कहा जाता है?", "question_en": "Which state is known as the 'Heart of India'?", "options": {"A": "राजस्थान / Rajasthan", "B": "मध्य प्रदेश / Madhya Pradesh", "C": "छत्तीसगढ़ / Chhattisgarh", "D": "महाराष्ट्र / Maharashtra"}, "answer": "B"},
+    {"id": 4, "question_hi": "भारत में कुल वन क्षेत्र की दृष्टि से प्रथम स्थान किस राज्य का है?", "question_en": "Which state ranks first in India in terms of total forest cover area?", "options": {"A": "अरुणाचल प्रदेश / Arunachal Pradesh", "B": "महाराष्ट्र / Maharashtra", "C": "मध्य प्रदेश / Madhya Pradesh", "D": "छत्तीसगढ़ / Chhattisgarh"}, "answer": "C"},
+    {"id": 5, "question_hi": "'पिंक सिटी' के नाम से प्रसिद्ध जयपुर किस राज्य की राजधानी है?", "question_en": "Jaipur, known as the 'Pink City', is the capital of which state?", "options": {"A": "गुजरात / Gujarat", "B": "राजस्थान / Rajasthan", "C": "हरियाणा / Haryana", "D": "पंजाब / Punjab"}, "answer": "B"},
+    {"id": 6, "question_hi": "भारत में सबसे लंबी तटरेखा वाला राज्य कौन-सा है?", "question_en": "Which Indian state has the longest coastline?", "options": {"A": "महाराष्ट्र / Maharashtra", "B": "गुजरात / Gujarat", "C": "तमिलनाडु / Tamil Nadu", "D": "आंध्र प्रदेश / Andhra Pradesh"}, "answer": "B"},
+    {"id": 7, "question_hi": "चिल्का झील किस राज्य में स्थित है?", "question_en": "Chilika Lake is located in which state?", "options": {"A": "पश्चिम बंगाल / West Bengal", "B": "ओडिशा / Odisha", "C": "केरल / Kerala", "D": "आंध्र प्रदेश / Andhra Pradesh"}, "answer": "B"},
+    {"id": 8, "question_hi": "काजीरंगा राष्ट्रीय उद्यान का संबंध किस राज्य से है?", "question_en": "Kaziranga National Park is associated with which state?", "options": {"A": "असम / Assam", "B": "मेघालय / Meghalaya", "C": "मणिपुर / Manipur", "D": "नागालैंड / Nagaland"}, "answer": "A"},
+    {"id": 9, "question_hi": "गिर राष्ट्रीय उद्यान किस राज्य में स्थित है?", "question_en": "Gir National Park is located in which Indian state?", "options": {"A": "राजस्थान / Rajasthan", "B": "गुजरात / Gujarat", "C": "मध्य प्रदेश / Madhya Pradesh", "D": "महाराष्ट्र / Maharashtra"}, "answer": "B"},
+    {"id": 10, "question_hi": "'धान का कटोरा' के नाम से किस राज्य को जाना जाता है?", "question_en": "Which state is known as the 'Rice Bowl of India'?", "options": {"A": "पंजाब / Punjab", "B": "हरियाणा / Haryana", "C": "छत्तीसगढ़ / Chhattisgarh", "D": "बिहार / Bihar"}, "answer": "C"},
+    {"id": 11, "question_hi": "लोकटक झील और केइबुल लामजाओ राष्ट्रीय उद्यान किस राज्य में स्थित हैं?", "question_en": "Loktak Lake and Keibul Lamjao National Park are located in which state?", "options": {"A": "मणिपुर / Manipur", "B": "मिजोरम / Mizoram", "C": "त्रिपुरा / Tripura", "D": "असम / Assam"}, "answer": "A"},
+    {"id": 12, "question_hi": "'बादलों का घर' अर्थात Land of Clouds किस राज्य का उपनाम है?", "question_en": "Which state is popularly known as the 'Land of Clouds'?", "options": {"A": "सिक्किम / Sikkim", "B": "मेघालय / Meghalaya", "C": "अरुणाचल प्रदेश / Arunachal Pradesh", "D": "नागालैंड / Nagaland"}, "answer": "B"},
+    {"id": 13, "question_hi": "भारत में सबसे पहले सूर्योदय दिखाई देने वाला राज्य सामान्यतः किसे माना जाता है?", "question_en": "Which Indian state is generally considered to be the first to witness sunrise?", "options": {"A": "असम / Assam", "B": "सिक्किम / Sikkim", "C": "अरुणाचल प्रदेश / Arunachal Pradesh", "D": "नागालैंड / Nagaland"}, "answer": "C"},
+    {"id": 14, "question_hi": "हॉर्नबिल महोत्सव मुख्य रूप से किस राज्य से संबंधित है?", "question_en": "The Hornbill Festival is mainly associated with which state?", "options": {"A": "मणिपुर / Manipur", "B": "नागालैंड / Nagaland", "C": "मिजोरम / Mizoram", "D": "त्रिपुरा / Tripura"}, "answer": "B"},
+    {"id": 15, "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?", "question_en": "Which is the smallest Indian state in terms of area?", "options": {"A": "सिक्किम / Sikkim", "B": "गोवा / Goa", "C": "त्रिपुरा / Tripura", "D": "मिजोरम / Mizoram"}, "answer": "B"},
+    {"id": 16, "question_hi": "अरब सागर में स्थित भारत का सबसे छोटा केंद्र शासित प्रदेश कौन-सा है?", "question_en": "Which is India's smallest Union Territory located in the Arabian Sea?", "options": {"A": "पुडुचेरी / Puducherry", "B": "लक्षद्वीप / Lakshadweep", "C": "चंडीगढ़ / Chandigarh", "D": "लद्दाख / Ladakh"}, "answer": "B"},
+    {"id": 17, "question_hi": "पंजाब और हरियाणा दोनों की संयुक्त राजधानी कौन-सी है?", "question_en": "Which city serves as the joint capital of Punjab and Haryana?", "options": {"A": "अमृतसर / Amritsar", "B": "पंचकूला / Panchkula", "C": "चंडीगढ़ / Chandigarh", "D": "शिमला / Shimla"}, "answer": "C"},
+    {"id": 18, "question_hi": "जम्मू-कश्मीर केंद्र शासित प्रदेश की ग्रीष्मकालीन राजधानी कौन-सी है?", "question_en": "What is the summer capital of the Union Territory of Jammu and Kashmir?", "options": {"A": "जम्मू / Jammu", "B": "श्रीनगर / Srinagar", "C": "लेह / Leh", "D": "गुलमर्ग / Gulmarg"}, "answer": "B"},
+    {"id": 19, "question_hi": "भारत का एकमात्र सक्रिय ज्वालामुखी बैरन द्वीप किस केंद्र शासित प्रदेश में स्थित है?", "question_en": "Barren Island, India's only active volcano, is located in which Union Territory?", "options": {"A": "लक्षद्वीप / Lakshadweep", "B": "लद्दाख / Ladakh", "C": "अंडमान एवं निकोबार द्वीप समूह / Andaman and Nicobar Islands", "D": "पुडुचेरी / Puducherry"}, "answer": "C"},
+    {"id": 20, "question_hi": "निम्न में से कौन-सा केंद्र शासित प्रदेश पहले फ्रांसीसी उपनिवेश के रूप में जाना जाता था?", "question_en": "Which Union Territory was formerly known as a French colony?", "options": {"A": "चंडीगढ़ / Chandigarh", "B": "पुडुचेरी / Puducherry", "C": "लक्षद्वीप / Lakshadweep", "D": "दिल्ली / Delhi"}, "answer": "B"},
+    {"id": 21, "question_hi": "भारत का सर्वोच्च नागरिक सम्मान कौन-सा है?", "question_en": "What is the highest civilian award of India?", "options": {"A": "पद्म श्री / Padma Shri", "B": "पद्म भूषण / Padma Bhushan", "C": "भारत रत्न / Bharat Ratna", "D": "पद्म विभूषण / Padma Vibhushan"}, "answer": "C"},
+    {"id": 22, "question_hi": "भारत रत्न की स्थापना किस वर्ष हुई थी?", "question_en": "In which year was the Bharat Ratna instituted?", "options": {"A": "1947", "B": "1950", "C": "1954", "D": "1961"}, "answer": "C"},
+    {"id": 23, "question_hi": "भारत रत्न पाने वाली प्रथम महिला कौन थीं?", "question_en": "Who was the first woman to receive the Bharat Ratna?", "options": {"A": "सरोजिनी नायडू / Sarojini Naidu", "B": "इंदिरा गांधी / Indira Gandhi", "C": "मदर टेरेसा / Mother Teresa", "D": "प्रतिभा पाटिल / Pratibha Patil"}, "answer": "B"},
+    {"id": 24, "question_hi": "भारत रत्न पाने वाले प्रथम खिलाड़ी कौन थे?", "question_en": "Who was the first sportsperson to receive the Bharat Ratna?", "options": {"A": "ध्यानचंद / Dhyan Chand", "B": "कपिल देव / Kapil Dev", "C": "सचिन तेंदुलकर / Sachin Tendulkar", "D": "मिल्खा सिंह / Milkha Singh"}, "answer": "C"},
+    {"id": 25, "question_hi": "भारत का सर्वोच्च युद्धकालीन वीरता पुरस्कार कौन-सा है?", "question_en": "What is India's highest wartime gallantry award?", "options": {"A": "अशोक चक्र / Ashoka Chakra", "B": "वीर चक्र / Vir Chakra", "C": "महावीर चक्र / Maha Vir Chakra", "D": "परमवीर चक्र / Param Vir Chakra"}, "answer": "D"},
+    {"id": 26, "question_hi": "भारत का सर्वोच्च शांतिकालीन वीरता पुरस्कार कौन-सा है?", "question_en": "What is India's highest peacetime gallantry award?", "options": {"A": "परमवीर चक्र / Param Vir Chakra", "B": "अशोक चक्र / Ashoka Chakra", "C": "वीर चक्र / Vir Chakra", "D": "कीर्ति चक्र / Kirti Chakra"}, "answer": "B"},
+    {"id": 27, "question_hi": "भारत के प्रथम परमवीर चक्र विजेता कौन थे?", "question_en": "Who was the first recipient of the Param Vir Chakra?", "options": {"A": "मेजर सोमनाथ शर्मा / Major Somnath Sharma", "B": "अब्दुल हमीद / Abdul Hamid", "C": "निर्मलजीत सिंह सेखों / Nirmal Jit Singh Sekhon", "D": "विक्रम बत्रा / Vikram Batra"}, "answer": "A"},
+    {"id": 28, "question_hi": "भारत का सर्वोच्च खेल सम्मान वर्तमान में किस नाम से जाना जाता है?", "question_en": "What is India's highest sporting honour currently known as?", "options": {"A": "अर्जुन पुरस्कार / Arjuna Award", "B": "द्रोणाचार्य पुरस्कार / Dronacharya Award", "C": "मेजर ध्यानचंद खेल रत्न पुरस्कार / Major Dhyan Chand Khel Ratna Award", "D": "ध्यानचंद पुरस्कार / Dhyan Chand Award"}, "answer": "C"},
+    {"id": 29, "question_hi": "भारत का प्रथम नोबेल पुरस्कार विजेता कौन था?", "question_en": "Who was the first Indian Nobel Prize winner?", "options": {"A": "सी. वी. रमन / C. V. Raman", "B": "रवीन्द्रनाथ टैगोर / Rabindranath Tagore", "C": "अमर्त्य सेन / Amartya Sen", "D": "कैलाश सत्यार्थी / Kailash Satyarthi"}, "answer": "B"},
+    {"id": 30, "question_hi": "'एशिया का नोबेल पुरस्कार' किस पुरस्कार को कहा जाता है?", "question_en": "Which award is popularly known as the 'Nobel Prize of Asia'?", "options": {"A": "ज्ञानपीठ पुरस्कार / Jnanpith Award", "B": "दादा साहेब फाल्के पुरस्कार / Dadasaheb Phalke Award", "C": "रेमन मैग्सेसे पुरस्कार / Ramon Magsaysay Award", "D": "पुलित्जर पुरस्कार / Pulitzer Prize"}, "answer": "C"}
+  ]
+};
+
+document.getElementById('test-title').innerText = testData.title;
+document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
+
+let quizHTML = '';
+testData.questions.forEach((q) => {
+  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
+  quizHTML += `<div class="q-no">Question ${q.id}</div>`;
+  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`;
+  quizHTML += `<div class="options">`;
+  for(let key in q.options){
+    quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`;
+  }
+  quizHTML += `</div></div>`;
+});
+document.getElementById('quiz-form').innerHTML = quizHTML;
+
+let time = 20 * 60; let timerInterval;
+function startTimer(){
+  timerInterval = setInterval(()=>{
+    let m = Math.floor(time/60), s = time%60;
+    document.getElementById('timer').innerText = `⏰ Time Left: ${m}:${s<10?'0':''}${s}`;
+    if(time <= 0){ clearInterval(timerInterval); submitTest(); }
+    time--;
+  },1000);
+}
+
+function submitTest(){
+  clearInterval(timerInterval);
+  let score = 0;
+  testData.questions.forEach((q) => {
+    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+    let qbox = document.getElementById(`qbox${q.id}`);
+    let allLabels = qbox.querySelectorAll('label');
+
+    allLabels.forEach(label => {
+        let input = label.querySelector('input');
+        if(input.value === q.answer){
+            label.classList.add('correct-option');
+        }
+        if(selected && input.value === selected.value && selected.value !== q.answer){
+            label.classList.add('wrong-option');
+        }
+    });
+
+    if(selected && selected.value === q.answer){ score++; }
+    qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
+  });
+  document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
+  document.querySelector('.btn').style.display = 'none';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
