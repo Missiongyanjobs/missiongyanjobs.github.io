@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 7 | Mission Gyan Jobs</title>
+<style>
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
+body{background:#1a0000; padding:15px}
+.container{max-width:850px; margin:auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 20px rgba(255,0,0,0.5); border:2px solid #ff0000}
+.header{text-align:center; border-bottom:3px solid #ff0000; padding:15px; margin-bottom:20px; background:linear-gradient(90deg, #8B0000, #ff0000); color:white; border-radius:8px}
+.header h1{font-size:19px; text-shadow:0 0 5px #fff}
+.section-title{background:#0f172a; color:#fbbf24; padding:10px 15px; border-radius:6px; margin:20px 0 15px 0; font-size:18px; font-weight:800; text-align:center; border:1px solid #fbbf24}
+.timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
+@keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
+.question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
+.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
+.q-text{font-size:16px; margin-bottom:12px; font-weight:600}
+.options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
+.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
+.btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
+#result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
+.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
+.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
+.answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
+#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
+.pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
+.pass-box p{color:white; margin-bottom:15px}
+.pass-box input{width:100%; padding:12px; font-size:16px; border:3px solid yellow; border-radius:6px; margin-bottom:15px; text-align:center; font-weight:bold}
+.pass-box button{width:100%; padding:12px; background:yellow; color:#8B0000; border:none; border-radius:6px; font-size:17px; cursor:pointer; font-weight:bold}
+.error{color:yellow; margin-top:10px; display:none; font-weight:bold}
+</style>
+</head>
+<body>
+<div id="password-screen">
+  <div class="pass-box">
+    <h2>🔥 TEST LOCKED 🔥</h2>
+    <p>Test start karne ke liye password dalo</p>
+    <input type="password" id="passInput" placeholder="Password">
+    <button onclick="checkPassword()">START TEST NOW</button>
+    <p class="error" id="errorMsg">❌ Galat Password! try again</p>
+  </div>
+</div>
+<div class="container" id="main-test" style="display:none;">
+<div class="header"><h1 id="test-title"></h1><p id="test-subject"></p></div>
+<div class="timer" id="timer">⏰ Time Left: 20:00</div>
+<form id="quiz-form"></form>
+<button class="btn" onclick="submitTest()">🔥 SUBMIT TEST 🔥</button>
+<div id="result"></div>
+</div>
+<script>
+const correctPass = "MGE@77";
+function checkPassword(){
+  let pass = document.getElementById('passInput').value;
+  if(pass === correctPass){
+    document.getElementById('password-screen').style.display = 'none';
+    document.getElementById('main-test').style.display = 'block';
+    startTimer();
+  }else{ document.getElementById('errorMsg').style.display = 'block'; }
+}
+const testData = {
+  "title": "Air Force Non-Combatant 01/2027 - Practice Set 7",
+  "subject": "General Knowledge + English (30 Qs) - Verified Answers",
+  "questions": [
+    {"id": 1, "section": "GK", "question_hi": "भारतीय संविधान के अनुसार लोकसभा का सदस्य बनने के लिए उम्मीदवार की न्यूनतम आयु कितनी होनी चाहिए?", "question_en": "According to the Indian Constitution, what is the minimum age required to become a member of the Lok Sabha?", "options": {"A": "18 वर्ष / 18 years", "B": "21 वर्ष / 21 years", "C": "25 वर्ष / 25 years", "D": "30 वर्ष / 30 years"}, "answer": "C"},
+    {"id": 2, "section": "GK", "question_hi": "भारत और पाकिस्तान के बीच अंतरराष्ट्रीय सीमा के निर्धारण से संबंधित रेखा को क्या कहा जाता है?", "question_en": "What is the line associated with the demarcation of the boundary between India and Pakistan called?", "options": {"A": "डूरंड रेखा / Durand Line", "B": "मैकमोहन रेखा / McMahon Line", "C": "रेडक्लिफ रेखा / Radcliffe Line", "D": "24वीं समानांतर रेखा / 24th Parallel"}, "answer": "C"},
+    {"id": 3, "section": "GK", "question_hi": "निम्नलिखित में से किसे कंप्यूटर का 'Brain' कहा जाता है?", "question_en": "Which of the following is commonly known as the 'Brain of a Computer'?", "options": {"A": "RAM / रैम", "B": "CPU / सीपीयू", "C": "ROM / रोम", "D": "Hard Disk / हार्ड डिस्क"}, "answer": "B"},
+    {"id": 4, "section": "GK", "question_hi": "WWW का सही विस्तृत रूप क्या है?", "question_en": "What is the correct full form of WWW?", "options": {"A": "World Web Wide", "B": "Wide World Web", "C": "World Wide Web", "D": "Web World Wide"}, "answer": "C"},
+    {"id": 5, "section": "GK", "question_hi": "अफ्रीका में पाए जाने वाले उष्णकटिबंधीय घास के विस्तृत मैदानों को किस नाम से जाना जाता है?", "question_en": "What are the tropical grasslands mainly found in Africa known as?", "options": {"A": "टुंड्रा / Tundra", "B": "सवाना / Savanna", "C": "टैगा / Taiga", "D": "प्रेयरी / Prairie"}, "answer": "B"},
+    {"id": 6, "section": "GK", "question_hi": "'कृष्ण क्रांति' भारत में मुख्य रूप से किस क्षेत्र में वृद्धि से संबंधित है?", "question_en": "The 'Krishna Revolution' in India is primarily associated with an increase in which sector?", "options": {"A": "दूध उत्पादन / Milk production", "B": "खाद्यान्न उत्पादन / Food grain production", "C": "खनिज तेल उत्पादन / Mineral oil production", "D": "मत्स्य उत्पादन / Fish production"}, "answer": "C"},
+    {"id": 7, "section": "GK", "question_hi": "प्राचीन मगध के किस शासक ने पाटलिपुत्र को अपनी राजधानी बनाया था?", "question_en": "Which ancient ruler of Magadha made Pataliputra his capital?", "options": {"A": "बिम्बिसार / Bimbisara", "B": "अजातशत्रु / Ajatashatru", "C": "उदयिन / Udayin", "D": "धनानंद / Dhanananda"}, "answer": "C"},
+    {"id": 8, "section": "GK", "question_hi": "मगध के किस शासक ने अंग राज्य को अपने साम्राज्य में मिला लिया था?", "question_en": "Which ruler of Magadha annexed the kingdom of Anga into his empire?", "options": {"A": "बिम्बिसार / Bimbisara", "B": "उदयिन / Udayin", "C": "अजातशत्रु / Ajatashatru", "D": "महापद्मनंद / Mahapadma Nanda"}, "answer": "A"},
+    {"id": 9, "section": "GK", "question_hi": "भारत के दक्षिणतम बिंदु 'इंदिरा प्वाइंट' का संबंध किस द्वीप से है?", "question_en": "'Indira Point', the southernmost point of India, is located on which island?", "options": {"A": "दक्षिण अंडमान / South Andaman", "B": "ग्रेट निकोबार / Great Nicobar", "C": "मिनिकॉय / Minicoy", "D": "कार निकोबार / Car Nicobar"}, "answer": "B"},
+    {"id": 10, "section": "GK", "question_hi": "'इंदिरा कॉल' भारत के किस क्षेत्र में स्थित सबसे उत्तरी बिंदु है?", "question_en": "'Indira Col', the northernmost point of India, is located in which region?", "options": {"A": "जम्मू / Jammu", "B": "लद्दाख / Ladakh", "C": "हिमाचल प्रदेश / Himachal Pradesh", "D": "उत्तराखंड / Uttarakhand"}, "answer": "B"},
+    {"id": 11, "section": "GK", "question_hi": "'A Suitable Boy' नामक प्रसिद्ध उपन्यास के लेखक कौन हैं?", "question_en": "Who wrote the famous novel 'A Suitable Boy'?", "options": {"A": "चेतन भगत / Chetan Bhagat", "B": "विक्रम सेठ / Vikram Seth", "C": "अमिताव घोष / Amitav Ghosh", "D": "आर. के. नारायण / R. K. Narayan"}, "answer": "B"},
+    {"id": 12, "section": "GK", "question_hi": "'आवारा मसीहा' किस प्रसिद्ध लेखक की रचना है?", "question_en": "'Awara Masiha' is a literary work written by which author?", "options": {"A": "विष्णु प्रभाकर / Vishnu Prabhakar", "B": "जैनेन्द्र कुमार / Jainendra Kumar", "C": "यशपाल / Yashpal", "D": "रामधारी सिंह दिनकर / Ramdhari Singh Dinkar"}, "answer": "A"},
+    {"id": 13, "section": "GK", "question_hi": "वैदिक साहित्य में 'निष्क' शब्द मुख्यतः किस वस्तु के लिए प्रयुक्त हुआ है?", "question_en": "In Vedic literature, the term 'Nishka' was primarily used for which of the following?", "options": {"A": "हथियार / Weapon", "B": "आभूषण / Ornament", "C": "वस्त्र / Cloth", "D": "अनाज / Grain"}, "answer": "B"},
+    {"id": 14, "section": "GK", "question_hi": "'Telescope : Stars' के समान संबंध को पूरा कीजिए— 'Microscope : ?'", "question_en": "Complete the analogy: 'Telescope : Stars :: Microscope : ?'", "options": {"A": "Mountains / पर्वत", "B": "Planets / ग्रह", "C": "Cells / कोशिकाएँ", "D": "Oceans / महासागर"}, "answer": "C"},
+    {"id": 15, "section": "GK", "question_hi": "यदि 'Cub' का संबंध 'Bear' से है, तो 'Calf' का संबंध किससे होगा?", "question_en": "If 'Cub' is related to 'Bear', then 'Calf' is related to which of the following?", "options": {"A": "Goat / बकरी", "B": "Cow / गाय", "C": "Deer / हिरण", "D": "Buffalo / भैंस"}, "answer": "B"},
+    {"id": 16, "section": "ENGLISH", "question_hi": "They _____ playing football in the park right now.", "question_en": "They _____ playing football in the park right now.", "options": {"A": "is", "B": "are", "C": "were", "D": "have"}, "answer": "B"},
+    {"id": 17, "section": "ENGLISH", "question_hi": "My brother is _____ university student.", "question_en": "My brother is _____ university student.", "options": {"A": "a", "B": "an", "C": "the", "D": "no article"}, "answer": "A"},
+    {"id": 18, "section": "ENGLISH", "question_hi": "He opened the door. (Passive Voice)", "question_en": "He opened the door. (Passive)", "options": {"A": "The door is opened by him.", "B": "The door has opened by him.", "C": "The door was opened by him.", "D": "The door will be opened by him."}, "answer": "C"},
+    {"id": 19, "section": "ENGLISH", "question_hi": "She said, 'I am reading a book.' (Indirect)", "question_en": "She said, 'I am reading a book.' (Indirect)", "options": {"A": "She said that she is reading a book.", "B": "She said that I was reading a book.", "C": "She says that she was reading a book.", "D": "She said that she was reading a book."}, "answer": "D"},
+    {"id": 20, "section": "ENGLISH", "question_hi": "He / do not / play / cricket. (Find Error)", "question_en": "He / do not / play / cricket.", "options": {"A": "He", "B": "do not", "C": "play", "D": "cricket"}, "answer": "B"},
+    {"id": 21, "section": "ENGLISH", "question_hi": "The cat jumped _____ the table.", "question_en": "The cat jumped _____ the table.", "options": {"A": "on", "B": "upon", "C": "in", "D": "at"}, "answer": "A"},
+    {"id": 22, "section": "ENGLISH", "question_hi": "Choose the correct sentence:", "question_en": "Choose the correct sentence:", "options": {"A": "He have gone to the market.", "B": "He has went to the market.", "C": "He has gone to the market.", "D": "He going to the market."}, "answer": "C"},
+    {"id": 23, "section": "ENGLISH", "question_hi": "Correct punctuation:", "question_en": "Choose the correctly punctuated sentence:", "options": {"A": "Hurrah we won the match.", "B": "Hurrah! We won the match.", "C": "Hurrah, we won the match?", "D": "Hurrah We won the match!"}, "answer": "B"},
+    {"id": 24, "section": "ENGLISH", "question_hi": "Correct capitalization:", "question_en": "Choose the correctly capitalized sentence:", "options": {"A": "the ganga is a holy river.", "B": "The Ganga is a holy river.", "C": "The ganga is a Holy river.", "D": "the Ganga Is a holy River."}, "answer": "B"},
+    {"id": 25, "section": "ENGLISH", "question_hi": "Synonym of Enormous:", "question_en": "Synonym of Enormous:", "options": {"A": "Tiny", "B": "Small", "C": "Huge", "D": "Weak"}, "answer": "C"},
+    {"id": 26, "section": "ENGLISH", "question_hi": "Antonym of Optimist:", "question_en": "Antonym of Optimist:", "options": {"A": "Pessimist", "B": "Cheerful", "C": "Positive", "D": "Brave"}, "answer": "A"},
+    {"id": 27, "section": "ENGLISH", "question_hi": "One word: A person who does not believe in God", "question_en": "A person who does not believe in the existence of God", "options": {"A": "Theist", "B": "Priest", "C": "Atheist", "D": "Devotee"}, "answer": "C"},
+    {"id": 28, "section": "ENGLISH", "question_hi": "Idiom: Break a leg", "question_en": "Meaning of 'Break a leg':", "options": {"A": "To get injured", "B": "To wish someone good luck", "C": "To run very fast", "D": "To fail in an exam"}, "answer": "B"},
+    {"id": 29, "section": "ENGLISH", "question_hi": "Correct spelling:", "question_en": "Choose the correctly spelt word:", "options": {"A": "Comitee", "B": "Committee", "C": "Commitee", "D": "Comittee"}, "answer": "B"},
+    {"id": 30, "section": "ENGLISH", "question_hi": "Correct sentence:", "question_en": "Choose the correct sentence:", "options": {"A": "I am knowing him very well.", "B": "I knows him very well.", "C": "I know him very well.", "D": "I has known him very well."}, "answer": "C"}
+  ]
+};
+document.getElementById('test-title').innerText = testData.title;
+document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
+let quizHTML = '';
+let currentSection = '';
+testData.questions.forEach((q) => {
+  if(currentSection !== q.section){
+    currentSection = q.section;
+    quizHTML += `<div class="section-title">📚 ${currentSection}</div>`;
+  }
+  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
+  quizHTML += `<div class="q-no">Q${q.id} [${q.section}]</div>`;
+  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`;
+  quizHTML += `<div class="options">`;
+  for(let key in q.options){ quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`; }
+  quizHTML += `</div></div>`;
+});
+document.getElementById('quiz-form').innerHTML = quizHTML;
+let time = 20 * 60; let timerInterval;
+function startTimer(){
+  timerInterval = setInterval(()=>{
+    let m = Math.floor(time/60), s = time%60;
+    document.getElementById('timer').innerText = `⏰ Time Left: ${m}:${s<10?'0':''}${s}`;
+    if(time <= 0){ clearInterval(timerInterval); submitTest(); }
+    time--;
+  },1000);
+}
+function submitTest(){
+  clearInterval(timerInterval);
+  let score = 0;
+  testData.questions.forEach((q) => {
+    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+    let qbox = document.getElementById(`qbox${q.id}`);
+    let allLabels = qbox.querySelectorAll('label');
+    allLabels.forEach(label => {
+        let input = label.querySelector('input');
+        if(input.value === q.answer){ label.classList.add('correct-option'); }
+        if(selected && input.value === selected.value && selected.value !== q.answer){ label.classList.add('wrong-option'); }
+    });
+    if(selected && selected.value === q.answer){ score++; }
+    qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
+  });
+  document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
+  document.querySelector('.btn').style.display = 'none';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
