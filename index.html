@@ -50,13 +50,18 @@
         .box-full {grid-column: 1 / -1;}
         @media (max-width: 600px) {.pro-header {flex-direction: column; align-items: stretch; text-align: center;} .header-left {justify-content: center;} .offline-btn {text-align: center;} .header-text h1 {font-size: 20px;} .telegram-float {padding: 10px 16px; font-size: 13px; bottom: 12px; right: 12px;}}
 
-        /* ✅ SAME SIZE CARD FIX */
-        .airforce-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:15px; width:100%; }
+        /* 🔥 PREMIUM ONE LINE SCROLL FIX */
+        .airforce-wrapper{grid-column: 1 / -1; background:#fff; border:2px solid #B91C1C; border-radius:8px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.08);}
+        .airforce-grid{ display:flex; gap:15px; overflow-x:auto; padding:15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .airforce-grid::-webkit-scrollbar{height:8px} .airforce-grid::-webkit-scrollbar-thumb{background:#dc2626; border-radius:10px}
         .airforce-card{
+            min-width:285px; max-width:285px; flex:0 0 auto; scroll-snap-align:start;
             background:linear-gradient(135deg, #8B0000, #ff0000); color:white; padding:20px; border-radius:12px; 
             text-align:center; border:2px solid #ff0000; box-shadow:0 0 15px rgba(255,0,0,0.7);
-            display:flex; flex-direction:column; justify-content:space-between; min-height:195px;
+            display:flex; flex-direction:column; justify-content:space-between; min-height:200px;
+            transition:0.3s;
         }
+        .airforce-card:hover{transform:translateY(-5px); box-shadow:0 0 25px rgba(255,0,0,0.9);}
     </style>
 </head>
 <body>
@@ -154,9 +159,9 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- ===== AIR FORCE MOCK TEST - 4 CARDS SAME SIZE ===== -->
-            <div class="box-full">
+            <!-- ===== AIR FORCE MOCK TEST - 8 CARDS - ONE LINE PREMIUM ===== -->
+            <div class="airforce-wrapper">
+                <div class="box-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (8) 🔥</div>
                 <div class="airforce-grid">
 
                     <div class="airforce-card">
@@ -195,41 +200,44 @@
                         <a href="airforce-noncbt-2027-mock-test-4.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
                     </div>
 
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 5 - Free 30 Q + Answer Key</p>
+                            <p style="font-size:11px; color:#ffff00;">States, Capitals & Awards | 20 Minutes</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-5.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 6 - Free 30 Q + Answer Key</p>
+                            <p style="font-size:11px; color:#ffff00;">GK + English | 30 Questions | 20 Minutes</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-6.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 7 - Free 30 Q + Answer Key</p>
+                            <p style="font-size:11px; color:#ffff00;">GK + English | 30 Questions | 20 Minutes</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-7.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 8 - Free 30 Q + Answer Key</p>
+                            <p style="font-size:11px; color:#ffff00;">GK + English | 30 Questions | 20 Minutes</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-8.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
                 </div>
             </div>
-
-<div class="airforce-card">
-  <div>
-    <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-    <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 5 - Free 30 Q + Answer Key</p>
-    <p style="font-size:11px; color:#ffff00;">States, Capitals & Awards | 20 Minutes</p>
-  </div>
-  <a href="airforce-noncbt-2027-mock-test-5.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
-</div>
-<div class="airforce-card">
-  <div>
-    <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-    <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK + English Test 6 - 30 Qs</p>
-    <p style="font-size:11px; color:#ffff00;">15 GK + 15 English | 20 Minutes</p>
-  </div>
-  <a href="airforce-noncbt-2027-mock-test-6.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
-</div>
-<div class="airforce-card">
-  <div>
-    <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-    <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK + English Test 7 - 30 Qs</p>
-    <p style="font-size:11px; color:#ffff00;">Constitution + Reasoning | 20 Min</p>
-  </div>
-  <a href="airforce-noncbt-2027-mock-test-7.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
-</div>
-<div class="airforce-card">
-  <div>
-    <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-    <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">Practice Set 04 - NEW 30 Qs</p>
-    <p style="font-size:11px; color:#ffff00;">GK + English | Verified | 20 Min</p>
-  </div>
-  <a href="airforce-noncbt-2027-mock-test-8.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
-</div>
 
             <div class="box about-box box-full">
                 <div class="box-title">ℹ️ About Mission Gyan Jobs</div>
