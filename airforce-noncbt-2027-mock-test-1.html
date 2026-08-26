@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AIR FORCE TEST 1 - Premium with Ranking | Mission Gyan Jobs</title>
+<title>AIR FORCE TEST 1 - Premium with Ranking</title>
 <style>
 :root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0}
 body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
@@ -16,14 +16,25 @@ body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
 .circle{width:26px;height:26px;background:var(--bg);border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px}
 .btn{padding:11px;border:none;border-radius:10px;font-weight:800;cursor:pointer}.btn-g{background:#e2e8f0}.btn-y{background:#fef3c7}.btn-b{background:#1d4ed8;color:#fff}.btn-gr{background:#16a34a;color:#fff}
 .p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:10px}.p{height:38px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;font-weight:800;cursor:pointer}.p.cur{background:#ef4444;color:#fff}.p.ans{background:#10b981;color:#fff}.p.rev{background:#fbbf24}
-.overlay{position:fixed;inset:0;background:rgba(2,6,23,0.92);display:flex;justify-content:center;align-items:center;z-index:9999;padding:15px}
-.box{width:100%;max-width:380px;background:linear-gradient(180deg,#0f172a,#1e293b);padding:22px;border-radius:20px;border:2px solid #fbbf24;text-align:center;box-shadow:0 0 30px rgba(0,0,0,0.5)}
-.box h2{color:#fbbf24;margin-bottom:8px}.box p{color:#cbd5e1;font-size:13px;margin-bottom:12px}
-.box input{width:100%;padding:12px;border-radius:10px;border:2px solid #fbbf24;margin:7px 0;text-align:center;font-weight:700;font-size:15px}
-.box button{width:100%;padding:12px;background:#fbbf24;color:#0f172a;border:none;border-radius:10px;font-weight:900;margin-top:10px;cursor:pointer}
-.pass-box{background:linear-gradient(180deg,#8B0000,#ff0000);border-color:yellow}.pass-box h2{color:yellow}
-.score-card{width:100%;max-width:400px;background:#fff;border-radius:24px;padding:20px;animation:pop.3s ease}
-@keyframes pop{0%{transform:scale(.8)}100%{transform:scale(1)}}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:15px}
+
+/* LOGIN BOX - BLUE THEME */
+#loginScreen{background:rgba(2,6,23,0.92)}
+.login-box{width:100%;max-width:380px;background:linear-gradient(180deg,#0f172a,#1e293b);padding:22px;border-radius:20px;border:2px solid #fbbf24;text-align:center;box-shadow:0 0 30px rgba(0,0,0,0.5)}
+.login-box h2{color:#fbbf24;margin-bottom:8px}.login-box p{color:#cbd5e1;font-size:13px;margin-bottom:12px}
+.login-box input{width:100%;padding:12px;border-radius:10px;border:2px solid #fbbf24;margin:7px 0;text-align:center;font-weight:700;font-size:15px}
+.login-box button{width:100%;padding:12px;background:#fbbf24;color:#0f172a;border:none;border-radius:10px;font-weight:900;margin-top:10px;cursor:pointer}
+
+/* PASSWORD BOX - OLD RED THEME - SCREENSHOT JAISE */
+#passScreen{background:rgba(0,0,0,0.95)}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000);padding:30px;border-radius:15px;text-align:center;width:90%;max-width:400px;border:3px solid yellow;box-shadow:0 0 25px red}
+.pass-box h2{color:yellow;margin-bottom:10px;font-size:24px;text-shadow:0 0 10px #fff}
+.pass-box p{color:white;margin-bottom:15px;font-size:13px}
+.pass-box input{width:100%;padding:12px;font-size:16px;border:3px solid yellow;border-radius:6px;margin-bottom:15px;text-align:center;font-weight:bold}
+.pass-box button{width:100%;padding:12px;background:yellow;color:#8B0000;border:none;border-radius:6px;font-size:17px;cursor:pointer;font-weight:bold;box-shadow:0 0 15px yellow}
+.pass-box button:hover{background:#fff}
+
+.score-card{width:100%;max-width:400px;background:#fff;border-radius:24px;padding:20px}
 .badge-top{display:inline-block;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:5px 12px;border-radius:20px}
 .score-big{font-size:40px;font-weight:900;color:#1d4ed8;text-align:center}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
 .stat{border-radius:14px;padding:12px;text-align:center}.stat b{font-size:20px;display:block}
@@ -32,26 +43,23 @@ body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
 <body>
 <div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:36px;height:36px;border-radius:50%;border:none">🌙</button></div></div>
 
-<!-- 1. LOGIN BOX - NAME KE LIYE -->
 <div class="overlay" id="loginScreen">
-  <div class="box">
+  <div class="login-box">
     <h2>👋 Welcome Student</h2>
-    
     <input type="text" id="stuName" placeholder="अपना पूरा नाम / name *">
-    <input type="text" id="stuCity" placeholder="जिला / City ">
+    <input type="text" id="stuCity" placeholder="जिला / City">
     <button onclick="doLogin()">Continue →</button>
-    <p style="margin-top:10px;font-size:11px;color:#94a3b8"> This name will appear on the leaderboard  </p>
+    <p style="margin-top:10px;font-size:11px;color:#94a3b8">This name will appear on the leaderboard</p>
   </div>
 </div>
 
-<!-- 2. PASSWORD BOX -->
 <div class="overlay" id="passScreen" style="display:none">
-  <div class="box pass-box">
+  <div class="pass-box">
     <h2>🔥 TEST LOCKED 🔥</h2>
-    <p>Password daalo test start karne ke liye</p>
-    <input type="password" id="passInput" placeholder="password>
+    <p>Test start karne ke liye password dalo</p>
+    <input type="password" id="passInput" placeholder="Password">
     <button onclick="checkPass()">START TEST NOW</button>
-    <p id="passErr" style="color:yellow;display:none;margin-top:8px">❌ Galat Password</p>
+    <p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:bold">❌ Galat Password! try again</p>
   </div>
 </div>
 
@@ -67,13 +75,11 @@ body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
   <div class="p-card"><b>Question Palette</b><div class="p-grid" id="pGrid"></div></div>
 </div>
 
-<!-- 3. PREMIUM SCORECARD + RANKING -->
-<div class="overlay" id="scoreOverlay" style="display:none">
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(15,23,42,0.88)">
   <div class="score-card">
     <div style="text-align:center"><div class="badge-top">TEST SCORECARD</div>
       <div id="scoreMsg" style="font-size:22px;font-weight:900;color:#0f172a;margin:6px 0">Good Attempt! Keep Practicing 💪</div>
-      <div style="font-size:12px;color:#64748b" id="scoreSub2">Air Force Non-Combatant GK Test 1</div>
-      <div class="score-big"><span id="sBig">0.00</span><span style="font-size:16px;color:#64748b" id="sTot"> /25</span></div>
+      <div class="score-big"><span id="sBig">0.00</span><span style="font-size:16px;color:#64748b"> /25</span></div>
       <div style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">🏅 Rank: <span id="myRank">#1</span> / <span id="totRank">1</span></div>
     </div>
     <div class="stats">
@@ -91,39 +97,38 @@ body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
 const testData={title:"AIR FORCE NON-COMBATANT 01/2027 - GK TEST (1)",subject:"भारत में प्रथम महिला, प्रथम पुरुष एवं भारत में सबसे बड़ा",questions:[
 {qh:"भारत की प्रथम महिला राष्ट्रपति कौन थीं?",qe:"Who was the first Woman President of India?",o:{"A":"इंदिरा गांधी","B":"प्रतिभा पाटिल","C":"मीरा कुमार","D":"सरोजिनी नायडू"},a:"B"},
 {qh:"भारत के प्रथम राष्ट्रपति कौन थे?",qe:"Who was the first President of India?",o:{"A":"डॉ. राजेन्द्र प्रसाद","B":"डॉ. राधाकृष्णन","C":"डॉ. जाकिर हुसैन","D":"वी.वी. गिरि"},a:"A"},
-{qh:"भारत की प्रथम महिला प्रधानमंत्री कौन थीं?",qe:"Who was the first Woman PM of India?",o:{"A":"सोनिया गांधी","B":"प्रतिभा पाटिल","C":"इंदिरा गांधी","D":"सरोजिनी नायडू"},a:"C"},
-{qh:"भारत के प्रथम प्रधानमंत्री कौन थे?",qe:"Who was the first PM of India?",o:{"A":"महात्मा गांधी","B":"जवाहरलाल नेहरू","C":"सरदार पटेल","D":"लाल बहादुर शास्त्री"},a:"B"},
+{qh:"भारत की प्रथम महिला प्रधानमंत्री कौन थीं?",qe:"Who was the first Woman PM?",o:{"A":"सोनिया गांधी","B":"प्रतिभा पाटिल","C":"इंदिरा गांधी","D":"सरोजिनी नायडू"},a:"C"},
+{qh:"भारत के प्रथम प्रधानमंत्री कौन थे?",qe:"Who was the first PM?",o:{"A":"महात्मा गांधी","B":"जवाहरलाल नेहरू","C":"सरदार पटेल","D":"लाल बहादुर शास्त्री"},a:"B"},
 {qh:"भारत की प्रथम महिला IPS कौन थीं?",qe:"Who was first Woman IPS?",o:{"A":"किरण बेदी","B":"अन्ना राजम मल्होत्रा","C":"दुर्गा शक्ति","D":"अरुणा बहुगुणा"},a:"A"},
 {qh:"भारत की प्रथम महिला IAS कौन थीं?",qe:"Who was first Woman IAS?",o:{"A":"किरण बेदी","B":"अन्ना राजम मल्होत्रा","C":"इंदिरा गांधी","D":"सरोजिनी नायडू"},a:"B"},
 {qh:"भारत की प्रथम महिला मुख्यमंत्री कौन थीं?",qe:"Who was first Woman CM?",o:{"A":"जयललिता","B":"मायावती","C":"सुचेता कृपलानी","D":"ममता बनर्जी"},a:"C"},
-{qh:"लोकसभा की प्रथम महिला अध्यक्ष कौन थीं?",qe:"Who was first Woman Speaker of Lok Sabha?",o:{"A":"प्रतिभा पाटिल","B":"सुमित्रा महाजन","C":"मीरा कुमार","D":"सरोजिनी नायडू"},a:"C"},
+{qh:"लोकसभा की प्रथम महिला अध्यक्ष कौन थीं?",qe:"Who was first Woman Speaker?",o:{"A":"प्रतिभा पाटिल","B":"सुमित्रा महाजन","C":"मीरा कुमार","D":"सरोजिनी नायडू"},a:"C"},
 {qh:"अंतरिक्ष में जाने वाले प्रथम भारतीय कौन थे?",qe:"Who was first Indian in Space?",o:{"A":"राकेश शर्मा","B":"रविश मल्होत्रा","C":"कल्पना चावला","D":"सुनीता विलियम्स"},a:"A"},
 {qh:"अंतरिक्ष में जाने वाली प्रथम भारतीय महिला कौन थीं?",qe:"Who was first Indian Woman in Space?",o:{"A":"कल्पना चावला","B":"सुनीता विलियम्स","C":"बछेंद्री पाल","D":"हरिता कौर"},a:"A"},
-{qh:"एवरेस्ट पर पहुँचने वाली प्रथम भारतीय महिला कौन थीं?",qe:"Who was first Indian Woman on Everest?",o:{"A":"संतोष यादव","B":"अरुणिमा सिन्हा","C":"बछेंद्री पाल","D":"प्रेमलता अग्रवाल"},a:"C"},
-{qh:"भारत का सर्वोच्च नागरिक सम्मान कौन सा है?",qe:"Which is highest civilian award?",o:{"A":"पद्म भूषण","B":"पद्म विभूषण","C":"परमवीर चक्र","D":"भारत रत्न"},a:"D"},
-{qh:"भारत रत्न की शुरुआत कब हुई?",qe:"When was Bharat Ratna started?",o:{"A":"1950","B":"1952","C":"1954","D":"1956"},a:"C"},
-{qh:"नोबेल पाने वाले प्रथम भारतीय कौन थे?",qe:"Who was first Indian Nobel winner?",o:{"A":"सी.वी. रमन","B":"अमर्त्य सेन","C":"रवीन्द्रनाथ टैगोर","D":"मदर टेरेसा"},a:"C"},
-{qh:"भारत की सबसे लंबी नदी कौन सी है?",qe:"Which is longest river in India?",o:{"A":"यमुना","B":"गंगा","C":"गोदावरी","D":"ब्रह्मपुत्र"},a:"B"},
-{qh:"दक्षिण भारत की सबसे लंबी नदी कौन सी है?",qe:"Which is longest river in South India?",o:{"A":"कृष्णा","B":"कावेरी","C":"गोदावरी","D":"महानदी"},a:"C"},
-{qh:"भारत की सबसे लंबी सहायक नदी कौन सी है?",qe:"Which is longest tributary?",o:{"A":"चंबल","B":"बेतवा","C":"यमुना","D":"कोसी"},a:"C"},
-{qh:"भारत में सबसे लंबी तटरेखा वाला राज्य?",qe:"Which state has longest coastline?",o:{"A":"महाराष्ट्र","B":"गुजरात","C":"तमिलनाडु","D":"केरल"},a:"B"},
-{qh:"सर्वाधिक वन क्षेत्र वाला राज्य?",qe:"Which state has largest forest area?",o:{"A":"महाराष्ट्र","B":"छत्तीसगढ़","C":"मध्य प्रदेश","D":"ओडिशा"},a:"C"},
-{qh:"सर्वाधिक वर्षा कहाँ होती है?",qe:"Where highest rainfall?",o:{"A":"चेरापूंजी","B":"शिलांग","C":"गंगटोक","D":"मासिनराम"},a:"D"},
+{qh:"एवरेस्ट पर पहुँचने वाली प्रथम भारतीय महिला?",qe:"Who was first Indian Woman on Everest?",o:{"A":"संतोष यादव","B":"अरुणिमा सिन्हा","C":"बछेंद्री पाल","D":"प्रेमलता अग्रवाल"},a:"C"},
+{qh:"भारत का सर्वोच्च नागरिक सम्मान?",qe:"Which is highest civilian award?",o:{"A":"पद्म भूषण","B":"पद्म विभूषण","C":"परमवीर चक्र","D":"भारत रत्न"},a:"D"},
+{qh:"भारत रत्न की शुरुआत कब?",qe:"When was Bharat Ratna started?",o:{"A":"1950","B":"1952","C":"1954","D":"1956"},a:"C"},
+{qh:"नोबेल पाने वाले प्रथम भारतीय?",qe:"Who was first Indian Nobel winner?",o:{"A":"सी.वी. रमन","B":"अमर्त्य सेन","C":"रवीन्द्रनाथ टैगोर","D":"मदर टेरेसा"},a:"C"},
+{qh:"भारत की सबसे लंबी नदी?",qe:"Longest river in India?",o:{"A":"यमुना","B":"गंगा","C":"गोदावरी","D":"ब्रह्मपुत्र"},a:"B"},
+{qh:"दक्षिण भारत की सबसे लंबी नदी?",qe:"Longest river in South India?",o:{"A":"कृष्णा","B":"कावेरी","C":"गोदावरी","D":"महानदी"},a:"C"},
+{qh:"सबसे लंबी सहायक नदी?",qe:"Longest tributary?",o:{"A":"चंबल","B":"बेतवा","C":"यमुना","D":"कोसी"},a:"C"},
+{qh:"सबसे लंबी तटरेखा वाला राज्य?",qe:"Longest coastline state?",o:{"A":"महाराष्ट्र","B":"गुजरात","C":"तमिलनाडु","D":"केरल"},a:"B"},
+{qh:"सर्वाधिक वन क्षेत्र वाला राज्य?",qe:"Largest forest area state?",o:{"A":"महाराष्ट्र","B":"छत्तीसगढ़","C":"मध्य प्रदेश","D":"ओडिशा"},a:"C"},
+{qh:"सर्वाधिक वर्षा कहाँ?",qe:"Highest rainfall place?",o:{"A":"चेरापूंजी","B":"शिलांग","C":"गंगटोक","D":"मासिनराम"},a:"D"},
 {qh:"सबसे बड़ी खारे पानी की झील?",qe:"Largest saltwater lake?",o:{"A":"सांभर","B":"वूलर","C":"चिल्का","D":"लोकटक"},a:"C"},
-{qh:"प्रथम मुख्य न्यायाधीश कौन थे?",qe:"Who was first CJI?",o:{"A":"ए.एन. रे","B":"एच.जे. कानिया","C":"एम.सी. छागला","D":"पी.एन. भगवती"},a:"B"},
-{qh:"प्रथम चुनाव आयुक्त कौन थे?",qe:"Who was first CEC?",o:{"A":"टी.एन. शेषन","B":"एस.वाई. कुरैशी","C":"सुकुमार सेन","D":"राजीव कुमार"},a:"C"},
-{qh:"प्रथम फील्ड मार्शल कौन थे?",qe:"Who was first Field Marshal?",o:{"A":"करियप्पा","B":"सैम मानेकशॉ","C":"बिपिन रावत","D":"सुंदरजी"},a:"B"},
-{qh:"ब्रिटिश संसद के प्रथम भारतीय सदस्य?",qe:"Who was first Indian in British Parliament?",o:{"A":"गोखले","B":"गांधी","C":"दादाभाई नौरोजी","D":"नेहरू"},a:"C"}
+{qh:"प्रथम मुख्य न्यायाधीश?",qe:"Who was first CJI?",o:{"A":"ए.एन. रे","B":"एच.जे. कानिया","C":"एम.सी. छागला","D":"पी.एन. भगवती"},a:"B"},
+{qh:"प्रथम चुनाव आयुक्त?",qe:"Who was first CEC?",o:{"A":"टी.एन. शेषन","B":"एस.वाई. कुरैशी","C":"सुकुमार सेन","D":"राजीव कुमार"},a:"C"},
+{qh:"प्रथम फील्ड मार्शल?",qe:"First Field Marshal?",o:{"A":"करियप्पा","B":"सैम मानेकशॉ","C":"बिपिन रावत","D":"सुंदरजी"},a:"B"},
+{qh:"ब्रिटिश संसद के प्रथम भारतीय सदस्य?",qe:"First Indian in British Parliament?",o:{"A":"गोखले","B":"गांधी","C":"दादाभाई नौरोजी","D":"नेहरू"},a:"C"}
 ]};
 
 let cur=0,answers={},visited=new Set([0]),reviews=new Set(),lang='both',time=20*60,tInt,startTS;
-
 document.getElementById('tTitle').innerText=testData.title;document.getElementById('tSub').innerText=testData.subject;
 
 function doLogin(){
   let n=document.getElementById('stuName').value.trim();
   let c=document.getElementById('stuCity').value.trim();
-  if(n.length<3){alert("Naam to daalo bhai (min 3 letters)");return;}
+  if(n.length<3){alert("Naam daalo bhai min 3 letters");return;}
   localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);
   document.getElementById('loginScreen').style.display='none';
   document.getElementById('passScreen').style.display='flex';
@@ -140,35 +145,24 @@ function render(){visited.add(cur);let q=testData.questions[cur];document.getEle
 function sel(k){answers[cur]=k;render();}function clearAns(){delete answers[cur];render();}function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
 function saveNext(){if(cur<testData.questions.length-1){cur++;render();}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function setLang(l){lang=l;document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));if(l=='both'){lb.classList.add('active');qHi.style.display='';qEn.style.display='';}if(l=='hi'){lh.classList.add('active');qHi.style.display='';qEn.style.display='none';}if(l=='en'){le.classList.add('active');qHi.style.display='none';qEn.style.display='';}}
 function renderP(){let h="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";h+=`<div class="${cl}" onclick="cur=${i};render()">${i+1}</div>`});document.getElementById('pGrid').innerHTML=h;}
-
 function submitTest(){
   clearInterval(tInt);
   let cor=0,wro=0;testData.questions.forEach((q,i)=>{if(answers[i]==q.a)cor++;else if(answers[i]!=undefined)wro++;});
   let tot=testData.questions.length;let acc=Math.round(cor/tot*100);let tUsed=Math.floor((Date.now()-startTS)/1000);
   let name=localStorage.getItem("mgj_name")||"Student";let city=localStorage.getItem("mgj_city")||"";
-  // save ranking
   let atts=JSON.parse(localStorage.getItem("mgj_test1_lb")||"[]");
   atts.push({name,score:cor,acc,time:tUsed,city,date:Date.now()});
   atts.sort((a,b)=>b.score-a.score||a.time-b.time);atts=atts.slice(0,50);
   localStorage.setItem("mgj_test1_lb",JSON.stringify(atts));
-  let myRank=atts.findIndex(a=>a.date==atts.find(x=>x.name==name && x.score==cor)?.date)+1; if(myRank<=0)myRank=atts.findIndex(a=>a.name==name && a.score==cor)+1;
-
+  let myRank=atts.findIndex(a=>a.name==name && a.score==cor)+1;
   document.getElementById('sCor').innerText=cor;document.getElementById('sWro').innerText=wro;
   document.getElementById('sAcc').innerText=acc+"%";document.getElementById('sTime').innerText=`${Math.floor(tUsed/60)}m ${tUsed%60}s`;
   document.getElementById('sBig').innerText=cor.toFixed(2);document.getElementById('myRank').innerText="#"+myRank;document.getElementById('totRank').innerText=atts.length;
-  let msg=acc>=80?"Excellent Work! Topper Ho 🔥":acc>=50?"Good Job! Improving Ho 🚀":"Good Attempt! Keep Practicing 💪";
-  document.getElementById('scoreMsg').innerText=msg;
-
-  let lbH="";atts.slice(0,5).forEach((e,i)=>{
-    let isMe=(i+1)==myRank && e.name==name;
-    lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:${isMe?'#dbeafe':'#f8fafc'};border:1px solid #e2e8f0;font-size:13px;font-weight:700">
-    <span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''} ${isMe?'(You)':''}</span><span>${e.score}/${tot}</span></div>`;
-  });
+  document.getElementById('scoreMsg').innerText=acc>=80?"Excellent Work! Topper Ho 🔥":acc>=50?"Good Job! Improving Ho 🚀":"Good Attempt! Keep Practicing 💪";
+  let lbH="";atts.slice(0,5).forEach((e,i)=>{let isMe=(i+1)==myRank && e.name==name;lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:${isMe?'#dbeafe':'#f8fafc'};border:1px solid #e2e8f0;font-size:13px;font-weight:700"><span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''}</span><span>${e.score}/${tot}</span></div>`;});
   document.getElementById('lbBoard').innerHTML=lbH;
   document.getElementById('scoreOverlay').style.display='flex';
 }
-
-// Auto-fill name if already logged in
 if(localStorage.getItem("mgj_name")){document.getElementById('stuName').value=localStorage.getItem("mgj_name");document.getElementById('stuCity').value=localStorage.getItem("mgj_city")||"";}
 </script>
 </body>
