@@ -1,162 +1,125 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 4 | Mission Gyan Jobs</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AIR FORCE TEST 4 - Premium with Ranking | Mission Gyan Jobs</title>
 <style>
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
-body{background:#1a0000; padding:15px}
-.container{max-width:850px; margin:auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 20px rgba(255,0,0,0.5); border:2px solid #ff0000}
-.header{text-align:center; border-bottom:3px solid #ff0000; padding:15px; margin-bottom:20px; background:linear-gradient(90deg, #8B0000, #ff0000); color:white; border-radius:8px}
-.header h1{font-size:22px; text-shadow:0 0 5px #fff}
-.timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
-@keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
-.question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
-.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
-.q-text{font-size:16px; margin-bottom:12px; font-weight:600}
-.options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
-.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
-.btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
-.btn:hover{transform:scale(1.05)}
-#result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
-.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
-.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
-.answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
-#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
-.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
-.pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
-.pass-box p{color:white; margin-bottom:15px}
-.pass-box input{width:100%; padding:12px; font-size:16px; border:3px solid yellow; border-radius:6px; margin-bottom:15px; text-align:center; font-weight:bold}
-.pass-box button{width:100%; padding:12px; background:yellow; color:#8B0000; border:none; border-radius:6px; font-size:17px; cursor:pointer; font-weight:bold}
-.pass-box button:hover{background:#fff}
-.error{color:yellow; margin-top:10px; display:none; font-weight:bold}
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0}
+body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
+body{background:var(--bg);color:var(--text);transition:0.3s}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900}
+.container{max-width:850px;margin:10px auto;padding:0 10px}
+.q-card,.info-card,.p-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+.lang span{padding:5px 12px;border-radius:20px;border:1.5px solid #2563eb;font-size:12px;font-weight:700;cursor:pointer;color:var(--text)}.lang span.active{background:#2563eb;color:#fff!important}
+.options{margin-top:12px}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;background:var(--card);color:var(--text);transition:0.2s;font-weight:500}
+.options label:hover{border-color:#2563eb;transform:translateX(2px)}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700;box-shadow:0 0 0 3px rgba(22,163,74,0.15)}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px;flex-shrink:0}
+body.dark.q-card,body.dark.info-card,body.dark.p-card{background:#1e293b;border-color:#334155}
+body.dark #qHi{color:#f8fafc!important}body.dark #qEn{color:#94a3b8!important}
+body.dark.options label{background:#1e293b!important;border-color:#475569!important;color:#f1f5f9!important}
+body.dark.options label.sel{background:#14532d!important;border-color:#22c55e!important;color:#dcfce7!important}
+.btn{padding:11px;border:none;border-radius:10px;font-weight:800;cursor:pointer}.btn-g{background:#e2e8f0;color:#0f172a}.btn-y{background:#fef3c7;color:#92400e}.btn-b{background:#1d4ed8;color:#fff}.btn-gr{background:#16a34a;color:#fff}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:10px}.p{height:38px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;font-weight:800;cursor:pointer;color:var(--text)}.p.cur{background:#ef4444!important;color:#fff!important}.p.ans{background:#10b981!important;color:#fff!important}.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:15px}
+#loginScreen{background:rgba(2,6,23,0.92)}
+.login-box{width:100%;max-width:380px;background:linear-gradient(180deg,#0f172a,#1e293b);padding:22px;border-radius:20px;border:2px solid #fbbf24;text-align:center;box-shadow:0 0 30px rgba(0,0,0,0.5)}
+.login-box h2{color:#fbbf24;margin-bottom:8px}.login-box input{width:100%;padding:12px;border-radius:10px;border:2px solid #fbbf24;margin:7px 0;text-align:center;font-weight:700;font-size:15px}
+.login-box button{width:100%;padding:12px;background:#fbbf24;color:#0f172a;border:none;border-radius:10px;font-weight:900;margin-top:10px;cursor:pointer}
+#passScreen{background:rgba(0,0,0,0.95)}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000);padding:30px;border-radius:15px;text-align:center;width:90%;max-width:400px;border:3px solid yellow;box-shadow:0 0 25px red}
+.pass-box h2{color:yellow;margin-bottom:10px;font-size:22px;text-shadow:0 0 10px #fff}.pass-box p{color:white;margin-bottom:15px;font-size:13px}
+.pass-box input{width:100%;padding:12px;font-size:16px;border:3px solid yellow;border-radius:6px;margin-bottom:15px;text-align:center;font-weight:bold}
+.pass-box button{width:100%;padding:12px;background:yellow;color:#8B0000;border:none;border-radius:6px;font-size:17px;cursor:pointer;font-weight:bold}
+.score-card{width:100%;max-width:400px;background:#fff;border-radius:24px;padding:20px;color:#0f172a}
+.badge-top{display:inline-block;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:5px 12px;border-radius:20px}
+.score-big{font-size:40px;font-weight:900;color:#1d4ed8;text-align:center}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.stat{border-radius:14px;padding:12px;text-align:center}.stat b{font-size:20px;display:block}
 </style>
 </head>
 <body>
+<div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:36px;height:36px;border-radius:50%;border:none;cursor:pointer">🌙</button></div></div>
 
-<div id="password-screen">
-  <div class="pass-box">
-    <h2>🔥 TEST LOCKED 🔥</h2>
-    <p>Test start karne ke liye password dalo</p>
-    <input type="password" id="passInput" placeholder="Password">
-    <button onclick="checkPassword()">START TEST NOW</button>
-    <p class="error" id="errorMsg">❌ Galat Password! try again</p>
-  </div>
+<div class="overlay" id="loginScreen">
+  <div class="login-box"><h2>👋 Welcome Student</h2><input type="text" id="stuName" placeholder="अपना पूरा नाम / name *"><input type="text" id="stuCity" placeholder="जिला / City"><button onclick="doLogin()">Continue →</button><p style="margin-top:10px;font-size:11px;color:#94a3b8">This name will appear on the leaderboard</p></div>
 </div>
 
-<div class="container" id="main-test" style="display:none;">
-<div class="header">
-<h1 id="test-title"></h1>
-<p id="test-subject"></p>
+<div class="overlay" id="passScreen" style="display:none">
+  <div class="pass-box"><h2>🔥 TEST LOCKED 🔥</h2><p>Test start karne ke liye password dalo</p><input type="password" id="passInput" placeholder="Password"><button onclick="checkPass()">START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:bold">❌ Galat Password!</p></div>
 </div>
-<div class="timer" id="timer">⏰ Time Left: 20:00</div>
-<form id="quiz-form"></form>
-<button class="btn" onclick="submitTest()">🔥 SUBMIT TEST 🔥</button>
-<div id="result"></div>
+
+<div class="container" id="mainTest" style="display:none">
+  <div class="info-card"><b id="tTitle"></b><br><small id="tSub"></small><br><span style="color:#16a34a;font-weight:800;font-size:12px">30 Questions | 20 Mins | Bilingual</span></div>
+  <div class="q-card"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb">Q <span id="qNo">1</span>/30</b><div class="lang"><span class="active" id="lb" onclick="setLang('both')">Bilingual</span><span id="lh" onclick="setLang('hi')">हिंदी</span><span id="le" onclick="setLang('en')">EN</span></div></div><div id="qHi" style="font-weight:700;margin:12px 0 4px;font-size:16px"></div><div id="qEn" style="color:#64748b;font-size:13px;margin-bottom:6px"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:grid;grid-template-columns:1.6fr 1fr;gap:6px;margin-top:6px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
+  <div class="p-card"><b>Question Palette</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(15,23,42,0.88)">
+  <div class="score-card"><div style="text-align:center"><div class="badge-top">TEST 4 SCORECARD</div><div id="scoreMsg" style="font-size:20px;font-weight:900;margin:6px 0"></div><div class="score-big"><span id="sBig">0</span><span style="font-size:16px;color:#64748b"> /30</span></div><div style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">🏅 Rank: <span id="myRank">#1</span> / <span id="totRank">1</span></div></div><div class="stats"><div class="stat" style="background:#dcfce7;color:#166534"><b id="sCor">0</b><span style="font-size:11px">Correct</span></div><div class="stat" style="background:#fee2e2;color:#991b1b"><b id="sWro">0</b><span style="font-size:11px">Incorrect</span></div><div class="stat" style="background:#dbeafe;color:#1e40af"><b id="sAcc">0%</b><span style="font-size:11px">Accuracy</span></div><div class="stat" style="background:#fef9c3;color:#854d0e"><b id="sTime">0m 0s</b><span style="font-size:11px">Time Taken</span></div></div><div style="margin-top:10px"><b style="font-size:13px">🔥 Top 5 Leaderboard (Test 4)</b><div id="lbBoard" style="margin-top:6px"></div></div><button onclick="location.reload()" style="width:100%;background:#1d4ed8;color:white;padding:12px;border:none;border-radius:12px;font-weight:900;margin-top:12px">🔄 Retake Test</button></div>
 </div>
 
 <script>
-const correctPass = "MGE@77";
-function checkPassword(){
-  let pass = document.getElementById('passInput').value;
-  if(pass === correctPass){
-    document.getElementById('password-screen').style.display = 'none';
-    document.getElementById('main-test').style.display = 'block';
-    startTimer();
-  }else{
-    document.getElementById('errorMsg').style.display = 'block';
-  }
-}
+const testData={
+title:"AIR FORCE NON-COMBATANT 01/2027 - GK TEST (4)",
+subject:"Complete GK Class Test",
+questions:[
+{qh:"भारतीय संविधान में मौलिक कर्तव्यों को शामिल करने वाला संशोधन कौन-सा था?",qe:"Which Constitutional Amendment incorporated Fundamental Duties?",o:{"A":"44वाँ / 44th","B":"42वाँ / 42nd","C":"52वाँ / 52nd","D":"61वाँ / 61st"},a:"B"},
+{qh:"मतदान की आयु 21 से घटाकर 18 वर्ष किस संशोधन द्वारा की गई?",qe:"Which Amendment reduced voting age from 21 to 18?",o:{"A":"42वाँ","B":"44वाँ","C":"61वाँ","D":"73वाँ"},a:"C"},
+{qh:"IIT दिल्ली के सोनीपत परिसर में AI आधारित हाई-परफॉर्मेंस कंप्यूटिंग सुविधा का नाम क्या है?",qe:"Name of AI-powered HPC facility at IIT Delhi Sonipat?",o:{"A":"परम शक्ति","B":"परम प्रज्ञा","C":"परम गंगा","D":"परम सिद्धि"},a:"B"},
+{qh:"2026 में Miss World के 75वीं वर्षगांठ संस्करण की मेजबानी कौन-सा देश कर रहा है?",qe:"Which country hosting 75th Miss World 2026?",o:{"A":"भारत","B":"वियतनाम","C":"जापान","D":"मलेशिया"},a:"B"},
+{qh:"KHAAN QUEST 2026 किस प्रकार का आयोजन है?",qe:"What type of event is KHAAN QUEST 2026?",o:{"A":"बहुपक्षीय संयुक्त सैन्य अभ्यास","B":"नौसैनिक खेल","C":"अंतरिक्ष अभ्यास","D":"आर्थिक सम्मेलन"},a:"A"},
+{qh:"क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य कौन-सा है?",qe:"Largest state by area?",o:{"A":"मध्य प्रदेश","B":"महाराष्ट्र","C":"राजस्थान","D":"उत्तर प्रदेश"},a:"C"},
+{qh:"Great Indian Desert किस मरुस्थल को कहा जाता है?",qe:"Which desert is Great Indian Desert?",o:{"A":"लद्दाख","B":"थार मरुस्थल","C":"कच्छ","D":"दक्कन पठार"},a:"B"},
+{qh:"ब्रह्मपुत्र नदी में स्थित भारत का प्रसिद्ध नदी द्वीप कौन-सा है?",qe:"Famous river island in Brahmaputra?",o:{"A":"माजुली","B":"दीव","C":"श्रीहरिकोटा","D":"सालसेट"},a:"A"},
+{qh:"निम्न में से कौन-सा युग्म सही सुमेलित है?",qe:"Which pair correctly matched?",o:{"A":"वूलर — मीठे पानी की झील","B":"चिल्का — मीठे पानी","C":"लोकटक — खारे पानी लैगून","D":"सांभर — मीठे पानी"},a:"A"},
+{qh:"भारत की सबसे बड़ी खारे पानी की लैगून झील कौन-सी है?",qe:"India's largest saltwater lagoon?",o:{"A":"वूलर","B":"चिल्का","C":"लोकटक","D":"नैनी"},a:"B"},
+{qh:"क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा टाइगर रिजर्व कौन-सा है?",qe:"India's largest Tiger Reserve by area?",o:{"A":"कॉर्बेट","B":"रणथंभौर","C":"नागार्जुनसागर-श्रीशैलम","D":"कान्हा"},a:"C"},
+{qh:"एशियाई शेरों का प्रमुख प्राकृतिक आवास किस संरक्षित क्षेत्र में है?",qe:"Major natural habitat of Asiatic lions?",o:{"A":"गिर","B":"काजीरंगा","C":"पेरियार","D":"कान्हा"},a:"A"},
+{qh:"एक सींग वाले गैंडे के लिए प्रसिद्ध राष्ट्रीय उद्यान कौन-सा है?",qe:"Famous for one-horned rhinoceros?",o:{"A":"गिर","B":"काजीरंगा","C":"रणथंभौर","D":"बांधवगढ़"},a:"B"},
+{qh:"भारत का सबसे लंबा राष्ट्रीय राजमार्ग कौन-सा है?",qe:"Longest National Highway?",o:{"A":"NH-27","B":"NH-44","C":"NH-48","D":"NH-19"},a:"B"},
+{qh:"भारत में सबसे लंबी दूरी वाले रेल मार्ग के लिए कौन-सी ट्रेन प्रसिद्ध है?",qe:"Train with longest rail route?",o:{"A":"राजधानी","B":"विवेक एक्सप्रेस","C":"शताब्दी","D":"दुरंतो"},a:"B"},
+{qh:"भारत का सबसे लंबा रेलवे प्लेटफॉर्म वर्तमान में कहाँ स्थित है?",qe:"Longest railway platform currently?",o:{"A":"गोरखपुर","B":"हुबली जंक्शन","C":"नई दिल्ली","D":"मुंबई सेंट्रल"},a:"B"},
+{qh:"महानदी पर निर्मित और अपनी लंबाई के लिए प्रसिद्ध बाँध कौन-सा है?",qe:"Dam on Mahanadi known for length?",o:{"A":"टिहरी","B":"भाखड़ा","C":"हीराकुंड","D":"सरदार सरोवर"},a:"C"},
+{qh:"राजस्थान के शुष्क क्षेत्रों में सिंचाई के लिए महत्वपूर्ण लंबी नहर कौन-सी है?",qe:"Important canal for Rajasthan arid regions?",o:{"A":"सरहिंद नहर","B":"इंदिरा गांधी नहर","C":"यमुना नहर","D":"अपर गंगा नहर"},a:"B"},
+{qh:"अहमदाबाद स्थित विशाल क्रिकेट स्टेडियम का वर्तमान नाम क्या है?",qe:"Present name of large stadium in Ahmedabad?",o:{"A":"ईडन गार्डन्स","B":"वानखेड़े","C":"नरेंद्र मोदी स्टेडियम","D":"अरुण जेटली"},a:"C"},
+{qh:"फतेहपुर सीकरी में अकबर द्वारा बनवाया गया विशाल प्रवेश द्वार?",qe:"Massive gateway built by Akbar at Fatehpur Sikri?",o:{"A":"इंडिया गेट","B":"बुलंद दरवाजा","C":"गेटवे ऑफ इंडिया","D":"लाहौरी गेट"},a:"B"},
+{qh:"दिल्ली की लगभग 72.5 मीटर ऊँची ऐतिहासिक मीनार?",qe:"Historic 72.5m minaret in Delhi?",o:{"A":"चारमीनार","B":"कुतुब मीनार","C":"अलाई मीनार","D":"झूलता मीनार"},a:"B"},
+{qh:"कर्नाटक की वाराही नदी पर स्थित भारत का सबसे ऊँचा जलप्रपात?",qe:"India's highest waterfall on Varahi River Karnataka?",o:{"A":"जोग","B":"दूधसागर","C":"कुंचिकल","D":"शिवसमुद्रम"},a:"C"},
+{qh:"गंगा-ब्रह्मपुत्र-मेघना द्वारा निर्मित विशाल डेल्टा?",qe:"Vast delta formed by Ganga-Brahmaputra-Meghna?",o:{"A":"महानदी डेल्टा","B":"सुंदरवन डेल्टा","C":"कृष्णा डेल्टा","D":"गोदावरी डेल्टा"},a:"B"},
+{qh:"भाखड़ा-नांगल परियोजना से निर्मित कृत्रिम झील?",qe:"Artificial lake formed by Bhakra-Nangal?",o:{"A":"वूलर","B":"गोविंद सागर","C":"चिल्का","D":"लोकटक"},a:"B"},
+{qh:"कुल वन क्षेत्र के संदर्भ में भारत में कौन-सा राज्य प्रथम?",qe:"State ranks first in total forest area?",o:{"A":"मध्य प्रदेश","B":"केरल","C":"पंजाब","D":"हरियाणा"},a:"A"},
+{qh:"निम्न में से कौन-सा कथन ‘परम प्रज्ञा’ के संबंध में गलत है?",qe:"Incorrect statement regarding Param Pragya?",o:{"A":"AI-powered facility","B":"IIT Delhi Sonipat","C":"HPC related","D":"IIT Madras Chennai Campus"},a:"D"},
+{qh:"KHAAN QUEST 2026 के संबंध में कौन-सा कथन सही है?",qe:"Correct statement regarding KHAAN QUEST 2026?",o:{"A":"मंगोलिया में आयोजन","B":"केवल दो देशों का","C":"अंतरिक्ष अभ्यास","D":"भारत में आयोजन"},a:"A"},
+{qh:"जब 'भारत का सबसे बड़ा राज्य' पूछा जाए, तो 'बड़ा' किस आधार पर?",qe:"When asking largest state, largest determined on?",o:{"A":"जनसंख्या","B":"क्षेत्रफल","C":"वन प्रतिशत","D":"GDP"},a:"B"},
+{qh:"निम्न में से कौन-सा युग्म गलत सुमेलित है?",qe:"Incorrectly matched pair?",o:{"A":"गिर — एशियाई शेर","B":"काजीरंगा — गैंडा","C":"माजुली — नदी द्वीप","D":"चिल्का — मीठे पानी की झील"},a:"D"},
+{qh:"Miss World 2026 की 75वीं वर्षगांठ का मेजबान देश?",qe:"Host of 75th Miss World 2026?",o:{"A":"भारत","B":"वियतनाम","C":"जापान","D":"मंगोलिया"},a:"B"}
+]};
 
-const testData = {
-  "title": "AIR FORCE NON-COMBATANT 01/2027 - GK TEST (4)",
-  "subject": "complete gk class test",
-  "questions": [
-    {"id": 1, "question_hi": "भारतीय संविधान में मौलिक कर्तव्यों को शामिल करने वाला संशोधन कौन-सा था?", "question_en": "Which Constitutional Amendment incorporated Fundamental Duties into the Indian Constitution?", "options": {"A": "44वाँ / 44th", "B": "42वाँ / 42nd", "C": "52वाँ / 52nd", "D": "61वाँ / 61st"}, "answer": "B"},
-    {"id": 2, "question_hi": "भारतीय नागरिकों के मतदान की आयु 21 वर्ष से घटाकर 18 वर्ष किस संविधान संशोधन द्वारा की गई?", "question_en": "Which Constitutional Amendment reduced the voting age from 21 to 18 years?", "options": {"A": "42वाँ / 42nd", "B": "44वाँ / 44th", "C": "61वाँ / 61st", "D": "73वाँ / 73rd"}, "answer": "C"},
-    {"id": 3, "question_hi": "IIT दिल्ली के सोनीपत परिसर में AI आधारित हाई-परफॉर्मेंस कंप्यूटिंग सुविधा का नाम क्या है?", "question_en": "What is the name of the AI-powered high-performance computing facility at IIT Delhi's Sonipat Campus?", "options": {"A": "परम शक्ति / Param Shakti", "B": "परम प्रज्ञा / Param Pragya", "C": "परम गंगा / Param Ganga", "D": "परम सिद्धि / Param Siddhi"}, "answer": "B"},
-    {"id": 4, "question_hi": "2026 में Miss World के 75वीं वर्षगांठ संस्करण की मेजबानी कौन-सा देश कर रहा है?", "question_en": "Which country is hosting the 75th Anniversary Edition of Miss World in 2026?", "options": {"A": "भारत / India", "B": "वियतनाम / Vietnam", "C": "जापान / Japan", "D": "मलेशिया / Malaysia"}, "answer": "B"},
-    {"id": 5, "question_hi": "KHAAN QUEST 2026 किस प्रकार का आयोजन है?", "question_en": "What type of event is KHAAN QUEST 2026?", "options": {"A": "बहुपक्षीय संयुक्त सैन्य अभ्यास / Multilateral Joint Military Exercise", "B": "नौसैनिक खेल प्रतियोगिता / Naval Sports Competition", "C": "अंतरिक्ष अभ्यास / Space Exercise", "D": "आर्थिक सम्मेलन / Economic Summit"}, "answer": "A"},
-    {"id": 6, "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य कौन-सा है?", "question_en": "Which is the largest Indian state in terms of area?", "options": {"A": "मध्य प्रदेश / Madhya Pradesh", "B": "महाराष्ट्र / Maharashtra", "C": "राजस्थान / Rajasthan", "D": "उत्तर प्रदेश / Uttar Pradesh"}, "answer": "C"},
-    {"id": 7, "question_hi": "Great Indian Desert के नाम से किस मरुस्थल को जाना जाता है?", "question_en": "Which desert is known as the Great Indian Desert?", "options": {"A": "लद्दाख / Ladakh", "B": "थार मरुस्थल / Thar Desert", "C": "कच्छ / Kutch", "D": "दक्कन का पठार / Deccan Plateau"}, "answer": "B"},
-    {"id": 8, "question_hi": "ब्रह्मपुत्र नदी में स्थित भारत का प्रसिद्ध नदी द्वीप कौन-सा है?", "question_en": "Which famous river island of India is located in the Brahmaputra River?", "options": {"A": "माजुली / Majuli", "B": "दीव / Diu", "C": "श्रीहरिकोटा / Sriharikota", "D": "सालसेट / Salsette"}, "answer": "A"},
-    {"id": 9, "question_hi": "निम्न में से कौन-सा युग्म सही सुमेलित है?", "question_en": "Which of the following pairs is correctly matched?", "options": {"A": "वूलर — मीठे पानी की झील / Wular — Freshwater Lake", "B": "चिल्का — मीठे पानी की झील / Chilika — Freshwater Lake", "C": "लोकटक — खारे पानी की लैगून / Loktak — Saltwater Lagoon", "D": "सांभर — मीठे पानी की झील / Sambhar — Freshwater Lake"}, "answer": "A"},
-    {"id": 10, "question_hi": "भारत की सबसे बड़ी खारे पानी की लैगून झील कौन-सी है?", "question_en": "Which is India's largest saltwater lagoon?", "options": {"A": "वूलर / Wular", "B": "चिल्का / Chilika", "C": "लोकटक / Loktak", "D": "नैनी / Naini"}, "answer": "B"},
-    {"id": 11, "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा टाइगर रिजर्व कौन-सा है?", "question_en": "Which is India's largest Tiger Reserve in terms of area?", "options": {"A": "कॉर्बेट / Corbett", "B": "रणथंभौर / Ranthambore", "C": "नागार्जुनसागर-श्रीशैलम / Nagarjunasagar-Srisailam", "D": "कान्हा / Kanha"}, "answer": "C"},
-    {"id": 12, "question_hi": "एशियाई शेरों का प्रमुख प्राकृतिक आवास किस संरक्षित क्षेत्र में है?", "question_en": "Which protected area is the major natural habitat of Asiatic lions?", "options": {"A": "गिर / Gir", "B": "काजीरंगा / Kaziranga", "C": "पेरियार / Periyar", "D": "कान्हा / Kanha"}, "answer": "A"},
-    {"id": 13, "question_hi": "एक सींग वाले गैंडे के लिए प्रसिद्ध राष्ट्रीय उद्यान कौन-सा है?", "question_en": "Which national park is famous for the one-horned rhinoceros?", "options": {"A": "गिर / Gir", "B": "काजीरंगा / Kaziranga", "C": "रणथंभौर / Ranthambore", "D": "बांधवगढ़ / Bandhavgarh"}, "answer": "B"},
-    {"id": 14, "question_hi": "भारत का सबसे लंबा राष्ट्रीय राजमार्ग कौन-सा है?", "question_en": "Which is the longest National Highway in India?", "options": {"A": "NH-27", "B": "NH-44", "C": "NH-48", "D": "NH-19"}, "answer": "B"},
-    {"id": 15, "question_hi": "भारत में सबसे लंबी दूरी वाले रेल मार्ग के लिए कौन-सी ट्रेन प्रसिद्ध है?", "question_en": "Which train is known for having the longest-distance rail route in India?", "options": {"A": "राजधानी एक्सप्रेस / Rajdhani Express", "B": "विवेक एक्सप्रेस / Vivek Express", "C": "शताब्दी एक्सप्रेस / Shatabdi Express", "D": "दुरंतो एक्सप्रेस / Duronto Express"}, "answer": "B"},
-    {"id": 16, "question_hi": "भारत का सबसे लंबा रेलवे प्लेटफॉर्म वर्तमान में कहाँ स्थित है?", "question_en": "Where is the longest railway platform in India currently located?", "options": {"A": "गोरखपुर / Gorakhpur", "B": "हुबली जंक्शन / Hubballi Junction", "C": "नई दिल्ली / New Delhi", "D": "मुंबई सेंट्रल / Mumbai Central"}, "answer": "B"},
-    {"id": 17, "question_hi": "महानदी पर निर्मित और अपनी लंबाई के लिए प्रसिद्ध बाँध कौन-सा है?", "question_en": "Which dam is built on the Mahanadi River and is known for its great length?", "options": {"A": "टिहरी बाँध / Tehri Dam", "B": "भाखड़ा बाँध / Bhakra Dam", "C": "हीराकुंड बाँध / Hirakud Dam", "D": "सरदार सरोवर बाँध / Sardar Sarovar Dam"}, "answer": "C"},
-    {"id": 18, "question_hi": "राजस्थान के शुष्क क्षेत्रों में सिंचाई के लिए महत्वपूर्ण लंबी नहर कौन-सी है?", "question_en": "Which major long canal is important for irrigation in the arid regions of Rajasthan?", "options": {"A": "सरहिंद नहर / Sirhind Canal", "B": "इंदिरा गांधी नहर / Indira Gandhi Canal", "C": "यमुना नहर / Yamuna Canal", "D": "अपर गंगा नहर / Upper Ganga Canal"}, "answer": "B"},
-    {"id": 19, "question_hi": "अहमदाबाद स्थित भारत के विशाल क्रिकेट स्टेडियम का वर्तमान नाम क्या है?", "question_en": "What is the present name of the large cricket stadium located in Ahmedabad?", "options": {"A": "ईडन गार्डन्स / Eden Gardens", "B": "वानखेड़े स्टेडियम / Wankhede Stadium", "C": "नरेंद्र मोदी स्टेडियम / Narendra Modi Stadium", "D": "अरुण जेटली स्टेडियम / Arun Jaitley Stadium"}, "answer": "C"},
-    {"id": 20, "question_hi": "फतेहपुर सीकरी में अकबर द्वारा बनवाया गया विशाल प्रवेश द्वार किस नाम से जाना जाता है?", "question_en": "What is the name of the massive gateway built by Akbar at Fatehpur Sikri?", "options": {"A": "इंडिया गेट / India Gate", "B": "बुलंद दरवाजा / Buland Darwaza", "C": "गेटवे ऑफ इंडिया / Gateway of India", "D": "लाहौरी गेट / Lahori Gate"}, "answer": "B"},
-    {"id": 21, "question_hi": "दिल्ली की लगभग 72.5 मीटर ऊँची ऐतिहासिक मीनार कौन-सी है?", "question_en": "Which historic minaret in Delhi is approximately 72.5 metres tall?", "options": {"A": "चारमीनार / Charminar", "B": "कुतुब मीनार / Qutub Minar", "C": "अलाई मीनार / Alai Minar", "D": "झूलता मीनार / Jhulta Minar"}, "answer": "B"},
-    {"id": 22, "question_hi": "कर्नाटक की वाराही नदी पर स्थित भारत का सबसे ऊँचा जलप्रपात कौन-सा है?", "question_en": "Which is India's highest waterfall located on the Varahi River in Karnataka?", "options": {"A": "जोग / Jog", "B": "दूधसागर / Dudhsagar", "C": "कुंचिकल / Kunchikal", "D": "शिवसमुद्रम / Shivanasamudra"}, "answer": "C"},
-    {"id": 23, "question_hi": "गंगा-ब्रह्मपुत्र-मेघना नदी तंत्र द्वारा निर्मित विशाल डेल्टा कौन-सा है?", "question_en": "Which vast delta is formed by the Ganga-Brahmaputra-Meghna river system?", "options": {"A": "महानदी डेल्टा / Mahanadi Delta", "B": "सुंदरवन डेल्टा / Sundarbans Delta", "C": "कृष्णा डेल्टा / Krishna Delta", "D": "गोदावरी डेल्टा / Godavari Delta"}, "answer": "B"},
-    {"id": 24, "question_hi": "भाखड़ा-नांगल परियोजना से निर्मित कृत्रिम झील कौन-सी है?", "question_en": "Which artificial lake was formed by the Bhakra-Nangal Project?", "options": {"A": "वूलर झील / Wular Lake", "B": "गोविंद सागर / Gobind Sagar", "C": "चिल्का झील / Chilika Lake", "D": "लोकटक झील / Loktak Lake"}, "answer": "B"},
-    {"id": 25, "question_hi": "कुल वन क्षेत्र के संदर्भ में भारत में कौन-सा राज्य प्रथम स्थान पर है?", "question_en": "Which state ranks first in India in terms of total forest area?", "options": {"A": "मध्य प्रदेश / Madhya Pradesh", "B": "केरल / Kerala", "C": "पंजाब / Punjab", "D": "हरियाणा / Haryana"}, "answer": "A"},
-    {"id": 26, "question_hi": "निम्न में से कौन-सा कथन ‘परम प्रज्ञा’ के संबंध में गलत है?", "question_en": "Which of the following statements is incorrect regarding ‘Param Pragya’?", "options": {"A": "यह AI-powered facility है / It is an AI-powered facility", "B": "यह IIT Delhi के Sonipat Campus में है / It is at IIT Delhi's Sonipat Campus", "C": "यह high-performance computing से संबंधित है / It is related to high-performance computing", "D": "यह IIT Madras के Chennai Campus में स्थापित है / It is established at IIT Madras' Chennai Campus"}, "answer": "D"},
-    {"id": 27, "question_hi": "KHAAN QUEST 2026 के संबंध में कौन-सा कथन सही है?", "question_en": "Which statement is correct regarding KHAAN QUEST 2026?", "options": {"A": "इसका आयोजन मंगोलिया में हुआ / It was conducted in Mongolia", "B": "यह केवल दो देशों का अभ्यास था / It involved only two countries", "C": "यह एक अंतरिक्ष अभ्यास था / It was a space exercise", "D": "इसका आयोजन भारत में हुआ / It was conducted in India"}, "answer": "A"},
-    {"id": 28, "question_hi": "जब किसी प्रश्न में 'भारत का सबसे बड़ा राज्य' पूछा जाए, तो 'बड़ा' किस आधार पर निर्धारित किया जाता है?", "question_en": "When a question asks for the 'largest state in India', on what basis is 'largest' determined?", "options": {"A": "जनसंख्या / Population", "B": "क्षेत्रफल / Area", "C": "वन प्रतिशत / Forest Percentage", "D": "GDP / GDP"}, "answer": "B"},
-    {"id": 29, "question_hi": "निम्न में से कौन-सा युग्म गलत सुमेलित है?", "question_en": "Which of the following pairs is incorrectly matched?", "options": {"A": "गिर — एशियाई शेर / Gir — Asiatic Lion", "B": "काजीरंगा — एक सींग वाला गैंडा / Kaziranga — One-Horned Rhinoceros", "C": "माजुली — नदी द्वीप / Majuli — River Island", "D": "चिल्का — मीठे पानी की झील / Chilika — Freshwater Lake"}, "answer": "D"},
-    {"id": 30, "question_hi": "Miss World 2026 की 75वीं वर्षगांठ के आयोजन का मेजबान देश कौन-सा है?", "question_en": "Which country is hosting the 75th Anniversary Edition of Miss World 2026?", "options": {"A": "भारत / India", "B": "वियतनाम / Vietnam", "C": "जापान / Japan", "D": "मंगोलिया / Mongolia"}, "answer": "B"}
-  ]
-};
-
-document.getElementById('test-title').innerText = testData.title;
-document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
-
-let quizHTML = '';
-testData.questions.forEach((q) => {
-  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
-  quizHTML += `<div class="q-no">Question ${q.id}</div>`;
-  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`;
-  quizHTML += `<div class="options">`;
-  for(let key in q.options){
-    quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`;
-  }
-  quizHTML += `</div></div>`;
-});
-document.getElementById('quiz-form').innerHTML = quizHTML;
-
-let time = 20 * 60; let timerInterval;
-function startTimer(){
-  timerInterval = setInterval(()=>{
-    let m = Math.floor(time/60), s = time%60;
-    document.getElementById('timer').innerText = `⏰ Time Left: ${m}:${s<10?'0':''}${s}`;
-    if(time <= 0){ clearInterval(timerInterval); submitTest(); }
-    time--;
-  },1000);
-}
-
+let cur=0,answers={},reviews=new Set(),lang='both',time=20*60,tInt,startTS;
+document.getElementById('tTitle').innerText=testData.title;document.getElementById('tSub').innerText=testData.subject;
+function doLogin(){let n=document.getElementById('stuName').value.trim();let c=document.getElementById('stuCity').value.trim();if(n.length<3){alert("Naam daalo bhai");return;}localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);document.getElementById('loginScreen').style.display='none';document.getElementById('passScreen').style.display='flex';}
+function checkPass(){if(document.getElementById('passInput').value==="MGE@77"){document.getElementById('passScreen').style.display='none';document.getElementById('mainTest').style.display='block';startTS=Date.now();startTimer();render();}else document.getElementById('passErr').style.display='block';}
+function startTimer(){tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;document.getElementById('timer').innerText=`${m}:${s<10?'0'+s:s}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);}
+function render(){let q=testData.questions[cur];document.getElementById('qNo').innerText=cur+1;document.getElementById('qHi').innerText=q.qh;document.getElementById('qEn').innerText=q.qe;setLang(lang);let h="";for(let k in q.o){let isSel=answers[cur]==k;h+=`<label class="${isSel?'sel':''}" onclick="sel('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}document.getElementById('optBox').innerHTML=h;renderP();}
+function sel(k){answers[cur]=k;render();}function clearAns(){delete answers[cur];render();}function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function setLang(l){lang=l;document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));if(l=='both'){lb.classList.add('active');qHi.style.display='';qEn.style.display='';}if(l=='hi'){lh.classList.add('active');qHi.style.display='';qEn.style.display='none';}if(l=='en'){le.classList.add('active');qHi.style.display='none';qEn.style.display='';}}
+function renderP(){let h="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";h+=`<div class="${cl}" onclick="cur=${i};render()">${i+1}</div>`});document.getElementById('pGrid').innerHTML=h;}
 function submitTest(){
-  clearInterval(timerInterval);
-  let score = 0;
-  testData.questions.forEach((q) => {
-    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-    let qbox = document.getElementById(`qbox${q.id}`);
-    let allLabels = qbox.querySelectorAll('label');
-
-    allLabels.forEach(label => {
-        let input = label.querySelector('input');
-        if(input.value === q.answer){
-            label.classList.add('correct-option');
-        }
-        if(selected && input.value === selected.value && selected.value !== q.answer){
-            label.classList.add('wrong-option');
-        }
-    });
-
-    if(selected && selected.value === q.answer){ score++; }
-    qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
-  });
-  document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
-  document.querySelector('.btn').style.display = 'none';
-  window.scrollTo(0,0);
+  clearInterval(tInt);let cor=0,wro=0;testData.questions.forEach((q,i)=>{if(answers[i]==q.a)cor++;else if(answers[i]!=undefined)wro++;});
+  let tot=testData.questions.length;let acc=Math.round(cor/tot*100);let tUsed=Math.floor((Date.now()-startTS)/1000);
+  let name=localStorage.getItem("mgj_name")||"Student";let city=localStorage.getItem("mgj_city")||"";
+  let atts=JSON.parse(localStorage.getItem("mgj_test4_lb")||"[]");atts.push({name,score:cor,acc,time:tUsed,city,date:Date.now()});
+  atts.sort((a,b)=>b.score-a.score||a.time-b.time);atts=atts.slice(0,50);localStorage.setItem("mgj_test4_lb",JSON.stringify(atts));
+  let myRank=atts.findIndex(a=>a.name==name && a.score==cor)+1;
+  document.getElementById('sCor').innerText=cor;document.getElementById('sWro').innerText=wro;document.getElementById('sAcc').innerText=acc+"%";document.getElementById('sTime').innerText=`${Math.floor(tUsed/60)}m ${tUsed%60}s`;
+  document.getElementById('sBig').innerText=cor;document.getElementById('myRank').innerText="#"+myRank;document.getElementById('totRank').innerText=atts.length;
+  document.getElementById('scoreMsg').innerText=acc>=80?"Excellent Work! Topper Ho 🔥":acc>=50?"Good Job! Improving Ho 🚀":"Good Attempt! Keep Practicing 💪";
+  let lbH="";atts.slice(0,5).forEach((e,i)=>{lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;font-weight:700;color:#0f172a"><span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''}</span><span>${e.score}/${tot}</span></div>`;});
+  document.getElementById('lbBoard').innerHTML=lbH;document.getElementById('scoreOverlay').style.display='flex';
 }
+if(localStorage.getItem("mgj_name")){document.getElementById('stuName').value=localStorage.getItem("mgj_name");document.getElementById('stuCity').value=localStorage.getItem("mgj_city")||"";}
 </script>
 </body>
 </html>
