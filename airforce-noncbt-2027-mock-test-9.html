@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AIR FORCE TEST 9 - Premium with Ranking | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0}
+body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
+body{background:var(--bg);color:var(--text);transition:0.3s}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900}
+.container{max-width:850px;margin:10px auto;padding:0 10px}
+.q-card,.info-card,.p-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+.lang span{padding:5px 12px;border-radius:20px;border:1.5px solid #2563eb;font-size:12px;font-weight:700;cursor:pointer;color:var(--text)}.lang span.active{background:#2563eb;color:#fff!important}
+.options{margin-top:12px}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;background:var(--card);color:var(--text);transition:0.2s;font-weight:500}
+.options label:hover{border-color:#2563eb;transform:translateX(2px)}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700;box-shadow:0 0 0 3px rgba(22,163,74,0.15)}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px;flex-shrink:0}
+.section-badge{display:inline-block;background:#0f172a;color:#fbbf24;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:900;margin-bottom:6px;border:1px solid #fbbf24}
+body.dark.q-card,body.dark.info-card,body.dark.p-card{background:#1e293b;border-color:#334155}
+body.dark #qHi{color:#f8fafc!important}body.dark #qEn{color:#94a3b8!important}
+body.dark.options label{background:#1e293b!important;border-color:#475569!important;color:#f1f5f9!important}
+body.dark.options label.sel{background:#14532d!important;border-color:#22c55e!important;color:#dcfce7!important}
+.btn{padding:11px;border:none;border-radius:10px;font-weight:800;cursor:pointer}.btn-g{background:#e2e8f0;color:#0f172a}.btn-y{background:#fef3c7;color:#92400e}.btn-b{background:#1d4ed8;color:#fff}.btn-gr{background:#16a34a;color:#fff}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:10px}.p{height:38px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;font-weight:800;cursor:pointer;color:var(--text)}.p.cur{background:#ef4444!important;color:#fff!important}.p.ans{background:#10b981!important;color:#fff!important}.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:15px}
+#loginScreen{background:rgba(2,6,23,0.92)}
+.login-box{width:100%;max-width:380px;background:linear-gradient(180deg,#0f172a,#1e293b);padding:22px;border-radius:20px;border:2px solid #fbbf24;text-align:center}
+.login-box h2{color:#fbbf24;margin-bottom:8px}.login-box input{width:100%;padding:12px;border-radius:10px;border:2px solid #fbbf24;margin:7px 0;text-align:center;font-weight:700;font-size:15px}
+.login-box button{width:100%;padding:12px;background:#fbbf24;color:#0f172a;border:none;border-radius:10px;font-weight:900;margin-top:10px;cursor:pointer}
+#passScreen{background:rgba(0,0,0,0.95)}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000);padding:30px;border-radius:15px;text-align:center;width:90%;max-width:400px;border:3px solid yellow;box-shadow:0 0 25px red}
+.pass-box h2{color:yellow;margin-bottom:10px;font-size:22px;text-shadow:0 0 10px #fff}.pass-box p{color:white;margin-bottom:15px;font-size:13px}
+.pass-box input{width:100%;padding:12px;font-size:16px;border:3px solid yellow;border-radius:6px;margin-bottom:15px;text-align:center;font-weight:bold}
+.pass-box button{width:100%;padding:12px;background:yellow;color:#8B0000;border:none;border-radius:6px;font-size:17px;cursor:pointer;font-weight:bold}
+.score-card{width:100%;max-width:400px;background:#fff;border-radius:24px;padding:20px;color:#0f172a}
+.badge-top{display:inline-block;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:5px 12px;border-radius:20px}
+.score-big{font-size:40px;font-weight:900;color:#1d4ed8;text-align:center}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.stat{border-radius:14px;padding:12px;text-align:center}.stat b{font-size:20px;display:block}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:36px;height:36px;border-radius:50%;border:none;cursor:pointer">🌙</button></div></div>
+
+<div class="overlay" id="loginScreen">
+  <div class="login-box"><h2>👋 Welcome Student</h2><input type="text" id="stuName" placeholder="अपना पूरा नाम / name *"><input type="text" id="stuCity" placeholder="जिला / City"><button onclick="doLogin()">Continue →</button><p style="margin-top:10px;font-size:11px;color:#94a3b8">This name will appear on the leaderboard</p></div>
+</div>
+
+<div class="overlay" id="passScreen" style="display:none">
+  <div class="pass-box"><h2>🔥 TEST LOCKED 🔥</h2><p>Password dalo</p><input type="password" id="passInput" placeholder="Password"><button onclick="checkPass()">START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:bold">❌ Galat Password!</p></div>
+</div>
+
+<div class="container" id="mainTest" style="display:none">
+  <div class="info-card"><b id="tTitle"></b><br><small id="tSub"></small><br><span style="color:#16a34a;font-weight:800;font-size:12px">15 GK + 15 English = 30 Qs | Test 9</span></div>
+  <div class="q-card"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb">Q <span id="qNo">1</span>/30</b><div class="lang"><span class="active" id="lb" onclick="setLang('both')">Bilingual</span><span id="lh" onclick="setLang('hi')">हिंदी</span><span id="le" onclick="setLang('en')">EN</span></div></div><div id="secBadge" class="section-badge"></div><div id="qHi" style="font-weight:700;margin:4px 0;font-size:16px"></div><div id="qEn" style="color:#64748b;font-size:13px;margin-bottom:6px"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:grid;grid-template-columns:1.6fr 1fr;gap:6px;margin-top:6px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
+  <div class="p-card"><b>Question Palette</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(15,23,42,0.88)">
+  <div class="score-card"><div style="text-align:center"><div class="badge-top">TEST 9 SCORECARD</div><div id="scoreMsg" style="font-size:20px;font-weight:900;margin:6px 0"></div><div class="score-big"><span id="sBig">0</span><span style="font-size:16px;color:#64748b"> /30</span></div><div style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">🏅 Rank: <span id="myRank">#1</span> / <span id="totRank">1</span></div></div><div class="stats"><div class="stat" style="background:#dcfce7;color:#166534"><b id="sCor">0</b><span style="font-size:11px">Correct</span></div><div class="stat" style="background:#fee2e2;color:#991b1b"><b id="sWro">0</b><span style="font-size:11px">Incorrect</span></div><div class="stat" style="background:#dbeafe;color:#1e40af"><b id="sAcc">0%</b><span style="font-size:11px">Accuracy</span></div><div class="stat" style="background:#fef9c3;color:#854d0e"><b id="sTime">0m 0s</b><span style="font-size:11px">Time Taken</span></div></div><div style="margin-top:10px"><b style="font-size:13px">🔥 Top 5 Leaderboard (Test 9)</b><div id="lbBoard" style="margin-top:6px"></div></div><button onclick="location.reload()" style="width:100%;background:#1d4ed8;color:white;padding:12px;border:none;border-radius:12px;font-weight:900;margin-top:12px">🔄 Retake Test</button></div>
+</div>
+
+<script>
+const testData={
+title:"✈️ Air Force Non-Combatant 01/2027 (Test - 9)",
+subject:"GK + English - 30 Questions (15+15)",
+questions:[
+{qh:"राष्ट्रीय रक्षा अकादमी (NDA) कहाँ स्थित है?",qe:"Where is National Defence Academy located?",o:{"A":"देहरादून / Dehradun","B":"खड़कवासला (पुणे) / Khadakwasla (Pune)","C":"नई दिल्ली / New Delhi","D":"हैदराबाद / Hyderabad"},a:"B",s:"GK"},
+{qh:"माउंट एवरेस्ट पर चढ़ने वाली प्रथम भारतीय महिला कौन थीं?",qe:"Who was first Indian woman to scale Mount Everest?",o:{"A":"बछेंद्री पाल / Bachendri Pal","B":"संतोष यादव / Santosh Yadav","C":"अरुणिमा सिन्हा / Arunima Sinha","D":"डिकी डोल्मा / Dicky Dolma"},a:"A",s:"GK"},
+{qh:"इटली की राजधानी क्या है?",qe:"What is capital of Italy?",o:{"A":"पेरिस / Paris","B":"रोम / Rome","C":"मैड्रिड / Madrid","D":"वियना / Vienna"},a:"B",s:"GK"},
+{qh:"ग्लोबल वार्मिंग के लिए मुख्य रूप से कौन-सी गैस उत्तरदायी है?",qe:"Which gas primarily responsible for Global Warming?",o:{"A":"ऑक्सीजन / Oxygen","B":"नाइट्रोजन / Nitrogen","C":"कार्बन डाइऑक्साइड / Carbon Dioxide","D":"ओजोन / Ozone"},a:"C",s:"GK"},
+{qh:"'रामकृष्ण मिशन' की स्थापना किसने की थी?",qe:"Who founded Ramakrishna Mission?",o:{"A":"राजा राममोहन राय","B":"दयानंद सरस्वती","C":"स्वामी विवेकानंद","D":"ईश्वर चंद्र विद्यासागर"},a:"C",s:"GK"},
+{qh:"सबसे हल्की धातु कौन-सी है?",qe:"Which is lightest metal?",o:{"A":"सोना / Gold","B":"एल्युमिनियम / Aluminium","C":"लिथियम / Lithium","D":"चांदी / Silver"},a:"C",s:"GK"},
+{qh:"विश्व स्वास्थ्य संगठन (WHO) का मुख्यालय कहाँ है?",qe:"Where is headquarters of WHO?",o:{"A":"जिनेवा / Geneva","B":"न्यूयॉर्क / New York","C":"पेरिस / Paris","D":"लंदन / London"},a:"A",s:"GK"},
+{qh:"किस नदी को 'बिहार का शोक' कहा जाता है?",qe:"Which river known as Sorrow of Bihar?",o:{"A":"गंगा / Ganga","B":"कोसी / Kosi","C":"गंडक / Gandak","D":"सोन / Son"},a:"B",s:"GK"},
+{qh:"स्वतंत्र भारत के प्रथम और अंतिम भारतीय गवर्नर-जनरल कौन थे?",qe:"Who was first and last Indian Governor-General of independent India?",o:{"A":"डॉ. बी. आर. अंबेडकर","B":"सी. राजगोपालाचारी","C":"राजेंद्र प्रसाद","D":"लॉर्ड माउंटबेटन"},a:"B",s:"GK"},
+{qh:"भूकंप की तीव्रता मापने के लिए किस यंत्र का प्रयोग किया जाता है?",qe:"Which instrument used to measure intensity of earthquake?",o:{"A":"बैरोमीटर / Barometer","B":"सिस्मोग्राफ / Seismograph","C":"लैक्टोमीटर / Lactometer","D":"थर्मामीटर / Thermometer"},a:"B",s:"GK"},
+{qh:"'भांगड़ा' किस राज्य का प्रसिद्ध लोक नृत्य है?",qe:"Bhangra is famous folk dance of which state?",o:{"A":"गुजरात / Gujarat","B":"राजस्थान / Rajasthan","C":"पंजाब / Punjab","D":"हरियाणा / Haryana"},a:"C",s:"GK"},
+{qh:"ओजोन गैस का रासायनिक सूत्र क्या है?",qe:"Chemical formula of Ozone gas?",o:{"A":"O2","B":"O3","C":"CO2","D":"H2O"},a:"B",s:"GK"},
+{qh:"प्रसिद्ध संस्कृत पुस्तक 'पंचतंत्र' के लेखक कौन हैं?",qe:"Who is author of famous Sanskrit book Panchatantra?",o:{"A":"कालिदास / Kalidasa","B":"बाणभट्ट / Banabhatta","C":"विष्णु शर्मा / Vishnu Sharma","D":"चाणक्य / Chanakya"},a:"C",s:"GK"},
+{qh:"'राष्ट्रीय मतदाता दिवस' कब मनाया जाता है?",qe:"When is National Voters Day celebrated?",o:{"A":"15 जनवरी","B":"25 जनवरी","C":"28 फरवरी","D":"24 मार्च"},a:"B",s:"GK"},
+{qh:"मानव शरीर की सबसे छोटी हड्डी कौन-सी है?",qe:"Which is smallest bone in human body?",o:{"A":"फीमर / Femur","B":"स्टेपीज / Stapes","C":"टिबिया / Tibia","D":"रेडियस / Radius"},a:"B",s:"GK"},
+{qh:"The patient _____ before doctor arrived.",qe:"The patient _____ before the doctor arrived.",o:{"A":"died","B":"dies","C":"had died","D":"is dying"},a:"C",s:"ENGLISH"},
+{qh:"He found _____ one-rupee coin on the road.",qe:"He found _____ one-rupee coin on the road.",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"A",s:"ENGLISH"},
+{qh:"The mechanic is repairing the car. (Passive)",qe:"The mechanic is repairing the car. (Passive)",o:{"A":"The car is repaired by mechanic.","B":"The car was being repaired.","C":"The car has been repaired.","D":"The car is being repaired by mechanic."},a:"D",s:"ENGLISH"},
+{qh:"Ravi said to me, 'I am your best friend.'",qe:"Ravi said to me, I am your best friend. (Indirect)",o:{"A":"Ravi said to me that I was his best friend.","B":"Ravi told me that he was my best friend.","C":"Ravi tells me that he is my best friend.","D":"Ravi told me that I am his best friend."},a:"B",s:"ENGLISH"},
+{qh:"The sceneries / of Kashmir / are / very beautiful.",qe:"The sceneries / of Kashmir / are / very beautiful. (Error)",o:{"A":"The sceneries","B":"of Kashmir","C":"are","D":"very beautiful"},a:"A",s:"ENGLISH"},
+{qh:"She has been living in this city _____ 2015.",qe:"She has been living in this city _____ 2015.",o:{"A":"from","B":"for","C":"since","D":"in"},a:"C",s:"ENGLISH"},
+{qh:"She is the _____ girl in our class.",qe:"She is the _____ girl in our class.",o:{"A":"tall","B":"taller","C":"tallest","D":"most tall"},a:"C",s:"ENGLISH"},
+{qh:"Either you _____ your brother must attend meeting.",qe:"Either you _____ your brother must attend meeting.",o:{"A":"nor","B":"or","C":"and","D":"but"},a:"B",s:"ENGLISH"},
+{qh:"You are coming to the party, _____?",qe:"You are coming to party, _____? (Question Tag)",o:{"A":"aren't you","B":"are you","C":"isn't it","D":"don't you"},a:"A",s:"ENGLISH"},
+{qh:"Synonym of Furious:",qe:"Synonym of Furious:",o:{"A":"Calm","B":"Happy","C":"Angry","D":"Sad"},a:"C",s:"ENGLISH"},
+{qh:"Antonym of Abundant:",qe:"Antonym of Abundant:",o:{"A":"Plenty","B":"Scarce","C":"Rich","D":"Huge"},a:"B",s:"ENGLISH"},
+{qh:"A place where birds are kept.",qe:"A place where birds are kept.",o:{"A":"Zoo","B":"Aquarium","C":"Apiary","D":"Aviary"},a:"D",s:"ENGLISH"},
+{qh:"Idiom: Under the weather",qe:"Meaning of Under the weather:",o:{"A":"To enjoy rain","B":"Feeling ill or sick","C":"To be very angry","D":"To hide a secret"},a:"B",s:"ENGLISH"},
+{qh:"Correctly spelt word: Occasion",qe:"Correctly spelt word:",o:{"A":"Occassion","B":"Ocasion","C":"Occasion","D":"Occasionn"},a:"C",s:"ENGLISH"},
+{qh:"Choose correct sentence: If it rains...",qe:"Choose correct sentence:",o:{"A":"If it will rain, I will not go.","B":"If it rains, I will not go.","C":"If it rain, I will not go.","D":"If it rained, I will not go."},a:"B",s:"ENGLISH"}
+]};
+
+let cur=0,answers={},reviews=new Set(),lang='both',time=20*60,tInt,startTS;
+document.getElementById('tTitle').innerText=testData.title;document.getElementById('tSub').innerText=testData.subject;
+function doLogin(){let n=document.getElementById('stuName').value.trim();let c=document.getElementById('stuCity').value.trim();if(n.length<3){alert("Naam daalo bhai");return;}localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);document.getElementById('loginScreen').style.display='none';document.getElementById('passScreen').style.display='flex';}
+function checkPass(){if(document.getElementById('passInput').value==="MGE@77"){document.getElementById('passScreen').style.display='none';document.getElementById('mainTest').style.display='block';startTS=Date.now();startTimer();render();}else document.getElementById('passErr').style.display='block';}
+function startTimer(){tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;document.getElementById('timer').innerText=`${m}:${s<10?'0'+s:s}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);}
+function render(){let q=testData.questions[cur];document.getElementById('qNo').innerText=cur+1;document.getElementById('secBadge').innerText=`📚 ${q.s} - Q ${cur+1}`;document.getElementById('qHi').innerText=q.qh;document.getElementById('qEn').innerText=q.qe;setLang(lang);let h="";for(let k in q.o){let isSel=answers[cur]==k;h+=`<label class="${isSel?'sel':''}" onclick="sel('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}document.getElementById('optBox').innerHTML=h;renderP();}
+function sel(k){answers[cur]=k;render();}function clearAns(){delete answers[cur];render();}function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function setLang(l){lang=l;document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));if(l=='both'){lb.classList.add('active');qHi.style.display='';qEn.style.display='';}if(l=='hi'){lh.classList.add('active');qHi.style.display='';qEn.style.display='none';}if(l=='en'){le.classList.add('active');qHi.style.display='none';qEn.style.display='';}}
+function renderP(){let h="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";h+=`<div class="${cl}" onclick="cur=${i};render()">${i+1}</div>`});document.getElementById('pGrid').innerHTML=h;}
+function submitTest(){
+  clearInterval(tInt);let cor=0,wro=0;testData.questions.forEach((q,i)=>{if(answers[i]==q.a)cor++;else if(answers[i]!=undefined)wro++;});
+  let tot=testData.questions.length;let acc=Math.round(cor/tot*100);let tUsed=Math.floor((Date.now()-startTS)/1000);
+  let name=localStorage.getItem("mgj_name")||"Student";let city=localStorage.getItem("mgj_city")||"";
+  let atts=JSON.parse(localStorage.getItem("mgj_test9_lb")||"[]");atts.push({name,score:cor,acc,time:tUsed,city,date:Date.now()});
+  atts.sort((a,b)=>b.score-a.score||a.time-b.time);atts=atts.slice(0,50);localStorage.setItem("mgj_test9_lb",JSON.stringify(atts));
+  let myRank=atts.findIndex(a=>a.name==name && a.score==cor)+1;
+  document.getElementById('sCor').innerText=cor;document.getElementById('sWro').innerText=wro;document.getElementById('sAcc').innerText=acc+"%";document.getElementById('sTime').innerText=`${Math.floor(tUsed/60)}m ${tUsed%60}s`;
+  document.getElementById('sBig').innerText=cor;document.getElementById('myRank').innerText="#"+myRank;document.getElementById('totRank').innerText=atts.length;
+  document.getElementById('scoreMsg').innerText=acc>=80?"Excellent Work! Topper Ho 🔥":acc>=50?"Good Job! Improving Ho 🚀":"Good Attempt! Keep Practicing 💪";
+  let lbH="";atts.slice(0,5).forEach((e,i)=>{lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;font-weight:700;color:#0f172a"><span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''}</span><span>${e.score}/${tot}</span></div>`;});
+  document.getElementById('lbBoard').innerHTML=lbH;document.getElementById('scoreOverlay').style.display='flex';
+}
+if(localStorage.getItem("mgj_name")){document.getElementById('stuName').value=localStorage.getItem("mgj_name");document.getElementById('stuCity').value=localStorage.getItem("mgj_city")||"";}
+</script>
+</body>
+</html>
