@@ -1,145 +1,126 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 6 | Mission Gyan Jobs</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AIR FORCE TEST 6 - Premium with Ranking | Mission Gyan Jobs</title>
 <style>
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
-body{background:#1a0000; padding:15px}
-.container{max-width:850px; margin:auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 20px rgba(255,0,0,0.5); border:2px solid #ff0000}
-.header{text-align:center; border-bottom:3px solid #ff0000; padding:15px; margin-bottom:20px; background:linear-gradient(90deg, #8B0000, #ff0000); color:white; border-radius:8px}
-.header h1{font-size:20px; text-shadow:0 0 5px #fff}
-.section-title{background:#0f172a; color:#fbbf24; padding:10px 15px; border-radius:6px; margin:20px 0 15px 0; font-size:18px; font-weight:800; text-align:center; border:1px solid #fbbf24}
-.timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
-@keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
-.question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
-.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
-.q-text{font-size:16px; margin-bottom:12px; font-weight:600}
-.options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
-.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
-.btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
-#result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
-.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
-.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
-.answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
-#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
-.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
-.pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
-.pass-box p{color:white; margin-bottom:15px}
-.pass-box input{width:100%; padding:12px; font-size:16px; border:3px solid yellow; border-radius:6px; margin-bottom:15px; text-align:center; font-weight:bold}
-.pass-box button{width:100%; padding:12px; background:yellow; color:#8B0000; border:none; border-radius:6px; font-size:17px; cursor:pointer; font-weight:bold}
-.error{color:yellow; margin-top:10px; display:none; font-weight:bold}
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0}
+body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
+body{background:var(--bg);color:var(--text);transition:0.3s}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900}
+.container{max-width:850px;margin:10px auto;padding:0 10px}
+.q-card,.info-card,.p-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+.lang span{padding:5px 12px;border-radius:20px;border:1.5px solid #2563eb;font-size:12px;font-weight:700;cursor:pointer;color:var(--text)}.lang span.active{background:#2563eb;color:#fff!important}
+.options{margin-top:12px}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;background:var(--card);color:var(--text);transition:0.2s;font-weight:500}
+.options label:hover{border-color:#2563eb;transform:translateX(2px)}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700;box-shadow:0 0 0 3px rgba(22,163,74,0.15)}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px;flex-shrink:0}
+.section-badge{display:inline-block;background:#0f172a;color:#fbbf24;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:900;margin-bottom:6px;border:1px solid #fbbf24}
+body.dark.q-card,body.dark.info-card,body.dark.p-card{background:#1e293b;border-color:#334155}
+body.dark #qHi{color:#f8fafc!important}body.dark #qEn{color:#94a3b8!important}
+body.dark.options label{background:#1e293b!important;border-color:#475569!important;color:#f1f5f9!important}
+body.dark.options label.sel{background:#14532d!important;border-color:#22c55e!important;color:#dcfce7!important}
+.btn{padding:11px;border:none;border-radius:10px;font-weight:800;cursor:pointer}.btn-g{background:#e2e8f0;color:#0f172a}.btn-y{background:#fef3c7;color:#92400e}.btn-b{background:#1d4ed8;color:#fff}.btn-gr{background:#16a34a;color:#fff}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:10px}.p{height:38px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;font-weight:800;cursor:pointer;color:var(--text)}.p.cur{background:#ef4444!important;color:#fff!important}.p.ans{background:#10b981!important;color:#fff!important}.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:15px}
+#loginScreen{background:rgba(2,6,23,0.92)}
+.login-box{width:100%;max-width:380px;background:linear-gradient(180deg,#0f172a,#1e293b);padding:22px;border-radius:20px;border:2px solid #fbbf24;text-align:center;box-shadow:0 0 30px rgba(0,0,0,0.5)}
+.login-box h2{color:#fbbf24;margin-bottom:8px}.login-box input{width:100%;padding:12px;border-radius:10px;border:2px solid #fbbf24;margin:7px 0;text-align:center;font-weight:700;font-size:15px}
+.login-box button{width:100%;padding:12px;background:#fbbf24;color:#0f172a;border:none;border-radius:10px;font-weight:900;margin-top:10px;cursor:pointer}
+#passScreen{background:rgba(0,0,0,0.95)}
+.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000);padding:30px;border-radius:15px;text-align:center;width:90%;max-width:400px;border:3px solid yellow;box-shadow:0 0 25px red}
+.pass-box h2{color:yellow;margin-bottom:10px;font-size:22px;text-shadow:0 0 10px #fff}.pass-box p{color:white;margin-bottom:15px;font-size:13px}
+.pass-box input{width:100%;padding:12px;font-size:16px;border:3px solid yellow;border-radius:6px;margin-bottom:15px;text-align:center;font-weight:bold}
+.pass-box button{width:100%;padding:12px;background:yellow;color:#8B0000;border:none;border-radius:6px;font-size:17px;cursor:pointer;font-weight:bold}
+.score-card{width:100%;max-width:400px;background:#fff;border-radius:24px;padding:20px;color:#0f172a}
+.badge-top{display:inline-block;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:5px 12px;border-radius:20px}
+.score-big{font-size:40px;font-weight:900;color:#1d4ed8;text-align:center}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.stat{border-radius:14px;padding:12px;text-align:center}.stat b{font-size:20px;display:block}
 </style>
 </head>
 <body>
-<div id="password-screen">
-  <div class="pass-box">
-    <h2>🔥 TEST LOCKED 🔥</h2>
-    <p>Test start karne ke liye password dalo</p>
-    <input type="password" id="passInput" placeholder="Password">
-    <button onclick="checkPassword()">START TEST NOW</button>
-    <p class="error" id="errorMsg">❌ Galat Password! try again</p>
-  </div>
+<div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:36px;height:36px;border-radius:50%;border:none;cursor:pointer">🌙</button></div></div>
+
+<div class="overlay" id="loginScreen">
+  <div class="login-box"><h2>👋 Welcome Student</h2><input type="text" id="stuName" placeholder="अपना पूरा नाम / name *"><input type="text" id="stuCity" placeholder="जिला / City"><button onclick="doLogin()">Continue →</button><p style="margin-top:10px;font-size:11px;color:#94a3b8">This name will appear on the leaderboard</p></div>
 </div>
-<div class="container" id="main-test" style="display:none;">
-<div class="header"><h1 id="test-title"></h1><p id="test-subject"></p></div>
-<div class="timer" id="timer">⏰ Time Left: 20:00</div>
-<form id="quiz-form"></form>
-<button class="btn" onclick="submitTest()">🔥 SUBMIT TEST 🔥</button>
-<div id="result"></div>
+
+<div class="overlay" id="passScreen" style="display:none">
+  <div class="pass-box"><h2>🔥 TEST LOCKED 🔥</h2><p>Test start karne ke liye password dalo</p><input type="password" id="passInput" placeholder="Password"><button onclick="checkPass()">START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:bold">❌ Galat Password!</p></div>
 </div>
+
+<div class="container" id="mainTest" style="display:none">
+  <div class="info-card"><b id="tTitle"></b><br><small id="tSub"></small><br><span style="color:#16a34a;font-weight:800;font-size:12px">15 GK + 15 English = 30 Qs | 20 Mins | Bilingual</span></div>
+  <div class="q-card"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb">Q <span id="qNo">1</span>/30</b><div class="lang"><span class="active" id="lb" onclick="setLang('both')">Bilingual</span><span id="lh" onclick="setLang('hi')">हिंदी</span><span id="le" onclick="setLang('en')">EN</span></div></div><div id="secBadge" class="section-badge"></div><div id="qHi" style="font-weight:700;margin:4px 0;font-size:16px"></div><div id="qEn" style="color:#64748b;font-size:13px;margin-bottom:6px"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:grid;grid-template-columns:1.6fr 1fr;gap:6px;margin-top:6px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
+  <div class="p-card"><b>Question Palette - <span id="pSecInfo">GK + English</span></b><div class="p-grid" id="pGrid"></div></div>
+</div>
+
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(15,23,42,0.88)">
+  <div class="score-card"><div style="text-align:center"><div class="badge-top">TEST 6 SCORECARD</div><div id="scoreMsg" style="font-size:20px;font-weight:900;margin:6px 0"></div><div class="score-big"><span id="sBig">0</span><span style="font-size:16px;color:#64748b"> /30</span></div><div style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">🏅 Rank: <span id="myRank">#1</span> / <span id="totRank">1</span></div></div><div class="stats"><div class="stat" style="background:#dcfce7;color:#166534"><b id="sCor">0</b><span style="font-size:11px">Correct</span></div><div class="stat" style="background:#fee2e2;color:#991b1b"><b id="sWro">0</b><span style="font-size:11px">Incorrect</span></div><div class="stat" style="background:#dbeafe;color:#1e40af"><b id="sAcc">0%</b><span style="font-size:11px">Accuracy</span></div><div class="stat" style="background:#fef9c3;color:#854d0e"><b id="sTime">0m 0s</b><span style="font-size:11px">Time Taken</span></div></div><div style="margin-top:10px"><b style="font-size:13px">🔥 Top 5 Leaderboard (Test 6)</b><div id="lbBoard" style="margin-top:6px"></div></div><button onclick="location.reload()" style="width:100%;background:#1d4ed8;color:white;padding:12px;border:none;border-radius:12px;font-weight:900;margin-top:12px">🔄 Retake Test</button></div>
+</div>
+
 <script>
-const correctPass = "MGE@77";
-function checkPassword(){
-  let pass = document.getElementById('passInput').value;
-  if(pass === correctPass){
-    document.getElementById('password-screen').style.display = 'none';
-    document.getElementById('main-test').style.display = 'block';
-    startTimer();
-  }else{ document.getElementById('errorMsg').style.display = 'block'; }
-}
-const testData = {
-  "title": "Air Force Non-Combatant 01/2027 - Class 6 Model Paper",
-  "subject": "General Knowledge + English (15+15 = 30 Qs)",
-  "questions": [
-    {"id": 1, "section": "GK", "question_hi": "वर्तमान में भारतीय वायु सेना के प्रमुख (Chief of the Air Staff) कौन हैं?", "question_en": "Who is the current Chief of the Air Staff of the Indian Air Force?", "options": {"A": "एयर चीफ मार्शल विवेक राम चौधरी / Air Chief Marshal Vivek Ram Chaudhari", "B": "एयर चीफ मार्शल अमर प्रीत सिंह / Air Chief Marshal Amar Preet Singh", "C": "एयर मार्शल संदीप सिंह / Air Marshal Sandeep Singh", "D": "इनमें से कोई नहीं / None of these"}, "answer": "B"},
-    {"id": 2, "section": "GK", "question_hi": "भारत का पहला स्वदेशी हल्का लड़ाकू विमान (Indigenous Light Combat Aircraft) कौन-सा है?", "question_en": "Which is India's first indigenous Light Combat Aircraft?", "options": {"A": "राफेल / Rafale", "B": "सुखोई-30 MKI / Su-30 MKI", "C": "तेजस / Tejas", "D": "मिराज 2000 / Mirage 2000"}, "answer": "C"},
-    {"id": 3, "section": "GK", "question_hi": "नाइजीरिया में आयोजित Under-23 Commonwealth Fencing Championship 2026 में Senior Women's Epee स्पर्धा में स्वर्ण पदक किसने जीता?", "question_en": "Who won the gold medal in the Senior Women's Epee event at the Under-23 Commonwealth Fencing Championship 2026 held in Nigeria?", "options": {"A": "तनिष्का खत्री / Tanishka Khatri", "B": "भवानी देवी / Bhavani Devi", "C": "काजल कुमारी / Kajal Kumari", "D": "सिमरनजीत कौर / Simranjeet Kaur"}, "answer": "A"},
-    {"id": 4, "section": "GK", "question_hi": "अरलम तितली अभयारण्य (Aralam Butterfly Sanctuary) किस राज्य में स्थित है?", "question_en": "In which state is the Aralam Butterfly Sanctuary located?", "options": {"A": "तमिलनाडु / Tamil Nadu", "B": "कर्नाटक / Karnataka", "C": "केरल / Kerala", "D": "असम / Assam"}, "answer": "C"},
-    {"id": 5, "section": "GK", "question_hi": "'बाबरनामा' की रचना किसने की थी?", "question_en": "Who wrote the 'Baburnama'?", "options": {"A": "अबुल फजल / Abul Fazl", "B": "बदायूँनी / Badauni", "C": "बाबर / Babur", "D": "अब्दुर रहीम खानखाना / Abdur Rahim Khan-i-Khana"}, "answer": "C"},
-    {"id": 6, "section": "GK", "question_hi": "पृथ्वी से कुछ ऊँचाई पर स्थित वस्तु में कौन-सी ऊर्जा होती है?", "question_en": "Which type of energy does an object possess when it is at some height above the Earth?", "options": {"A": "गतिज ऊर्जा / Kinetic Energy", "B": "स्थितिज ऊर्जा / Potential Energy", "C": "रासायनिक ऊर्जा / Chemical Energy", "D": "विद्युत ऊर्जा / Electrical Energy"}, "answer": "B"},
-    {"id": 7, "section": "GK", "question_hi": "अकबर के भूमि सुधारों का श्रेय किसे दिया जाता है?", "question_en": "Who is credited with Akbar's land revenue reforms?", "options": {"A": "बीरबल / Birbal", "B": "अबुल फजल / Abul Fazl", "C": "राजा टोडरमल / Raja Todar Mal", "D": "मान सिंह / Man Singh"}, "answer": "C"},
-    {"id": 8, "section": "GK", "question_hi": "विश्व का सबसे ऊँचा ज्वालामुखी पर्वत कौन-सा है?", "question_en": "Which is the highest volcanic mountain in the world?", "options": {"A": "माउंट एटना / Mount Etna", "B": "कोटोपैक्सी / Cotopaxi", "C": "मौना लोआ / Mauna Loa", "D": "किलिमंजारो / Kilimanjaro"}, "answer": "B"},
-    {"id": 9, "section": "GK", "question_hi": "किस वेद में जादू-टोना संबंधी वर्णन मिलता है?", "question_en": "Which Veda contains descriptions related to magic and witchcraft?", "options": {"A": "ऋग्वेद / Rigveda", "B": "सामवेद / Samaveda", "C": "यजुर्वेद / Yajurveda", "D": "अथर्ववेद / Atharvaveda"}, "answer": "D"},
-    {"id": 10, "section": "GK", "question_hi": "पंडित रविशंकर किस वाद्य यंत्र से संबंधित थे?", "question_en": "Pandit Ravi Shankar was associated with which musical instrument?", "options": {"A": "तबला / Tabla", "B": "सितार / Sitar", "C": "सरोद / Sarod", "D": "पखावज / Pakhawaj"}, "answer": "B"},
-    {"id": 11, "section": "GK", "question_hi": "'फिनॉल' को अन्य किस नाम से जाना जाता है?", "question_en": "Phenol is also known by which name?", "options": {"A": "कार्बोलिक अम्ल / Carbolic Acid", "B": "नाइट्रिक अम्ल / Nitric Acid", "C": "एसीटिक अम्ल / Acetic Acid", "D": "सल्फ्यूरिक अम्ल / Sulphuric Acid"}, "answer": "A"},
-    {"id": 12, "section": "GK", "question_hi": "'योग्यतम की उत्तरजीविता' (Survival of the Fittest) के सिद्धांत का प्रतिपादन किसने किया था?", "question_en": "Who proposed the concept of 'Survival of the Fittest'?", "options": {"A": "चार्ल्स डार्विन / Charles Darwin", "B": "ग्रेगर मेंडल / Gregor Mendel", "C": "लैमार्क / Lamarck", "D": "अरस्तू / Aristotle"}, "answer": "A"},
-    {"id": 13, "section": "GK", "question_hi": "'अजंता, एलोरा और एलिफेंटा' की गुफाएँ किस राज्य में स्थित हैं?", "question_en": "The caves of Ajanta, Ellora and Elephanta are located in which state?", "options": {"A": "मध्य प्रदेश / Madhya Pradesh", "B": "महाराष्ट्र / Maharashtra", "C": "गुजरात / Gujarat", "D": "कर्नाटक / Karnataka"}, "answer": "B"},
-    {"id": 14, "section": "GK", "question_hi": "2014 का FIFA विश्व कप किस देश ने जीता था?", "question_en": "Which country won the 2014 FIFA World Cup?", "options": {"A": "ब्राजील / Brazil", "B": "अर्जेंटीना / Argentina", "C": "जर्मनी / Germany", "D": "स्पेन / Spain"}, "answer": "C"},
-    {"id": 15, "section": "GK", "question_hi": "'लिंगराज मंदिर' कहाँ स्थित है?", "question_en": "Where is the 'Lingaraj Temple' located?", "options": {"A": "पुरी / Puri", "B": "भुवनेश्वर / Bhubaneswar", "C": "कोणार्क / Konark", "D": "कटक / Cuttack"}, "answer": "B"},
-    {"id": 16, "section": "ENGLISH", "question_hi": "Choose the correct tense: She _____ to school every day.", "question_en": "She _____ to school every day.", "options": {"A": "go", "B": "goes", "C": "went", "D": "going"}, "answer": "B"},
-    {"id": 17, "section": "ENGLISH", "question_hi": "Fill in the blank with the correct article: He is _____ honest man.", "question_en": "He is _____ honest man.", "options": {"A": "a", "B": "an", "C": "the", "D": "no article"}, "answer": "B"},
-    {"id": 18, "section": "ENGLISH", "question_hi": "Choose the correct Passive Voice: Ram writes a letter.", "question_en": "Ram writes a letter. (Passive)", "options": {"A": "A letter is written by Ram.", "B": "A letter was written by Ram.", "C": "A letter has written by Ram.", "D": "A letter is being written by Ram."}, "answer": "A"},
-    {"id": 19, "section": "ENGLISH", "question_hi": "Change into Indirect Speech: He said, “I am happy.”", "question_en": "He said, “I am happy.” (Indirect)", "options": {"A": "He said that I am happy.", "B": "He said that he was happy.", "C": "He says that he was happy.", "D": "He said that he is happy."}, "answer": "B"},
-    {"id": 20, "section": "ENGLISH", "question_hi": "Find the error: She / do not / like tea.", "question_en": "She / do not / like tea. (Find Error)", "options": {"A": "She", "B": "do not", "C": "like tea", "D": "No error"}, "answer": "B"},
-    {"id": 21, "section": "ENGLISH", "question_hi": "Fill in the blank: The boys are playing _____ the field.", "question_en": "The boys are playing _____ the field.", "options": {"A": "in", "B": "on", "C": "at", "D": "by"}, "answer": "A"},
-    {"id": 22, "section": "ENGLISH", "question_hi": "Choose the correct sentence:", "question_en": "Choose the correct sentence:", "options": {"A": "He go to school every day.", "B": "He going to school every day.", "C": "He goes to school every day.", "D": "He gone to school every day."}, "answer": "C"},
-    {"id": 23, "section": "ENGLISH", "question_hi": "Choose the correctly punctuated sentence:", "question_en": "Choose the correctly punctuated sentence:", "options": {"A": "What is your name.", "B": "What is your name?", "C": "what is your name?", "D": "What is your name,"}, "answer": "B"},
-    {"id": 24, "section": "ENGLISH", "question_hi": "Choose the correctly capitalized sentence:", "question_en": "Choose the correctly capitalized sentence:", "options": {"A": "india is a great country.", "B": "India is a great country.", "C": "india Is a Great country.", "D": "India Is a great Country."}, "answer": "B"},
-    {"id": 25, "section": "ENGLISH", "question_hi": "Choose the synonym of “Brave”:", "question_en": "Synonym of Brave:", "options": {"A": "Coward", "B": "Weak", "C": "Courageous", "D": "Lazy"}, "answer": "C"},
-    {"id": 26, "section": "ENGLISH", "question_hi": "Choose the antonym of “Ancient”:", "question_en": "Antonym of Ancient:", "options": {"A": "Old", "B": "Modern", "C": "Historic", "D": "Past"}, "answer": "B"},
-    {"id": 27, "section": "ENGLISH", "question_hi": "Choose the correct one-word substitution: A person who cannot read or write", "question_en": "A person who cannot read or write", "options": {"A": "Literate", "B": "Scholar", "C": "Illiterate", "D": "Teacher"}, "answer": "C"},
-    {"id": 28, "section": "ENGLISH", "question_hi": "Choose the correct meaning of the idiom “A piece of cake”:", "question_en": "Meaning of 'A piece of cake':", "options": {"A": "Something very difficult", "B": "Something very easy", "C": "To eat a cake", "D": "To waste time"}, "answer": "B"},
-    {"id": 29, "section": "ENGLISH", "question_hi": "Choose the correctly spelt word:", "question_en": "Correctly spelt word:", "options": {"A": "Goverment", "B": "Government", "C": "Govarnment", "D": "Governmant"}, "answer": "B"},
-    {"id": 30, "section": "ENGLISH", "question_hi": "Choose the correct sentence:", "question_en": "Choose the correct sentence:", "options": {"A": "She has completed her work.", "B": "She have completed her work.", "C": "She completed has her work.", "D": "She having completed her work."}, "answer": "A"}
-  ]
-};
-document.getElementById('test-title').innerText = testData.title;
-document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
-let quizHTML = '';
-let currentSection = '';
-testData.questions.forEach((q) => {
-  if(currentSection !== q.section){
-    currentSection = q.section;
-    quizHTML += `<div class="section-title">📚 ${currentSection} - ${currentSection === 'GK' ? 'सामान्य ज्ञान' : 'English'}</div>`;
-  }
-  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
-  quizHTML += `<div class="q-no">Question ${q.id} [${q.section}]</div>`;
-  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`;
-  quizHTML += `<div class="options">`;
-  for(let key in q.options){ quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`; }
-  quizHTML += `</div></div>`;
-});
-document.getElementById('quiz-form').innerHTML = quizHTML;
-let time = 20 * 60; let timerInterval;
-function startTimer(){
-  timerInterval = setInterval(()=>{
-    let m = Math.floor(time/60), s = time%60;
-    document.getElementById('timer').innerText = `⏰ Time Left: ${m}:${s<10?'0':''}${s}`;
-    if(time <= 0){ clearInterval(timerInterval); submitTest(); }
-    time--;
-  },1000);
-}
+const testData={
+title:"Air Force Non-Combatant 01/2027 - Class 6 Model Paper",
+subject:"General Knowledge + English (15+15 = 30 Qs)",
+questions:[
+{qh:"वर्तमान में भारतीय वायु सेना के प्रमुख (Chief of the Air Staff) कौन हैं?",qe:"Who is current Chief of Air Staff of Indian Air Force?",o:{"A":"एयर चीफ मार्शल विवेक राम चौधरी","B":"एयर चीफ मार्शल अमर प्रीत सिंह","C":"एयर मार्शल संदीप सिंह","D":"इनमें से कोई नहीं"},a:"B",s:"GK"},
+{qh:"भारत का पहला स्वदेशी हल्का लड़ाकू विमान कौन-सा है?",qe:"India's first indigenous Light Combat Aircraft?",o:{"A":"राफेल","B":"सुखोई-30 MKI","C":"तेजस","D":"मिराज 2000"},a:"C",s:"GK"},
+{qh:"नाइजीरिया में Under-23 Commonwealth Fencing 2026 में Senior Women's Epee में स्वर्ण किसने जीता?",qe:"Who won gold in Senior Women's Epee at Under-23 Commonwealth Fencing 2026 in Nigeria?",o:{"A":"तनिष्का खत्री","B":"भवानी देवी","C":"काजल कुमारी","D":"सिमरनजीत कौर"},a:"A",s:"GK"},
+{qh:"अरलम तितली अभयारण्य किस राज्य में स्थित है?",qe:"Aralam Butterfly Sanctuary located in which state?",o:{"A":"तमिलनाडु","B":"कर्नाटक","C":"केरल","D":"असम"},a:"C",s:"GK"},
+{qh:"'बाबरनामा' की रचना किसने की थी?",qe:"Who wrote Baburnama?",o:{"A":"अबुल फजल","B":"बदायूँनी","C":"बाबर","D":"अब्दुर रहीम खानखाना"},a:"C",s:"GK"},
+{qh:"पृथ्वी से कुछ ऊँचाई पर स्थित वस्तु में कौन-सी ऊर्जा होती है?",qe:"Which energy object possess at some height above Earth?",o:{"A":"गतिज ऊर्जा","B":"स्थितिज ऊर्जा","C":"रासायनिक ऊर्जा","D":"विद्युत ऊर्जा"},a:"B",s:"GK"},
+{qh:"अकबर के भूमि सुधारों का श्रेय किसे दिया जाता है?",qe:"Who credited with Akbar's land reforms?",o:{"A":"बीरबल","B":"अबुल फजल","C":"राजा टोडरमल","D":"मान सिंह"},a:"C",s:"GK"},
+{qh:"विश्व का सबसे ऊँचा ज्वालामुखी पर्वत कौन-सा है?",qe:"Highest volcanic mountain in world?",o:{"A":"माउंट एटना","B":"कोटोपैक्सी","C":"मौना लोआ","D":"किलिमंजारो"},a:"B",s:"GK"},
+{qh:"किस वेद में जादू-टोना संबंधी वर्णन मिलता है?",qe:"Which Veda contains descriptions related to magic?",o:{"A":"ऋग्वेद","B":"सामवेद","C":"यजुर्वेद","D":"अथर्ववेद"},a:"D",s:"GK"},
+{qh:"पंडित रविशंकर किस वाद्य यंत्र से संबंधित थे?",qe:"Pandit Ravi Shankar associated with which instrument?",o:{"A":"तबला","B":"सितार","C":"सरोद","D":"पखावज"},a:"B",s:"GK"},
+{qh:"'फिनॉल' को अन्य किस नाम से जाना जाता है?",qe:"Phenol is also known by?",o:{"A":"कार्बोलिक अम्ल","B":"नाइट्रिक अम्ल","C":"एसीटिक अम्ल","D":"सल्फ्यूरिक अम्ल"},a:"A",s:"GK"},
+{qh:"'योग्यतम की उत्तरजीविता' के सिद्धांत का प्रतिपादन किसने किया?",qe:"Who proposed Survival of Fittest?",o:{"A":"चार्ल्स डार्विन","B":"ग्रेगर मेंडल","C":"लैमार्क","D":"अरस्तू"},a:"A",s:"GK"},
+{qh:"'अजंता, एलोरा और एलिफेंटा' की गुफाएँ किस राज्य में?",qe:"Caves of Ajanta, Ellora, Elephanta located in which state?",o:{"A":"मध्य प्रदेश","B":"महाराष्ट्र","C":"गुजरात","D":"कर्नाटक"},a:"B",s:"GK"},
+{qh:"2014 का FIFA विश्व कप किस देश ने जीता था?",qe:"Which country won 2014 FIFA World Cup?",o:{"A":"ब्राजील","B":"अर्जेंटीना","C":"जर्मनी","D":"स्पेन"},a:"C",s:"GK"},
+{qh:"'लिंगराज मंदिर' कहाँ स्थित है?",qe:"Where is Lingaraj Temple located?",o:{"A":"पुरी","B":"भुवनेश्वर","C":"कोणार्क","D":"कटक"},a:"B",s:"GK"},
+{qh:"She _____ to school every day.",qe:"She _____ to school every day.",o:{"A":"go","B":"goes","C":"went","D":"going"},a:"B",s:"ENGLISH"},
+{qh:"He is _____ honest man.",qe:"He is _____ honest man.",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"B",s:"ENGLISH"},
+{qh:"Ram writes a letter. (Passive)",qe:"Ram writes a letter. (Passive)",o:{"A":"A letter is written by Ram.","B":"A letter was written by Ram.","C":"A letter has written by Ram.","D":"A letter is being written by Ram."},a:"A",s:"ENGLISH"},
+{qh:"He said, “I am happy.” (Indirect)",qe:"He said, “I am happy.” (Indirect)",o:{"A":"He said that I am happy.","B":"He said that he was happy.","C":"He says that he was happy.","D":"He said that he is happy."},a:"B",s:"ENGLISH"},
+{qh:"She / do not / like tea. (Find Error)",qe:"She / do not / like tea.",o:{"A":"She","B":"do not","C":"like tea","D":"No error"},a:"B",s:"ENGLISH"},
+{qh:"The boys are playing _____ the field.",qe:"The boys are playing _____ the field.",o:{"A":"in","B":"on","C":"at","D":"by"},a:"A",s:"ENGLISH"},
+{qh:"Choose the correct sentence: He goes to school",qe:"Choose correct sentence:",o:{"A":"He go to school every day.","B":"He going to school every day.","C":"He goes to school every day.","D":"He gone to school every day."},a:"C",s:"ENGLISH"},
+{qh:"Choose correctly punctuated: What is your name?",qe:"Correctly punctuated:",o:{"A":"What is your name.","B":"What is your name?","C":"what is your name?","D":"What is your name,"},a:"B",s:"ENGLISH"},
+{qh:"Choose correctly capitalized: India is a great country.",qe:"Correctly capitalized:",o:{"A":"india is a great country.","B":"India is a great country.","C":"india Is a Great country.","D":"India Is a great Country."},a:"B",s:"ENGLISH"},
+{qh:"Synonym of Brave:",qe:"Synonym of Brave:",o:{"A":"Coward","B":"Weak","C":"Courageous","D":"Lazy"},a:"C",s:"ENGLISH"},
+{qh:"Antonym of Ancient:",qe:"Antonym of Ancient:",o:{"A":"Old","B":"Modern","C":"Historic","D":"Past"},a:"B",s:"ENGLISH"},
+{qh:"A person who cannot read or write",qe:"A person who cannot read or write",o:{"A":"Literate","B":"Scholar","C":"Illiterate","D":"Teacher"},a:"C",s:"ENGLISH"},
+{qh:"Meaning of 'A piece of cake':",qe:"Meaning of 'A piece of cake':",o:{"A":"Something very difficult","B":"Something very easy","C":"To eat a cake","D":"To waste time"},a:"B",s:"ENGLISH"},
+{qh:"Correctly spelt word: Government",qe:"Correctly spelt word:",o:{"A":"Goverment","B":"Government","C":"Govarnment","D":"Governmant"},a:"B",s:"ENGLISH"},
+{qh:"She has completed her work.",qe:"She has completed her work.",o:{"A":"She has completed her work.","B":"She have completed her work.","C":"She completed has her work.","D":"She having completed her work."},a:"A",s:"ENGLISH"}
+]};
+
+let cur=0,answers={},reviews=new Set(),lang='both',time=20*60,tInt,startTS;
+document.getElementById('tTitle').innerText=testData.title;document.getElementById('tSub').innerText=testData.subject;
+function doLogin(){let n=document.getElementById('stuName').value.trim();let c=document.getElementById('stuCity').value.trim();if(n.length<3){alert("Naam daalo bhai");return;}localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);document.getElementById('loginScreen').style.display='none';document.getElementById('passScreen').style.display='flex';}
+function checkPass(){if(document.getElementById('passInput').value==="MGE@77"){document.getElementById('passScreen').style.display='none';document.getElementById('mainTest').style.display='block';startTS=Date.now();startTimer();render();}else document.getElementById('passErr').style.display='block';}
+function startTimer(){tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;document.getElementById('timer').innerText=`${m}:${s<10?'0'+s:s}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);}
+function render(){let q=testData.questions[cur];document.getElementById('qNo').innerText=cur+1;document.getElementById('secBadge').innerText=`📚 ${q.s} - Q ${cur+1}`;document.getElementById('qHi').innerText=q.qh;document.getElementById('qEn').innerText=q.qe;setLang(lang);let h="";for(let k in q.o){let isSel=answers[cur]==k;h+=`<label class="${isSel?'sel':''}" onclick="sel('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}document.getElementById('optBox').innerHTML=h;renderP();}
+function sel(k){answers[cur]=k;render();}function clearAns(){delete answers[cur];render();}function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function setLang(l){lang=l;document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));if(l=='both'){lb.classList.add('active');qHi.style.display='';qEn.style.display='';}if(l=='hi'){lh.classList.add('active');qHi.style.display='';qEn.style.display='none';}if(l=='en'){le.classList.add('active');qHi.style.display='none';qEn.style.display='';}}
+function renderP(){let h="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";h+=`<div class="${cl}" onclick="cur=${i};render()">${i+1}</div>`});document.getElementById('pGrid').innerHTML=h;}
 function submitTest(){
-  clearInterval(timerInterval);
-  let score = 0;
-  testData.questions.forEach((q) => {
-    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-    let qbox = document.getElementById(`qbox${q.id}`);
-    let allLabels = qbox.querySelectorAll('label');
-    allLabels.forEach(label => {
-        let input = label.querySelector('input');
-        if(input.value === q.answer){ label.classList.add('correct-option'); }
-        if(selected && input.value === selected.value && selected.value !== q.answer){ label.classList.add('wrong-option'); }
-    });
-    if(selected && selected.value === q.answer){ score++; }
-    qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
-  });
-  document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
-  document.querySelector('.btn').style.display = 'none';
-  window.scrollTo(0,0);
+  clearInterval(tInt);let cor=0,wro=0;testData.questions.forEach((q,i)=>{if(answers[i]==q.a)cor++;else if(answers[i]!=undefined)wro++;});
+  let tot=testData.questions.length;let acc=Math.round(cor/tot*100);let tUsed=Math.floor((Date.now()-startTS)/1000);
+  let name=localStorage.getItem("mgj_name")||"Student";let city=localStorage.getItem("mgj_city")||"";
+  let atts=JSON.parse(localStorage.getItem("mgj_test6_lb")||"[]");atts.push({name,score:cor,acc,time:tUsed,city,date:Date.now()});
+  atts.sort((a,b)=>b.score-a.score||a.time-b.time);atts=atts.slice(0,50);localStorage.setItem("mgj_test6_lb",JSON.stringify(atts));
+  let myRank=atts.findIndex(a=>a.name==name && a.score==cor)+1;
+  document.getElementById('sCor').innerText=cor;document.getElementById('sWro').innerText=wro;document.getElementById('sAcc').innerText=acc+"%";document.getElementById('sTime').innerText=`${Math.floor(tUsed/60)}m ${tUsed%60}s`;
+  document.getElementById('sBig').innerText=cor;document.getElementById('myRank').innerText="#"+myRank;document.getElementById('totRank').innerText=atts.length;
+  document.getElementById('scoreMsg').innerText=acc>=80?"Excellent Work! Topper Ho 🔥":acc>=50?"Good Job! Improving Ho 🚀":"Good Attempt! Keep Practicing 💪";
+  let lbH="";atts.slice(0,5).forEach((e,i)=>{lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;font-weight:700;color:#0f172a"><span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''}</span><span>${e.score}/${tot}</span></div>`;});
+  document.getElementById('lbBoard').innerHTML=lbH;document.getElementById('scoreOverlay').style.display='flex';
 }
+if(localStorage.getItem("mgj_name")){document.getElementById('stuName').value=localStorage.getItem("mgj_name");document.getElementById('stuCity').value=localStorage.getItem("mgj_city")||"";}
 </script>
 </body>
 </html>
