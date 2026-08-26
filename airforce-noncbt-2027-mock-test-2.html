@@ -2,161 +2,1592 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>AIR FORCE NON-COMBATANT 01/2027 - GK TEST 2 | Mission Gyan Jobs</title>
+
 <style>
-*{margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial;}
-body{background:#1a0000; padding:15px}
-.container{max-width:850px; margin:auto; background:#fff; padding:25px; border-radius:12px; box-shadow:0 0 20px rgba(255,0,0,0.5); border:2px solid #ff0000}
-.header{text-align:center; border-bottom:3px solid #ff0000; padding:15px; margin-bottom:20px; background:linear-gradient(90deg, #8B0000, #ff0000); color:white; border-radius:8px}
-.header h1{font-size:22px; text-shadow:0 0 5px #fff}
-.timer{font-size:18px; font-weight:bold; color:#ff0000; text-align:right; margin-bottom:15px; animation: blink 1s infinite}
-@keyframes blink{0%,50%{opacity:1} 51%,100%{opacity:0.3}}
-.question-box{margin-bottom:25px; padding:18px; border:2px solid #ffcccc; border-radius:10px; background:linear-gradient(135deg, #fff5f5, #ffffff)}
-.q-no{background:#8B0000; color:white; padding:6px 14px; border-radius:5px; display:inline-block; margin-bottom:10px; font-weight:bold; font-size:16px}
-.q-text{font-size:16px; margin-bottom:12px; font-weight:600}
-.options label{display:block; padding:12px; margin:8px 0; background:white; border:2px solid #ddd; border-radius:8px; cursor:pointer; transition:0.3s; font-weight:500}
-.options label:hover{border-color:#ff0000; background:#fff0f0; transform:translateX(8px)}
-.btn{background:linear-gradient(90deg, #ff0000, #8B0000); color:white; padding:14px 30px; border:none; border-radius:8px; font-size:17px; cursor:pointer; display:block; margin:20px auto; font-weight:bold; box-shadow:0 0 15px rgba(255,0,0,0.7)}
-.btn:hover{transform:scale(1.05)}
-#result{font-size:24px; font-weight:bold; text-align:center; margin:20px 0; color:#008000; background:#e6ffe6; padding:15px; border-radius:8px}
-.correct-option{background:#d4ffd4 !important; border:2px solid #00aa00 !important; color:#006600; font-weight:bold}
-.wrong-option{background:#ffd4d4 !important; border:2px solid #ff0000 !important; color:#aa0000; font-weight:bold}
-.answer{color:#008000; font-weight:bold; margin-top:10px; padding:8px; background:#e6ffe6; border-left:4px solid #008000}
-#password-screen{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0.95); display:flex; justify-content:center; align-items:center; z-index:999}
-.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000); padding:30px; border-radius:15px; text-align:center; width:90%; max-width:400px; border:3px solid yellow; box-shadow:0 0 25px red}
-.pass-box h2{color:yellow; margin-bottom:15px; font-size:24px; text-shadow:0 0 10px #fff}
-.pass-box p{color:white; margin-bottom:15px}
-.pass-box input{width:100%; padding:12px; font-size:16px; border:3px solid yellow; border-radius:6px; margin-bottom:15px; text-align:center; font-weight:bold}
-.pass-box button{width:100%; padding:12px; background:yellow; color:#8B0000; border:none; border-radius:6px; font-size:17px; cursor:pointer; font-weight:bold}
-.pass-box button:hover{background:#fff}
-.error{color:yellow; margin-top:10px; display:none; font-weight:bold}
+:root{
+  --bg:#f1f5f9;
+  --card:#fff;
+  --text:#0f172a;
+  --border:#e2e8f0
+}
+
+body.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#e2e8f0;
+  --border:#334155
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',Arial
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s
+}
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:#0f172a;
+  color:#fff;
+  padding:10px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:3px solid #fbbf24
+}
+
+.timer{
+  border:2px solid #fecaca;
+  background:#fef2f2;
+  color:#dc2626;
+  padding:6px 14px;
+  border-radius:20px;
+  font-weight:900;
+  white-space:nowrap
+}
+
+.container{
+  max-width:850px;
+  margin:10px auto;
+  padding:0 10px
+}
+
+.q-card,
+.info-card,
+.p-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  margin-bottom:10px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06)
+}
+
+.lang span{
+  padding:5px 12px;
+  border-radius:20px;
+  border:1.5px solid #2563eb;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  color:var(--text);
+  display:inline-block
+}
+
+.lang span.active{
+  background:#2563eb;
+  color:#fff!important
+}
+
+.options{
+  margin-top:12px
+}
+
+.options label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 14px;
+  margin:9px 0;
+  border:2px solid var(--border);
+  border-radius:12px;
+  cursor:pointer;
+  background:var(--card);
+  color:var(--text);
+  transition:.2s;
+  font-weight:500
+}
+
+.options label:hover{
+  border-color:#2563eb;
+  transform:translateX(2px)
+}
+
+.options label.sel{
+  border-color:#16a34a!important;
+  background:#dcfce7!important;
+  color:#065f46!important;
+  font-weight:700;
+  box-shadow:0 0 0 3px rgba(22,163,74,.15)
+}
+
+.circle{
+  width:32px;
+  height:32px;
+  min-width:32px;
+  border-radius:50%;
+  border:2px solid #94a3b8;
+  background:var(--bg);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:14px;
+  flex-shrink:0
+}
+
+.options label.sel .circle{
+  background:#16a34a;
+  border-color:#16a34a;
+  color:white
+}
+
+/* DARK MODE */
+body.dark .q-card,
+body.dark .info-card,
+body.dark .p-card{
+  background:#1e293b;
+  border-color:#334155
+}
+
+body.dark #qHi{
+  color:#f8fafc!important
+}
+
+body.dark #qEn{
+  color:#94a3b8!important
+}
+
+body.dark .options label{
+  background:#1e293b!important;
+  border-color:#475569!important;
+  color:#f1f5f9!important
+}
+
+body.dark .options label:hover{
+  background:#0f172a!important;
+  border-color:#60a5fa!important
+}
+
+body.dark .options label .circle{
+  background:#0f172a;
+  border-color:#64748b;
+  color:#e2e8f0
+}
+
+body.dark .options label.sel{
+  background:#14532d!important;
+  border-color:#22c55e!important;
+  color:#dcfce7!important
+}
+
+body.dark .btn-g{
+  background:#334155;
+  color:#e2e8f0
+}
+
+/* BUTTONS */
+.btn{
+  padding:11px;
+  border:none;
+  border-radius:10px;
+  font-weight:800;
+  cursor:pointer
+}
+
+.btn-g{
+  background:#e2e8f0;
+  color:#0f172a
+}
+
+.btn-y{
+  background:#fef3c7;
+  color:#92400e
+}
+
+.btn-b{
+  background:#1d4ed8;
+  color:#fff
+}
+
+.btn-gr{
+  background:#16a34a;
+  color:#fff
+}
+
+/* QUESTION PALETTE */
+.p-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:7px;
+  margin-top:10px
+}
+
+.p{
+  height:38px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  cursor:pointer;
+  color:var(--text)
+}
+
+.p.cur{
+  background:#ef4444!important;
+  color:#fff!important
+}
+
+.p.ans{
+  background:#10b981!important;
+  color:#fff!important
+}
+
+.p.rev{
+  background:#fbbf24!important;
+  color:#000!important
+}
+
+/* LOGIN */
+.overlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  padding:15px
+}
+
+#loginScreen{
+  background:rgba(2,6,23,.92)
+}
+
+.login-box{
+  width:100%;
+  max-width:380px;
+  background:linear-gradient(180deg,#0f172a,#1e293b);
+  padding:22px;
+  border-radius:20px;
+  border:2px solid #fbbf24;
+  text-align:center;
+  box-shadow:0 0 30px rgba(0,0,0,.5)
+}
+
+.login-box h2{
+  color:#fbbf24;
+  margin-bottom:8px
+}
+
+.login-box p{
+  color:#cbd5e1;
+  font-size:13px;
+  margin-bottom:12px
+}
+
+.login-box input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:2px solid #fbbf24;
+  margin:7px 0;
+  text-align:center;
+  font-weight:700;
+  font-size:15px
+}
+
+.login-box button{
+  width:100%;
+  padding:12px;
+  background:#fbbf24;
+  color:#0f172a;
+  border:none;
+  border-radius:10px;
+  font-weight:900;
+  margin-top:10px;
+  cursor:pointer
+}
+
+/* PASSWORD */
+#passScreen{
+  background:rgba(0,0,0,.95)
+}
+
+.pass-box{
+  background:linear-gradient(180deg,#8B0000,#ff0000);
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  width:90%;
+  max-width:400px;
+  border:3px solid yellow;
+  box-shadow:0 0 25px red
+}
+
+.pass-box h2{
+  color:yellow;
+  margin-bottom:10px;
+  font-size:22px;
+  text-shadow:0 0 10px #fff
+}
+
+.pass-box p{
+  color:white;
+  margin-bottom:15px;
+  font-size:13px
+}
+
+.pass-box input{
+  width:100%;
+  padding:12px;
+  font-size:16px;
+  border:3px solid yellow;
+  border-radius:6px;
+  margin-bottom:15px;
+  text-align:center;
+  font-weight:bold
+}
+
+.pass-box button{
+  width:100%;
+  padding:12px;
+  background:yellow;
+  color:#8B0000;
+  border:none;
+  border-radius:6px;
+  font-size:17px;
+  cursor:pointer;
+  font-weight:bold
+}
+
+/* SCORE */
+.score-card{
+  width:100%;
+  max-width:400px;
+  background:#fff;
+  border-radius:24px;
+  padding:20px;
+  color:#0f172a;
+  max-height:95vh;
+  overflow-y:auto
+}
+
+.badge-top{
+  display:inline-block;
+  background:#dbeafe;
+  color:#1d4ed8;
+  font-weight:900;
+  font-size:11px;
+  padding:5px 12px;
+  border-radius:20px
+}
+
+.score-big{
+  font-size:40px;
+  font-weight:900;
+  color:#1d4ed8;
+  text-align:center
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:12px 0
+}
+
+.stat{
+  border-radius:14px;
+  padding:12px;
+  text-align:center
+}
+
+.stat b{
+  font-size:20px;
+  display:block
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+  .header{
+    padding:8px 10px
+  }
+
+  .header b{
+    font-size:13px
+  }
+
+  .timer{
+    font-size:12px;
+    padding:5px 8px
+  }
+
+  .container{
+    padding:0 6px
+  }
+
+  .q-card,
+  .info-card,
+  .p-card{
+    padding:11px
+  }
+
+  .lang span{
+    padding:4px 8px;
+    font-size:10px
+  }
+
+  .p-grid{
+    grid-template-columns:repeat(5,1fr)
+  }
+
+  .options label{
+    padding:11px 10px;
+    gap:9px;
+    font-size:14px
+  }
+}
 </style>
 </head>
+
 <body>
 
-<div id="password-screen">
-  <div class="pass-box">
-    <h2>🔥 TEST LOCKED 🔥</h2>
-    <p>Test start karne ke liye password dalo</p>
-    <input type="password" id="passInput" placeholder="Password">
-    <button onclick="checkPassword()">START TEST NOW</button>
-    <p class="error" id="errorMsg">❌ Galat Password! try again</p>
+<div class="header">
+  <b style="color:#fbbf24">MISSION GYAN JOBS</b>
+
+  <div style="display:flex;gap:8px;align-items:center">
+
+    <div class="timer">
+      ⏱️ <span id="timer">20:00</span>
+    </div>
+
+    <button
+      onclick="document.body.classList.toggle('dark')"
+      style="width:36px;height:36px;border-radius:50%;border:none;cursor:pointer">
+      🌙
+    </button>
+
   </div>
 </div>
 
-<div class="container" id="main-test" style="display:none;">
-<div class="header">
-<h1 id="test-title"></h1>
-<p id="test-subject"></p>
+
+<!-- LOGIN -->
+<div class="overlay" id="loginScreen">
+
+  <div class="login-box">
+
+    <h2>👋 Welcome Student</h2>
+
+    <input
+      type="text"
+      id="stuName"
+      placeholder="अपना पूरा नाम / Name">
+
+    <input
+      type="text"
+      id="stuCity"
+      placeholder="जिला / City">
+
+    <button onclick="doLogin()">
+      Continue →
+    </button>
+
+    <p style="margin-top:10px;font-size:11px;color:#94a3b8">
+      This name will appear on the leaderboard
+    </p>
+
+  </div>
+
 </div>
-<div class="timer" id="timer">⏰ Time Left: 20:00</div>
-<form id="quiz-form"></form>
-<button class="btn" onclick="submitTest()">🔥 SUBMIT TEST 🔥</button>
-<div id="result"></div>
+
+
+<!-- PASSWORD -->
+<div class="overlay" id="passScreen" style="display:none">
+
+  <div class="pass-box">
+
+    <h2>🔥 TEST LOCKED 🔥</h2>
+
+    <p>Enter the password to start the test</p>
+
+    <input
+      type="password"
+      id="passInput"
+      placeholder="Password">
+
+    <button onclick="checkPass()">
+      START TEST NOW
+    </button>
+
+    <p
+      id="passErr"
+      style="color:yellow;display:none;margin-top:10px;font-weight:bold">
+      ❌ Galat Password!
+    </p>
+
+  </div>
+
 </div>
+
+
+<!-- MAIN TEST -->
+<div
+  class="container"
+  id="mainTest"
+  style="display:none">
+
+  <div class="info-card">
+
+    <b id="tTitle"></b>
+    <br>
+
+    <small id="tSub"></small>
+    <br>
+
+    <span
+      id="testInfo"
+      style="color:#16a34a;font-weight:800;font-size:12px">
+      30 Questions | 20 Mins | Bilingual
+    </span>
+
+  </div>
+
+
+  <div class="q-card">
+
+    <div
+      style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+
+      <b style="color:#2563eb">
+        Q <span id="qNo">1</span>/<span id="totalQ">30</span>
+      </b>
+
+      <div class="lang">
+
+        <span
+          class="active"
+          id="lb"
+          onclick="setLang('both')">
+          Bilingual
+        </span>
+
+        <span
+          id="lh"
+          onclick="setLang('hi')">
+          हिंदी
+        </span>
+
+        <span
+          id="le"
+          onclick="setLang('en')">
+          EN
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="qHi"
+      style="font-weight:700;margin:12px 0 4px;font-size:16px">
+    </div>
+
+    <div
+      id="qEn"
+      style="color:#64748b;font-size:13px;margin-bottom:6px">
+    </div>
+
+
+    <div
+      id="optBox"
+      class="options">
+    </div>
+
+
+    <div
+      style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px;margin-top:14px">
+
+      <button
+        class="btn btn-g"
+        onclick="prevQ()">
+        ← Prev
+      </button>
+
+      <button
+        class="btn btn-g"
+        onclick="clearAns()">
+        Clear
+      </button>
+
+      <button
+        class="btn btn-y"
+        onclick="markRev()">
+        ☆ Review
+      </button>
+
+    </div>
+
+
+    <div
+      style="display:grid;grid-template-columns:1.6fr 1fr;gap:6px;margin-top:6px">
+
+      <button
+        class="btn btn-b"
+        onclick="saveNext()">
+        Save & Next →
+      </button>
+
+      <button
+        class="btn btn-gr"
+        onclick="submitTest()">
+        Submit
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- QUESTION PALETTE -->
+  <div class="p-card">
+
+    <b>Question Palette</b>
+
+    <div
+      class="p-grid"
+      id="pGrid">
+    </div>
+
+    <div
+      style="font-size:11px;margin-top:10px;color:#64748b;display:flex;gap:12px;flex-wrap:wrap">
+
+      <span>🔴 Current</span>
+      <span>🟢 Answered</span>
+      <span>🟡 Review</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- SCORE -->
+<div
+  class="overlay"
+  id="scoreOverlay"
+  style="display:none;background:rgba(15,23,42,.88)">
+
+  <div class="score-card">
+
+    <div style="text-align:center">
+
+      <div class="badge-top">
+        TEST SCORECARD
+      </div>
+
+      <div
+        id="scoreMsg"
+        style="font-size:20px;font-weight:900;color:#0f172a;margin:6px 0">
+        Good Attempt! Keep Practicing 💪
+      </div>
+
+      <div class="score-big">
+
+        <span id="sBig">0.00</span>
+
+        <span style="font-size:16px;color:#64748b">
+          /30
+        </span>
+
+      </div>
+
+      <div
+        style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">
+
+        🏅 Rank:
+        <span id="myRank">#1</span>
+        /
+        <span id="totRank">1</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div
+        class="stat"
+        style="background:#dcfce7;color:#166534">
+
+        <b id="sCor">0</b>
+
+        <span style="font-size:11px">
+          Correct
+        </span>
+
+      </div>
+
+
+      <div
+        class="stat"
+        style="background:#fee2e2;color:#991b1b">
+
+        <b id="sWro">0</b>
+
+        <span style="font-size:11px">
+          Incorrect
+        </span>
+
+      </div>
+
+
+      <div
+        class="stat"
+        style="background:#dbeafe;color:#1e40af">
+
+        <b id="sAcc">0%</b>
+
+        <span style="font-size:11px">
+          Accuracy
+        </span>
+
+      </div>
+
+
+      <div
+        class="stat"
+        style="background:#fef9c3;color:#854d0e">
+
+        <b id="sTime">0m 0s</b>
+
+        <span style="font-size:11px">
+          Time Taken
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div style="margin-top:10px">
+
+      <b style="font-size:13px;color:#0f172a">
+        🔥 Top 5 Leaderboard
+      </b>
+
+      <div
+        id="lbBoard"
+        style="margin-top:6px">
+      </div>
+
+    </div>
+
+
+    <button
+      onclick="location.reload()"
+      style="width:100%;background:#1d4ed8;color:white;padding:12px;border:none;border-radius:12px;font-weight:900;margin-top:12px">
+
+      🔄 Retake Test
+
+    </button>
+
+  </div>
+
+</div>
+
 
 <script>
-const correctPass = "MGE@77";
-function checkPassword(){
-  let pass = document.getElementById('passInput').value;
-  if(pass === correctPass){
-    document.getElementById('password-screen').style.display = 'none';
-    document.getElementById('main-test').style.display = 'block';
-    startTimer();
-  }else{
-    document.getElementById('errorMsg').style.display = 'block';
-  }
+
+const testData={
+
+title:"AIR FORCE NON-COMBATANT 01/2027 - GK TEST (2)",
+
+subject:"complete gk class test",
+
+questions:[
+
+{
+id:1,
+qh:"ऑस्ट्रेलिया की संसद किस शहर में स्थित है?",
+qe:"Where is the Parliament of Australia located?",
+o:{
+A:"सिडनी (Sydney)",
+B:"मेलबर्न (Melbourne)",
+C:"कैनबरा (Canberra)",
+D:"पर्थ (Perth)"
+},
+a:"C"
+},
+
+{
+id:2,
+qh:"यदि किसी देश की मुद्रा 'रूबल' है, तो वह देश कौन-सा है?",
+qe:"Which country uses the currency 'Ruble'?",
+o:{
+A:"जापान (Japan)",
+B:"रूस (Russia)",
+C:"फ्रांस (France)",
+D:"चीन (China)"
+},
+a:"B"
+},
+
+{
+id:3,
+qh:"भारत के पहले प्रधानमंत्री के रूप में किसने कार्यभार संभाला?",
+qe:"Who assumed office as the first Prime Minister of India?",
+o:{
+A:"डॉ. राजेंद्र प्रसाद",
+B:"सरदार पटेल",
+C:"जवाहरलाल नेहरू",
+D:"लाल बहादुर शास्त्री"
+},
+a:"C"
+},
+
+{
+id:4,
+qh:"सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",
+qe:"Which planet is the largest in the Solar System?",
+o:{
+A:"शनि",
+B:"पृथ्वी",
+C:"मंगल",
+D:"बृहस्पति"
+},
+a:"D"
+},
+
+{
+id:5,
+qh:"रतौंधी किस विटामिन की कमी से होती है?",
+qe:"Night Blindness occurs due to deficiency of which vitamin?",
+o:{
+A:"Vitamin B",
+B:"Vitamin C",
+C:"Vitamin A",
+D:"Vitamin D"
+},
+a:"C"
+},
+
+{
+id:6,
+qh:"भारतीय संविधान के प्रमुख शिल्पकार किसे कहा जाता है?",
+qe:"Who is regarded as the chief architect of the Indian Constitution?",
+o:{
+A:"बी. एन. राव",
+B:"डॉ. बी. आर. अंबेडकर",
+C:"महात्मा गांधी",
+D:"जवाहरलाल नेहरू"
+},
+a:"B"
+},
+
+{
+id:7,
+qh:"सूर्य के सबसे निकट स्थित ग्रह कौन-सा है?",
+qe:"Which planet lies nearest to the Sun?",
+o:{
+A:"शुक्र",
+B:"बुध",
+C:"पृथ्वी",
+D:"मंगल"
+},
+a:"B"
+},
+
+{
+id:8,
+qh:"भारत का सबसे ऊँचा बाँध कौन-सा है?",
+qe:"Which is the highest dam in India?",
+o:{
+A:"हीराकुंड",
+B:"सरदार सरोवर",
+C:"टिहरी",
+D:"भाखड़ा नांगल"
+},
+a:"C"
+},
+
+{
+id:9,
+qh:"मानव शरीर की सबसे लंबी हड्डी कौन-सी है?",
+qe:"Name the longest bone in the human body.",
+o:{
+A:"टिबिया",
+B:"फीमर",
+C:"रेडियस",
+D:"स्टेपीज़"
+},
+a:"B"
+},
+
+{
+id:10,
+qh:"विद्युत धारा की SI इकाई क्या है?",
+qe:"What is the SI unit of electric current?",
+o:{
+A:"वोल्ट",
+B:"वॉट",
+C:"ओम",
+D:"एम्पीयर"
+},
+a:"D"
+},
+
+{
+id:11,
+qh:"काजीरंगा राष्ट्रीय उद्यान किस जीव के लिए प्रसिद्ध है?",
+qe:"Kaziranga National Park is mainly famous for conserving which animal?",
+o:{
+A:"बाघ",
+B:"हाथी",
+C:"एक सींग वाला गैंडा",
+D:"एशियाई शेर"
+},
+a:"C"
+},
+
+{
+id:12,
+qh:"'वंदे मातरम्' की रचना किसने की?",
+qe:"Who composed 'Vande Mataram'?",
+o:{
+A:"रवींद्रनाथ टैगोर",
+B:"बंकिम चंद्र चटर्जी",
+C:"सरोजिनी नायडू",
+D:"महात्मा गांधी"
+},
+a:"B"
+},
+
+{
+id:13,
+qh:"क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?",
+qe:"Which is India's smallest state by area?",
+o:{
+A:"त्रिपुरा",
+B:"सिक्किम",
+C:"गोवा",
+D:"मिजोरम"
+},
+a:"C"
+},
+
+{
+id:14,
+qh:"'लाल ग्रह' किसे कहा जाता है?",
+qe:"Which planet is popularly known as the Red Planet?",
+o:{
+A:"मंगल",
+B:"शुक्र",
+C:"शनि",
+D:"बृहस्पति"
+},
+a:"A"
+},
+
+{
+id:15,
+qh:"अंतरिक्ष की यात्रा करने वाले प्रथम भारतीय कौन थे?",
+qe:"Who became the first Indian to travel into space?",
+o:{
+A:"कल्पना चावला",
+B:"राकेश शर्मा",
+C:"विक्रम साराभाई",
+D:"सतीश धवन"
+},
+a:"B"
+},
+
+{
+id:16,
+qh:"भारत के पहले नोबेल पुरस्कार विजेता कौन थे?",
+qe:"Who was the first Nobel Prize winner from India?",
+o:{
+A:"सी. वी. रमन",
+B:"मदर टेरेसा",
+C:"रवींद्रनाथ टैगोर",
+D:"हरगोविंद खुराना"
+},
+a:"C"
+},
+
+{
+id:17,
+qh:"जल का रासायनिक सूत्र क्या है?",
+qe:"Which is the chemical formula of water?",
+o:{
+A:"CO₂",
+B:"H₂O",
+C:"NaCl",
+D:"O₂"
+},
+a:"B"
+},
+
+{
+id:18,
+qh:"विश्व का सबसे बड़ा महासागर कौन-सा है?",
+qe:"Which is the largest ocean on Earth?",
+o:{
+A:"हिंद महासागर",
+B:"अटलांटिक महासागर",
+C:"प्रशांत महासागर",
+D:"आर्कटिक महासागर"
+},
+a:"C"
+},
+
+{
+id:19,
+qh:"हम्पी के प्रसिद्ध खंडहर किस राज्य में स्थित हैं?",
+qe:"The famous ruins of Hampi are situated in which state?",
+o:{
+A:"महाराष्ट्र",
+B:"तमिलनाडु",
+C:"कर्नाटक",
+D:"आंध्र प्रदेश"
+},
+a:"C"
+},
+
+{
+id:20,
+qh:"फ्रांस की राजधानी क्या है?",
+qe:"What is the capital city of France?",
+o:{
+A:"रोम",
+B:"पेरिस",
+C:"बर्लिन",
+D:"मैड्रिड"
+},
+a:"B"
+},
+
+{
+id:21,
+qh:"भारत के वर्तमान रक्षा मंत्री कौन हैं?",
+qe:"Who is the current Defence Minister of India?",
+o:{
+A:"अमित शाह",
+B:"एस. जयशंकर",
+C:"राजनाथ सिंह",
+D:"निर्मला सीतारमण"
+},
+a:"C"
+},
+
+{
+id:22,
+qh:"'गरबा' किस राज्य का प्रसिद्ध लोकनृत्य है?",
+qe:"Garba is a famous folk dance of which state?",
+o:{
+A:"पंजाब",
+B:"राजस्थान",
+C:"गुजरात",
+D:"हरियाणा"
+},
+a:"C"
+},
+
+{
+id:23,
+qh:"भारत में हरित क्रांति के जनक किसे कहा जाता है?",
+qe:"Who is known as the Father of Green Revolution in India?",
+o:{
+A:"वर्गीज कुरियन",
+B:"एम. एस. स्वामीनाथन",
+C:"नॉर्मन बोरलॉग",
+D:"सी. सुब्रमण्यम"
+},
+a:"B"
+},
+
+{
+id:24,
+qh:"'नीली क्रांति' किससे संबंधित है?",
+qe:"Blue Revolution is related to which sector?",
+o:{
+A:"कृषि उत्पादन",
+B:"दुग्ध उत्पादन",
+C:"मत्स्य उत्पादन",
+D:"अंडा उत्पादन"
+},
+a:"C"
+},
+
+{
+id:25,
+qh:"भारत की सबसे लंबी अंतरराष्ट्रीय सीमा किस देश के साथ है?",
+qe:"India shares its longest international border with which country?",
+o:{
+A:"चीन",
+B:"नेपाल",
+C:"पाकिस्तान",
+D:"बांग्लादेश"
+},
+a:"D"
+},
+
+{
+id:26,
+qh:"'मालाबार' नौसैनिक अभ्यास में भारत, अमेरिका और जापान के साथ कौन-सा देश भाग लेता है?",
+qe:"Which country joins India, USA and Japan in the Malabar Naval Exercise?",
+o:{
+A:"फ्रांस",
+B:"ऑस्ट्रेलिया",
+C:"ब्रिटेन",
+D:"रूस"
+},
+a:"B"
+},
+
+{
+id:27,
+qh:"ISRO का मुख्यालय कहाँ स्थित है?",
+qe:"ISRO Headquarters is located in which city?",
+o:{
+A:"नई दिल्ली",
+B:"हैदराबाद",
+C:"बेंगलुरु",
+D:"मुंबई"
+},
+a:"C"
+},
+
+{
+id:28,
+qh:"विश्व स्वास्थ्य दिवस कब मनाया जाता है?",
+qe:"World Health Day is celebrated every year on?",
+o:{
+A:"1 मई",
+B:"7 अप्रैल",
+C:"11 जुलाई",
+D:"1 दिसंबर"
+},
+a:"B"
+},
+
+{
+id:29,
+qh:"'दक्षिण गंगा' किस नदी को कहा जाता है?",
+qe:"Which river is known as the 'Dakshin Ganga'?",
+o:{
+A:"नर्मदा",
+B:"कृष्णा",
+C:"गोदावरी",
+D:"कावेरी"
+},
+a:"C"
+},
+
+{
+id:30,
+qh:"भारतीय सेना में सबसे प्रारंभिक कमीशंड अधिकारी रैंक कौन-सी है?",
+qe:"Which is the entry-level commissioned rank in the Indian Army?",
+o:{
+A:"कैप्टन",
+B:"मेजर",
+C:"लेफ्टिनेंट",
+D:"सूबेदार"
+},
+a:"C"
 }
 
-const testData = {
-  "title": "AIR FORCE NON-COMBATANT 01/2027 - GK TEST (2)",
-  "subject": "complete gk class test",
-  "questions": [ 
-  {"id": 1, "question_hi": "ऑस्ट्रेलिया की संसद किस शहर में स्थित है?", "question_en": "Where is the Parliament of Australia located?", "options": {"A": "सिडनी (Sydney)", "B": "मेलबर्न (Melbourne)", "C": "कैनबरा (Canberra)", "D": "पर्थ (Perth)"}, "answer": "C", "correct_answer": "कैनबरा (Canberra)"},
-  {"id": 2, "question_hi": "यदि किसी देश की मुद्रा 'रूबल' है, तो वह देश कौन-सा है?", "question_en": "Which country uses the currency 'Ruble'?", "options": {"A": "जापान (Japan)", "B": "रूस (Russia)", "C": "फ्रांस (France)", "D": "चीन (China)"}, "answer": "B", "correct_answer": "रूस (Russia)"},
-  {"id": 3, "question_hi": "भारत के पहले प्रधानमंत्री के रूप में किसने कार्यभार संभाला?", "question_en": "Who assumed office as the first Prime Minister of India?", "options": {"A": "डॉ. राजेंद्र प्रसाद", "B": "सरदार पटेल", "C": "जवाहरलाल नेहरू", "D": "लाल बहादुर शास्त्री"}, "answer": "C", "correct_answer": "जवाहरलाल नेहरू"},
-  {"id": 4, "question_hi": "सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?", "question_en": "Which planet is the largest in the Solar System?", "options": {"A": "शनि", "B": "पृथ्वी", "C": "मंगल", "D": "बृहस्पति"}, "answer": "D", "correct_answer": "बृहस्पति (Jupiter)"},
-  {"id": 5, "question_hi": "रतौंधी किस विटामिन की कमी से होती है?", "question_en": "Night Blindness occurs due to deficiency of which vitamin?", "options": {"A": "Vitamin B", "B": "Vitamin C", "C": "Vitamin A", "D": "Vitamin D"}, "answer": "C", "correct_answer": "Vitamin A"},
-  {"id": 6, "question_hi": "भारतीय संविधान के प्रमुख शिल्पकार किसे कहा जाता है?", "question_en": "Who is regarded as the chief architect of the Indian Constitution?", "options": {"A": "बी. एन. राव", "B": "डॉ. बी. आर. अंबेडकर", "C": "महात्मा गांधी", "D": "जवाहरलाल नेहरू"}, "answer": "B", "correct_answer": "डॉ. बी. आर. अंबेडकर"},
-  {"id": 7, "question_hi": "सूर्य के सबसे निकट स्थित ग्रह कौन-सा है?", "question_en": "Which planet lies nearest to the Sun?", "options": {"A": "शुक्र", "B": "बुध", "C": "पृथ्वी", "D": "मंगल"}, "answer": "B", "correct_answer": "बुध (Mercury)"},
-  {"id": 8, "question_hi": "भारत का सबसे ऊँचा बाँध कौन-सा है?", "question_en": "Which is the highest dam in India?", "options": {"A": "हीराकुंड", "B": "सरदार सरोवर", "C": "टिहरी", "D": "भाखड़ा नांगल"}, "answer": "C", "correct_answer": "टिहरी बाँध (Tehri Dam)"},
-  {"id": 9, "question_hi": "मानव शरीर की सबसे लंबी हड्डी कौन-सी है?", "question_en": "Name the longest bone in the human body.", "options": {"A": "टिबिया", "B": "फीमर", "C": "रेडियस", "D": "स्टेपीज़"}, "answer": "B", "correct_answer": "फीमर (Femur)"},
-  {"id": 10, "question_hi": "विद्युत धारा की SI इकाई क्या है?", "question_en": "What is the SI unit of electric current?", "options": {"A": "वोल्ट", "B": "वॉट", "C": "ओम", "D": "एम्पीयर"}, "answer": "D", "correct_answer": "एम्पीयर (Ampere)"},
-  {"id": 11, "question_hi": "काजीरंगा राष्ट्रीय उद्यान किस जीव के लिए प्रसिद्ध है?", "question_en": "Kaziranga National Park is mainly famous for conserving which animal?", "options": {"A": "बाघ", "B": "हाथी", "C": "एक सींग वाला गैंडा", "D": "एशियाई शेर"}, "answer": "C", "correct_answer": "एक सींग वाला गैंडा"},
-  {"id": 12, "question_hi": "'वंदे मातरम्' की रचना किसने की?", "question_en": "Who composed 'Vande Mataram'?", "options": {"A": "रवींद्रनाथ टैगोर", "B": "बंकिम चंद्र चटर्जी", "C": "सरोजिनी नायडू", "D": "महात्मा गांधी"}, "answer": "B", "correct_answer": "बंकिम चंद्र चटर्जी"},
-  {"id": 13, "question_hi": "क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?", "question_en": "Which is India's smallest state by area?", "options": {"A": "त्रिपुरा", "B": "सिक्किम", "C": "गोवा", "D": "मिजोरम"}, "answer": "C", "correct_answer": "गोवा (Goa)"},
-  {"id": 14, "question_hi": "'लाल ग्रह' किसे कहा जाता है?", "question_en": "Which planet is popularly known as the Red Planet?", "options": {"A": "मंगल", "B": "शुक्र", "C": "शनि", "D": "बृहस्पति"}, "answer": "A", "correct_answer": "मंगल (Mars)"},
-  {"id": 15, "question_hi": "अंतरिक्ष की यात्रा करने वाले प्रथम भारतीय कौन थे?", "question_en": "Who became the first Indian to travel into space?", "options": {"A": "कल्पना चावला", "B": "राकेश शर्मा", "C": "विक्रम साराभाई", "D": "सतीश धवन"}, "answer": "B", "correct_answer": "राकेश शर्मा"},
-  {"id": 16, "question_hi": "भारत के पहले नोबेल पुरस्कार विजेता कौन थे?", "question_en": "Who was the first Nobel Prize winner from India?", "options": {"A": "सी. वी. रमन", "B": "मदर टेरेसा", "C": "रवींद्रनाथ टैगोर", "D": "हरगोविंद खुराना"}, "answer": "C", "correct_answer": "रवींद्रनाथ टैगोर"},
-  {"id": 17, "question_hi": "जल का रासायनिक सूत्र क्या है?", "question_en": "Which is the chemical formula of water?", "options": {"A": "CO₂", "B": "H₂O", "C": "NaCl", "D": "O₂"}, "answer": "B", "correct_answer": "H₂O"},
-  {"id": 18, "question_hi": "विश्व का सबसे बड़ा महासागर कौन-सा है?", "question_en": "Which is the largest ocean on Earth?", "options": {"A": "हिंद महासागर", "B": "अटलांटिक महासागर", "C": "प्रशांत महासागर", "D": "आर्कटिक महासागर"}, "answer": "C", "correct_answer": "प्रशांत महासागर (Pacific Ocean)"},
-  {"id": 19, "question_hi": "हम्पी के प्रसिद्ध खंडहर किस राज्य में स्थित हैं?", "question_en": "The famous ruins of Hampi are situated in which state?", "options": {"A": "महाराष्ट्र", "B": "तमिलनाडु", "C": "कर्नाटक", "D": "आंध्र प्रदेश"}, "answer": "C", "correct_answer": "कर्नाटक (Karnataka)"},
-  {"id": 20, "question_hi": "फ्रांस की राजधानी क्या है?", "question_en": "What is the capital city of France?", "options": {"A": "रोम", "B": "पेरिस", "C": "बर्लिन", "D": "मैड्रिड"}, "answer": "B", "correct_answer": "पेरिस (Paris)"},
-  {"id": 21, "question_hi": "भारत के वर्तमान रक्षा मंत्री कौन हैं?", "question_en": "Who is the current Defence Minister of India?", "options": {"A": "अमित शाह", "B": "एस. जयशंकर", "C": "राजनाथ सिंह", "D": "निर्मला सीतारमण"}, "answer": "C", "correct_answer": "राजनाथ सिंह"},
-  {"id": 22, "question_hi": "'गरबा' किस राज्य का प्रसिद्ध लोकनृत्य है?", "question_en": "Garba is a famous folk dance of which state?", "options": {"A": "पंजाब", "B": "राजस्थान", "C": "गुजरात", "D": "हरियाणा"}, "answer": "C", "correct_answer": "गुजरात (Gujarat)"},
-  {"id": 23, "question_hi": "भारत में हरित क्रांति के जनक किसे कहा जाता है?", "question_en": "Who is known as the Father of Green Revolution in India?", "options": {"A": "वर्गीज कुरियन", "B": "एम. एस. स्वामीनाथन", "C": "नॉर्मन बोरलॉग", "D": "सी. सुब्रमण्यम"}, "answer": "B", "correct_answer": "डॉ. एम. एस. स्वामीनाथन"},
-  {"id": 24, "question_hi": "'नीली क्रांति' किससे संबंधित है?", "question_en": "Blue Revolution is related to which sector?", "options": {"A": "कृषि उत्पादन", "B": "दुग्ध उत्पादन", "C": "मत्स्य उत्पादन", "D": "अंडा उत्पादन"}, "answer": "C", "correct_answer": "मत्स्य उत्पादन (Fish Production)"},
-  {"id": 25, "question_hi": "भारत की सबसे लंबी अंतरराष्ट्रीय सीमा किस देश के साथ है?", "question_en": "India shares its longest international border with which country?", "options": {"A": "चीन", "B": "नेपाल", "C": "पाकिस्तान", "D": "बांग्लादेश"}, "answer": "D", "correct_answer": "बांग्लादेश (Bangladesh)"},
-  {"id": 26, "question_hi": "'मालाबार' नौसैनिक अभ्यास में भारत, अमेरिका और जापान के साथ कौन-सा देश भाग लेता है?", "question_en": "Which country joins India, USA and Japan in the Malabar Naval Exercise?", "options": {"A": "फ्रांस", "B": "ऑस्ट्रेलिया", "C": "ब्रिटेन", "D": "रूस"}, "answer": "B", "correct_answer": "ऑस्ट्रेलिया (Australia)"},
-  {"id": 27, "question_hi": "ISRO का मुख्यालय कहाँ स्थित है?", "question_en": "ISRO Headquarters is located in which city?", "options": {"A": "नई दिल्ली", "B": "हैदराबाद", "C": "बेंगलुरु", "D": "मुंबई"}, "answer": "C", "correct_answer": "बेंगलुरु (Bengaluru)"},
-  {"id": 28, "question_hi": "विश्व स्वास्थ्य दिवस कब मनाया जाता है?", "question_en": "World Health Day is celebrated every year on?", "options": {"A": "1 मई", "B": "7 अप्रैल", "C": "11 जुलाई", "D": "1 दिसंबर"}, "answer": "B", "correct_answer": "7 अप्रैल"},
-  {"id": 29, "question_hi": "'दक्षिण गंगा' किस नदी को कहा जाता है?", "question_en": "Which river is known as the 'Dakshin Ganga'?", "options": {"A": "नर्मदा", "B": "कृष्णा", "C": "गोदावरी", "D": "कावेरी"}, "answer": "C", "correct_answer": "गोदावरी (Godavari)"},
-  {"id": 30, "question_hi": "भारतीय सेना में सबसे प्रारंभिक कमीशंड अधिकारी रैंक कौन-सी है?", "question_en": "Which is the entry-level commissioned rank in the Indian Army?", "options": {"A": "कैप्टन", "B": "मेजर", "C": "लेफ्टिनेंट", "D": "सूबेदार"}, "answer": "C", "correct_answer": "लेफ्टिनेंट (Lieutenant)"}
- ]
+]
 };
+<script>
+const testData={
+title:"AIR FORCE NON-COMBATANT 01/2027 - GK TEST (2)",
+subject:"Complete GK Class Test",
+questions:[
 
-document.getElementById('test-title').innerText = testData.title;
-document.getElementById('test-subject').innerText = "Subject: " + testData.subject;
+{qh:"ऑस्ट्रेलिया की संसद किस शहर में स्थित है?",qe:"Where is the Parliament of Australia located?",o:{
+A:"सिडनी (Sydney)",B:"मेलबर्न (Melbourne)",C:"कैनबरा (Canberra)",D:"पर्थ (Perth)"},a:"C"},
 
-let quizHTML = '';
-testData.questions.forEach((q) => {
-  quizHTML += `<div class="question-box" id="qbox${q.id}">`;
-  quizHTML += `<div class="q-no">Question ${q.id}</div>`;
-  quizHTML += `<div class="q-text">${q.question_hi}<br><span style="color:#666; font-size:14px; font-weight:400">${q.question_en}</span></div>`; // ✅ YE SAHI KIYA
-  quizHTML += `<div class="options">`;
-  for(let key in q.options){
-    quizHTML += `<label><input type="radio" name="q${q.id}" value="${key}" style="margin-right:8px"> <b>${key}.</b> ${q.options[key]}</label>`;
-  }
-  quizHTML += `</div></div>`;
-});
-document.getElementById('quiz-form').innerHTML = quizHTML;
+{qh:"यदि किसी देश की मुद्रा 'रूबल' है, तो वह देश कौन-सा है?",qe:"Which country uses the currency 'Ruble'?",o:{
+A:"जापान (Japan)",B:"रूस (Russia)",C:"फ्रांस (France)",D:"चीन (China)"},a:"B"},
 
-let time = 20 * 60; let timerInterval;
+{qh:"भारत के पहले प्रधानमंत्री के रूप में किसने कार्यभार संभाला?",qe:"Who assumed office as the first Prime Minister of India?",o:{
+A:"डॉ. राजेंद्र प्रसाद",B:"सरदार पटेल",C:"जवाहरलाल नेहरू",D:"लाल बहादुर शास्त्री"},a:"C"},
+
+{qh:"सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",qe:"Which planet is the largest in the Solar System?",o:{
+A:"शनि",B:"पृथ्वी",C:"मंगल",D:"बृहस्पति"},a:"D"},
+
+{qh:"रतौंधी किस विटामिन की कमी से होती है?",qe:"Night Blindness occurs due to deficiency of which vitamin?",o:{
+A:"Vitamin B",B:"Vitamin C",C:"Vitamin A",D:"Vitamin D"},a:"C"},
+
+{qh:"भारतीय संविधान के प्रमुख शिल्पकार किसे कहा जाता है?",qe:"Who is regarded as the chief architect of the Indian Constitution?",o:{
+A:"बी. एन. राव",B:"डॉ. बी. आर. अंबेडकर",C:"महात्मा गांधी",D:"जवाहरलाल नेहरू"},a:"B"},
+
+{qh:"सूर्य के सबसे निकट स्थित ग्रह कौन-सा है?",qe:"Which planet lies nearest to the Sun?",o:{
+A:"शुक्र",B:"बुध",C:"पृथ्वी",D:"मंगल"},a:"B"},
+
+{qh:"भारत का सबसे ऊँचा बाँध कौन-सा है?",qe:"Which is the highest dam in India?",o:{
+A:"हीराकुंड",B:"सरदार सरोवर",C:"टिहरी",D:"भाखड़ा नांगल"},a:"C"},
+
+{qh:"मानव शरीर की सबसे लंबी हड्डी कौन-सी है?",qe:"Name the longest bone in the human body.",o:{
+A:"टिबिया",B:"फीमर",C:"रेडियस",D:"स्टेपीज़"},a:"B"},
+
+{qh:"विद्युत धारा की SI इकाई क्या है?",qe:"What is the SI unit of electric current?",o:{
+A:"वोल्ट",B:"वॉट",C:"ओम",D:"एम्पीयर"},a:"D"},
+
+{qh:"काजीरंगा राष्ट्रीय उद्यान किस जीव के लिए प्रसिद्ध है?",qe:"Kaziranga National Park is mainly famous for conserving which animal?",o:{
+A:"बाघ",B:"हाथी",C:"एक सींग वाला गैंडा",D:"एशियाई शेर"},a:"C"},
+
+{qh:"'वंदे मातरम्' की रचना किसने की?",qe:"Who composed 'Vande Mataram'?",o:{
+A:"रवींद्रनाथ टैगोर",B:"बंकिम चंद्र चटर्जी",C:"सरोजिनी नायडू",D:"महात्मा गांधी"},a:"B"},
+
+{qh:"क्षेत्रफल की दृष्टि से भारत का सबसे छोटा राज्य कौन-सा है?",qe:"Which is India's smallest state by area?",o:{
+A:"त्रिपुरा",B:"सिक्किम",C:"गोवा",D:"मिजोरम"},a:"C"},
+
+{qh:"'लाल ग्रह' किसे कहा जाता है?",qe:"Which planet is popularly known as the Red Planet?",o:{
+A:"मंगल",B:"शुक्र",C:"शनि",D:"बृहस्पति"},a:"A"},
+
+{qh:"अंतरिक्ष की यात्रा करने वाले प्रथम भारतीय कौन थे?",qe:"Who became the first Indian to travel into space?",o:{
+A:"कल्पना चावला",B:"राकेश शर्मा",C:"विक्रम साराभाई",D:"सतीश धवन"},a:"B"},
+
+{qh:"भारत के पहले नोबेल पुरस्कार विजेता कौन थे?",qe:"Who was the first Nobel Prize winner from India?",o:{
+A:"सी. वी. रमन",B:"मदर टेरेसा",C:"रवींद्रनाथ टैगोर",D:"हरगोविंद खुराना"},a:"C"},
+
+{qh:"जल का रासायनिक सूत्र क्या है?",qe:"Which is the chemical formula of water?",o:{
+A:"CO₂",B:"H₂O",C:"NaCl",D:"O₂"},a:"B"},
+
+{qh:"विश्व का सबसे बड़ा महासागर कौन-सा है?",qe:"Which is the largest ocean on Earth?",o:{
+A:"हिंद महासागर",B:"अटलांटिक महासागर",C:"प्रशांत महासागर",D:"आर्कटिक महासागर"},a:"C"},
+
+{qh:"हम्पी के प्रसिद्ध खंडहर किस राज्य में स्थित हैं?",qe:"The famous ruins of Hampi are situated in which state?",o:{
+A:"महाराष्ट्र",B:"तमिलनाडु",C:"कर्नाटक",D:"आंध्र प्रदेश"},a:"C"},
+
+{qh:"फ्रांस की राजधानी क्या है?",qe:"What is the capital city of France?",o:{
+A:"रोम",B:"पेरिस",C:"बर्लिन",D:"मैड्रिड"},a:"B"},
+
+{qh:"भारत के वर्तमान रक्षा मंत्री कौन हैं?",qe:"Who is the current Defence Minister of India?",o:{
+A:"अमित शाह",B:"एस. जयशंकर",C:"राजनाथ सिंह",D:"निर्मला सीतारमण"},a:"C"},
+
+{qh:"'गरबा' किस राज्य का प्रसिद्ध लोकनृत्य है?",qe:"Garba is a famous folk dance of which state?",o:{
+A:"पंजाब",B:"राजस्थान",C:"गुजरात",D:"हरियाणा"},a:"C"},
+
+{qh:"भारत में हरित क्रांति के जनक किसे कहा जाता है?",qe:"Who is known as the Father of Green Revolution in India?",o:{
+A:"वर्गीज कुरियन",B:"एम. एस. स्वामीनाथन",C:"नॉर्मन बोरलॉग",D:"सी. सुब्रमण्यम"},a:"B"},
+
+{qh:"'नीली क्रांति' किससे संबंधित है?",qe:"Blue Revolution is related to which sector?",o:{
+A:"कृषि उत्पादन",B:"दुग्ध उत्पादन",C:"मत्स्य उत्पादन",D:"अंडा उत्पादन"},a:"C"},
+
+{qh:"भारत की सबसे लंबी अंतरराष्ट्रीय सीमा किस देश के साथ है?",qe:"India shares its longest international border with which country?",o:{
+A:"चीन",B:"नेपाल",C:"पाकिस्तान",D:"बांग्लादेश"},a:"D"},
+
+{qh:"'मालाबार' नौसैनिक अभ्यास में भारत, अमेरिका और जापान के साथ कौन-सा देश भाग लेता है?",qe:"Which country joins India, USA and Japan in the Malabar Naval Exercise?",o:{
+A:"फ्रांस",B:"ऑस्ट्रेलिया",C:"ब्रिटेन",D:"रूस"},a:"B"},
+
+{qh:"ISRO का मुख्यालय कहाँ स्थित है?",qe:"ISRO Headquarters is located in which city?",o:{
+A:"नई दिल्ली",B:"हैदराबाद",C:"बेंगलुरु",D:"मुंबई"},a:"C"},
+
+{qh:"विश्व स्वास्थ्य दिवस कब मनाया जाता है?",qe:"World Health Day is celebrated every year on?",o:{
+A:"1 मई",B:"7 अप्रैल",C:"11 जुलाई",D:"1 दिसंबर"},a:"B"},
+
+{qh:"'दक्षिण गंगा' किस नदी को कहा जाता है?",qe:"Which river is known as the 'Dakshin Ganga'?",o:{
+A:"नर्मदा",B:"कृष्णा",C:"गोदावरी",D:"कावेरी"},a:"C"},
+
+{qh:"भारतीय सेना में सबसे प्रारंभिक कमीशंड अधिकारी रैंक कौन-सी है?",qe:"Which is the entry-level commissioned rank in the Indian Army?",o:{
+A:"कैप्टन",B:"मेजर",C:"लेफ्टिनेंट",D:"सूबेदार"},a:"C"}
+
+]};
+
+let cur=0,answers={},visited=new Set([0]),reviews=new Set();
+let lang='both',time=20*60,tInt,startTS;
+
+document.getElementById('tTitle').innerText=testData.title;
+document.getElementById('tSub').innerText=testData.subject;
+
+function doLogin(){
+ let n=document.getElementById('stuName').value.trim();
+ let c=document.getElementById('stuCity').value.trim();
+
+ if(n.length<3){
+   alert("Naam daalo bhai");
+   return;
+ }
+
+ localStorage.setItem("mgj_name",n);
+ localStorage.setItem("mgj_city",c);
+
+ document.getElementById('loginScreen').style.display='none';
+ document.getElementById('passScreen').style.display='flex';
+}
+
+function checkPass(){
+ if(document.getElementById('passInput').value==="MGE@77"){
+   document.getElementById('passScreen').style.display='none';
+   document.getElementById('mainTest').style.display='block';
+
+   startTS=Date.now();
+   startTimer();
+   render();
+ }else{
+   document.getElementById('passErr').style.display='block';
+ }
+}
+
 function startTimer(){
-  timerInterval = setInterval(()=>{
-    let m = Math.floor(time/60), s = time%60;
-    document.getElementById('timer').innerText = `⏰ Time Left: ${m}:${s<10?'0':''}${s}`;
-    if(time <= 0){ clearInterval(timerInterval); submitTest(); }
-    time--;
-  },1000);
+ tInt=setInterval(()=>{
+   time--;
+
+   let m=Math.floor(time/60);
+   let s=time%60;
+
+   document.getElementById('timer').innerText=
+   `${m}:${s<10?'0'+s:s}`;
+
+   if(time<=0){
+     clearInterval(tInt);
+     submitTest();
+   }
+ },1000);
+}
+
+function render(){
+
+ visited.add(cur);
+
+ let q=testData.questions[cur];
+
+ document.getElementById('qNo').innerText=cur+1;
+ document.getElementById('qHi').innerText=q.qh;
+ document.getElementById('qEn').innerText=q.qe;
+
+ setLang(lang);
+
+ let h="";
+
+ for(let k in q.o){
+
+   let isSel=answers[cur]==k;
+
+   h+=`
+   <label class="${isSel?'sel':''}" onclick="sel('${k}')">
+     <div class="circle">${k}</div>
+     <div class="opt-text">${q.o[k]}</div>
+   </label>`;
+ }
+
+ document.getElementById('optBox').innerHTML=h;
+
+ renderP();
+}
+
+function sel(k){
+ answers[cur]=k;
+ render();
+}
+
+function clearAns(){
+ delete answers[cur];
+ render();
+}
+
+function markRev(){
+ if(reviews.has(cur)){
+   reviews.delete(cur);
+ }else{
+   reviews.add(cur);
+ }
+ render();
+}
+
+function saveNext(){
+
+ if(cur<testData.questions.length-1){
+   cur++;
+   render();
+ }else{
+   submitTest();
+ }
+}
+
+function prevQ(){
+ if(cur>0){
+   cur--;
+   render();
+ }
+}
+
+function setLang(l){
+
+ lang=l;
+
+ document.querySelectorAll('.lang span')
+ .forEach(s=>s.classList.remove('active'));
+
+ if(l=='both'){
+   lb.classList.add('active');
+   qHi.style.display='';
+   qEn.style.display='';
+ }
+
+ if(l=='hi'){
+   lh.classList.add('active');
+   qHi.style.display='';
+   qEn.style.display='none';
+ }
+
+ if(l=='en'){
+   le.classList.add('active');
+   qHi.style.display='none';
+   qEn.style.display='';
+ }
+}
+
+function renderP(){
+
+ let h="";
+
+ testData.questions.forEach((_,i)=>{
+
+   let cl="p";
+
+   if(i==cur)cl+=" cur";
+   else if(reviews.has(i))cl+=" rev";
+   else if(answers[i]!=undefined)cl+=" ans";
+
+   h+=`
+   <div class="${cl}" onclick="cur=${i};render()">
+   ${i+1}
+   </div>`;
+ });
+
+ document.getElementById('pGrid').innerHTML=h;
 }
 
 function submitTest(){
-  clearInterval(timerInterval);
-  let score = 0;
-  testData.questions.forEach((q) => {
-    let selected = document.querySelector(`input[name="q${q.id}"]:checked`);
-    let qbox = document.getElementById(`qbox${q.id}`);
-    let allLabels = qbox.querySelectorAll('label');
 
-    allLabels.forEach(label => {
-        let input = label.querySelector('input');
-        if(input.value === q.answer){
-            label.classList.add('correct-option');
-        }
-        if(selected && input.value === selected.value && selected.value !== q.answer){
-            label.classList.add('wrong-option');
-        }
-    });
+ if(document.getElementById('scoreOverlay').style.display==='flex'){
+   return;
+ }
 
-    if(selected && selected.value === q.answer){ score++; }
-    qbox.innerHTML += `<div class="answer">✅ Correct Answer: ${q.answer}. ${q.options[q.answer]}</div>`;
-  });
-  document.getElementById('result').innerText = `🏆 Final Score: ${score} / ${testData.questions.length}`;
-  document.querySelector('.btn').style.display = 'none';
-  window.scrollTo(0,0);
+ clearInterval(tInt);
+
+ let cor=0,wro=0;
+
+ testData.questions.forEach((q,i)=>{
+
+   if(answers[i]==q.a){
+     cor++;
+   }else if(answers[i]!=undefined){
+     wro++;
+   }
+
+ });
+
+ let tot=testData.questions.length;
+ let acc=tot?Math.round(cor/tot*100):0;
+
+ let tUsed=startTS?
+ Math.floor((Date.now()-startTS)/1000):0;
+
+ let name=localStorage.getItem("mgj_name")||"Student";
+ let city=localStorage.getItem("mgj_city")||"";
+
+ let atts=JSON.parse(
+   localStorage.getItem("mgj_test2_lb")||"[]"
+ );
+
+ atts.push({
+   name,
+   score:cor,
+   acc,
+   time:tUsed,
+   city,
+   date:Date.now()
+ });
+
+ atts.sort((a,b)=>
+   b.score-a.score||a.time-b.time
+ );
+
+ atts=atts.slice(0,50);
+
+ localStorage.setItem(
+   "mgj_test2_lb",
+   JSON.stringify(atts)
+ );
+
+ let myRank=atts.findIndex(a=>
+   a.name==name &&
+   a.score==cor &&
+   a.date===Math.max(...atts
+     .filter(x=>x.name==name && x.score==cor)
+     .map(x=>x.date))
+ )+1;
+
+ if(myRank<=0)myRank=1;
+
+ document.getElementById('sCor').innerText=cor;
+ document.getElementById('sWro').innerText=wro;
+ document.getElementById('sAcc').innerText=acc+"%";
+
+ document.getElementById('sTime').innerText=
+ `${Math.floor(tUsed/60)}m ${tUsed%60}s`;
+
+ document.getElementById('sBig').innerText=
+ cor.toFixed(2);
+
+ document.getElementById('myRank').innerText="#"+myRank;
+ document.getElementById('totRank').innerText=atts.length;
+
+ document.getElementById('scoreMsg').innerText=
+ acc>=80
+ ?"Excellent Work! Topper Ho 🔥":
+ acc>=50
+ ?"Good Job! Improving Ho 🚀":
+ "Good Attempt! Keep Practicing 💪";
+
+ let lbH="";
+
+ atts.slice(0,5).forEach((e,i)=>{
+
+   lbH+=`
+   <div style="
+   display:flex;
+   justify-content:space-between;
+   padding:8px 10px;
+   border-radius:10px;
+   margin:4px 0;
+   background:#f8fafc;
+   border:1px solid #e2e8f0;
+   font-size:13px;
+   font-weight:700;
+   color:#0f172a">
+
+   <span>
+   ${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)}
+   ${e.name}
+   ${e.city?'('+e.city+')':''}
+   </span>
+
+   <span>${e.score}/${tot}</span>
+
+   </div>`;
+ });
+
+ document.getElementById('lbBoard').innerHTML=lbH;
+
+ document.getElementById('scoreOverlay').style.display='flex';
+}
+
+if(localStorage.getItem("mgj_name")){
+
+ document.getElementById('stuName').value=
+ localStorage.getItem("mgj_name");
+
+ document.getElementById('stuCity').value=
+ localStorage.getItem("mgj_city")||"";
 }
 </script>
-</body>
-</html>
