@@ -1,126 +1,57 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>AIR FORCE TEST 1 - Premium with Ranking | Mission Gyan Jobs</title>
 <style>
-:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0}
-body.dark{--bg:#0f172a;--card:#1e293b;--text:#e2e8f0;--border:#334155}
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
-body{background:var(--bg);color:var(--text);transition:0.3s}
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height:1.5}
 .header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
-.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900}
-.container{max-width:850px;margin:10px auto;padding:0 10px}
-.q-card,.info-card,.p-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;box-shadow:0 4px 12px rgba(0,0,0,0.06)}
-.lang span{padding:5px 12px;border-radius:20px;border:1.5px solid #2563eb;font-size:12px;font-weight:700;cursor:pointer;color:var(--text)}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.lang span{padding:5px 12px;border-radius:20px;border:1.5px solid #2563eb;font-size:12px;font-weight:700;cursor:pointer;color:var(--text);margin-left:4px}
 .lang span.active{background:#2563eb;color:#fff!important}
-
-/* === PROFESSIONAL OPTION BOX - FINAL FIXED === */
-.options{margin-top:12px}
-.options label{
-  display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;
-  border:2px solid var(--border);border-radius:12px;cursor:pointer;
-  background:var(--card);color:var(--text);transition:0.2s;font-weight:500
-}
-.options label:hover{border-color:#2563eb;transform:translateX(2px)}
-.options label.sel{
-  border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;
-  font-weight:700;box-shadow:0 0 0 3px rgba(22,163,74,0.15)
-}
-.circle{
-  width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;
-  background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px;flex-shrink:0
-}
-.options label.sel.circle{background:#16a34a;border-color:#16a34a;color:white}
-
-/* DARK MODE - 100% FIXED - AB SAHI DIKHEGA */
-body.dark.q-card{background:#1e293b;border-color:#334155}
-body.dark.info-card{background:#1e293b;border-color:#334155}
-body.dark.p-card{background:#1e293b;border-color:#334155}
-body.dark #qHi{color:#f8fafc!important}
-body.dark #qEn{color:#94a3b8!important}
-body.dark.options label{
-  background:#1e293b!important;border-color:#475569!important;color:#f1f5f9!important
-}
-body.dark.options label:hover{background:#0f172a!important;border-color:#60a5fa!important}
-body.dark.options label.circle{background:#0f172a;border-color:#64748b;color:#e2e8f0}
-body.dark.options label.sel{
-  background:#14532d!important;border-color:#22c55e!important;color:#dcfce7!important
-}
-body.dark.btn-g{background:#334155;color:#e2e8f0}
-
-.btn{padding:11px;border:none;border-radius:10px;font-weight:800;cursor:pointer}.btn-g{background:#e2e8f0;color:#0f172a}.btn-y{background:#fef3c7;color:#92400e}.btn-b{background:#1d4ed8;color:#fff}.btn-gr{background:#16a34a;color:#fff}
-.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:10px}.p{height:38px;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;font-weight:800;cursor:pointer;color:var(--text)}.p.cur{background:#ef4444!important;color:#fff!important}.p.ans{background:#10b981!important;color:#fff!important}.p.rev{background:#fbbf24!important;color:#000!important}
-.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:15px}
-#loginScreen{background:rgba(2,6,23,0.92)}
-.login-box{width:100%;max-width:380px;background:linear-gradient(180deg,#0f172a,#1e293b);padding:22px;border-radius:20px;border:2px solid #fbbf24;text-align:center;box-shadow:0 0 30px rgba(0,0,0,0.5)}
-.login-box h2{color:#fbbf24;margin-bottom:8px}.login-box p{color:#cbd5e1;font-size:13px;margin-bottom:12px}
-.login-box input{width:100%;padding:12px;border-radius:10px;border:2px solid #fbbf24;margin:7px 0;text-align:center;font-weight:700;font-size:15px}
-.login-box button{width:100%;padding:12px;background:#fbbf24;color:#0f172a;border:none;border-radius:10px;font-weight:900;margin-top:10px;cursor:pointer}
-#passScreen{background:rgba(0,0,0,0.95)}
-.pass-box{background:linear-gradient(180deg, #8B0000, #ff0000);padding:30px;border-radius:15px;text-align:center;width:90%;max-width:400px;border:3px solid yellow;box-shadow:0 0 25px red}
-.pass-box h2{color:yellow;margin-bottom:10px;font-size:22px;text-shadow:0 0 10px #fff}
-.pass-box p{color:white;margin-bottom:15px;font-size:13px}
-.pass-box input{width:100%;padding:12px;font-size:16px;border:3px solid yellow;border-radius:6px;margin-bottom:15px;text-align:center;font-weight:bold}
-.pass-box button{width:100%;padding:12px;background:yellow;color:#8B0000;border:none;border-radius:6px;font-size:17px;cursor:pointer;font-weight:bold}
-.score-card{width:100%;max-width:400px;background:#fff;border-radius:24px;padding:20px;color:#0f172a}
-.badge-top{display:inline-block;background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:5px 12px;border-radius:20px}
-.score-big{font-size:40px;font-weight:900;color:#1d4ed8;text-align:center}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.stat{border-radius:14px;padding:12px;text-align:center}.stat b{font-size:20px;display:block}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;background:var(--card);color:var(--text);transition:0.2s;font-weight:500}
+.options label:hover{border-color:#2563eb}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+body.dark.options label.sel{background:#14532d!important;color:#86efac!important;border-color:#22c55e!important}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}.btn:active{transform:scale(0.97)}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}.btn-b{background:#1d4ed8;color:#fff;flex:1.6}.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;color:var(--text)}.p.cur{background:#ef4444!important;color:#fff!important}.p.ans{background:#10b981!important;color:#fff!important}.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;display:none;text-align:left;margin-top:2px}
+#passScreen{background:rgba(0,0,0,0.96)}.pass-box{background:linear-gradient(180deg,#7f1d1d,#dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+body.dark.opt-item.correct-opt{background:#14532d!important;color:#bbf7d0!important;border-color:#22c55e!important}
+body.dark.opt-item.wrong-opt{background:#450a0a!important;color:#fecaca!important;border-color:#ef4444!important}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900}.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+body.dark.badge-correct{background:#14532d;color:#86efac}body.dark.badge-wrong{background:#7f1d1d;color:#fecaca}body.dark.badge-skip{background:#78350f;color:#fde68a}
+#qHi{font-size:17px;font-weight:700;margin:10px 0 4px} #qEn{font-size:13px;color:var(--muted);margin-bottom:6px}
 </style>
 </head>
 <body>
-<div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:36px;height:36px;border-radius:50%;border:none;cursor:pointer">🌙</button></div></div>
-
-<div class="overlay" id="loginScreen">
-  <div class="login-box">
-    <h2>👋 Welcome Student</h2>
-    <input type="text" id="stuName" placeholder="अपना पूरा नाम / name ">
-    <input type="text" id="stuCity" placeholder="जिला / City">
-    <button onclick="doLogin()">Continue →</button>
-    <p style="margin-top:10px;font-size:11px;color:#94a3b8">This name will appear on the leaderboard</p>
-  </div>
-</div>
-
-<div class="overlay" id="passScreen" style="display:none">
-  <div class="pass-box">
-    <h2>🔥 TEST LOCKED 🔥</h2>
-    <p> Enter the password to start the test </p>
-    <input type="password" id="passInput" placeholder="Password">
-    <button onclick="checkPass()">START TEST NOW</button>
-    <p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:bold">❌ Galat Password!</p>
-  </div>
-</div>
-
+<div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#fbbf24">👋 Welcome Student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Name + District bharo tabhi test start hoga</p><input id="stuName" placeholder="अपना पूरा नाम *"><div id="nameErr" class="err-msg">❌ नाम भरना जरूरी है</div><input id="stuCity" placeholder="जिला / City *"><div id="cityErr" class="err-msg">❌ जिला भरना जरूरी है</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:12px;color:#000;cursor:pointer">Continue →</button></div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:yellow">🔥 TEST 1 LOCKED 🔥</h2><p style="color:white;font-size:13px;margin-bottom:12px">Password dalo - MGE@77</p><input type="password" id="passInput" placeholder="Password"><button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900">START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ Galat Password!</p></div></div>
 <div class="container" id="mainTest" style="display:none">
-  <div class="info-card"><b id="tTitle"></b><br><small id="tSub"></small><br><span style="color:#16a34a;font-weight:800;font-size:12px">25 Questions | 20 Mins | Bilingual</span></div>
-  <div class="q-card">
-    <div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb">Q <span id="qNo">1</span>/25</b><div class="lang"><span class="active" id="lb" onclick="setLang('both')">Bilingual</span><span id="lh" onclick="setLang('hi')">हिंदी</span><span id="le" onclick="setLang('en')">EN</span></div></div>
-    <div id="qHi" style="font-weight:700;margin:12px 0 4px;font-size:16px"></div><div id="qEn" style="color:#64748b;font-size:13px;margin-bottom:6px"></div>
-    <div id="optBox" class="options"></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:6px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
-    <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:6px;margin-top:6px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div>
-  </div>
-  <div class="p-card"><b>Question Palette</b><div class="p-grid" id="pGrid"></div></div>
+<div class="info-card" style="border-left:5px solid #fbbf24"><b id="tTitle"></b><br><small id="tSub"></small><br><span style="color:#16a34a;font-weight:800;font-size:12px">25 Questions | 20 Mins | <span id="attemptInfo">0/25 Attempted</span></span></div>
+<div class="q-card"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb">Q <span id="qNo">1</span>/25</b><div class="lang"><span class="active" id="lb" onclick="setLang('both')">Bilingual</span><span id="lh" onclick="setLang('hi')">हिंदी</span><span id="le" onclick="setLang('en')">EN</span></div></div><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
 </div>
 
-<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(15,23,42,0.88)">
-  <div class="score-card">
-    <div style="text-align:center"><div class="badge-top">TEST SCORECARD</div>
-      <div id="scoreMsg" style="font-size:20px;font-weight:900;color:#0f172a;margin:6px 0">Good Attempt! Keep Practicing 💪</div>
-      <div class="score-big"><span id="sBig">0.00</span><span style="font-size:16px;color:#64748b"> /25</span></div>
-      <div style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">🏅 Rank: <span id="myRank">#1</span> / <span id="totRank">1</span></div>
-    </div>
-    <div class="stats">
-      <div class="stat" style="background:#dcfce7;color:#166534"><b id="sCor">0</b><span style="font-size:11px">Correct</span></div>
-      <div class="stat" style="background:#fee2e2;color:#991b1b"><b id="sWro">0</b><span style="font-size:11px">Incorrect</span></div>
-      <div class="stat" style="background:#dbeafe;color:#1e40af"><b id="sAcc">0%</b><span style="font-size:11px">Accuracy</span></div>
-      <div class="stat" style="background:#fef9c3;color:#854d0e"><b id="sTime">0m 0s</b><span style="font-size:11px">Time Taken</span></div>
-    </div>
-    <div style="margin-top:10px"><b style="font-size:13px;color:#0f172a">🔥 Top 5 Leaderboard</b><div id="lbBoard" style="margin-top:6px"></div></div>
-    <button onclick="location.reload()" style="width:100%;background:#1d4ed8;color:white;padding:12px;border:none;border-radius:12px;font-weight:900;margin-top:12px">🔄 Retake Test</button>
-  </div>
-</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.92)"><div class="score-card"><div style="text-align:center"><div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">TEST 1 SCORECARD</div><div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div><div style="font-size:48px;font-weight:900;color:#1d4ed8"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /25</span></div><div style="background:#0f172a;color:#fbbf24;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:900;font-size:12px;margin-top:6px">🏅 Rank: <span id="myRank">#1</span> / <span id="totRank">1</span></div><div id="stuInfoShow" style="color:var(--muted);font-size:11px;margin-top:6px"></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin:16px 0"><div style="background:#dcfce7;padding:10px;border-radius:12px;text-align:center"><b id="sCor" style="color:#065f46">0</b><br><small style="color:#065f46">Correct</small></div><div style="background:#fee2e2;padding:10px;border-radius:12px;text-align:center"><b id="sWro" style="color:#991b1b">0</b><br><small style="color:#991b1b">Wrong</small></div><div style="background:#fef3c7;padding:10px;border-radius:12px;text-align:center"><b id="sSkip" style="color:#92400e">0</b><br><small style="color:#92400e">Skip</small></div><div style="background:#dbeafe;padding:10px;border-radius:12px;text-align:center"><b id="sAcc" style="color:#1e40af">0%</b><br><small style="color:#1e40af">Acc</small></div></div><button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:14px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;cursor:pointer">📝 View All Questions - Sahi/Galat Dekho</button><div style="margin-top:12px"><b style="font-size:13px">🔥 Top 5 Leaderboard</b><div id="lbBoard" style="margin-top:6px"></div></div><button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:12px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake Test</button></div></div>
+
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto"><div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px;z-index:10"><b>📝 Detailed Analysis - Test 1</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div><div id="reviewList"></div></div></div>
 
 <script>
 const testData={title:"AIR FORCE NON-COMBATANT 01/2027 - GK TEST (1)",subject:"भारत में प्रथम महिला, प्रथम पुरुष एवं भारत में सबसे बड़ा",questions:[
@@ -150,29 +81,17 @@ const testData={title:"AIR FORCE NON-COMBATANT 01/2027 - GK TEST (1)",subject:"�
 {qh:"प्रथम फील्ड मार्शल?",qe:"First Field Marshal?",o:{"A":"करियप्पा","B":"सैम मानेकशॉ","C":"बिपिन रावत","D":"सुंदरजी"},a:"B"},
 {qh:"ब्रिटिश संसद के प्रथम भारतीय सदस्य?",qe:"First Indian in British Parliament?",o:{"A":"गोखले","B":"गांधी","C":"दादाभाई नौरोजी","D":"नेहरू"},a:"C"}
 ]};
-let cur=0,answers={},visited=new Set([0]),reviews=new Set(),lang='both',time=20*60,tInt,startTS;
+let cur=0,answers={},reviews=new Set(),lang='both',time=20*60,tInt,startTS;
 document.getElementById('tTitle').innerText=testData.title;document.getElementById('tSub').innerText=testData.subject;
-function doLogin(){let n=document.getElementById('stuName').value.trim();let c=document.getElementById('stuCity').value.trim();if(n.length<3){alert("Naam daalo bhai");return;}localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);document.getElementById('loginScreen').style.display='none';document.getElementById('passScreen').style.display='flex';}
-function checkPass(){if(document.getElementById('passInput').value==="MGE@77"){document.getElementById('passScreen').style.display='none';document.getElementById('mainTest').style.display='block';startTS=Date.now();startTimer();render();}else document.getElementById('passErr').style.display='block';}
-function startTimer(){tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;document.getElementById('timer').innerText=`${m}:${s<10?'0'+s:s}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);}
-function render(){visited.add(cur);let q=testData.questions[cur];document.getElementById('qNo').innerText=cur+1;document.getElementById('qHi').innerText=q.qh;document.getElementById('qEn').innerText=q.qe;setLang(lang);let h="";for(let k in q.o){let isSel=answers[cur]==k;h+=`<label class="${isSel?'sel':''}" onclick="sel('${k}')"><div class="circle">${k}</div><div class="opt-text">${q.o[k]}</div></label>`}document.getElementById('optBox').innerHTML=h;renderP();}
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim(),ok=true;if(n.length<3){nameErr.style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{nameErr.style.display='none';stuName.style.borderColor='#22c55e';}if(c.length<2){cityErr.style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{cityErr.style.display='none';stuCity.style.borderColor='#22c55e';}if(!ok)return;localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';startTS=Date.now();tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);render();}else passErr.style.display='block';}
+function render(){let q=testData.questions[cur];qNo.innerText=cur+1;qHi.innerText=q.qh;qEn.innerText=q.qe;setLang(lang);let h="";for(let k in q.o){let sel=answers[cur]==k;h+=`<label class="${sel?'sel':''}" onclick="sel('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}optBox.innerHTML=h;attemptInfo.innerText=`${Object.keys(answers).length}/${testData.questions.length} Attempted`;let ph="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";ph+=`<div class="${cl}" onclick="cur=${i};render()">${i+1}</div>`});pGrid.innerHTML=ph;}
 function sel(k){answers[cur]=k;render();}function clearAns(){delete answers[cur];render();}function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
-function saveNext(){if(cur<testData.questions.length-1){cur++;render();}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function setLang(l){lang=l;document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));if(l=='both'){lb.classList.add('active');qHi.style.display='';qEn.style.display='';}if(l=='hi'){lh.classList.add('active');qHi.style.display='';qEn.style.display='none';}if(l=='en'){le.classList.add('active');qHi.style.display='none';qEn.style.display='';}}
-function renderP(){let h="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";h+=`<div class="${cl}" onclick="cur=${i};render()">${i+1}</div>`});document.getElementById('pGrid').innerHTML=h;}
-function submitTest(){
-  clearInterval(tInt);let cor=0,wro=0;testData.questions.forEach((q,i)=>{if(answers[i]==q.a)cor++;else if(answers[i]!=undefined)wro++;});
-  let tot=testData.questions.length;let acc=Math.round(cor/tot*100);let tUsed=Math.floor((Date.now()-startTS)/1000);
-  let name=localStorage.getItem("mgj_name")||"Student";let city=localStorage.getItem("mgj_city")||"";
-  let atts=JSON.parse(localStorage.getItem("mgj_test1_lb")||"[]");atts.push({name,score:cor,acc,time:tUsed,city,date:Date.now()});
-  atts.sort((a,b)=>b.score-a.score||a.time-b.time);atts=atts.slice(0,50);localStorage.setItem("mgj_test1_lb",JSON.stringify(atts));
-  let myRank=atts.findIndex(a=>a.name==name && a.score==cor)+1;
-  document.getElementById('sCor').innerText=cor;document.getElementById('sWro').innerText=wro;document.getElementById('sAcc').innerText=acc+"%";document.getElementById('sTime').innerText=`${Math.floor(tUsed/60)}m ${tUsed%60}s`;
-  document.getElementById('sBig').innerText=cor.toFixed(2);document.getElementById('myRank').innerText="#"+myRank;document.getElementById('totRank').innerText=atts.length;
-  document.getElementById('scoreMsg').innerText=acc>=80?"Excellent Work! Topper Ho 🔥":acc>=50?"Good Job! Improving Ho 🚀":"Good Attempt! Keep Practicing 💪";
-  let lbH="";atts.slice(0,5).forEach((e,i)=>{lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;font-weight:700;color:#0f172a"><span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''}</span><span>${e.score}/${tot}</span></div>`;});
-  document.getElementById('lbBoard').innerHTML=lbH;document.getElementById('scoreOverlay').style.display='flex';
-}
-if(localStorage.getItem("mgj_name")){document.getElementById('stuName').value=localStorage.getItem("mgj_name");document.getElementById('stuCity').value=localStorage.getItem("mgj_city")||"";}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function setLang(l){lang=l;document.querySelectorAll('.lang span').forEach(s=>s.classList.remove('active'));if(l=='both'){lb.classList.add('active');qHi.style.display='';qEn.style.display='';}if(l=='hi'){lh.classList.add('active');qHi.style.display='';qEn.style.display='none';}if(l=='en'){le.classList.add('active');qHi.style.display='none';qEn.style.display='';}}
+function submitTest(){let att=Object.keys(answers).length;if(att<3 && time>60){if(!confirm(`Sirf ${att} questions kiye hain, submit karna hai?`))return;}clearInterval(tInt);let cor=0,wro=0,skip=0;testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++;else if(answers[i]==q.a)cor++;else wro++;});let tot=testData.questions.length,acc=Math.round(cor/tot*100),tUsed=Math.floor((Date.now()-startTS)/1000);let name=localStorage.getItem("mgj_name")||"Student",city=localStorage.getItem("mgj_city")||"";let lbs=JSON.parse(localStorage.getItem("mgj_test1_lb")||"[]");lbs.push({name,score:cor,acc,time:tUsed,city,date:Date.now()});lbs.sort((a,b)=>b.score-a.score||a.time-b.time);lbs=lbs.slice(0,50);localStorage.setItem("mgj_test1_lb",JSON.stringify(lbs));let myRank=lbs.findIndex(a=>a.name==name && a.score==cor)+1;sCor.innerText=cor;sWro.innerText=wro;sSkip.innerText=skip;sAcc.innerText=acc+"%";sBig.innerText=cor;myRank.innerText="#"+myRank;totRank.innerText=lbs.length;scoreMsg.innerText=acc>=80?"Excellent! Topper Ho 🔥":acc>=50?"Good Job! 🚀":"Practice Karo 💪";stuInfoShow.innerText=`${name} | ${city} | ${new Date().toLocaleDateString()}`;let lbH="";lbs.slice(0,5).forEach((e,i)=>{lbH+=`<div style="display:flex;justify-content:space-between;padding:8px 10px;border-radius:10px;margin:4px 0;background:var(--bg);border:1px solid var(--border);font-size:13px;font-weight:700"><span>${i==0?'🥇':i==1?'🥈':i==2?'🥉':'#'+(i+1)} ${e.name} ${e.city?'('+e.city+')':''}</span><span>${e.score}/${tot}</span></div>`});lbBoard.innerHTML=lbH;scoreOverlay.style.display='flex';buildReview();}
+function buildReview(){let html="";testData.questions.forEach((q,i)=>{let u=answers[i],correct=u==q.a,status=u==undefined?"Not Attempted":correct?"Correct":"Wrong",badge=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong",icon=u==undefined?"⚠️":correct?"✅":"❌";html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#2563eb">Q ${i+1}</b><span class="badge ${badge}">${icon} ${status}</span></div><div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div><div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;for(let k in q.o){let cls="opt-item";if(k==q.a)cls+=" correct-opt";else if(k==u && u!=q.a)cls+=" wrong-opt";html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u && k!=q.a?'❌ Your':''}</div>`;}html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Skip'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;});reviewList.innerHTML=html;}
+function openReview(){reviewPage.style.display='block';reviewPage.scrollTop=0;}function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||"";stuCity.value=localStorage.getItem("mgj_city")||"";
 </script>
 </body>
 </html>
