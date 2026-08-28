@@ -14,11 +14,11 @@ body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height
 .q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
 .lang span{padding:5px 12px;border-radius:20px;border:1.5px solid #2563eb;font-size:12px;font-weight:700;cursor:pointer;color:var(--text);margin-left:4px}
 .lang span.active{background:#2563eb;color:#fff!important}
-.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;background:var(--card);color:var(--text);transition:0.2s;font-weight:500}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;background:var(--card);color:var(--text);font-weight:500;transition:0.2s}
 .options label:hover{border-color:#2563eb}
-.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
-body.dark.options label.sel{background:#14532d!important;color:#86efac!important;border-color:#22c55e!important}
-.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700;box-shadow:0 0 0 3px rgba(22,163,74,0.15)}
+body.dark .options label.sel{background:#14532d!important;color:#86efac!important;border-color:#22c55e!important}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px;flex-shrink:0}
 .btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}.btn:active{transform:scale(0.97)}
 .btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}.btn-b{background:#1d4ed8;color:#fff;flex:1.6}.btn-gr{background:#16a34a;color:#fff;flex:1}
 .p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;color:var(--text)}.p.cur{background:#ef4444!important;color:#fff!important}.p.ans{background:#10b981!important;color:#fff!important}.p.rev{background:#fbbf24!important;color:#000!important}
@@ -26,23 +26,34 @@ body.dark.options label.sel{background:#14532d!important;color:#86efac!important
 #loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff}
 .login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;outline:none}
 .err-msg{color:#f87171;font-size:12px;font-weight:700;display:none;text-align:left;margin-top:2px}
-#passScreen{background:rgba(0,0,0,0.96)}.pass-box{background:linear-gradient(180deg,#7f1d1d,#dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow}
+
+/* RIGHT SIDE WALA PREMIUM POPUP - FINAL */
+#passScreen{background:rgba(0,0,0,0.94);backdrop-filter:blur(12px)}
+.pass-box{background:linear-gradient(180deg,#991b1b,#dc2626 60%,#ef4444);padding:28px 24px;border-radius:20px;text-align:center;width:100%;max-width:360px;border:3px solid #facc15;box-shadow:0 0 0 2px rgba(250,204,21,0.3),0 0 40px rgba(250,204,21,0.4)}
+.pass-box h2{color:#facc15;margin-bottom:6px;font-size:21px;font-weight:900;text-shadow:0 2px 0 rgba(0,0,0,0.3)}
+.pass-box p{color:#fef2f2;font-size:12px;margin-bottom:16px;opacity:0.9}
+.pass-box input{width:100%;padding:14px 16px;border:3px solid #facc15;border-radius:12px;text-align:center;font-weight:800;font-size:14px;outline:none;background:#ffffff;color:#000;box-shadow:0 0 0 4px rgba(250,204,21,0.2)}
+.pass-box button{width:100%;padding:14px;background:#facc15;color:#7f1d1d;border:none;border-radius:12px;font-weight:900;margin-top:14px;font-size:13px;cursor:pointer;letter-spacing:0.5px;box-shadow:0 4px 0 #a16207}
+.pass-box button:active{transform:translateY(2px);box-shadow:0 2px 0 #a16207}
+
 .score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
 .review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
 .opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;background:var(--card);color:var(--text);font-size:14px}
 .opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
 .opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
-body.dark.opt-item.correct-opt{background:#14532d!important;color:#bbf7d0!important;border-color:#22c55e!important}
-body.dark.opt-item.wrong-opt{background:#450a0a!important;color:#fecaca!important;border-color:#ef4444!important}
+body.dark .opt-item.correct-opt{background:#14532d!important;color:#bbf7d0!important;border-color:#22c55e!important}
+body.dark .opt-item.wrong-opt{background:#450a0a!important;color:#fecaca!important;border-color:#ef4444!important}
 .badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900}.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
-body.dark.badge-correct{background:#14532d;color:#86efac}body.dark.badge-wrong{background:#7f1d1d;color:#fecaca}body.dark.badge-skip{background:#78350f;color:#fde68a}
+body.dark .badge-correct{background:#14532d;color:#86efac}body.dark .badge-wrong{background:#7f1d1d;color:#fecaca}body.dark .badge-skip{background:#78350f;color:#fde68a}
 #qHi{font-size:17px;font-weight:700;margin:10px 0 4px} #qEn{font-size:13px;color:var(--muted);margin-bottom:6px}
 </style>
 </head>
 <body>
 <div class="header"><b style="color:#fbbf24">MISSION GYAN JOBS</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24">🌙</button></div></div>
+
 <div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#fbbf24">👋 Welcome Student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:12px">Name + District bharo tabhi test start hoga</p><input id="stuName" placeholder="अपना पूरा नाम *"><div id="nameErr" class="err-msg">❌ नाम भरना जरूरी है</div><input id="stuCity" placeholder="जिला / City *"><div id="cityErr" class="err-msg">❌ जिला भरना जरूरी है</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:12px;color:#000;cursor:pointer">Continue →</button></div></div>
-<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:yellow">🔥 TEST 1 LOCKED 🔥</h2><p style="color:white;font-size:13px;margin-bottom:12px">Password dalo - MGE@77</p><input type="password" id="passInput" placeholder="Password"><button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900">START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ Galat Password!</p></div></div>
+
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2>🔥 TEST 1 LOCKED 🔥</h2><p>Enter the password first.</p><input type="password" id="passInput" placeholder="Password"><button onclick="checkPass()">UNLOCK & START TEST NOW</button><p id="passErr" style="color:#fef08a;display:none;margin-top:12px;font-weight:800;font-size:13px">❌ Galat Password!</p></div></div>
 <div class="container" id="mainTest" style="display:none">
 <div class="info-card" style="border-left:5px solid #fbbf24"><b id="tTitle"></b><br><small id="tSub"></small><br><span style="color:#16a34a;font-weight:800;font-size:12px">25 Questions | 20 Mins | <span id="attemptInfo">0/25 Attempted</span></span></div>
 <div class="q-card"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb">Q <span id="qNo">1</span>/25</b><div class="lang"><span class="active" id="lb" onclick="setLang('both')">Bilingual</span><span id="lh" onclick="setLang('hi')">हिंदी</span><span id="le" onclick="setLang('en')">EN</span></div></div><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
