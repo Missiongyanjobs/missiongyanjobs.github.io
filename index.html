@@ -22,35 +22,20 @@
         .header-text h1 {font-size: 26px; font-weight: 900; color: #fbbf24; letter-spacing: 0.8px;}
         .header-text p {font-size: 13px; color: #e2e8f0; margin: 3px 0 0 0; font-weight: 500;}
         .offline-btn {background: linear-gradient(45deg, #fbbf24, #f59e0b); color: #0f172a; padding: 13px 24px; border-radius: 10px; text-decoration: none; font-weight: 900; font-size: 15px; box-shadow: 0 4px 15px rgba(251, 191, 36, 0.5); white-space: nowrap;}
-        .offline-btn:hover {transform: translateY(-2px);}
         .news-ticker {background: #0f172a; color: #fff; padding: 10px 0; font-weight: 700; overflow: hidden; white-space: nowrap; border-bottom: 3px solid #fbbf24;}
-        .news-ticker marquee {font-size: 14px;}
-        .news-ticker marquee span {margin: 0 15px;}
-        .ticker-raj {color: #f59e0b;} .ticker-uptet {color: #10b981;} .ticker-ahc {color: #8b5cf6;}
+        .box {background: #fff; border: 2px solid #B91C1C; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);}
+        .box-title {background: linear-gradient(90deg, #B91C1C, #dc2626, #B91C1C); color: white; padding: 14px; font-weight: 800; font-size: 19px; text-align: center;}
+        .box-content {padding: 18px 12px;} .box-content ul {list-style: none;} .box-content li {padding: 15px 10px; border-bottom: 1px solid #e5e7eb;}
+        .box-content a {text-decoration: none; color: #1e40af; font-size: 16px; font-weight: 600; display: block;}
+        .new-badge {background: linear-gradient(45deg, #FF0000, #dc2626); color: white; font-size: 11px; padding: 4px 9px; border-radius: 4px; margin-left: 8px; font-weight: 800; display: inline-block; animation: blink 1.5s infinite;}
+        @keyframes blink {0%, 50% {opacity: 1;} 51%, 100% {opacity: 0.4;}}
         .container {max-width: 1200px; margin: 25px auto; padding: 0 15px;}
         .grid {display: grid; grid-template-columns: 1fr; gap: 22px; margin-bottom: 25px;}
         @media (min-width: 768px) {.grid {grid-template-columns: repeat(3, 1fr);}}
-        .box {background: #fff; border: 2px solid #B91C1C; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);}
-        .box-title {background: linear-gradient(90deg, #B91C1C, #dc2626, #B91C1C); color: white; padding: 14px; font-weight: 800; font-size: 19px; text-align: center;}
-        .box-content {padding: 18px 12px;}
-        .box-content ul {list-style: none;}
-        .box-content li {padding: 15px 10px; border-bottom: 1px solid #e5e7eb;}
-        .box-content li:last-child {border-bottom: none;}
-        .box-content a {text-decoration: none; color: #1e40af; font-size: 16px; font-weight: 600; display: block;}
-        .box-content a:hover {color: #B91C1C;}
-        .new-badge {background: linear-gradient(45deg, #FF0000, #dc2626); color: white; font-size: 11px; padding: 4px 9px; border-radius: 4px; margin-left: 8px; font-weight: 800; display: inline-block; animation: blink 1.5s infinite;}
-        @keyframes blink {0%, 50% {opacity: 1;} 51%, 100% {opacity: 0.4;}}
-        .about-box .box-content p {font-size: 16px; color: #1e293b; padding: 6px 4px;}
-        .footer {background: #0f172a; color: #e2e8f0; text-align: center; padding: 30px 20px; border-top: 4px solid #fbbf24; margin-top: 10px;}
-        .footer p {margin: 6px 0; font-size: 15px;}
-        .footer a {color: #fbbf24; text-decoration: none; font-weight: 600; margin: 0 8px;}
-        .footer a:hover {text-decoration: underline;}
-        .footer-telegram {display: inline-block; margin-top: 12px; background: #229ED9; color: #fff !important; padding: 12px 28px; border-radius: 50px; font-weight: 800; font-size: 16px; text-decoration: none !important; box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4); transition: 0.3s;}
-        .footer-telegram:hover {transform: scale(1.04); text-decoration: none !important;}
         .box-full {grid-column: 1 / -1;}
-        @media (max-width: 600px) {.pro-header {flex-direction: column; align-items: stretch; text-align: center;} .header-left {justify-content: center;} .offline-btn {text-align: center;} .header-text h1 {font-size: 20px;} .telegram-float {padding: 10px 16px; font-size: 13px; bottom: 12px; right: 12px;}}
-
-        /* 🔥 PREMIUM ONE LINE SCROLL FIX */
+        .footer {background: #0f172a; color: #e2e8f0; text-align: center; padding: 30px 20px; border-top: 4px solid #fbbf24; margin-top: 10px;}
+        .footer a {color: #fbbf24; text-decoration: none; font-weight: 600; margin: 0 8px;}
+        /* 🔥 PREMIUM ONE LINE SCROLL FIX - 100% ERROR FREE */
         .airforce-wrapper{grid-column: 1 / -1; background:#fff; border:2px solid #B91C1C; border-radius:8px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.08);}
         .airforce-grid{ display:flex; gap:15px; overflow-x:auto; padding:15px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .airforce-grid::-webkit-scrollbar{height:8px} .airforce-grid::-webkit-scrollbar-thumb{background:#dc2626; border-radius:10px}
@@ -58,10 +43,11 @@
             min-width:285px; max-width:285px; flex:0 0 auto; scroll-snap-align:start;
             background:linear-gradient(135deg, #8B0000, #ff0000); color:white; padding:20px; border-radius:12px; 
             text-align:center; border:2px solid #ff0000; box-shadow:0 0 15px rgba(255,0,0,0.7);
-            display:flex; flex-direction:column; justify-content:space-between; min-height:200px;
+            display:flex; flex-direction:column; justify-content:space-between; min-height:210px;
             transition:0.3s;
         }
         .airforce-card:hover{transform:translateY(-5px); box-shadow:0 0 25px rgba(255,0,0,0.9);}
+        @media (max-width: 600px) {.pro-header {flex-direction: column; text-align: center;} .header-left {justify-content: center;} .telegram-float {padding: 10px 16px; font-size: 13px; bottom: 12px; right: 12px;}}
     </style>
 </head>
 <body>
@@ -78,11 +64,7 @@
     </header>
     <div class="news-ticker">
         <marquee behavior="scroll" direction="left" scrollamount="6">
-            <span class="ticker-raj">🔥 Rajasthan CET 12th Level 2026 – 3000+ Posts</span>
-            <span class="ticker-uptet">📚 UPTET 2026 Apply Online Started</span>
-            <span class="ticker-ahc">⚖️ Allahabad HC RO/ARO/CA 2026 – 543 Posts</span>
-            <span>📢 RSSB Graduate Level CET 2026 – Patwari, VDO</span>
-            <span>🎯 JHTET 2026 Jharkhand TET – Apply Now</span>
+            <span>🔥 Rajasthan CET 12th Level 2026 – 3000+ Posts</span> <span>📚 UPTET 2026 Apply Online Started</span> <span>⚖️ Allahabad HC RO/ARO/CA 2026 – 543 Posts</span>
         </marquee>
     </div>
     <div class="container">
@@ -92,7 +74,7 @@
                 <div class="box-content">
                     <ul>
                         <li><a href="rajasthan-cet-12th-level-2026.html">Rajasthan CET 12th Level 2026 – 3000+ Posts <span class="new-badge">New</span></a></li>
-                        <li><a href="uptet-2026.html">UPTET 2026 Primary &amp; Junior Level – Apply Online <span class="new-badge">New</span></a></li>
+                        <li><a href="uptet-2026.html">UPTET 2026 Primary & Junior Level – Apply Online <span class="new-badge">New</span></a></li>
                         <li><a href="allahabad-hc-ro-aro-ca-2026.html">Allahabad HC RO/ARO/CA 2026 – 543 Posts <span class="new-badge">New</span></a></li>
                         <li><a href="rssb-cet-graduate-level-2026.html">RSSB Graduate Level CET 2026 – Patwari, VDO Posts <span class="new-badge">New</span></a></li>
                         <li><a href="jhtet-2026.html">JHTET 2026 Jharkhand TET – Apply Online <span class="new-badge">New</span></a></li>
@@ -128,7 +110,7 @@
                     <ul>
                         <li><a href="ssc-cgl-tier2-answer-key-2026.html">SSC CGL Tier-II Final Answer Key 2026 <span class="new-badge">New</span></a></li>
                         <li><a href="rrb-ntpc-10-2-answer-key-2026.html">RRB NTPC 10+2 UG Answer Key 2026 <span class="new-badge">New</span></a></li>
-                        <li><a href="upsc-iss-answer-key-2026.html">UPSC ISS Answer Key 2026 – Statistics I &amp; II <span class="new-badge">New</span></a></li>
+                        <li><a href="upsc-iss-answer-key-2026.html">UPSC ISS Answer Key 2026 – Statistics I & II <span class="new-badge">New</span></a></li>
                         <li><a href="#">CTET December 2025 Answer Key <span class="new-badge">Coming Soon</span></a></li>
                         <li><a href="#">Rajasthan Police Constable 2025 Answer Key <span class="new-badge">Coming Soon</span></a></li>
                     </ul>
@@ -140,7 +122,7 @@
                     <ul>
                         <li><a href="rssb-cet-12th-level-syllabus-2026.html">Rajasthan RSSB 10+2 Senior Secondary CET Syllabus 2026 <span class="new-badge">New</span></a></li>
                         <li><a href="rssb-cet-graduate-level-syllabus-2026.html">RSSB Graduate Level CET Syllabus 2026 <span class="new-badge">New</span></a></li>
-                        <li><a href="uptet-syllabus-2026.html">UPTET 2026 Syllabus – Paper I &amp; II <span class="new-badge">New</span></a></li>
+                        <li><a href="uptet-syllabus-2026.html">UPTET 2026 Syllabus – Paper I & II <span class="new-badge">New</span></a></li>
                         <li><a href="allahabad-hc-ro-aro-syllabus-2026.html">Allahabad High Court RO, ARO, Computer Assistant Syllabus 2026 <span class="new-badge">New</span></a></li>
                         <li><a href="jhtet-syllabus-2026.html">Jharkhand Teacher Eligibility Test JHTET Syllabus 2026 <span class="new-badge">New</span></a></li>
                     </ul>
@@ -155,13 +137,13 @@
                         <li><a href="#">Rajasthan Police Constable Recruitment 2026 – 4000+ Posts <span class="new-badge">Coming Soon</span></a></li>
                         <li><a href="#">RPSC RAS 2026 – Apply Online, Notification <span class="new-badge">Coming Soon</span></a></li>
                         <li><a href="#">Rajasthan Patwari Recruitment 2026 – 3000+ Posts <span class="new-badge">Coming Soon</span></a></li>
-                        <li><a href="#">REET Level 1 &amp; 2 Recruitment 2026 – Apply Online <span class="new-badge">Coming Soon</span></a></li>
+                        <li><a href="#">REET Level 1 & 2 Recruitment 2026 – Apply Online <span class="new-badge">Coming Soon</span></a></li>
                     </ul>
                 </div>
             </div>
-            <!-- ===== AIR FORCE MOCK TEST - 8 CARDS - ONE LINE PREMIUM ===== -->
+            <!-- ===== AIR FORCE MOCK TEST - 12 CARDS - PREMIUM ONE LINE SCROLL - ERROR FREE ===== -->
             <div class="airforce-wrapper">
-                <div class="box-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (8) 🔥</div>
+                <div class="box-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (12) 🔥</div>
                 <div class="airforce-grid">
 
                     <div class="airforce-card">
@@ -170,7 +152,7 @@
                             <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 1 - Free 25 Q + Answer Key</p>
                             <p style="font-size:11px; color:#ffff00;">Complete GK | 25 Questions | 20 Minutes</p>
                         </div>
-                        <a href="/airforce-noncbt-2027-mock-test-1.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                        <a href="airforce-noncbt-2027-mock-test-1.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
                     </div>
 
                     <div class="airforce-card">
@@ -236,77 +218,58 @@
                         <a href="airforce-noncbt-2027-mock-test-8.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
                     </div>
 
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 9 - Free 30 Q + Answer Key</p>
+                            <p style="font-size:11px; color:#ffff00;">GK + English | 30 Questions | 20 Minutes | NEW</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-9.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 10 - Free 30 Q + Answer Key (VERIFIED)</p>
+                            <p style="font-size:11px; color:#ffff00;">Gandhi | Lonar | IAF Motto | 30 Qs | 20 Min | NEW</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-10.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
+                    <div class="airforce-card">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 11 - Free 30 Q + Answer Key (VERIFIED)</p>
+                            <p style="font-size:11px; color:#ffff00;">Rupiya | UP | Washing Machine | INS Vikrant | NEW</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-11.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
+                    </div>
+
+                    <div class="airforce-card" style="border-color:#22c55e; background:linear-gradient(135deg,#0f172a,#14532d); box-shadow:0 0 20px rgba(34,197,94,0.8);">
+                        <div>
+                            <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥 <span style="background:#22c55e;color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;vertical-align:middle">NEW</span></h3>
+                            <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 12 - Free 30 Q + Answer Key (100% VERIFIED)</p>
+                            <p style="font-size:11px; color:#ffff00;">First CDS | Wular | Konark | Garuda | Siachen | 20 Min</p>
+                        </div>
+                        <a href="airforce-noncbt-2027-mock-test-12.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow; white-space:nowrap;">START NOW</a>
+                    </div>
+
                 </div>
             </div>
-<div class="airforce-card">
-    <div>
-        <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-        <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 9 - Free 30 Q + Answer Key</p>
-        <p style="font-size:11px; color:#ffff00;">GK + English | 30 Questions | 20 Minutes | NEW</p>
-    </div>
-    <a href="airforce-noncbt-2027-mock-test-9.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
-</div>
 
-<style>
-.airforce-card{
-background:linear-gradient(135deg,#0f172a,#dc2626);
-border:2px solid #fbbf24;
-border-left:6px solid yellow;
-border-radius:14px;
-padding:16px;
-color:#fff;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.2);
-max-width:600px;
-margin:12px auto;
-}
-@media(max-width:500px){
-.airforce-card{flex-direction:column;text-align:center}
-}
-</style>
-
-<div class="airforce-card">
-    <div>
-        <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-        <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 10 - Free 30 Q + Answer Key (VERIFIED)</p>
-        <p style="font-size:11px; color:#ffff00;">Gandhi | Lonar | IAF Motto | Skin | GK+English | 30 Qs | 20 Min | NEW</p>
-    </div>
-    <a href="airforce-noncbt-2027-mock-test-10.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow; white-space:nowrap;">START NOW</a>
-</div>
-<div class="airforce-card">
-    <div>
-        <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥</h3>
-        <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 11 - Free 30 Q + Answer Key (VERIFIED)</p>
-        <p style="font-size:11px; color:#ffff00;">Rupiya | UP | Washing Machine | INS Vikrant | 8 States | 30 Qs | 20 Min | NEW</p>
-    </div>
-    <a href="airforce-noncbt-2027-mock-test-11.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow;">START NOW</a>
-</div>
             <div class="box about-box box-full">
                 <div class="box-title">ℹ️ About Mission Gyan Jobs</div>
                 <div class="box-content">
                     <p><strong>Mission Gyan Jobs</strong> is India's No.1 website for all <strong>Sarkari Naukri</strong>, Result, Admit Card, Answer Key updates. All information is updated daily. We provide direct official links for all government job notifications. Get fastest updates for <strong>UPSC, RRB, CGL, SSC, Bank, Railway, Police</strong>, and other government exams.</p>
                 </div>
             </div>
+
         </div>
     </div>
-<!-- TEST 12 - NEWEST FIRST -->
-<div class="airforce-card" style="border-color:#22c55e; background:linear-gradient(135deg,#0f172a,#14532d);">
-    <div>
-        <h3 style="font-size:16px; margin-bottom:8px;">🔥 AIR FORCE NON-CBT 01/2027 🔥 <span style="background:#22c55e;color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;vertical-align:middle">NEW</span></h3>
-        <p style="font-size:14px; font-weight:bold; margin-bottom:6px;">GK Mock Test 12 - Free 30 Q + Answer Key (100% VERIFIED)</p>
-        <p style="font-size:11px; color:#ffff00;">First CDS | Wular | Konark | Garuda | IAF HQ | Siachen | 30 Qs | 20 Min</p>
-    </div>
-    <a href="airforce-noncbt-2027-mock-test-12.html" style="background:yellow; color:#8B0000; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:14px; display:inline-block; margin-top:10px; box-shadow:0 0 10px yellow; white-space:nowrap;">START NOW</a>
-</div>
     <footer class="footer">
         <p>© 2026 Mission Gyan Jobs | All Rights Reserved</p>
-        <a href="privacy-policy.html">Privacy Policy</a> | 
-        <a href="contact-us.html">Contact Us</a> | 
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="https://t.me/Missiongyanexams1" target="_blank" class="footer-telegram">📢 Join Telegram Channel for Fast Updates</a>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="contact-us.html">Contact Us</a> | <a href="disclaimer.html">Disclaimer</a></p>
+        <a href="https://t.me/Missiongyanexams1" target="_blank" style="display:inline-block;margin-top:12px;background:#229ED9;color:#fff!important;padding:12px 28px;border-radius:50px;font-weight:800;font-size:16px;text-decoration:none!important;box-shadow:0 4px 15px rgba(34,158,217,0.4);">📢 Join Telegram Channel for Fast Updates</a>
     </footer>
 </body>
 </html>
