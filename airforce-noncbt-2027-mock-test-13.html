@@ -1,98 +1,218 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Air Force Non-CBT 01/2027 Mock Test 13 - GK + English | Mission Gyan Jobs</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Air Force Non-CBT 01/2027 - TEST 13 | Mission Gyan Jobs</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
-body{background:#f1f5f9;padding:12px}
-.box{max-width:750px;margin:0 auto;background:#fff;border:2px solid #B91C1C;border-radius:10px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
-.header{background:linear-gradient(90deg,#B91C1C,#dc2626);color:#fff;padding:14px;text-align:center;font-weight:800;font-size:18px}
-.info{padding:10px 14px;background:#fffbeb;border-bottom:1px solid #fde68a;font-size:13px;font-weight:600;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
-.qbox{padding:14px 12px;border-bottom:1px solid #e5e7eb}
-.q{font-size:15px;font-weight:700;margin-bottom:10px;color:#0f172a}
-.opt{padding:9px 12px;border:1.5px solid #e5e7eb;border-radius:8px;margin:6px 0;cursor:pointer;font-size:14px}
-.opt:hover{background:#f8fafc;border-color:#fbbf24}
-.opt.correct{background:#dcfce7;border-color:#22c55e;color:#14532d;font-weight:700}
-.opt.wrong{background:#fee2e2;border-color:#ef4444;color:#7f1d1d;font-weight:700}
-.btn{display:block;width:95%;margin:15px auto;background:linear-gradient(90deg,#0f172a,#1e3a8a);color:#fbbf24;padding:14px;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer}
-.result{padding:16px;text-align:center;display:none}
-.pass-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(15,23,42,0.95);z-index:9999;display:flex;align-items:center;justify-content:center}
-.pass-box{background:#fff;padding:22px;border-radius:14px;max-width:360px;width:90%;text-align:center;border:3px solid #fbbf24}
-.pass-box input{width:100%;padding:12px;border:2px solid #e5e7eb;border-radius:8px;margin:12px 0;font-size:15px}
-.pass-box button{width:100%;padding:12px;background:#0f172a;color:#fbbf24;border:none;border-radius:8px;font-weight:800;cursor:pointer}
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text);transition:0.2s}
+.options label:hover{border-color:#fbbf24}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px;transition:0.2s}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#1d4ed8;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #7f1d1d, #dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow;box-shadow:0 0 30px rgba(255,255,0,0.3)}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;line-height:1.4} #qEn{font-size:13px;color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="pass-overlay" id="passOverlay">
-  <div class="pass-box">
-    <h3 style="color:#B91C1C">🔒 Password Protected</h3>
-    <p style="font-size:13px;margin:8px 0">Password: MGE@77<br><a href="https://t.me/Missiongyanexams1" target="_blank" style="color:#229ED9;font-weight:800">📢 Join Telegram</a></p>
-    <input type="password" id="passInput" placeholder="Enter Password MGE@77">
-    <button onclick="checkPass()">UNLOCK TEST 13</button>
-    <p id="passErr" style="color:red;font-size:12px;margin-top:8px;display:none">Wrong Password!</p>
-  </div>
+<div class="header">
+<b style="color:#fbbf24">✈️ MISSION GYAN JOBS</b>
+<div style="display:flex;gap:8px;align-items:center">
+<div class="timer">⏱️ <span id="timer">20:00</span></div>
+<button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24;font-size:16px">🌙</button>
 </div>
-<div class="box">
-<div class="header">🔥 AIR FORCE NON-CBT 01/2027 - TEST 13 (100% VERIFIED) 🔥</div>
-<div class="info"><span>⏱️ 20 Min</span><span>📝 30 Qs</span><span>📚 GK (15) + English (15)</span><span style="color:#16a34a">✅ Verified</span></div>
-<div id="quiz"></div>
-<button class="btn" onclick="submitTest()">SUBMIT TEST - RESULT + ANSWER KEY</button>
-<div class="result" id="result"></div>
+</div>
+<div class="overlay" id="loginScreen">
+<div class="login-box">
+<h2 style="color:#fbbf24;margin-bottom:4px">👋 welcome student</h2>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Enter your name and district; only then will the test begin.</p>
+<input id="stuName" placeholder="अपना पूरा नाम *">
+<div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div>
+<input id="stuCity" placeholder="अपना जिला / शहर *">
+<div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button>
+</div>
+</div>
+<div class="overlay" id="passScreen" style="display:none">
+<div class="pass-box">
+<h2 style="color:yellow;margin-bottom:6px">🔥 TEST 13 LOCKED 🔥</h2>
+<p style="color:white;font-size:13px;margin-bottom:12px">Password = MGE@77</p>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid yellow;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START TEST NOW</button>
+<p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ wrong Password! Telegram Join Karo</p>
+</div>
+</div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #22c55e"><b>✈️ Air Force Non-Combatant 01/2027 | TEST - 13 | 100% VERIFIED</b><br><small style="color:var(--muted)">GK 15 + English 15 | <span id="attemptInfo">0/30 Attempted</span></small></div>
+<div class="q-card">
+<b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 30</b>
+<div id="qHi"></div>
+<div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px">
+<button class="btn btn-g" onclick="prevQ()">← Prev</button>
+<button class="btn btn-g" onclick="clearAns()">Clear</button>
+<button class="btn btn-y" onclick="markRev()">☆ Review</button>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn btn-b" onclick="saveNext()">Save & Next →</button>
+<button class="btn btn-gr" onclick="submitTest()">Submit Test</button>
+</div>
+</div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)">
+<div class="score-card">
+<div style="text-align:center">
+<div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">SCORECARD TEST 13</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#1d4ed8;line-height:1"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /30</span></div>
+<div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0">
+<div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div>
+<div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div>
+<div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div>
+</div>
+<button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px;cursor:pointer">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button>
+</div>
+</div>
+<div class="review-page" id="reviewPage">
+<div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px;z-index:10">
+<b style="font-size:15px">📝 Detailed Analysis - Test 13</b>
+<button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button>
+</div>
+<div id="reviewList"></div>
+</div>
 </div>
 <script>
-const quizData=[
-{q:"Q1. 'घूमर' किस राज्य का पारंपरिक लोक नृत्य है? / Ghoomar Folk Dance of which State?",opts:["A) गुजरात","B) राजस्थान (Rajasthan) ✅","C) पंजाब","D) मध्य प्रदेश"],ans:1,exp:"Ghoomar - Rajasthan ka famous folk dance, Bhil tribe se start hua"},
-{q:"Q2. भारतीय वायु सेना दिवस कब मनाया जाता है? / Air Force Day date?",opts:["A) 15 जनवरी","B) 8 अक्टूबर (8 October) ✅","C) 4 दिसंबर","D) 26 जनवरी"],ans:1,exp:"IAF Day: 8 Oct 1932 ko IAF establish hua tha"},
-{q:"Q3. 'Siachen Glacier' किस UT में है?",opts:["A) लद्दाख (Ladakh) ✅","B) जम्मू और कश्मीर","C) हिमाचल","D) उत्तराखंड"],ans:0,exp:"Siachen Glacier - Ladakh UT me, World's highest battlefield"},
-{q:"Q4. भारतीय नौसेना दिवस कब?",opts:["A) 15 जनवरी","B) 4 दिसंबर (4 December) ✅","C) 8 अक्टूबर","D) 26 जनवरी"],ans:1,exp:"Navy Day: 4 Dec - 1971 Indo-Pak war me Operation Trident ki yaad me"},
-{q:"Q5. 'सांची स्तूप' किस राज्य में?",opts:["A) राजस्थान","B) मध्य प्रदेश (Madhya Pradesh) ✅","C) उत्तर प्रदेश","D) बिहार"],ans:1,exp:"Sanchi Stupa - MP me, Ashoka ne banwaya tha, UNESCO site"},
-{q:"Q6. भारत का राष्ट्रीय जलीय जीव? / National Aquatic Animal?",opts:["A) मगरमच्छ","B) गंगा डॉल्फिन (Ganges Dolphin) ✅","C) कछुआ","D) व्हेल"],ans:1,exp:"National Aquatic Animal: Ganga Dolphin - 2010 me declare"},
-{q:"Q7. 'हिराकुंड बांध' किस नदी पर? / Hirakud Dam on which River?",opts:["A) गोदावरी","B) कृष्णा","C) महानदी (Mahanadi) ✅","D) नर्मदा"],ans:2,exp:"Hirakud Dam - Mahanadi, Odisha - India ka longest dam"},
-{q:"Q8. भारतीय सेना दिवस कब? / Army Day?",opts:["A) 15 जनवरी (15 January) ✅","B) 26 जनवरी","C) 4 दिसंबर","D) 8 अक्टूबर"],ans:0,exp:"Army Day: 15 Jan 1949 - Gen KM Cariappa first Indian Army Chief bane"},
-{q:"Q9. 'भाखड़ा नांगल' किस नदी पर? / Bhakra Nangal Project?",opts:["A) गंगा","B) यमुना","C) सतलुज (Sutlej) ✅","D) ब्रह्मपुत्र"],ans:2,exp:"Bhakra Nangal - Sutlej River par, HP-Punjab border"},
-{q:"Q10. 'बिहू' किस राज्य का त्योहार? / Bihu festival?",opts:["A) असम (Assam) ✅","B) ओडिशा","C) मणिपुर","D) त्रिपुरा"],ans:0,exp:"Bihu - Assam ka main harvest festival"},
-{q:"Q11. राष्ट्रीय खेल दिवस कब? / National Sports Day?",opts:["A) 29 अगस्त (29 August) ✅","B) 15 अगस्त","C) 26 जनवरी","D) 21 जून"],ans:0,exp:"29 Aug - Major Dhyan Chand ke birthday par"},
-{q:"Q12. 'रानी की वाव' कहाँ है? / Rani Ki Vav located?",opts:["A) गुजरात (Gujarat) ✅","B) राजस्थान","C) मध्य प्रदेश","D) महाराष्ट्र"],ans:0,exp:"Rani Ki Vav - Patan, Gujarat - UNESCO World Heritage stepwell"},
-{q:"Q13. 'INS Vikrant' क्या है? / What is INS Vikrant?",opts:["A) पनडुब्बी","B) युद्धक टैंक","C) विमानवाहक पोत (Aircraft Carrier) ✅","D) लड़ाकू विमान"],ans:2,exp:"INS Vikrant - India ka pehla indigenous Aircraft Carrier"},
-{q:"Q14. 'नंदा देवी राष्ट्रीय उद्यान' कहाँ? / Nanda Devi National Park?",opts:["A) हिमाचल","B) उत्तराखंड (Uttarakhand) ✅","C) सिक्किम","D) अरुणाचल"],ans:1,exp:"Nanda Devi NP - Uttarakhand me, UNESCO site"},
-{q:"Q15. संविधान कब अपनाया गया? / Constitution adopted?",opts:["A) 15 Aug 1947","B) 26 Jan 1950","C) 26 Nov 1949 (26 November 1949) ✅","D) 9 Dec 1946"],ans:2,exp:"Adopted: 26 Nov 1949, लागू: 26 Jan 1950"},
-{q:"Q16. If it rains, we _____ the match.",opts:["A) cancel","B) will cancel ✅","C) canceled","D) has canceled"],ans:1,exp:"First Conditional: If + present, will + V1"},
-{q:"Q17. _____ Earth revolves around the sun.",opts:["A) A","B) An","C) The ✅","D) No article"],ans:2,exp:"Unique objects (Earth, Sun, Moon) ke saath 'The'"},
-{q:"Q18. Error: He have / bought / a new / mobile phone.",opts:["A) He have ✅ - Error","B) bought","C) a new","D) mobile phone"],ans:0,exp:"He ke saath 'has' aayega, 'have' nahi. He has bought"},
-{q:"Q19. She was very angry _____ my behavior.",opts:["A) on","B) in","C) at ✅","D) to"],ans:2,exp:"angry at - kisi cheez/bat par gussa, angry with - kisi vyakti par"},
-{q:"Q20. Neither of the girls _____ completed the task.",opts:["A) have","B) has ✅","C) are","D) were"],ans:1,exp:"Neither/Either singular verb leta hai - Neither has"},
-{q:"Q21. Antonym of 'Reveal'",opts:["A) Show","B) Hide ✅","C) Open","D) Tell"],ans:1,exp:"Reveal = dikhana, Hide = chhupana - opposite"},
-{q:"Q22. A person who cannot read or write.",opts:["A) Literate","B) Scholar","C) Illiterate ✅","D) Genius"],ans:2,exp:"Illiterate = anpadh, jo likh-padh na sake"},
-{q:"Q23. Idiom 'By leaps and bounds'",opts:["A) Very slowly","B) Very quickly ✅","C) To jump high","D) In a bad way"],ans:1,exp:"By leaps and bounds = bahut tezi se progress karna"},
-{q:"Q24. Passive: She sings a song.",opts:["A) A song was sung","B) A song is sung by her ✅","C) is being sung","D) has been sung"],ans:1,exp:"Simple Present Passive: is + V3"},
-{q:"Q25. He said to me, 'I am busy.' -> Indirect",opts:["A) He told me that he was busy ✅","B) He said to me that I was busy","C) He told me that he is busy","D) He asks me if he was busy"],ans:0,exp:"am -> was, said to -> told, I -> he"},
-{q:"Q26. Study hard _____ you will fail the exam.",opts:["A) but","B) and","C) otherwise ✅","D) because"],ans:2,exp:"otherwise = warna. Study hard otherwise you will fail"},
-{q:"Q27. The highest _____ of the mountain was covered in snow.",opts:["A) peak ✅","B) peek","C) pick","D) peck"],ans:0,exp:"peak = choti, peek = jhankna - mountain ki peak"},
-{q:"Q28. Synonym of 'Lethal'",opts:["A) Harmless","B) Safe","C) Deadly ✅","D) Weak"],ans:2,exp:"Lethal = ghatak, jaanlewa = Deadly"},
-{q:"Q29. Correctly spelt word",opts:["A) Comitee","B) Commitee","C) Committee ✅","D) Comittee"],ans:2,exp:"Committee - double m, double t, double e"},
-{q:"Q30. Choose the correct sentence",opts:["A) I have seen him yesterday","B) I saw him yesterday ✅","C) I had seen him yesterday","D) I see him yesterday"],ans:1,exp:"Yesterday = Simple Past, isliye 'saw' - 'have seen' present perfect yesterday ke saath galat"}
-];
-let html=""; quizData.forEach((q,i)=>{
-html+=`<div class="qbox" id="q${i}"><div class="q">${q.q}</div>`;
-q.opts.forEach((o,j)=>{html+=`<div class="opt" onclick="select(${i},${j})" id="q${i}o${j}">${o}</div>`});
-html+=`<div style="font-size:12px;color:#14532d;background:#dcfce7;padding:8px;border-radius:6px;margin-top:8px;display:none" id="exp${i}">✅ ${q.exp}</div></div>`;
-}); document.getElementById("quiz").innerHTML=html;
-let selected=new Array(quizData.length).fill(-1);
-function select(q,o){selected[q]=o; document.querySelectorAll(`#q${q} .opt`).forEach(el=>el.classList.remove('correct','wrong')); document.getElementById(`q${q}o${o}`).classList.add('correct');}
+const testData={questions:[
+{qh:"Q1. 'घूमर' किस राज्य का पारंपरिक लोक नृत्य है?",qe:"'Ghoomar' is the traditional Folk Dance of which State?",o:{A:"गुजरात (Gujarat)",B:"राजस्थान (Rajasthan)",C:"पंजाब (Punjab)",D:"मध्य प्रदेश (Madhya Pradesh)"},a:"B"},
+{qh:"Q2. भारतीय वायु सेना दिवस प्रतिवर्ष किस तिथि को मनाया जाता है?",qe:"Indian Air Force Day is celebrated every year on which date?",o:{A:"15 जनवरी (15 January)",B:"8 अक्टूबर (8 October)",C:"4 दिसंबर (4 December)",D:"26 जनवरी (26 January)"},a:"B"},
+{qh:"Q3. 'Siachen Glacier' किस केंद्र शासित प्रदेश में स्थित है?",qe:"'Siachen Glacier' is located in which Union Territory?",o:{A:"लद्दाख (Ladakh)",B:"जम्मू और कश्मीर (Jammu and Kashmir)",C:"हिमाचल प्रदेश (Himachal Pradesh)",D:"उत्तराखंड (Uttarakhand)"},a:"A"},
+{qh:"Q4. भारतीय नौसेना दिवस प्रतिवर्ष किस तिथि को मनाया जाता है?",qe:"Indian Navy Day is celebrated every year on which date?",o:{A:"15 जनवरी (15 January)",B:"4 दिसंबर (4 December)",C:"8 अक्टूबर (8 October)",D:"26 जनवरी (26 January)"},a:"B"},
+{qh:"Q5. 'सांची स्तूप' किस राज्य में स्थित है?",qe:"'Sanchi Stupa' is located in which State?",o:{A:"राजस्थान (Rajasthan)",B:"मध्य प्रदेश (Madhya Pradesh)",C:"उत्तर प्रदेश (Uttar Pradesh)",D:"बिहार (Bihar)"},a:"B"},
+{qh:"Q6. भारत का राष्ट्रीय जलीय जीव कौन है?",qe:"Which is the National Aquatic Animal of India?",o:{A:"मगरमच्छ (Crocodile)",B:"गंगा डॉल्फिन (Ganges Dolphin)",C:"कछुआ (Turtle)",D:"व्हेल (Whale)"},a:"B"},
+{qh:"Q7. 'हिराकुंड बांध' किस नदी पर बनाया गया है?",qe:"'Hirakud Dam' is built on which River?",o:{A:"गोदावरी (Godavari)",B:"कृष्णा (Krishna)",C:"महानदी (Mahanadi)",D:"नर्मदा (Narmada)"},a:"C"},
+{qh:"Q8. भारतीय सेना दिवस कब मनाया जाता है?",qe:"When is Indian Army Day celebrated?",o:{A:"15 जनवरी (15 January)",B:"26 जनवरी (26 January)",C:"4 दिसंबर (4 December)",D:"8 अक्टूबर (8 October)"},a:"A"},
+{qh:"Q9. 'भाखड़ा नांगल परियोजना' किस नदी से संबंधित है?",qe:"'Bhakra Nangal Project' is associated with which River?",o:{A:"गंगा (Ganga)",B:"यमुना (Yamuna)",C:"सतलुज (Sutlej)",D:"ब्रह्मपुत्र (Brahmaputra)"},a:"C"},
+{qh:"Q10. 'बिहू' किस राज्य का प्रसिद्ध त्योहार है?",qe:"'Bihu' is a famous festival of which State?",o:{A:"असम (Assam)",B:"ओडिशा (Odisha)",C:"मणिपुर (Manipur)",D:"त्रिपुरा (Tripura)"},a:"A"},
+{qh:"Q11. भारत का राष्ट्रीय खेल दिवस कब मनाया जाता है?",qe:"When is National Sports Day celebrated in India?",o:{A:"29 अगस्त (29 August)",B:"15 अगस्त (15 August)",C:"26 जनवरी (26 January)",D:"21 जून (21 June)"},a:"A"},
+{qh:"Q12. 'रानी की वाव' किस राज्य में स्थित है?",qe:"'Rani Ki Vav' is located in which State?",o:{A:"गुजरात (Gujarat)",B:"राजस्थान (Rajasthan)",C:"मध्य प्रदेश (Madhya Pradesh)",D:"महाराष्ट्र (Maharashtra)"},a:"A"},
+{qh:"Q13. 'INS Vikrant' क्या है?",qe:"What is INS Vikrant?",o:{A:"पनडुब्बी (Submarine)",B:"युद्धक टैंक (Battle Tank)",C:"विमानवाहक पोत (Aircraft Carrier)",D:"लड़ाकू विमान (Fighter Aircraft)"},a:"C"},
+{qh:"Q14. 'नंदा देवी राष्ट्रीय उद्यान' किस राज्य में स्थित है?",qe:"'Nanda Devi National Park' is located in which State?",o:{A:"हिमाचल प्रदेश (Himachal Pradesh)",B:"उत्तराखंड (Uttarakhand)",C:"सिक्किम (Sikkim)",D:"अरुणाचल प्रदेश (Arunachal Pradesh)"},a:"B"},
+{qh:"Q15. भारतीय संविधान को कब अपनाया गया था?",qe:"When was the Constitution of India adopted?",o:{A:"15 अगस्त 1947",B:"26 जनवरी 1950",C:"26 नवंबर 1949 (26 November 1949)",D:"9 दिसंबर 1946"},a:"C"},
+{qh:"Q16. If it rains, we _____ the match.",qe:"Choose the correct tense:",o:{A:"cancel",B:"will cancel",C:"canceled",D:"has canceled"},a:"B"},
+{qh:"Q17. _____ Earth revolves around the sun.",qe:"Fill in the blank with the correct article:",o:{A:"A",B:"An",C:"The",D:"No article"},a:"C"},
+{qh:"Q18. He have / bought / a new / mobile phone. - Find error",qe:"Find the error in the sentence:",o:{A:"He have",B:"bought",C:"a new",D:"mobile phone"},a:"A"},
+{qh:"Q19. She was very angry _____ my behavior.",qe:"Fill in the blank with suitable preposition:",o:{A:"on",B:"in",C:"at",D:"to"},a:"C"},
+{qh:"Q20. Neither of the girls _____ completed the task.",qe:"Fill in the blank with correct verb:",o:{A:"have",B:"has",C:"are",D:"were"},a:"B"},
+{qh:"Q21. Choose the antonym of 'Reveal'",qe:"Antonym of Reveal:",o:{A:"Show",B:"Hide",C:"Open",D:"Tell"},a:"B"},
+{qh:"Q22. A person who cannot read or write.",qe:"One-word substitution:",o:{A:"Literate",B:"Scholar",C:"Illiterate",D:"Genius"},a:"C"},
+{qh:"Q23. 'By leaps and bounds' का अर्थ?",qe:"Choose correct meaning of idiom 'By leaps and bounds':",o:{A:"Very slowly",B:"Very quickly",C:"To jump high",D:"In a bad way"},a:"B"},
+{qh:"Q24. She sings a song. - Passive Voice?",qe:"Choose correct Passive Voice:",o:{A:"A song was sung by her",B:"A song is sung by her",C:"A song is being sung by her",D:"A song has been sung by her"},a:"B"},
+{qh:"Q25. He said to me, 'I am busy.' - Indirect?",qe:"Change into Indirect Speech:",o:{A:"He told me that he was busy",B:"He said to me that I was busy",C:"He told me that he is busy",D:"He asks me if he was busy"},a:"A"},
+{qh:"Q26. Study hard _____ you will fail the exam.",qe:"Choose correct conjunction:",o:{A:"but",B:"and",C:"otherwise",D:"because"},a:"C"},
+{qh:"Q27. The highest _____ of the mountain was covered in snow.",qe:"Fill correct word:",o:{A:"peak",B:"peek",C:"pick",D:"peck"},a:"A"},
+{qh:"Q28. Synonym of 'Lethal'",qe:"Choose synonym of Lethal:",o:{A:"Harmless",B:"Safe",C:"Deadly",D:"Weak"},a:"C"},
+{qh:"Q29. Correctly spelt word:",qe:"Choose correctly spelt word:",o:{A:"Comitee",B:"Commitee",C:"Committee",D:"Comittee"},a:"C"},
+{qh:"Q30. Correct sentence choose karo",qe:"Choose the correct sentence:",o:{A:"I have seen him yesterday",B:"I saw him yesterday",C:"I had seen him yesterday",D:"I see him yesterday"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=20*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim();
+  let ok=true;
+  if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return;
+  localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){
+  if(passInput.value==="MGE@77"){
+    passScreen.style.display='none'; mainTest.style.display='block';
+    tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);
+    render();
+  }else{passErr.style.display='block';}
+}
+function render(){
+  let q=testData.questions[cur];
+  qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h;
+  let attempted=Object.keys(answers).length;
+  attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});
+  pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();}
+function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
 function submitTest(){
-let score=0; quizData.forEach((q,i)=>{
-document.getElementById(`exp${i}`).style.display="block";
-if(selected[i]==q.ans){score++;}else{
-if(selected[i]>=0) document.getElementById(`q${i}o${selected[i]}`).classList.add('wrong');
-document.getElementById(`q${i}o${q.ans}`).classList.add('correct');
+  let attempted=Object.keys(answers).length;
+  if(attempted<5 && time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Kya sach me submit karna hai?`))return;}
+  clearInterval(tInt);
+  let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  scoreMsg.innerText=cor>=24?"Excellent! Topper Ho 🔥":cor>=18?"Bahut Badhiya! 🚀":cor>=10?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex';
+  buildReview();
 }
-});
-document.getElementById("result").style.display="block";
-document.getElementById("result").innerHTML=`<h2 style="color:${score>=18?'#16a34a':'#dc2626'}">Score: ${score}/${quizData.length}</h2><p style="font-size:13px;margin:8px 0">100% Verified Answer Key - All Correct Answers Shown in Green</p><a href="index.html" style="display:inline-block;margin-top:10px;background:#fbbf24;color:#0f172a;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:800">🏠 Back to Home</a>`;
-window.scrollTo(0,document.body.scrollHeight);
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let status=u==undefined?"Not Attempted":correct?"Correct":"Wrong";
+    let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong"; let icon=u==undefined?"⚠️":correct?"✅":"❌";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#2563eb">Q ${i+1}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div>
+    <div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div>
+    <div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;
+    for(let k in q.o){
+      let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt";
+      html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u && k!=q.a?'❌ Your':''}</div>`;
+    }
+    html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Skip'}</span><span><b>Correct:</b> ${q.a}</span></div></div>`;
+  });
+  reviewList.innerHTML=html;
 }
-function checkPass(){if(document.getElementById("passInput").value==="MGE@77"){document.getElementById("passOverlay").style.display="none";}else{document.getElementById("passErr").style.display="block";}}
+function openReview(){reviewPage.style.display='block'; reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
 </script>
 </body>
 </html>
