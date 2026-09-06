@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Air Force Non-CBT 01/2027 Test 18 - English+GK | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:600;background:var(--card)}
+.options label:hover{border-color:#fbbf24}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:800}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#1d4ed8;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer}
+.p.cur{background:#ef4444!important;color:#fff!important}
+.p.ans{background:#10b981!important;color:#fff!important}
+.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px}
+#loginScreen{background:rgba(2,6,23,0.92)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96)}
+.pass-box{background:linear-gradient(180deg,#7f1d1d,#dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;max-height:95vh;overflow-y:auto}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;font-weight:800;line-height:1.4} #qEn{font-size:13px;color:var(--muted);margin-top:3px}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#fbbf24">✈️ MISSION GYAN JOBS</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box">
+<h2 style="color:#fbbf24">👋 Welcome Student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Name & District bharo, test start hoga</p>
+<input id="stuName" placeholder="पूरा नाम *"><div id="nameErr" class="err-msg">❌ नाम भरें</div>
+<input id="stuCity" placeholder="जिला / शहर *"><div id="cityErr" class="err-msg">❌ जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px">Continue →</button>
+</div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box">
+<h2 style="color:yellow">🔥 TEST LOCKED 🔥</h2><p style="color:white;font-size:13px;margin-bottom:12px">Password daalo</p>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid yellow;border-radius:8px;text-align:center;font-weight:900;font-size:15px">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px">UNLOCK & START</button>
+<p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
+</div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #fbbf24"><b>✈️ AIR FORCE NON-CBT 01/2027 | MOCK TEST - 18</b><br><small>English 15 + GK 15 | <span id="attemptInfo">0/30 Attempted</span> | 20 Min | No Negative</small></div>
+<div class="q-card">
+<b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 30</b>
+<div id="qHi"></div><div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div>
+</div>
+<div class="p-card"><b style="font-size:14px">Question Palette - 30 Q</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90)">
+<div class="score-card"><div style="text-align:center"><div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">SCORECARD TEST 18</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#1d4ed8"><span id="sBig">0</span><span style="font-size:18px;color:#64748b"> /30</span></div>
+<div style="font-size:12px;color:#64748b" id="stuInfoShow"></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div></div>
+<button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:#f1f5f9;padding:13px;border:1px solid #e2e8f0;border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:white;padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px"><b>📝 Test 18 - Analysis</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. सही Tense चुनें: It _____ raining heavily since morning.",qe:"Choose the correct tense",o:{"A":"is","B":"was","C":"has been","D":"have been"},a:"C"},
+{qh:"Q2. Article भरें: Mr. Sharma is _____ honorable man.",qe:"Fill in the blank with the correct article",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"B"},
+{qh:"Q3. Error ढूंढें: The news / you brought / are / very good.",qe:"Find the error in the sentence",o:{"A":"The news","B":"you brought","C":"are","D":"very good"},a:"C"},
+{qh:"Q4. Preposition भरें: Agra is famous _____ its historical monuments.",qe:"Fill in the blank with the suitable preposition",o:{"A":"of","B":"with","C":"for","D":"in"},a:"C"},
+{qh:"Q5. सही Verb भरें: Fifty rupees _____ not a large amount.",qe:"Fill in the blank with the correct verb",o:{"A":"are","B":"is","C":"have","D":"were"},a:"B"},
+{qh:"Q6. “Guilty” का Antonym चुनें:",qe:"Choose the antonym of Guilty",o:{"A":"Innocent","B":"Faulty","C":"Clever","D":"Cruel"},a:"A"},
+{qh:"Q7. One-word चुनें: A person who eats too much.",qe:"Choose the correct one-word substitution",o:{"A":"Glutton","B":"Cannibal","C":"Omnivore","D":"Epicure"},a:"A"},
+{qh:"Q8. Idiom का अर्थ चुनें “To cry over spilt milk”:",qe:"Choose the correct meaning of the idiom",o:{"A":"To spill milk on the floor","B":"To cry for no reason","C":"To regret something that has already happened","D":"To ask for help"},a:"C"},
+{qh:"Q9. Passive Voice चुनें: The peon rang the bell.",qe:"Choose the correct Passive Voice",o:{"A":"The bell is rung by the peon.","B":"The bell was rung by the peon.","C":"The bell has been rung by the peon.","D":"The bell was ring by the peon."},a:"B"},
+{qh:"Q10. Indirect Speech में बदलें: He said, “I am a good boy.”",qe:"Change into Indirect Speech",o:{"A":"He said that I am a good boy.","B":"He says that he is a good boy.","C":"He said that he was a good boy.","D":"He told that he is a good boy."},a:"C"},
+{qh:"Q11. Conjunction चुनें: Walk carefully lest you _____ fall down.",qe:"Choose the correct conjunction",o:{"A":"should","B":"would","C":"could","D":"might"},a:"A"},
+{qh:"Q12. सही शब्द भरें: He completely _____ to help me.",qe:"Fill in the blank with the correct word",o:{"A":"denied","B":"refused","C":"accepted","D":"ignored"},a:"B"},
+{qh:"Q13. “Feeble” का Synonym चुनें:",qe:"Choose the synonym of Feeble",o:{"A":"Strong","B":"Weak","C":"Bold","D":"Active"},a:"B"},
+{qh:"Q14. सही Spelling चुनें:",qe:"Choose the correctly spelt word",o:{"A":"Calender","B":"Celendar","C":"Calendar","D":"Calander"},a:"C"},
+{qh:"Q15. सही वाक्य चुनें:",qe:"Choose the correct sentence",o:{"A":"The news are good.","B":"The news is good.","C":"The news have good.","D":"The news were good."},a:"B"},
+{qh:"Q16. भारत की प्रथम महिला आईपीएस अधिकारी कौन थीं?",qe:"Who was the first woman IPS officer of India?",o:{"A":"अन्ना राजम मल्होत्रा (Anna Rajam Malhotra)","B":"किरण बेदी (Kiran Bedi)","C":"फातिमा बीबी (Fathima Beevi)","D":"मीरा कुमार (Meira Kumar)"},a:"B"},
+{qh:"Q17. 'उबेर कप' (Uber Cup) का संबंध किस खेल से है?",qe:"Uber Cup is associated with which sport?",o:{"A":"महिला बैडमिंटन (Women's Badminton)","B":"पुरुष टेनिस (Men's Tennis)","C":"महिला क्रिकेट (Women's Cricket)","D":"पुरुष हॉकी (Men's Hockey)"},a:"A"},
+{qh:"Q18. दस डिग्री चैनल (10 Degree Channel) किन दो द्वीपों को अलग करता है?",qe:"The 10 Degree Channel separates which two islands?",o:{"A":"मालदीव और लक्षद्वीप (Maldives and Lakshadweep)","B":"अंडमान और निकोबार (Andaman and Nicobar)","C":"भारत और श्रीलंका (India and Sri Lanka)","D":"सुमात्रा और जावा (Sumatra and Java)"},a:"B"},
+{qh:"Q19. भारतीय संविधान की 'प्रारूप समिति' के अध्यक्ष कौन थे?",qe:"Who was the Chairman of the Drafting Committee of the Indian Constitution?",o:{"A":"डॉ. राजेंद्र प्रसाद (Dr. Rajendra Prasad)","B":"जवाहरलाल नेहरू (Jawaharlal Nehru)","C":"डॉ. बी. आर. अंबेडकर (Dr. B. R. Ambedkar)","D":"सरदार वल्लभभाई पटेल (Sardar Vallabhbhai Patel)"},a:"C"},
+{qh:"Q20. पृथ्वी के वायुमंडल में ऑक्सीजन की मात्रा लगभग कितनी होती है?",qe:"What is the approximate percentage of Oxygen in the Earth's atmosphere?",o:{"A":"21%","B":"78%","C":"15%","D":"0.03%"},a:"A"},
+{qh:"Q21. 'प्लासी का युद्ध' किस वर्ष लड़ा गया था?",qe:"In which year was the Battle of Plassey fought?",o:{"A":"1757","B":"1764","C":"1526","D":"1857"},a:"A"},
+{qh:"Q22. प्रसिद्ध पुस्तक 'आनंदमठ' के रचयिता कौन हैं?",qe:"Who is the author of the famous book Anandamath?",o:{"A":"रवींद्रनाथ टैगोर (Rabindranath Tagore)","B":"बंकिम चंद्र चटर्जी (Bankim Chandra Chatterjee)","C":"शरत चंद्र चट्टोपाध्याय (Sarat Chandra Chattopadhyay)","D":"स्वामी विवेकानंद (Swami Vivekananda)"},a:"B"},
+{qh:"Q23. महाराष्ट्र का नासिक शहर किस नदी के तट पर स्थित है?",qe:"The city of Nashik in Maharashtra is situated on the banks of which river?",o:{"A":"कृष्णा (Krishna)","B":"कावेरी (Kaveri)","C":"गोदावरी (Godavari)","D":"नर्मदा (Narmada)"},a:"C"},
+{qh:"Q24. भारतीय वायु सेना अकादमी कहाँ स्थित है?",qe:"Where is the Indian Air Force Academy located?",o:{"A":"पुणे (Pune)","B":"डूंडीगल, हैदराबाद (Dundigal, Hyderabad)","C":"बेंगलुरु (Bengaluru)","D":"कोयम्बटूर (Coimbatore)"},a:"B"},
+{qh:"Q25. 'अर्जुन पुरस्कार' किस क्षेत्र में उत्कृष्टता के लिए दिया जाता है?",qe:"Arjuna Award is given for excellence in which field?",o:{"A":"साहित्य (Literature)","B":"सिनेमा (Cinema)","C":"विज्ञान (Science)","D":"खेल (Sports)"},a:"D"},
+{qh:"Q26. 'मधुबनी' चित्रकला शैली भारत के किस राज्य से संबंधित है?",qe:"Madhubani painting style is associated with which state of India?",o:{"A":"राजस्थान (Rajasthan)","B":"उत्तर प्रदेश (Uttar Pradesh)","C":"बिहार (Bihar)","D":"ओडिशा (Odisha)"},a:"C"},
+{qh:"Q27. मानव शरीर में लाल रक्त कणिकाओं (RBC) का जीवनकाल लगभग कितना होता है?",qe:"What is the approximate lifespan of Red Blood Cells (RBC) in the human body?",o:{"A":"60 दिन (60 Days)","B":"90 दिन (90 Days)","C":"120 दिन (120 Days)","D":"150 दिन (150 Days)"},a:"C"},
+{qh:"Q28. विश्व बैंक का मुख्यालय कहाँ स्थित है?",qe:"Where is the headquarters of the World Bank located?",o:{"A":"न्यूयॉर्क (New York)","B":"वाशिंगटन डी.सी. (Washington D.C.)","C":"जिनेवा (Geneva)","D":"पेरिस (Paris)"},a:"B"},
+{qh:"Q29. 'सीमांत गांधी' के नाम से किसे जाना जाता है?",qe:"Who is known by the name Frontier Gandhi?",o:{"A":"खान अब्दुल गफ्फार खान (Khan Abdul Ghaffar Khan)","B":"मौलाना अबुल कलाम आजाद (Maulana Abul Kalam Azad)","C":"भगत सिंह (Bhagat Singh)","D":"लियाकत अली खान (Liaquat Ali Khan)"},a:"A"},
+{qh:"Q30. अंतर्राष्ट्रीय मानवाधिकार दिवस कब मनाया जाता है?",qe:"When is International Human Rights Day celebrated?",o:{"A":"1 दिसंबर (1 December)","B":"10 दिसंबर (10 December)","C":"24 अक्टूबर (24 October)","D":"8 मार्च (8 March)"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=20*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim(); let ok=true;
+  if(n.length<3){nameErr.style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{nameErr.style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){cityErr.style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{cityErr.style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return; localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){ if(passInput.value==="MGE@77"){ passScreen.style.display='none'; mainTest.style.display='block'; tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000); render(); }else{passErr.style.display='block';} }
+function render(){
+  let q=testData.questions[cur]; qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h; attemptInfo.innerText=`${Object.keys(answers).length}/30 Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`}); pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();} function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}} function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  clearInterval(tInt); let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  scoreMsg.innerText=cor>=24?"Excellent! Topper Ho 🔥":cor>=18?"Bahut Badhiya! 🚀":cor>=10?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex'; buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between"><b style="color:#2563eb">Q ${i+1}</b><span class="badge ${badgeClass}">${u==undefined?"⚠️ Skipped":correct?"✅ Correct":"❌ Wrong"}</span></div>
+    <div style="font-weight:800;font-size:16px;margin:6px 0">${q.qh}</div>
+    <div style="color:#64748b;font-size:13px;margin-bottom:8px">${q.qe}</div>`;
+    for(let k in q.o){let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt"; html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u && k!=q.a?'❌ Your Answer':''}</div>`;}
+    html+=`</div>`;
+  }); reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block';} function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
