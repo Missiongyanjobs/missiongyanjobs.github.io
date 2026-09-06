@@ -25,21 +25,38 @@
         .footer {background: #0f172a; color: #e2e8f0; text-align: center; padding: 30px 20px; border-top: 4px solid #fbbf24;}
         .footer a {color: #fbbf24; text-decoration: none; font-weight: 600; margin: 0 8px;}
 
-        /* 🔥 BADA TEXT - RED CARD - 100% CLEAR */
-        .airforce-wrapper{grid-column: 1 / -1; background:#fff; border:2px solid #B91C1C; border-radius:10px; overflow:hidden; margin-bottom:18px;}
+        /* AIR FORCE - RED PRO MAX BADA TEXT */
+        .airforce-wrapper{grid-column: 1 / -1; background:#fff; border:2px solid #B91C1C; border-radius:12px; overflow:hidden; margin-bottom:20px; box-shadow:0 6px 18px rgba(220,38,38,0.15);}
         .airforce-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .airforce-grid::-webkit-scrollbar{height:10px} .airforce-grid::-webkit-scrollbar-thumb{background:#dc2626; border-radius:10px} .airforce-grid::-webkit-scrollbar-track{background:#fee2e2;}
         .airforce-card{
             min-width:325px; max-width:325px; flex:0 0 auto; scroll-snap-align:start;
             background:linear-gradient(145deg, #7f1d1d, #dc2626); padding:18px; border-radius:14px; 
             text-align:left; border:2.5px solid #fbbf24; box-shadow:0 6px 18px rgba(0,0,0,0.4);
-            display:flex; flex-direction:column; justify-content:space-between; min-height:260px; position:relative;
+            display:flex; flex-direction:column; justify-content:space-between; min-height:265px; position:relative;
         }
-        .airforce-card h3{font-size:15px !important; font-weight:900 !important; color:#FFFF00 !important; line-height:1.3; margin-bottom:10px; text-transform:uppercase;}
-        .airforce-card .test-title{font-size:17px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.3; margin-bottom:8px; text-shadow:0 1px 2px rgba(0,0,0,0.8);}
-        .airforce-card .test-desc{font-size:13px !important; font-weight:800 !important; color:#fefce8 !important; line-height:1.4; min-height:40px;}
-        .pro-badge{position:absolute; top:8px; right:8px; background:yellow; color:#7f1d1d; font-size:10px; font-weight:900; padding:4px 9px; border-radius:20px;}
-        @media (max-width: 600px) {.airforce-card{min-width:300px; max-width:300px; min-height:250px;}}
+        .airforce-card h3{font-size:15px !important; font-weight:900 !important; color:#FFFF00 !important; line-height:1.3; margin-bottom:10px;}
+        .airforce-card .test-title{font-size:17px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.3; margin-bottom:8px; text-shadow:0 1px 3px rgba(0,0,0,0.8);}
+        .airforce-card .test-desc{font-size:13.5px !important; font-weight:800 !important; color:#fefce8 !important; line-height:1.4; min-height:40px;}
+
+        /* NAVY - BLUE PRO MAX - ALAG COLOUR */
+        .navy-wrapper{grid-column: 1 / -1; background:#fff; border:2.5px solid #0b3d91; border-radius:12px; overflow:hidden; margin-bottom:20px; box-shadow:0 8px 24px rgba(11,61,145,0.2);}
+        .navy-title{background:linear-gradient(90deg,#020617 0%,#0b3d91 30%,#1d4ed8 50%,#0b3d91 70%,#020617 100%); color:white; padding:15px; font-weight:900; font-size:19px; text-align:center; letter-spacing:0.6px; border-bottom:3px solid #38bdf8;}
+        .navy-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .navy-grid::-webkit-scrollbar{height:10px} .navy-grid::-webkit-scrollbar-thumb{background:#0b3d91; border-radius:10px} .navy-grid::-webkit-scrollbar-track{background:#dbeafe;}
+        .navy-card{
+            min-width:340px; max-width:340px; flex:0 0 auto; scroll-snap-align:start;
+            background:linear-gradient(145deg,#020617 0%,#0f172a 20%,#1e3a8a 60%,#2563eb 100%); padding:19px; border-radius:15px; 
+            text-align:left; border:2.5px solid #38bdf8; box-shadow:0 8px 22px rgba(11,61,145,0.45);
+            display:flex; flex-direction:column; justify-content:space-between; min-height:305px; position:relative;
+        }
+        .navy-card h3{font-size:14px !important; font-weight:900 !important; color:#7dd3fc !important; line-height:1.3; margin-bottom:9px; letter-spacing:0.3px;}
+        .navy-card .test-title{font-size:17px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.35; margin-bottom:8px;}
+        .navy-card .test-desc{font-size:13px !important; font-weight:700 !important; color:#e0f2fe !important; line-height:1.45; min-height:48px;}
+        .navy-card .test-meta{font-size:12px !important; font-weight:800 !important; color:#fde047 !important; margin-top:8px; line-height:1.4; background:rgba(0,0,0,0.3); padding:6px 9px; border-radius:6px; border:1px solid rgba(56,189,248,0.3);}
+        .pro-badge{position:absolute; top:9px; right:9px; background:yellow; color:#7f1d1d; font-size:10px; font-weight:900; padding:4px 10px; border-radius:20px; z-index:2;}
+        .navy-badge{position:absolute; top:9px; right:9px; background:#38bdf8; color:#020617; font-size:10px; font-weight:900; padding:4px 10px; border-radius:20px; z-index:2;}
+        @media (max-width: 600px) {.airforce-card,.navy-card{min-width:300px; max-width:300px;}}
     </style>
 </head>
 <body>
@@ -47,7 +64,7 @@
         <div class="header-left"><img src="logo.png" alt="Mission Gyan Jobs" class="logo-img" /><div class="header-text"><h1>MISSION GYAN JOBS</h1><p>Latest Sarkari Naukri + Offline Forms 2026</p></div></div>
         <a href="offline-forms.html" class="offline-btn" style="background:#fbbf24; color:#0f172a; padding:13px 24px; border-radius:10px; text-decoration:none; font-weight:900;">📄 Offline Forms</a>
     </header>
-    <div class="news-ticker"><marquee behavior="scroll" direction="left" scrollamount="6"><span>🔥 Rajasthan CET 12th Level 2026 – 3000+ Posts</span> <span>📚 UPTET 2026 Apply Online Started</span></marquee></div>
+    <div class="news-ticker"><marquee behavior="scroll" direction="left" scrollamount="6"><span>🔥 AIR FORCE NON-CBT 17 Tests Added | ⚓ INDIAN NAVY MR Mock Test 01 Added - 50Q 30Min Negative 0.25 🔥</span></marquee></div>
     <div class="container">
         <div class="grid">
             <div class="box"><div class="box-title">📌 Latest Jobs</div><div class="box-content"><ul>
@@ -93,7 +110,7 @@
                 <li><a href="#">REET Level 1 & 2 Recruitment 2026 – Apply Online <span class="new-badge">Coming Soon</span></a></li>
             </ul></div></div>
 
-            <!-- SINGLE PATTI - 2 LINES - BADA TEXT -->
+            <!-- AIR FORCE - SINGLE PATTI - 2 LINES - BADA TEXT -->
             <div class="airforce-wrapper">
                 <div class="box-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (17) 🔥</div>
                 <div class="airforce-grid">
@@ -119,7 +136,46 @@
                 </div>
             </div>
 
-            <div class="box about-box box-full"><div class="box-title">ℹ️ About Mission Gyan Jobs</div><div class="box-content"><p><strong>Mission Gyan Jobs</strong> is India's No.1 website for all <strong>Sarkari Naukri</strong>, Result, Admit Card, Answer Key updates.</p></div></div>
+            <!-- 🇮🇳 INDIAN NAVY MR - BLUE PRO MAX - BADA CLEAR TEXT -->
+            <div class="navy-wrapper">
+                <div class="navy-title">🇮🇳 INDIAN NAVY AGNIVEER MR - ALL MOCK TESTS (01) ⚓</div>
+                <div class="navy-grid">
+                    <div class="navy-card">
+                        <span class="navy-badge">NEW 2026</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR ⚓</h3>
+                            <p class="test-title">🔥 MOCK TEST – 01 | 50 Q + Answer Key</p>
+                            <p class="test-desc">SECTION-A: विज्ञान एवं गणित (25 Q)<br>SECTION-B: सामान्य जागरूकता (25 Q)</p>
+                            <p class="test-meta">⏱️ Time: 30 Minutes | ❌ Negative: 0.25 | 📝 Marks: 50<br>🧪 Science+Maths | 🧠 GK+GS</p>
+                        </div>
+                        <a href="navy-mr-2026-mock-test-1.html" style="background:#38bdf8; color:#020617; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white; box-shadow:0 0 18px rgba(56,189,248,0.7);">START NOW →</a>
+                    </div>
+
+                    <div class="navy-card" style="opacity:0.85; border-style:dashed; border-color:#fbbf24;">
+                        <span class="navy-badge" style="background:#fbbf24; color:#000;">COMING SOON</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR ⚓</h3>
+                            <p class="test-title">🔥 MOCK TEST – 02 | 50 Q + Answer Key</p>
+                            <p class="test-desc">Full Navy Pattern | Science + Maths + GK<br>Latest 2026 Syllabus | 100% Verified</p>
+                            <p class="test-meta">⏱️ Time: 30 Minutes | ❌ Negative: 0.25 | 📝 50 Marks</p>
+                        </div>
+                        <a href="#" style="background:#475569; color:#fff; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid #94a3b8;">COMING SOON</a>
+                    </div>
+
+                    <div class="navy-card" style="opacity:0.75; border-style:dashed;">
+                        <span class="navy-badge" style="background:#fbbf24; color:#000;">COMING SOON</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR ⚓</h3>
+                            <p class="test-title">🔥 MOCK TEST – 03 | 50 Q + Answer Key</p>
+                            <p class="test-desc">Full Navy Pattern | Science + Maths + GK<br>Latest 2026 Syllabus</p>
+                            <p class="test-meta">⏱️ 30 Min | ❌ 0.25 Negative | 📝 50 Marks</p>
+                        </div>
+                        <a href="#" style="background:#475569; color:#fff; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px;">COMING SOON</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box about-box box-full"><div class="box-title">ℹ️ About Mission Gyan Jobs</div><div class="box-content"><p><strong>Mission Gyan Jobs</strong> is India's No.1 website for all <strong>Sarkari Naukri</strong>, Result, Admit Card, Answer Key updates. All information is updated daily. Direct official links for all govt job notifications.</p></div></div>
         </div>
     </div>
     <footer class="footer">
