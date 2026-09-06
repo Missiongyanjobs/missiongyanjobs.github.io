@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Indian Navy MR Mock Test 01 - 50 Q | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#020617;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #38bdf8}
+.timer{border:2px solid #7dd3fc;background:#0c4a6e;color:#7dd3fc;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.options label{display:flex;align-items:center;gap:12px;padding:13px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:600;background:var(--card)}
+.options label:hover{border-color:#38bdf8}
+.options label.sel{border-color:#2563eb!important;background:#dbeafe!important;color:#1e3a8a!important;font-weight:800}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#0b3d91;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}
+.p{height:42px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px}
+.p.cur{background:#ef4444!important;color:#fff!important}
+.p.ans{background:#10b981!important;color:#fff!important}
+.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #38bdf8;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #38bdf8;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96)}
+.pass-box{background:linear-gradient(180deg,#020617,#0b3d91);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #38bdf8}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;max-height:95vh;overflow-y:auto}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;font-weight:800;line-height:1.4} #qEn{font-size:13.5px;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="header">
+<b style="color:#7dd3fc">⚓ MISSION GYAN JOBS - NAVY MR</b>
+<div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">30:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#38bdf8">🌙</button></div>
+</div>
+<div class="overlay" id="loginScreen"><div class="login-box">
+<h2 style="color:#38bdf8;margin-bottom:4px">👋 Welcome Sailor</h2>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Name & District bharo, test start hoga</p>
+<input id="stuName" placeholder="अपना पूरा नाम *"><div id="nameErr" class="err-msg">❌ नाम भरें</div>
+<input id="stuCity" placeholder="जिला / शहर *"><div id="cityErr" class="err-msg">❌ जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#38bdf8;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#020617;font-size:15px">Continue →</button>
+</div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box">
+<h2 style="color:#7dd3fc;margin-bottom:6px">⚓ TEST LOCKED ⚓</h2>
+<p style="color:white;font-size:13px;margin-bottom:12px">Password daalo</p>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #38bdf8;border-radius:8px;text-align:center;font-weight:900;font-size:15px">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:#38bdf8;color:#020617;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px">UNLOCK & START</button>
+<p id="passErr" style="color:#7dd3fc;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
+</div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #0b3d91"><b>🇮🇳 INDIAN NAVY AGNIVEER MR - MOCK TEST 01</b><br><small>कुल प्रश्न 50 | कुल अंक 50 | समय 30 Min | Negative 0.25 | <span id="attemptInfo">0/50</span></small></div>
+<div class="q-card">
+<b style="color:#0b3d91;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b>
+<div id="qHi"></div><div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div>
+</div>
+<div class="p-card"><b style="font-size:14px">Question Palette - 50 Questions</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.92)">
+<div class="score-card">
+<div style="text-align:center"><div style="background:#dbeafe;color:#0b3d91;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">NAVY MR SCORECARD</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#0b3d91"><span id="sBig">0</span><span style="font-size:18px;color:#64748b"> /50</span></div>
+<div style="font-size:12px;color:#64748b" id="stuInfoShow"></div>
+<div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0">
+<div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div>
+<div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong -0.25</small></div>
+<div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div></div>
+<button onclick="openReview()" style="width:100%;background:#020617;color:#7dd3fc;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #38bdf8;font-size:14px">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:#f1f5f9;padding:13px;border:1px solid #e2e8f0;border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake</button>
+</div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:white;padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #38bdf8;margin-bottom:12px"><b>📝 Detailed Analysis - 50 Q</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div>
+<div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. मनुष्य के शरीर में रक्त को पंप करने वाला अंग कौन-सा है?",qe:"Which organ pumps blood in the human body?",o:{"A":"फेफड़ा — Lungs","B":"हृदय — Heart","C":"गुर्दा — Kidney","D":"यकृत — Liver"},a:"B"},
+{qh:"Q2. निर्वात में प्रकाश की चाल लगभग कितनी होती है?",qe:"What is the approximate speed of light in vacuum?",o:{"A":"3 × 10⁶ m/s","B":"3 × 10⁸ m/s","C":"3 × 10⁵ m/s","D":"3 × 10¹⁰ m/s"},a:"B"},
+{qh:"Q3. प्रकाश संश्लेषण के लिए पौधों को मुख्यतः किस गैस की आवश्यकता होती है?",qe:"Which gas is mainly required by plants for photosynthesis?",o:{"A":"ऑक्सीजन — Oxygen","B":"नाइट्रोजन — Nitrogen","C":"कार्बन डाइऑक्साइड — Carbon dioxide","D":"हाइड्रोजन — Hydrogen"},a:"C"},
+{qh:"Q4. विद्युत धारा की SI इकाई क्या है?",qe:"What is the SI unit of electric current?",o:{"A":"वोल्ट — Volt","B":"वाट — Watt","C":"एम्पियर — Ampere","D":"ओम — Ohm"},a:"C"},
+{qh:"Q5. जल का रासायनिक सूत्र क्या है?",qe:"What is the chemical formula of water?",o:{"A":"CO₂","B":"H₂O","C":"O₂","D":"H₂O₂"},a:"B"},
+{qh:"Q6. अम्लीय पदार्थ का pH सामान्यतः कितना होता है?",qe:"What is the pH of an acidic substance generally?",o:{"A":"7 से कम — Less than 7","B":"7 — 7","C":"7 से अधिक — More than 7","D":"14 से अधिक — More than 14"},a:"A"},
+{qh:"Q7. न्यूटन का प्रथम नियम किससे संबंधित है?",qe:"Newton's First Law is related to what?",o:{"A":"ऊर्जा — Energy","B":"जड़त्व — Inertia","C":"गुरुत्वाकर्षण — Gravitation","D":"दाब — Pressure"},a:"B"},
+{qh:"Q8. मानव शरीर में ऑक्सीजन का परिवहन मुख्यतः किसके द्वारा होता है?",qe:"Oxygen is mainly transported in the human body by?",o:{"A":"प्लेटलेट्स — Platelets","B":"प्लाज्मा — Plasma","C":"हीमोग्लोबिन — Hemoglobin","D":"श्वेत रक्त कोशिकाएँ — White Blood Cells"},a:"C"},
+{qh:"Q9. लोहे पर जंग लगने के लिए मुख्यतः किनकी आवश्यकता होती है?",qe:"What is mainly required for rusting of iron?",o:{"A":"केवल CO₂ — Only CO₂","B":"ऑक्सीजन और नमी — Oxygen and moisture","C":"केवल नाइट्रोजन — Only nitrogen","D":"केवल हाइड्रोजन — Only hydrogen"},a:"B"},
+{qh:"Q10. निम्नलिखित में से विद्युत का अच्छा चालक कौन-सा है?",qe:"Which of the following is a good conductor of electricity?",o:{"A":"रबर — Rubber","B":"लकड़ी — Wood","C":"तांबा — Copper","D":"प्लास्टिक — Plastic"},a:"C"},
+{qh:"Q11. 25 का 20% कितना होगा?",qe:"What is 20% of 25?",o:{"A":"4","B":"5","C":"6","D":"10"},a:"B"},
+{qh:"Q12. 12 × 8 का मान क्या है?",qe:"What is the value of 12 × 8?",o:{"A":"86","B":"96","C":"108","D":"112"},a:"B"},
+{qh:"Q13. 144 का वर्गमूल क्या है?",qe:"What is the square root of 144?",o:{"A":"10","B":"11","C":"12","D":"14"},a:"C"},
+{qh:"Q14. ₹500 की वस्तु पर 10% छूट दी जाती है। विक्रय मूल्य कितना होगा?",qe:"An item costs ₹500 and a discount of 10% is given. What is its selling price?",o:{"A":"₹450","B":"₹460","C":"₹480","D":"₹490"},a:"A"},
+{qh:"Q15. 3/4 + 1/4 का मान क्या है?",qe:"What is the value of 3/4 + 1/4?",o:{"A":"1/2","B":"1","C":"3/8","D":"4/8"},a:"B"},
+{qh:"Q16. यदि x + 7 = 15, तो x का मान क्या है?",qe:"If x + 7 = 15, what is the value of x?",o:{"A":"6","B":"7","C":"8","D":"9"},a:"C"},
+{qh:"Q17. श्रृंखला को पूरा कीजिए: 2, 4, 8, 16,?",qe:"Complete the series: 2, 4, 8, 16,?",o:{"A":"20","B":"24","C":"30","D":"32"},a:"D"},
+{qh:"Q18. एक त्रिभुज के तीनों कोणों का योग कितना होता है?",qe:"What is the sum of the three angles of a triangle?",o:{"A":"90°","B":"180°","C":"270°","D":"360°"},a:"B"},
+{qh:"Q19. 15 और 20 का HCF क्या है?",qe:"What is the HCF of 15 and 20?",o:{"A":"3","B":"4","C":"5","D":"10"},a:"C"},
+{qh:"Q20. 6 और 8 का LCM क्या है?",qe:"What is the LCM of 6 and 8?",o:{"A":"12","B":"18","C":"24","D":"48"},a:"C"},
+{qh:"Q21. एक आयत की लंबाई 10 cm और चौड़ाई 5 cm है। क्षेत्रफल कितना होगा?",qe:"A rectangle has a length of 10 cm and breadth of 5 cm. What is its area?",o:{"A":"15 cm²","B":"30 cm²","C":"50 cm²","D":"100 cm²"},a:"C"},
+{qh:"Q22. ₹1000 पर 5% वार्षिक साधारण ब्याज की दर से 2 वर्ष का ब्याज कितना होगा?",qe:"What will be the simple interest on ₹1000 at 5% per annum for 2 years?",o:{"A":"₹50","B":"₹100","C":"₹150","D":"₹200"},a:"B"},
+{qh:"Q23. 72 km/h को m/s में बदलने पर कितना होगा?",qe:"Convert 72 km/h into m/s.",o:{"A":"10 m/s","B":"15 m/s","C":"20 m/s","D":"25 m/s"},a:"C"},
+{qh:"Q24. किसी संख्या का 25% = 20 है। वह संख्या क्या है?",qe:"25% of a number is 20. What is the number?",o:{"A":"40","B":"60","C":"80","D":"100"},a:"C"},
+{qh:"Q25. एक वस्तु ₹800 में खरीदी और ₹920 में बेची गई। लाभ प्रतिशत कितना है?",qe:"An item is bought for ₹800 and sold for ₹920. What is the profit percentage?",o:{"A":"10%","B":"12%","C":"15%","D":"20%"},a:"C"},
+{qh:"Q26. भारत की राजधानी क्या है?",qe:"What is the capital of India?",o:{"A":"मुंबई — Mumbai","B":"नई दिल्ली — New Delhi","C":"कोलकाता — Kolkata","D":"चेन्नई — Chennai"},a:"B"},
+{qh:"Q27. भारतीय संविधान कब लागू हुआ था?",qe:"When did the Constitution of India come into force?",o:{"A":"15 अगस्त 1947 — 15 August 1947","B":"26 नवंबर 1949 — 26 November 1949","C":"26 जनवरी 1950 — 26 January 1950","D":"2 अक्टूबर 1950 — 2 October 1950"},a:"C"},
+{qh:"Q28. भारत का राष्ट्रीय पशु कौन-सा है?",qe:"What is the national animal of India?",o:{"A":"शेर — Lion","B":"बाघ — Tiger","C":"हाथी — Elephant","D":"मोर — Peacock"},a:"B"},
+{qh:"Q29. भारत का आधिकारिक राष्ट्रीय खेल कौन-सा है?",qe:"What is India's officially recognized national sport?",o:{"A":"हॉकी — Hockey","B":"क्रिकेट — Cricket","C":"कबड्डी — Kabaddi","D":"कोई आधिकारिक राष्ट्रीय खेल नहीं — No officially recognized national sport"},a:"D"},
+{qh:"Q30. भारतीय नौसेना दिवस कब मनाया जाता है?",qe:"When is Indian Navy Day celebrated?",o:{"A":"4 दिसंबर — 4 December","B":"15 अगस्त — 15 August","C":"26 जनवरी — 26 January","D":"8 अक्टूबर — 8 October"},a:"A"},
+{qh:"Q31. भारतीय नौसेना का मुख्यालय कहाँ स्थित है?",qe:"Where is the headquarters of the Indian Navy located?",o:{"A":"नई दिल्ली — New Delhi","B":"मुंबई — Mumbai","C":"कोच्चि — Kochi","D":"विशाखापट्टनम — Visakhapatnam"},a:"A"},
+{qh:"Q32. INS का पूरा नाम क्या है?",qe:"What is the full form of INS?",o:{"A":"Indian Naval Ship","B":"Indian National Ship","C":"Indian Navy Service","D":"Indian Naval Service"},a:"A"},
+{qh:"Q33. क्षेत्रफल की दृष्टि से भारत का सबसे बड़ा राज्य कौन-सा है?",qe:"Which is the largest state of India by area?",o:{"A":"मध्य प्रदेश — Madhya Pradesh","B":"महाराष्ट्र — Maharashtra","C":"राजस्थान — Rajasthan","D":"उत्तर प्रदेश — Uttar Pradesh"},a:"C"},
+{qh:"Q34. भारत में बहने वाली सबसे लंबी नदी कौन-सी मानी जाती है?",qe:"Which is considered the longest river flowing in India?",o:{"A":"यमुना — Yamuna","B":"गंगा — Ganga","C":"गोदावरी — Godavari","D":"नर्मदा — Narmada"},a:"B"},
+{qh:"Q35. पृथ्वी का एकमात्र प्राकृतिक उपग्रह कौन-सा है?",qe:"What is the only natural satellite of Earth?",o:{"A":"मंगल — Mars","B":"चंद्रमा — Moon","C":"शुक्र — Venus","D":"सूर्य — Sun"},a:"B"},
+{qh:"Q36. भारत के राष्ट्रीय ध्वज का डिजाइन किसने तैयार किया था?",qe:"Who designed the national flag of India?",o:{"A":"पिंगली वेंकैया — Pingali Venkayya","B":"महात्मा गांधी — Mahatma Gandhi","C":"जवाहरलाल नेहरू — Jawaharlal Nehru","D":"डॉ. बी. आर. अंबेडकर — Dr. B. R. Ambedkar"},a:"A"},
+{qh:"Q37. 'जय जवान, जय किसान' का नारा किसने दिया था?",qe:"Who gave the slogan 'Jai Jawan, Jai Kisan'?",o:{"A":"जवाहरलाल नेहरू — Jawaharlal Nehru","B":"लाल बहादुर शास्त्री — Lal Bahadur Shastri","C":"सरदार पटेल — Sardar Patel","D":"सुभाष चंद्र बोस — Subhas Chandra Bose"},a:"B"},
+{qh:"Q38. भारतीय संविधान की प्रस्तावना में भारत को किस रूप में वर्णित किया गया है?",qe:"How is India described in the Preamble of the Constitution?",o:{"A":"राजतंत्र — Monarchy","B":"लोकतांत्रिक गणराज्य — Democratic Republic","C":"सैन्य राज्य — Military State","D":"उपनिवेश — Colony"},a:"B"},
+{qh:"Q39. भारत का राष्ट्रीय पक्षी कौन-सा है?",qe:"What is the national bird of India?",o:{"A":"कबूतर — Pigeon","B":"मोर — Peacock","C":"हंस — Swan","D":"गरुड़ — Eagle"},a:"B"},
+{qh:"Q40. भारतीय रिजर्व बैंक की स्थापना किस वर्ष हुई थी?",qe:"In which year was the Reserve Bank of India established?",o:{"A":"1930","B":"1935","C":"1947","D":"1950"},a:"B"},
+{qh:"Q41. भारत में अधिकांश मुद्रा नोट जारी करने का अधिकार किसके पास है?",qe:"Who has the authority to issue most currency notes in India?",o:{"A":"SBI","B":"RBI","C":"वित्त मंत्रालय — Ministry of Finance","D":"SEBI"},a:"B"},
+{qh:"Q42. 'वंदे मातरम्' के रचयिता कौन हैं?",qe:"Who wrote 'Vande Mataram'?",o:{"A":"रवीन्द्रनाथ टैगोर — Rabindranath Tagore","B":"बंकिम चंद्र चट्टोपाध्याय — Bankim Chandra Chattopadhyay","C":"प्रेमचंद — Premchand","D":"रामधारी सिंह दिनकर — Ramdhari Singh Dinkar"},a:"B"},
+{qh:"Q43. भारत की सबसे ऊँची पर्वत चोटी कौन-सी है?",qe:"Which is the highest mountain peak in India?",o:{"A":"नंदा देवी — Nanda Devi","B":"K2","C":"कंचनजंगा — Kangchenjunga","D":"माउंट एवरेस्ट — Mount Everest"},a:"C"},
+{qh:"Q44. सौरमंडल का सबसे बड़ा ग्रह कौन-सा है?",qe:"Which is the largest planet in the Solar System?",o:{"A":"पृथ्वी — Earth","B":"शनि — Saturn","C":"बृहस्पति — Jupiter","D":"मंगल — Mars"},a:"C"},
+{qh:"Q45. भारतीय राष्ट्रीय कांग्रेस की स्थापना किस वर्ष हुई थी?",qe:"In which year was the Indian National Congress founded?",o:{"A":"1885","B":"1905","C":"1919","D":"1947"},a:"A"},
+{qh:"Q46. भारत छोड़ो आंदोलन किस वर्ष शुरू हुआ था?",qe:"In which year was the Quit India Movement launched?",o:{"A":"1930","B":"1940","C":"1942","D":"1947"},a:"C"},
+{qh:"Q47. भारत का राष्ट्रीय गीत कौन-सा है?",qe:"What is the national song of India?",o:{"A":"जन गण मन — Jana Gana Mana","B":"सारे जहाँ से अच्छा — Sare Jahan Se Achha","C":"वंदे मातरम् — Vande Mataram","D":"ऐ मेरे वतन के लोगों — Ae Mere Watan Ke Logon"},a:"C"},
+{qh:"Q48. 'जन गण मन' के रचयिता कौन हैं?",qe:"Who composed 'Jana Gana Mana'?",o:{"A":"बंकिम चंद्र चट्टोपाध्याय — Bankim Chandra Chattopadhyay","B":"रवीन्द्रनाथ टैगोर — Rabindranath Tagore","C":"सरोजिनी नायडू — Sarojini Naidu","D":"सुभाष चंद्र बोस — Subhas Chandra Bose"},a:"B"},
+{qh:"Q49. भारतीय सशस्त्र बलों का सर्वोच्च कमांडर कौन होता है?",qe:"Who is the Supreme Commander of the Indian Armed Forces?",o:{"A":"प्रधानमंत्री — Prime Minister","B":"रक्षा मंत्री — Defence Minister","C":"राष्ट्रपति — President","D":"नौसेना प्रमुख — Chief of Naval Staff"},a:"C"},
+{qh:"Q50. भारत का राष्ट्रीय चिन्ह किससे लिया गया है?",qe:"The National Emblem of India is adopted from which?",o:{"A":"कुतुब मीनार — Qutub Minar","B":"सारनाथ के अशोक स्तंभ के सिंह शीर्ष — Lion Capital of Ashoka at Sarnath","C":"इंडिया गेट — India Gate","D":"लाल किला — Red Fort"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=30*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim(); let ok=true;
+  if(n.length<3){nameErr.style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{nameErr.style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){cityErr.style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{cityErr.style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return; localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){ if(passInput.value==="MGE@77"){ passScreen.style.display='none'; mainTest.style.display='block'; tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000); render(); }else{passErr.style.display='block';} }
+function render(){
+  let q=testData.questions[cur]; qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h; attemptInfo.innerText=`${Object.keys(answers).length}/50 Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`}); pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();} function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}} function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  clearInterval(tInt); let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  let finalMarks = cor*1 - wro*0.25;
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  finalScoreNeg.innerText=`Final Score with Negative 0.25: ${finalMarks.toFixed(2)} / 50 (Correct ${cor} - Wrong ${wro}×0.25)`;
+  scoreMsg.innerText=cor>=40?"Excellent! Navy Topper Ho ⚓":cor>=30?"Bahut Badhiya! 🚀":cor>=20?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex'; buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between"><b style="color:#0b3d91">Q ${i+1}</b><span class="badge ${badgeClass}">${u==undefined?"⚠️ Skipped":correct?"✅ Correct":"❌ Wrong"}</span></div>
+    <div style="font-weight:800;font-size:16px;margin:6px 0">${q.qh}</div>
+    <div style="color:#64748b;font-size:13px;margin-bottom:8px">${q.qe}</div>`;
+    for(let k in q.o){let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt"; html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u && k!=q.a?'❌ Your Answer':''}</div>`;}
+    html+=`<div style="margin-top:8px;font-size:12px"><b>Your:</b> ${u||'Not Attempted'} | <b>Correct:</b> ${q.a} (${q.o[q.a]})</div></div>`;
+  }); reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block';} function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
