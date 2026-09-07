@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Navy MR Mock Test 02 - Hard Level | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#020617;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #38bdf8}
+.timer{border:2px solid #7dd3fc;background:#0c4a6e;color:#7dd3fc;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:600;background:var(--card)}
+.options label.sel{border-color:#2563eb!important;background:#dbeafe!important;color:#1e3a8a!important;font-weight:800}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#0b3d91;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}
+.p{height:42px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px}
+.p.cur{background:#ef4444!important;color:#fff!important}
+.p.ans{background:#10b981!important;color:#fff!important}
+.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px}
+#loginScreen{background:rgba(2,6,23,0.92)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #38bdf8;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #38bdf8;margin:8px 0;text-align:center;font-weight:700;font-size:15px}
+#passScreen{background:rgba(0,0,0,0.96)}
+.pass-box{background:linear-gradient(180deg,#020617,#0b3d91);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #38bdf8}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;max-height:95vh;overflow-y:auto}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;font-weight:800;line-height:1.4} #qEn{font-size:13.5px;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#7dd3fc">⚓ MISSION GYAN JOBS - NAVY MR HARD</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">30:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#38bdf8">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box">
+<h2 style="color:#38bdf8">👋 Welcome Sailor - TEST 02 HARD</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Name & District bharo</p>
+<input id="stuName" placeholder="पूरा नाम *"><div id="nameErr" style="color:#f87171;font-size:12px;display:none;text-align:left">❌ नाम भरें</div>
+<input id="stuCity" placeholder="जिला / शहर *"><div id="cityErr" style="color:#f87171;font-size:12px;display:none;text-align:left">❌ जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#38bdf8;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#020617;font-size:15px">Continue →</button>
+<p style="font-size:10px;color:#64748b;margin-top:8px">50 Q | 30 Min | -0.25 Negative | Hard Level</p>
+</div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box">
+<h2 style="color:#7dd3fc">⚓ TEST 02 LOCKED ⚓</h2><p style="color:white;font-size:13px;margin-bottom:12px">Password daalo</p>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #38bdf8;border-radius:8px;text-align:center;font-weight:900;font-size:15px">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:#38bdf8;color:#020617;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px">UNLOCK & START HARD TEST</button>
+<p id="passErr" style="color:#7dd3fc;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
+</div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #ef4444"><b>🇮🇳 INDIAN NAVY AGNIVEER MR - MOCK TEST 02 [HARD LEVEL]</b><br><small>50 Q | 50 Marks | <span id="attemptInfo">0/50</span> | Negative 0.25 | Score = Correct*1 - Wrong*0.25</small></div>
+<div class="q-card">
+<b style="color:#0b3d91;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b>
+<div id="qHi"></div><div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div>
+</div>
+<div class="p-card"><b style="font-size:14px">Question Palette - 50 Q Hard</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.92)">
+<div class="score-card"><div style="text-align:center"><div style="background:#fee2e2;color:#991b1b;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">HARD LEVEL SCORECARD TEST 02</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#0b3d91"><span id="sBig">0</span><span style="font-size:18px;color:#64748b"> /50</span></div>
+<div style="font-size:12px;color:#64748b" id="stuInfoShow"></div>
+<div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div></div>
+<button onclick="openReview()" style="width:100%;background:#020617;color:#7dd3fc;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #38bdf8;font-size:14px">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:#f1f5f9;padding:13px;border:1px solid #e2e8f0;border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake Hard Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:white;padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #38bdf8;margin-bottom:12px"><b>📝 Test 02 Hard - Analysis</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. एक वस्तु 20 m/s की चाल से 5 सेकंड तक चलती है। वह कितनी दूरी तय करेगी?",qe:"An object moves with a speed of 20 m/s for 5 seconds. What distance will it cover?",o:{"A":"50 m — 50 मीटर","B":"80 m — 80 मीटर","C":"100 m — 100 मीटर","D":"120 m — 120 मीटर"},a:"C"},
+{qh:"Q2. विद्युत प्रतिरोध की SI इकाई क्या है?",qe:"What is the SI unit of electrical resistance?",o:{"A":"Volt — वोल्ट","B":"Ampere — एम्पियर","C":"Ohm — ओम","D":"Watt — वाट"},a:"C"},
+{qh:"Q3. यदि किसी परिपथ में विभवांतर 12 V और प्रतिरोध 4 Ω है, तो धारा कितनी होगी?",qe:"If the potential difference is 12 V and resistance is 4 Ω, what will be the current?",o:{"A":"2 A — 2 एम्पियर","B":"3 A — 3 एम्पियर","C":"4 A — 4 एम्पियर","D":"48 A — 48 एम्पियर"},a:"B"},
+{qh:"Q4. मानव शरीर में इंसुलिन हार्मोन किस अंग द्वारा बनाया जाता है?",qe:"Which organ produces the hormone insulin in the human body?",o:{"A":"Liver — यकृत","B":"Kidney — गुर्दा","C":"Pancreas — अग्न्याशय","D":"Thyroid — थायरॉइड"},a:"C"},
+{qh:"Q5. विटामिन D की कमी से कौन-सा रोग हो सकता है?",qe:"Deficiency of Vitamin D can cause which disease?",o:{"A":"Scurvy — स्कर्वी","B":"Rickets — रिकेट्स","C":"Beriberi — बेरी-बेरी","D":"Night blindness — रतौंधी"},a:"B"},
+{qh:"Q6. निम्न में से कौन-सा रासायनिक परिवर्तन है?",qe:"Which of the following is a chemical change?",o:{"A":"Melting of ice — बर्फ का पिघलना","B":"Cutting of paper — कागज काटना","C":"Rusting of iron — लोहे में जंग लगना","D":"Boiling of water — पानी का उबलना"},a:"C"},
+{qh:"Q7. ध्वनि निर्वात में—",qe:"Sound in vacuum—",o:{"A":"Travels fast — तेजी से चलती है","B":"Travels slowly — धीरे चलती है","C":"Cannot travel — नहीं चल सकती","D":"Travels at light speed — प्रकाश की गति से चलती है"},a:"C"},
+{qh:"Q8. परमाणु संख्या किसके बराबर होती है?",qe:"Atomic number is equal to the number of—",o:{"A":"Neutrons — न्यूट्रॉन","B":"Protons — प्रोटॉन","C":"Neutrons + electrons — न्यूट्रॉन + इलेक्ट्रॉन","D":"Protons + neutrons — प्रोटॉन + न्यूट्रॉन"},a:"B"},
+{qh:"Q9. न्यूटन का तीसरा नियम किससे संबंधित है?",qe:"Newton's Third Law is related to—",o:{"A":"Inertia — जड़त्व","B":"F = ma","C":"Action and reaction — क्रिया और प्रतिक्रिया","D":"Gravitation — गुरुत्वाकर्षण"},a:"C"},
+{qh:"Q10. मानव रक्त का सामान्य pH लगभग कितना होता है?",qe:"What is the approximate normal pH of human blood?",o:{"A":"5.5","B":"6.5","C":"7.4","D":"8.5"},a:"C"},
+{qh:"Q11. एक संख्या का 40% = 72 है। वह संख्या क्या है?",qe:"40% of a number is 72. What is the number?",o:{"A":"160","B":"180","C":"200","D":"220"},a:"B"},
+{qh:"Q12. यदि किसी वस्तु का क्रय मूल्य ₹800 और विक्रय मूल्य ₹920 है, तो लाभ प्रतिशत क्या होगा?",qe:"If the cost price is ₹800 and selling price is ₹920, what is the profit percentage?",o:{"A":"10%","B":"12%","C":"15%","D":"20%"},a:"C"},
+{qh:"Q13. दो संख्याओं का अनुपात 3 : 5 है और उनका योग 64 है। छोटी संख्या क्या है?",qe:"The ratio of two numbers is 3 : 5 and their sum is 64. What is the smaller number?",o:{"A":"18","B":"21","C":"24","D":"30"},a:"C"},
+{qh:"Q14. एक ट्रेन 72 km/h की गति से चल रही है। 25 सेकंड में वह कितनी दूरी तय करेगी?",qe:"A train is moving at 72 km/h. How much distance will it cover in 25 seconds?",o:{"A":"400 m","B":"450 m","C":"500 m","D":"550 m"},a:"C"},
+{qh:"Q15. ₹2000 पर 6% वार्षिक दर से 3 वर्ष का साधारण ब्याज कितना होगा?",qe:"What is the simple interest on ₹2000 at 6% per annum for 3 years?",o:{"A":"₹300","B":"₹320","C":"₹360","D":"₹380"},a:"C"},
+{qh:"Q16. यदि 5x − 7 = 28, तो x का मान क्या है?",qe:"If 5x − 7 = 28, what is the value of x?",o:{"A":"5","B":"6","C":"7","D":"8"},a:"C"},
+{qh:"Q17. 24, 36 और 60 का HCF क्या है?",qe:"What is the HCF of 24, 36 and 60?",o:{"A":"6","B":"12","C":"18","D":"24"},a:"B"},
+{qh:"Q18. 12, 18 और 30 का LCM क्या है?",qe:"What is the LCM of 12, 18 and 30?",o:{"A":"90","B":"120","C":"150","D":"180"},a:"D"},
+{qh:"Q19. एक आयत की लंबाई 15 cm और चौड़ाई 8 cm है। उसका परिमाप कितना होगा?",qe:"A rectangle has length 15 cm and breadth 8 cm. What is its perimeter?",o:{"A":"38 cm","B":"46 cm","C":"48 cm","D":"56 cm"},a:"B"},
+{qh:"Q20. एक वृत्त की त्रिज्या 7 cm है। π = 22/7 लेने पर क्षेत्रफल कितना होगा?",qe:"A circle has a radius of 7 cm. Taking π = 22/7, what is its area?",o:{"A":"44 cm²","B":"88 cm²","C":"154 cm²","D":"308 cm²"},a:"C"},
+{qh:"Q21. एक व्यक्ति 3 घंटे में 18 km चलता है। उसकी औसत चाल क्या है?",qe:"A person walks 18 km in 3 hours. What is his average speed?",o:{"A":"5 km/h","B":"6 km/h","C":"8 km/h","D":"9 km/h"},a:"B"},
+{qh:"Q22. एक दुकानदार किसी वस्तु को ₹600 में खरीदता है और 20% लाभ पर बेचता है। विक्रय मूल्य क्या होगा?",qe:"A shopkeeper buys an item for ₹600 and sells it at a profit of 20%. What is the selling price?",o:{"A":"₹680","B":"₹700","C":"₹720","D":"₹750"},a:"C"},
+{qh:"Q23. यदि 3/5 किसी संख्या का 48 है, तो संख्या क्या है?",qe:"If 3/5 of a number is 48, what is the number?",o:{"A":"60","B":"70","C":"80","D":"90"},a:"C"},
+{qh:"Q24. एक कक्षा में लड़कों और लड़कियों का अनुपात 5 : 3 है। कुल विद्यार्थी 40 हैं। लड़कियों की संख्या कितनी है?",qe:"The ratio of boys to girls in a class is 5 : 3. If there are 40 students in total, how many are girls?",o:{"A":"12","B":"15","C":"18","D":"20"},a:"B"},
+{qh:"Q25. यदि किसी संख्या में 25% की वृद्धि करने पर वह 250 हो जाती है, तो मूल संख्या क्या थी?",qe:"If a number becomes 250 after a 25% increase, what was the original number?",o:{"A":"180","B":"200","C":"220","D":"225"},a:"B"},
+{qh:"Q26. भारतीय नौसेना का आदर्श वाक्य क्या है?",qe:"What is the motto of the Indian Navy?",o:{"A":"Jai Hind — जय हिंद","B":"Sham No Varunah — शं नो वरुणः","C":"Satyameva Jayate — सत्यमेव जयते","D":"Vayam Rakshamah — वयं रक्षामः"},a:"B"},
+{qh:"Q27. भारतीय नौसेना दिवस किस घटना की स्मृति में मनाया जाता है?",qe:"Indian Navy Day commemorates which event?",o:{"A":"Operation Vijay — ऑपरेशन विजय","B":"Operation Trident — ऑपरेशन ट्राइडेंट","C":"Operation Meghdoot — ऑपरेशन मेघदूत","D":"Operation Cactus — ऑपरेशन कैक्टस"},a:"B"},
+{qh:"Q28. भारत का पहला स्वदेशी विमानवाहक पोत कौन-सा है?",qe:"Which is India's first indigenous aircraft carrier?",o:{"A":"INS Vikramaditya — आईएनएस विक्रमादित्य","B":"INS Vikrant — आईएनएस विक्रांत","C":"INS Viraat — आईएनएस विराट","D":"INS Arihant — आईएनएस अरिहंत"},a:"B"},
+{qh:"Q29. भारतीय नौसेना का सर्वोच्च मानद / युद्धकालीन पद (सहित) कौन-सा माना जाता है?",qe:"Which is considered the highest honorary/wartime rank of Indian Navy including?",o:{"A":"Rear Admiral — रियर एडमिरल","B":"Vice Admiral — वाइस एडमिरल","C":"Admiral — एडमिरल","D":"Admiral of the Fleet — एडमिरल ऑफ द फ्लीट"},a:"D"},
+{qh:"Q30. भारत के संविधान का संरक्षक किसे माना जाता है?",qe:"Who is regarded as the guardian of the Constitution of India?",o:{"A":"Parliament — संसद","B":"Supreme Court — सर्वोच्च न्यायालय","C":"President — राष्ट्रपति","D":"Prime Minister — प्रधानमंत्री"},a:"B"},
+{qh:"Q31. मौलिक कर्तव्य भारतीय संविधान में किस संशोधन द्वारा जोड़े गए थे?",qe:"Fundamental Duties were added to the Indian Constitution by which amendment?",o:{"A":"24th Amendment — 24वां संशोधन","B":"42nd Amendment — 42वां संशोधन","C":"44th Amendment — 44वां संशोधन","D":"73rd Amendment — 73वां संशोधन"},a:"B"},
+{qh:"Q32. भारत में पंचायती राज को संवैधानिक दर्जा किस संशोधन से मिला?",qe:"Which amendment gave constitutional status to Panchayati Raj institutions?",o:{"A":"61st — 61वां","B":"73rd — 73वां","C":"74th — 74वां","D":"86th — 86वां"},a:"B"},
+{qh:"Q33. भारत का सबसे बड़ा मरुस्थल कौन-सा है?",qe:"Which is the largest desert in India?",o:{"A":"Thar Desert — थार मरुस्थल","B":"Sahara Desert — सहारा मरुस्थल","C":"Gobi Desert — गोबी मरुस्थल","D":"Kalahari Desert — कालाहारी मरुस्थल"},a:"A"},
+{qh:"Q34. भारत में सबसे लंबी तटरेखा वाला राज्य कौन-सा है?",qe:"Which Indian state has the longest coastline?",o:{"A":"Maharashtra — महाराष्ट्र","B":"Gujarat — गुजरात","C":"Tamil Nadu — तमिलनाडु","D":"Andhra Pradesh — आंध्र प्रदेश"},a:"B"},
+{qh:"Q35. भारत की सबसे बड़ी मीठे पानी की झील कौन-सी है?",qe:"Which is the largest freshwater lake in India?",o:{"A":"Chilika Lake — चिलिका झील","B":"Wular Lake — वुलर झील","C":"Sambhar Lake — सांभर झील","D":"Pulicat Lake — पुलिकट झील"},a:"B"},
+{qh:"Q36. सांभर झील किस राज्य में स्थित है?",qe:"Sambhar Lake is located in which state?",o:{"A":"Gujarat — गुजरात","B":"Rajasthan — राजस्थान","C":"Haryana — हरियाणा","D":"Madhya Pradesh — मध्य प्रदेश"},a:"B"},
+{qh:"Q37. भारत का पहला परमाणु परीक्षण किस स्थान पर किया गया था?",qe:"Where was India's first nuclear test conducted?",o:{"A":"Pokhran — पोखरण","B":"Sriharikota — श्रीहरिकोटा","C":"Kalpakkam — कलपक्कम","D":"Tarapur — तारापुर"},a:"A"},
+{qh:"Q38. “मिसाइल मैन ऑफ इंडिया” किसे कहा जाता है?",qe:"Who is known as the Missile Man of India?",o:{"A":"Homi J. Bhabha — होमी जे. भाभा","B":"Vikram Sarabhai — विक्रम साराभाई","C":"A. P. J. Abdul Kalam — ए. पी. जे. अब्दुल कलाम","D":"Satish Dhawan — सतीश धवन"},a:"C"},
+{qh:"Q39. ISRO का मुख्यालय कहाँ स्थित है?",qe:"Where is the headquarters of ISRO located?",o:{"A":"Hyderabad — हैदराबाद","B":"Bengaluru — बेंगलुरु","C":"Chennai — चेन्नई","D":"New Delhi — नई दिल्ली"},a:"B"},
+{qh:"Q40. भारत का पहला उपग्रह कौन-सा था?",qe:"What was India's first satellite?",o:{"A":"Rohini — रोहिणी","B":"Aryabhata — आर्यभट्ट","C":"INSAT-1A — इनसैट-1A","D":"Bhaskara — भास्कर"},a:"B"},
+{qh:"Q41. भारतीय संविधान में कुल कितनी अनुसूचियाँ वर्तमान में हैं?",qe:"How many Schedules are there in the Constitution of India at present?",o:{"A":"10","B":"11","C":"12","D":"13"},a:"C"},
+{qh:"Q42. राज्यसभा की अधिकतम सदस्य संख्या कितनी हो सकती है?",qe:"What is the maximum strength of the Rajya Sabha?",o:{"A":"238","B":"245","C":"250","D":"252"},a:"C"},
+{qh:"Q43. लोकसभा का सामान्य कार्यकाल कितना होता है?",qe:"What is the normal term of the Lok Sabha?",o:{"A":"4 years — 4 वर्ष","B":"5 years — 5 वर्ष","C":"6 years — 6 वर्ष","D":"7 years — 7 वर्ष"},a:"B"},
+{qh:"Q44. भारत में हरित क्रांति के जनक के रूप में किसे जाना जाता है?",qe:"Who is known as the Father of the Green Revolution in India?",o:{"A":"M. S. Swaminathan — एम. एस. स्वामीनाथन","B":"Norman Borlaug — नॉर्मन बोरलॉग","C":"Verghese Kurien — वर्गीज कुरियन","D":"C. Subramaniam — सी. सुब्रमण्यम"},a:"A"},
+{qh:"Q45. भारत में श्वेत क्रांति किससे संबंधित है?",qe:"The White Revolution in India is associated with—",o:{"A":"Wheat — गेहूँ","B":"Milk — दूध","C":"Fish — मछली","D":"Cotton — कपास"},a:"B"},
+{qh:"Q46. “ऑपरेशन फ्लड” किससे संबंधित था?",qe:"Operation Flood was related to—",o:{"A":"Milk production — दूध उत्पादन","B":"Food grains — खाद्यान्न","C":"Irrigation — सिंचाई","D":"Flood control — बाढ़ नियंत्रण"},a:"A"},
+{qh:"Q47. भारत का राष्ट्रीय जलीय जीव कौन-सा है?",qe:"What is the national aquatic animal of India?",o:{"A":"Blue Whale — नीली व्हेल","B":"Ganges River Dolphin — गंगा नदी डॉल्फिन","C":"Crocodile — मगरमच्छ","D":"Olive Ridley Turtle — ऑलिव रिडले कछुआ"},a:"B"},
+{qh:"Q48. भारत का राष्ट्रीय वृक्ष कौन-सा है?",qe:"What is the national tree of India?",o:{"A":"Neem — नीम","B":"Banyan — बरगद","C":"Peepal — पीपल","D":"Mango — आम"},a:"B"},
+{qh:"Q49. भारत का राष्ट्रीय फल कौन-सा है?",qe:"What is the national fruit of India?",o:{"A":"Apple — सेब","B":"Banana — केला","C":"Mango — आम","D":"Orange — संतरा"},a:"C"},
+{qh:"Q50. भारतीय संविधान में समानता का अधिकार किन अनुच्छेदों में है?",qe:"The Right to Equality is covered under which Articles?",o:{"A":"Articles 12–13 — अनुच्छेद 12–13","B":"Articles 14–18 — अनुच्छेद 14–18","C":"Articles 19–22 — अनुच्छेद 19–22","D":"Articles 25–28 — अनुच्छेद 25–28"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=30*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim(); let ok=true;
+  if(n.length<3){nameErr.style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{nameErr.style.display='none';}
+  if(c.length<2){cityErr.style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{cityErr.style.display='none';}
+  if(!ok) return; localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){ if(passInput.value==="MGE@77"){ passScreen.style.display='none'; mainTest.style.display='block'; tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000); render(); }else{passErr.style.display='block';} }
+function render(){
+  let q=testData.questions[cur]; qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h; attemptInfo.innerText=`${Object.keys(answers).length}/50 Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`}); pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();} function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}} function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  clearInterval(tInt); let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  let finalMarks = cor*1 - wro*0.25;
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  finalScoreNeg.innerText=`Final Score: ${finalMarks.toFixed(2)} / 50 (Formula: ${cor}×1 - ${wro}×0.25)`;
+  scoreMsg.innerText=finalMarks>=40?"Excellent! Navy Hard Topper ⚓🔥":finalMarks>=30?"Bahut Badhiya! Hard Level Clear 🚀":finalMarks>=20?"Theek Hai, Aur Practice Karo 💪":"Hard Hai, Par Ho Jayega 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex'; buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between"><b style="color:#0b3d91">Q ${i+1}</b><span class="badge ${badgeClass}">${u==undefined?"⚠️ Skipped":correct?"✅ Correct":"❌ Wrong"}</span></div>
+    <div style="font-weight:800;font-size:16px;margin:6px 0">${q.qh}</div>
+    <div style="color:#64748b;font-size:13px;margin-bottom:8px">${q.qe}</div>`;
+    for(let k in q.o){let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt"; html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u && k!=q.a?'❌ Your Answer':''}</div>`;}
+    if(i==28) html+=`<div style="background:#eff6ff;padding:8px;border-radius:8px;margin-top:8px;font-size:12px"><b>Note:</b> Admiral of the Fleet भारत का सर्वोच्च मानद 5-star rank है, जो युद्धकालीन/मानद रूप से दिया जाता है। सक्रिय सेवा में सर्वोच्च पद Admiral है।</div>`;
+    html+=`</div>`;
+  }); reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block';} function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
