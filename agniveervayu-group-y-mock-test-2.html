@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Group Y Mock Test 02 - 50Q | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#451a03;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fde68a;background:#7c2d12;color:#fbbf24;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:600;background:var(--card)}
+.options label.sel{border-color:#d97706!important;background:#fef3c7!important;color:#92400e!important;font-weight:800}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#451a03;color:#fbbf24;flex:1.6;border:1px solid #fbbf24}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}
+.p{height:42px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px}
+.p.cur{background:#ef4444!important;color:#fff!important}
+.p.ans{background:#10b981!important;color:#fff!important}
+.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px}
+#loginScreen{background:rgba(69,26,3,0.92)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px}
+#passScreen{background:rgba(0,0,0,0.96)}
+.pass-box{background:linear-gradient(180deg,#451a03,#92400e);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #fbbf24}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;max-height:95vh;overflow-y:auto}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;font-weight:800;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#fde68a">✈️ GROUP Y TEST 02 - MISSION GYAN JOBS</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">45:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box">
+<h2 style="color:#fbbf24">👋 Group Y Test 02</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Name & District bharo</p>
+<input id="stuName" placeholder="Full Name *"><input id="stuCity" placeholder="District / City *">
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px">Continue →</button>
+<p style="font-size:10px;color:#64748b;margin-top:8px">50 Q | 45 Min | Negative 0.25</p>
+</div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box">
+<h2 style="color:#fde68a">🔥 GROUP Y TEST 02 LOCKED 🔥</h2>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #fbbf24;border-radius:8px;text-align:center;font-weight:900;font-size:15px;margin-top:12px">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:#fbbf24;color:#000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px">UNLOCK & START</button>
+<p id="passErr" style="color:#fde68a;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
+</div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #d97706"><b>✈️ AGNIVEERVAYU GROUP Y - MOCK TEST 02</b><br><small>English 20 + RAGA 30 | <span id="attemptInfo">0/50</span> | 45 Min | Negative 0.25</small></div>
+<div class="q-card">
+<b style="color:#d97706;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b>
+<div id="qHi"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div>
+</div>
+<div class="p-card"><b style="font-size:14px">Question Palette - 50 Q Group Y</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(69,26,3,0.92)">
+<div class="score-card"><div style="text-align:center"><div style="background:#fef3c7;color:#92400e;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">GROUP Y TEST 02 SCORECARD</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#d97706"><span id="sBig">0</span><span style="font-size:18px;color:#64748b"> /50</span></div>
+<div style="font-size:12px;color:#64748b" id="stuInfoShow"></div>
+<div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div></div>
+<button onclick="openReview()" style="width:100%;background:#451a03;color:#fde68a;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:#f1f5f9;padding:13px;border:1px solid #e2e8f0;border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:white;padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px"><b>📝 Group Y Test 02 - Analysis</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. Choose the correct synonym of 'Mitigate'.",o:{"A":"Increase","B":"Lessen","C":"Mix","D":"Expand"},a:"B"},
+{qh:"Q2. Choose the antonym of 'Diligent'.",o:{"A":"Hardworking","B":"Lazy","C":"Intelligent","D":"Careful"},a:"B"},
+{qh:"Q3. Fill in the blank: He is good ___ Mathematics.",o:{"A":"in","B":"on","C":"at","D":"with"},a:"C"},
+{qh:"Q4. Choose the correctly spelt word.",o:{"A":"Accomodation","B":"Acommodation","C":"Accommodation","D":"Acomodation"},a:"C"},
+{qh:"Q5. Identify the error: One of my friend is going to Delhi.",o:{"A":"One of","B":"my friend","C":"is going","D":"to Delhi"},a:"B"},
+{qh:"Q6. Choose the correct passive voice: They are building a new hospital.",o:{"A":"A new hospital is building by them.","B":"A new hospital was being built by them.","C":"A new hospital is built by them.","D":"A new hospital is being built by them."},a:"D"},
+{qh:"Q7. Choose the correct indirect speech: She said, 'The sun rises in the east.'",o:{"A":"She said that the sun rose in the east.","B":"She says that the sun rises in the east.","C":"She said that the sun rises in the east.","D":"She said if the sun rises in the east."},a:"C"},
+{qh:"Q8. Choose the correct article: He is ___ European citizen.",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"A"},
+{qh:"Q9. What is the meaning of idiom 'To add fuel to the fire'?",o:{"A":"To make a fire burn brighter","B":"To make a bad situation worse","C":"To bring warmth to a cold place","D":"To solve a problem quickly"},a:"B"},
+{qh:"Q10. Fill in the blank: No sooner did he reach the station ___ the train left.",o:{"A":"when","B":"then","C":"than","D":"but"},a:"C"},
+{qh:"Q11. Choose the synonym of 'Obstinate'.",o:{"A":"Flexible","B":"Stubborn","C":"Agreeable","D":"Weak"},a:"B"},
+{qh:"Q12. Choose the antonym of 'Optimist'.",o:{"A":"Realist","B":"Pessimist","C":"Idealist","D":"Believer"},a:"B"},
+{qh:"Q13. Fill in the blank: If it rains, we ___ the match.",o:{"A":"will cancel","B":"cancel","C":"would cancel","D":"cancelled"},a:"A"},
+{qh:"Q14. Choose the correct preposition: She is very fond ___ listening to music.",o:{"A":"in","B":"at","C":"of","D":"for"},a:"C"},
+{qh:"Q15. One word substitution: A piece of land surrounded by water on all sides",o:{"A":"Peninsula","B":"Island","C":"Continent","D":"Coast"},a:"B"},
+{qh:"Q16. Change into active voice: Let the window be closed.",o:{"A":"You close the window.","B":"The window should be closed.","C":"Close the window.","D":"Window is closed."},a:"C"},
+{qh:"Q17. Choose the correct spelling:",o:{"A":"Lieutenant","B":"Leutenant","C":"Lieutnant","D":"Luetenant"},a:"A"},
+{qh:"Q18. Identify the error: If I was a bird, I would fly in the sky.",o:{"A":"If I was","B":"a bird,","C":"I would fly","D":"in the sky."},a:"A"},
+{qh:"Q19. Choose the correct meaning of 'Once in a blue moon'.",o:{"A":"Very frequently","B":"Something painted blue","C":"Very rarely","D":"Never"},a:"C"},
+{qh:"Q20. Choose the correct verb form: He normally ___ to the gym every evening.",o:{"A":"is going","B":"goes","C":"gone","D":"went"},a:"B"},
+{qh:"Q21. Find the next number: 3, 8, 15, 24, 35,?",o:{"A":"46","B":"48","C":"44","D":"50"},a:"B"},
+{qh:"Q22. If APPLE is written as BQQMF, how will MANGO be written?",o:{"A":"NBPJP","B":"NCOHP","C":"NBOHP","D":"OCPHQ"},a:"C"},
+{qh:"Q23. A boy walks 15 km East, turns left and walks 20 km. Shortest distance from starting point?",o:{"A":"35 km","B":"25 km","C":"20 km","D":"30 km"},a:"B"},
+{qh:"Q24. Pointing to a photograph, a woman says, 'He is the only son of my father's only daughter.' How is the boy related to the woman?",o:{"A":"Brother","B":"Nephew","C":"Son","D":"Uncle"},a:"C"},
+{qh:"Q25. Find the odd one out: 27, 64, 125, 144",o:{"A":"27","B":"64","C":"125","D":"144"},a:"D"},
+{qh:"Q26. Statement: All cats are dogs. Some dogs are rats. Conclusion: Some cats are rats.",o:{"A":"Definitely True","B":"Definitely False","C":"Probably True","D":"Cannot be determined"},a:"D"},
+{qh:"Q27. Complete the alphabet series: BDF, CFI, DHL,?",o:{"A":"EJO","B":"EJM","C":"EMI","D":"FJO"},a:"A"},
+{qh:"Q28. What will be angle between hands of clock at 4:30?",o:{"A":"30°","B":"45°","C":"60°","D":"75°"},a:"B"},
+{qh:"Q29. Complete analogy: Bird : Nest :: Dog :?",o:{"A":"Cave","B":"Kennel","C":"Stable","D":"Den"},a:"B"},
+{qh:"Q30. In a row, Ravi is 15th from left and 15th from right. How many students in row?",o:{"A":"29","B":"30","C":"31","D":"28"},a:"A"},
+{qh:"Q31. If 1st Jan 2020 was Wednesday, what day was 1st Jan 2021?",o:{"A":"Wednesday","B":"Thursday","C":"Friday","D":"Saturday"},a:"C"},
+{qh:"Q32. Arrange in dictionary order: 1. Marine 2. Margin 3. Marvel 4. Market",o:{"A":"2, 1, 4, 3","B":"2, 1, 3, 4","C":"1, 2, 4, 3","D":"2, 4, 1, 3"},a:"A"},
+{qh:"Q33. Find missing character in matrix: 2,4,20 | 3,9,90 | 1,5,?",o:{"A":"20","B":"25","C":"26","D":"30"},a:"C"},
+{qh:"Q34. Which Venn diagram represents relationship between Animals, Dogs, and Cats?",o:{"A":"Two separate circles inside a larger circle","B":"Three separate circles","C":"Three intersecting circles","D":"One circle inside another, inside a third"},a:"A"},
+{qh:"Q35. 40% of a number is 120. What is the number?",o:{"A":"240","B":"300","C":"360","D":"400"},a:"B"},
+{qh:"Q36. A shopkeeper buys bag for ₹500 and sells for ₹400. What is loss percentage?",o:{"A":"15%","B":"20%","C":"25%","D":"30%"},a:"B"},
+{qh:"Q37. The average of first five prime numbers is:",o:{"A":"5.2","B":"5.6","C":"6.4","D":"7.0"},a:"B"},
+{qh:"Q38. Find SI on ₹2000 at 5% per annum for 3 years.",o:{"A":"₹200","B":"₹300","C":"₹400","D":"₹500"},a:"B"},
+{qh:"Q39. A can do work in 10 days and B in 15 days. Together in how many days?",o:{"A":"5 days","B":"6 days","C":"8 days","D":"12 days"},a:"B"},
+{qh:"Q40. If A:B=2:3 and B:C=4:5, then A:B:C is:",o:{"A":"8 : 12 : 15","B":"2 : 4 : 5","C":"8 : 15 : 12","D":"6 : 12 : 15"},a:"A"},
+{qh:"Q41. A car travels at 72 km/h. What is its speed in m/s?",o:{"A":"15 m/s","B":"18 m/s","C":"20 m/s","D":"25 m/s"},a:"C"},
+{qh:"Q42. The LCM of 12, 15, and 20 is:",o:{"A":"60","B":"120","C":"30","D":"180"},a:"A"},
+{qh:"Q43. Which Article abolishes Untouchability?",o:{"A":"Article 14","B":"Article 15","C":"Article 17","D":"Article 19"},a:"C"},
+{qh:"Q44. Who was founder of Maurya Empire?",o:{"A":"Ashoka","B":"Chandragupta Maurya","C":"Bindusara","D":"Harsha"},a:"B"},
+{qh:"Q45. Which planet is known as Red Planet?",o:{"A":"Venus","B":"Mars","C":"Jupiter","D":"Mercury"},a:"B"},
+{qh:"Q46. Which device converts mechanical energy into electrical energy?",o:{"A":"Motor","B":"Dynamo / Generator","C":"Transformer","D":"Battery"},a:"B"},
+{qh:"Q47. What is capital of Australia?",o:{"A":"Sydney","B":"Melbourne","C":"Canberra","D":"Perth"},a:"C"},
+{qh:"Q48. How many players in standard Kabaddi team on court?",o:{"A":"6","B":"7","C":"9","D":"11"},a:"B"},
+{qh:"Q49. What is highest peacetime gallantry award in India?",o:{"A":"Param Vir Chakra","B":"Ashok Chakra","C":"Maha Vir Chakra","D":"Kirti Chakra"},a:"B"},
+{qh:"Q50. 1 Byte is equal to how many bits?",o:{"A":"4 bits","B":"8 bits","C":"16 bits","D":"1024 bits"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();if(n.length<3||c.length<2){alert("Name & District bharo");return;}localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);render();}else{passErr.style.display='block';}}
+function render(){
+  let q=testData.questions[cur]; qNo.innerText=cur+1; qHi.innerText=q.qh;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h; attemptInfo.innerText=`${Object.keys(answers).length}/50 Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`}); pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();} function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}} function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  clearInterval(tInt); let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  let finalMarks = cor*1 - wro*0.25;
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  finalScoreNeg.innerText=`Final Score: ${finalMarks.toFixed(2)} / 50 ( ${cor}×1 - ${wro}×0.25 )`;
+  scoreMsg.innerText=finalMarks>=40?"Excellent! Group Y Topper ✈️🔥":finalMarks>=30?"Great Job! Selection Pakka 🚀":finalMarks>=20?"Good, Practice More 💪":"Keep Practicing 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex'; buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between"><b style="color:#d97706">Q ${i+1}</b><span class="badge ${badgeClass}">${u==undefined?"⚠️ Skipped":correct?"✅ Correct":"❌ Wrong"}</span></div>
+    <div style="font-weight:800;font-size:16px;margin:6px 0">${q.qh}</div>`;
+    for(let k in q.o){let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt"; html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️':''}</div>`;}
+    html+=`</div>`;
+  }); reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block';} function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
