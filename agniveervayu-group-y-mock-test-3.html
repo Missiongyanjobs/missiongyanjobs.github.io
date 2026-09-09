@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Group Y Mock Test 03 - 50Q | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#fff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#451a03;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fde68a;background:#7c2d12;color:#fbbf24;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:600;background:var(--card)}
+.options label.sel{border-color:#d97706!important;background:#fef3c7!important;color:#92400e!important;font-weight:800}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#451a03;color:#fbbf24;flex:1.6;border:1px solid #fbbf24}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}
+.p{height:42px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px}
+.p.cur{background:#ef4444!important;color:#fff!important}
+.p.ans{background:#10b981!important;color:#fff!important}
+.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px}
+#loginScreen{background:rgba(69,26,3,0.92)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px}
+#passScreen{background:rgba(0,0,0,0.96)}
+.pass-box{background:linear-gradient(180deg,#451a03,#92400e);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #fbbf24}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;max-height:95vh;overflow-y:auto}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;font-weight:800;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#fde68a">✈️ GROUP Y TEST 03 - MISSION GYAN JOBS</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">45:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box">
+<h2 style="color:#fbbf24">👋 Group Y Test 03</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Name & District bharo</p>
+<input id="stuName" placeholder="Full Name *"><input id="stuCity" placeholder="District / City *">
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px">Continue →</button>
+<p style="font-size:10px;color:#64748b;margin-top:8px">50 Q | 45 Min | Negative 0.25</p>
+</div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box">
+<h2 style="color:#fde68a">🔥 GROUP Y TEST 03 LOCKED 🔥</h2>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #fbbf24;border-radius:8px;text-align:center;font-weight:900;font-size:15px;margin-top:12px">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:#fbbf24;color:#000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px">UNLOCK & START</button>
+<p id="passErr" style="color:#fde68a;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
+</div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #d97706"><b>✈️ AGNIVEERVAYU GROUP Y - MOCK TEST 03</b><br><small>English 20 + RAGA 30 | <span id="attemptInfo">0/50</span> | 45 Min | Negative 0.25</small></div>
+<div class="q-card">
+<b style="color:#d97706;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b>
+<div id="qHi"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div>
+</div>
+<div class="p-card"><b style="font-size:14px">Question Palette - 50 Q Group Y</b><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(69,26,3,0.92)">
+<div class="score-card"><div style="text-align:center"><div style="background:#fef3c7;color:#92400e;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">GROUP Y TEST 03 SCORECARD</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#d97706"><span id="sBig">0</span><span style="font-size:18px;color:#64748b"> /50</span></div>
+<div style="font-size:12px;color:#64748b" id="stuInfoShow"></div>
+<div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div></div>
+<button onclick="openReview()" style="width:100%;background:#451a03;color:#fde68a;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:#f1f5f9;padding:13px;border:1px solid #e2e8f0;border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:white;padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px"><b>📝 Group Y Test 03 - Analysis</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. Choose the correct synonym of 'Clandestine'.",o:{"A":"Open","B":"Secret","C":"Dangerous","D":"Honest"},a:"B"},
+{qh:"Q2. Choose the antonym of 'Barren'.",o:{"A":"Fertile","B":"Empty","C":"Hard","D":"Dry"},a:"A"},
+{qh:"Q3. Fill with preposition: The heavy rain prevented us ___ going to the cinema.",o:{"A":"to","B":"of","C":"from","D":"by"},a:"C"},
+{qh:"Q4. Choose the correctly spelt word.",o:{"A":"Vaccum","B":"Vacuum","C":"Vaccume","D":"Vacum"},a:"B"},
+{qh:"Q5. Identify error: Scarcely had the teacher entered the class than the students stood up.",o:{"A":"Scarcely had","B":"the teacher entered","C":"the class than","D":"the students stood up."},a:"C"},
+{qh:"Q6. Choose correct passive voice: One must keep one's promises.",o:{"A":"Promises must keep by one.","B":"One's promises are kept.","C":"Promises must be kept.","D":"Promises are to be kept by one."},a:"C"},
+{qh:"Q7. Choose correct indirect speech: He said to me, 'May you live long!'",o:{"A":"He told me that I might live long.","B":"He prayed that my life was long.","C":"He wished that I might live long.","D":"He wished me to live long."},a:"C"},
+{qh:"Q8. Choose correct articles: ___ higher you go, ___ cooler you feel.",o:{"A":"A, a","B":"The, the","C":"A, the","D":"No article, no article"},a:"B"},
+{qh:"Q9. Meaning of idiom 'A wild goose chase'?",o:{"A":"A foolish and hopeless search","B":"To go hunting in a jungle","C":"A profitable adventure","D":"To catch a dangerous bird"},a:"A"},
+{qh:"Q10. Fill with correct verb: A number of students ___ absent today.",o:{"A":"is","B":"are","C":"has","D":"was"},a:"B"},
+{qh:"Q11. Choose synonym of 'Enigmatic'.",o:{"A":"Simple","B":"Mysterious","C":"Weak","D":"Beautiful"},a:"B"},
+{qh:"Q12. Choose antonym of 'Inevitable'.",o:{"A":"Unavoidable","B":"Certain","C":"Avoidable","D":"Necessary"},a:"C"},
+{qh:"Q13. Fill: I wish I ___ the Prime Minister of India.",o:{"A":"am","B":"was","C":"were","D":"have been"},a:"C"},
+{qh:"Q14. Fill with phrasal verb: The firemen managed to put ___ the fire after two hours.",o:{"A":"on","B":"off","C":"out","D":"up"},a:"C"},
+{qh:"Q15. One word: A remedy for all diseases",o:{"A":"Antibiotic","B":"Panacea","C":"Antidote","D":"Medicine"},a:"B"},
+{qh:"Q16. Change into passive: Who wrote this book?",o:{"A":"By who is this book written?","B":"By whom was this book written?","C":"Whom was this book written by?","D":"Who was written this book?"},a:"B"},
+{qh:"Q17. Choose correct spelling:",o:{"A":"Surveillance","B":"Surviellance","C":"Survellance","D":"Surveilance"},a:"A"},
+{qh:"Q18. Identify error: Neither of the two brothers are sure to pass the exam.",o:{"A":"Neither of","B":"the two brothers","C":"are sure to pass","D":"the exam."},a:"C"},
+{qh:"Q19. Choose correct meaning of 'Under the weather'.",o:{"A":"Enjoying the rain","B":"Feeling slightly ill","C":"Facing a storm","D":"Changing plans due to weather"},a:"B"},
+{qh:"Q20. Fill with conjunction: He walked carefully lest he ___ fall.",o:{"A":"would","B":"will","C":"should","D":"may"},a:"C"},
+{qh:"Q21. Find next number: 5,11,24,51,106,?",o:{"A":"212","B":"217","C":"215","D":"219"},a:"B"},
+{qh:"Q22. If PAINT=74128 and EXCEL=93596, how will ACCEPT be coded?",o:{"A":"455978","B":"459578","C":"457958","D":"455987"},a:"A"},
+{qh:"Q23. A man travels 5km North, right 4km, right 5km, left 3km. How far from starting point?",o:{"A":"5 km","B":"7 km","C":"9 km","D":"12 km"},a:"B"},
+{qh:"Q24. A is sister of B. C is mother of B. D is father of C. E is mother of D. How is A related to D?",o:{"A":"Granddaughter","B":"Daughter","C":"Grandmother","D":"Aunt"},a:"A"},
+{qh:"Q25. Find odd one out: 121,169,225,289",o:{"A":"121","B":"169","C":"225","D":"289"},a:"C"},
+{qh:"Q26. Statement: All pens are pencils. No pencil is a monkey. Conclusion: No pen is a monkey.",o:{"A":"Definitely True","B":"Definitely False","C":"Probably True","D":"Cannot be determined"},a:"A"},
+{qh:"Q27. Complete series: BZA, DYC, FXE,?",o:{"A":"HWG","B":"HWH","C":"GWG","D":"IVG"},a:"A"},
+{qh:"Q28. What day was 15th August 1947?",o:{"A":"Thursday","B":"Friday","C":"Saturday","D":"Wednesday"},a:"B"},
+{qh:"Q29. Complete analogy: Oxygen : Burn :: Carbon Dioxide :?",o:{"A":"Isolate","B":"Foam","C":"Extinguish","D":"Explode"},a:"C"},
+{qh:"Q30. Which Venn diagram best represents Men, Fathers, and Doctors?",o:{"A":"Two separate circles inside a larger one","B":"One circle inside another, and a third circle intersecting both","C":"Three intersecting circles","D":"Three separate circles"},a:"B"},
+{qh:"Q31. Election: A got 55% valid votes. 20% total votes invalid. Total 7500, votes A got?",o:{"A":"2700","B":"2900","C":"3100","D":"3300"},a:"D"},
+{qh:"Q32. Single equivalent discount for 20% and 10% successive.",o:{"A":"30%","B":"28%","C":"32%","D":"25%"},a:"B"},
+{qh:"Q33. Average of 11 numbers is 50. Avg first 6 is 49 and last 6 is 52, find 6th number.",o:{"A":"55","B":"56","C":"58","D":"60"},a:"B"},
+{qh:"Q34. A in 10 days, B in 15 days. Together 3 days, then A leaves. B finishes remaining in?",o:{"A":"5 days","B":"6 days","C":"7.5 days","D":"8 days"},a:"C"},
+{qh:"Q35. Sum ₹1050 divided among A,B,C such that A gets 2/5 of B+C. A's share?",o:{"A":"₹200","B":"₹300","C":"₹400","D":"₹450"},a:"B"},
+{qh:"Q36. Train 150m passes pole in 15 sec. Speed in km/h?",o:{"A":"36 km/h","B":"40 km/h","C":"45 km/h","D":"54 km/h"},a:"A"},
+{qh:"Q37. Diff between CI and SI on ₹5000 for 2 years at 10% is:",o:{"A":"₹25","B":"₹50","C":"₹75","D":"₹100"},a:"B"},
+{qh:"Q38. If x+1/x=4, find x²+1/x²",o:{"A":"12","B":"14","C":"16","D":"18"},a:"B"},
+{qh:"Q39. Which imaginary line passes almost through middle of India?",o:{"A":"Equator","B":"Tropic of Cancer","C":"Tropic of Capricorn","D":"Prime Meridian"},a:"B"},
+{qh:"Q40. Who was Governor-General during Revolt of 1857?",o:{"A":"Lord Dalhousie","B":"Lord Canning","C":"Lord Mountbatten","D":"Lord Curzon"},a:"B"},
+{qh:"Q41. Which schedule contains list of recognized languages?",o:{"A":"7th Schedule","B":"8th Schedule","C":"9th Schedule","D":"10th Schedule"},a:"B"},
+{qh:"Q42. When body taken from Earth to Moon, its:",o:{"A":"Mass changes, but weight remains constant","B":"Both mass and weight change","C":"Mass remains constant, but weight changes","D":"Both remain constant"},a:"C"},
+{qh:"Q43. Which gland is known as Master Gland?",o:{"A":"Thyroid","B":"Adrenal","C":"Pancreas","D":"Pituitary"},a:"D"},
+{qh:"Q44. Term Deuce is associated with which sport?",o:{"A":"Cricket","B":"Hockey","C":"Tennis","D":"Football"},a:"C"},
+{qh:"Q45. Who was first Indian woman to climb Mount Everest twice?",o:{"A":"Bachendri Pal","B":"Santosh Yadav","C":"Arunima Sinha","D":"Premlata Agarwal"},a:"B"},
+{qh:"Q46. NITI Aayog replaced which institution?",o:{"A":"Finance Commission","B":"Election Commission","C":"Planning Commission","D":"National Development Council"},a:"C"},
+{qh:"Q47. What is chemical formula of Baking Soda?",o:{"A":"Na2CO3","B":"NaHCO3","C":"NaCl","D":"NaOH"},a:"B"},
+{qh:"Q48. Which rank in IAF equivalent to Major in Army?",o:{"A":"Flight Lieutenant","B":"Squadron Leader","C":"Wing Commander","D":"Group Captain"},a:"B"},
+{qh:"Q49. Which is deepest ocean in world?",o:{"A":"Atlantic Ocean","B":"Indian Ocean","C":"Arctic Ocean","D":"Pacific Ocean"},a:"D"},
+{qh:"Q50. What does HTTP stand for?",o:{"A":"Hyper Transfer Text Protocol","B":"HyperText Transfer Protocol","C":"High Text Transmission Protocol","D":"HyperText Transmission Program"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();if(n.length<3||c.length<2){alert("Name & District bharo");return;}localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);render();}else{passErr.style.display='block';}}
+function render(){
+  let q=testData.questions[cur]; qNo.innerText=cur+1; qHi.innerText=q.qh;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h; attemptInfo.innerText=`${Object.keys(answers).length}/50 Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`}); pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();} function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}} function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  clearInterval(tInt); let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  let finalMarks = cor*1 - wro*0.25;
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  finalScoreNeg.innerText=`Final Score: ${finalMarks.toFixed(2)} / 50 ( ${cor}×1 - ${wro}×0.25 )`;
+  scoreMsg.innerText=finalMarks>=40?"Excellent! Group Y Topper ✈️🔥":finalMarks>=30?"Great Job! Selection Pakka 🚀":finalMarks>=20?"Good, Practice More 💪":"Keep Practicing 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex'; buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between"><b style="color:#d97706">Q ${i+1}</b><span class="badge ${badgeClass}">${u==undefined?"⚠️ Skipped":correct?"✅ Correct":"❌ Wrong"}</span></div>
+    <div style="font-weight:800;font-size:16px;margin:6px 0">${q.qh}</div>`;
+    for(let k in q.o){let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt"; html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️':''}</div>`;}
+    html+=`</div>`;
+  }); reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block';} function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
