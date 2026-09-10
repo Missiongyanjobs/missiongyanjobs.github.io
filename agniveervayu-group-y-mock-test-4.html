@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Air Force Y Group - Mock Test 04 (50 Q) | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text);transition:0.2s}
+.options label:hover{border-color:#fbbf24}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+body.dark.options label.sel{background:#14532d!important;color:#86efac!important;border-color:#22c55e!important}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px;transition:0.2s}
+.btn:active{transform:scale(0.97)}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#1d4ed8;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.login-box input:focus{border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,0.2)}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #7f1d1d, #dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow;box-shadow:0 0 30px rgba(255,255,0,0.3)}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+body.dark.opt-item.correct-opt{background:#14532d!important;border-color:#22c55e!important;color:#bbf7d0!important}
+body.dark.opt-item.wrong-opt{background:#450a0a!important;border-color:#ef4444!important;color:#fecaca!important}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+body.dark.badge-correct{background:#14532d;color:#86efac}body.dark.badge-wrong{background:#7f1d1d;color:#fecaca}body.dark.badge-skip{background:#78350f;color:#fde68a}
+#qHi{font-size:17px;line-height:1.4} #qEn{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="header">
+<b style="color:#fbbf24;letter-spacing:0.5px">✈️ MISSION GYAN JOBS - GROUP Y TEST 04</b>
+<div style="display:flex;gap:8px;align-items:center">
+<div class="timer">⏱️ <span id="timer">45:00</span></div>
+<button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24;font-size:16px">🌙</button>
+</div>
+</div>
+
+<div class="overlay" id="loginScreen">
+<div class="login-box">
+<h2 style="color:#fbbf24;margin-bottom:4px">👋 Group Y Test 04 (50Q) </h2>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:14px"> Name aur District bharo, tabhi test start hoga </p>
+<input id="stuName" placeholder="अपना पूरा नाम *">
+<div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div>
+<input id="stuCity" placeholder="अपना जिला / शहर *">
+<div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button>
+<p style="font-size:10px;color:#64748b;margin-top:10px">🔒 50Q | 45 Min | Negative 0.25</p>
+</div>
+</div>
+
+<div class="overlay" id="passScreen" style="display:none">
+<div class="pass-box">
+<h2 style="color:yellow;margin-bottom:6px">🔥 GROUP Y TEST 04 LOCKED 🔥</h2>
+<p style="color:white;font-size:13px;margin-bottom:12px"> Password daalo</p>
+<input type="password" id="passInput" placeholder="Password " style="width:100%;padding:13px;border:3px solid yellow;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START TEST NOW</button>
+<p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ wrong Password! </p>
+</div>
+</div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #fbbf24"><b>✈️ Agniveervayu Group Y | TEST - 04 | 50 Q</b><br><small style="color:var(--muted)">English + RAGA + GK | <span id="attemptInfo">0/50 Attempted</span> | Negative 0.25</small></div>
+<div class="q-card">
+<b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b>
+<div id="qHi"></div>
+<div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px">
+<button class="btn btn-g" onclick="prevQ()">← Prev</button>
+<button class="btn btn-g" onclick="clearAns()">Clear</button>
+<button class="btn btn-y" onclick="markRev()">☆ Review</button>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn btn-b" onclick="saveNext()">Save & Next →</button>
+<button class="btn btn-gr" onclick="submitTest()">Submit Test</button>
+</div>
+</div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette - 50 Q</b><small style="color:var(--muted)" id="paletteInfo">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)">
+<div class="score-card">
+<div style="text-align:center">
+<div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block;letter-spacing:0.5px">GROUP Y TEST 04 SCORECARD</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#1d4ed8;line-height:1"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /50</span></div>
+<div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div>
+<div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0">
+<div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small style="color:#065f46">Correct</small></div>
+<div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small style="color:#991b1b">Wrong</small></div>
+<div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small style="color:#92400e">Skipped</small></div>
+</div>
+<button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px;cursor:pointer">📝 View Detailed Analysis - Sahi / Galat Dekho</button>
+<button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button>
+</div>
+</div>
+
+<div class="review-page" id="reviewPage">
+<div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px;z-index:10;box-shadow:0 8px 20px rgba(0,0,0,0.15)">
+<b style="font-size:15px">📝 Detailed Analysis - 50 Q</b>
+<button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button>
+</div>
+<div id="reviewList"></div>
+</div>
+</div>
+
+<script>
+const testData={questions:[
+{qh:"1. संविधान सभा की पहली बैठक में अस्थायी अध्यक्ष किसे बनाया गया था?",qe:"Who was appointed as the temporary chairman of the Constituent Assembly?",o:{"A":"डॉ. राजेंद्र प्रसाद / Dr. Rajendra Prasad","B":"डॉ. सच्चिदानंद सिन्हा / Dr. Sachchidananda Sinha","C":"बी. आर. अंबेडकर / B. R. Ambedkar","D":"बी. एन. राव / B. N. Rau"},a:"B"},
+{qh:"2. संविधान सभा की पहली बैठक किस तारीख को हुई थी?",qe:"On which date was the first meeting of the Constituent Assembly held?",o:{"A":"9 दिसंबर 1946 / 9 December 1946","B":"11 दिसंबर 1946 / 11 December 1946","C":"13 दिसंबर 1946 / 13 December 1946","D":"15 अगस्त 1947 / 15 August 1947"},a:"A"},
+{qh:"3. संविधान सभा के स्थायी अध्यक्ष का पद किसने संभाला था?",qe:"Who served as the permanent chairman of the Constituent Assembly?",o:{"A":"डॉ. सच्चिदानंद सिन्हा / Dr. Sachchidananda Sinha","B":"डॉ. राजेंद्र प्रसाद / Dr. Rajendra Prasad","C":"जवाहरलाल नेहरू / Jawaharlal Nehru","D":"बी. आर. अंबेडकर / B. R. Ambedkar"},a:"B"},
+{qh:"4. डॉ. राजेंद्र प्रसाद संविधान सभा के स्थायी अध्यक्ष कब निर्वाचित हुए थे?",qe:"When was Dr. Rajendra Prasad elected permanent chairman?",o:{"A":"9 दिसंबर 1946","B":"10 दिसंबर 1946","C":"11 दिसंबर 1946","D":"13 दिसंबर 1946"},a:"C"},
+{qh:"5. प्रारूप समिति के अध्यक्ष के रूप में किसने कार्य किया था?",qe:"Who served as the chairman of the Drafting Committee?",o:{"A":"बी. एन. राव / B. N. Rau","B":"डॉ. बी. आर. अंबेडकर / Dr. B. R. Ambedkar","C":"डॉ. राजेंद्र प्रसाद / Dr. Rajendra Prasad","D":"जवाहरलाल नेहरू / Jawaharlal Nehru"},a:"B"},
+{qh:"6. संविधान सभा के संवैधानिक सलाहकार कौन थे?",qe:"Who was the Constitutional Adviser to the Constituent Assembly?",o:{"A":"बी. एन. राव / B. N. Rau","B":"के. एम. मुंशी / K. M. Munshi","C":"अल्लादी कृष्णास्वामी अय्यर","D":"बी. आर. अंबेडकर / B. R. Ambedkar"},a:"A"},
+{qh:"7. B. N. Rau का पूरा नाम क्या था?",qe:"What was the full name of B. N. Rau?",o:{"A":"बेनेगल नरसिंह राव / Benegal Narsing Rau","B":"बनवारी नरसिंह राव","C":"बाल नरसिंह राव","D":"बेनेगल नारायण राव"},a:"A"},
+{qh:"8. निम्न में से कौन-सा वाक्य व्याकरण की दृष्टि से सही है?",qe:"Which sentence is grammatically correct?",o:{"A":"The news are shocking.","B":"The news were shocking.","C":"The news was shocking.","D":"The news have shocking."},a:"C"},
+{qh:"9. 'News' के साथ सामान्यतः कौन-सी auxiliary verb प्रयुक्त होती है?",qe:"Which auxiliary verb is generally used with 'News'?",o:{"A":"Are","B":"Were","C":"Is","D":"Have"},a:"C"},
+{qh:"10. निम्न में से कौन-सा Uncountable Noun है?",qe:"Which is an uncountable noun?",o:{"A":"Book","B":"Chair","C":"News","D":"Student"},a:"C"},
+{qh:"11. शुक्र ग्रह को English में क्या कहते हैं जब वह सूर्यास्त के बाद दिखता है?",qe:"What is Venus called when visible after sunset?",o:{"A":"Morning Star","B":"Evening Star","C":"Pole Star","D":"Red Star"},a:"B"},
+{qh:"12. शुक्र ग्रह के अत्यधिक गर्म होने का प्रमुख कारण क्या है?",qe:"What is major reason for extreme heat of Venus?",o:{"A":"Strong magnetic field","B":"Greenhouse effect","C":"Rotation speed","D":"Distance from Moon"},a:"B"},
+{qh:"13. पृथ्वी के सबसे निकट आकार वाला ग्रह कौन-सा है?",qe:"Which planet is most similar to Earth in size?",o:{"A":"मंगल / Mars","B":"शुक्र / Venus","C":"बुध / Mercury","D":"बृहस्पति / Jupiter"},a:"B"},
+{qh:"14. शुक्र ग्रह सूर्य से कौन-सा ग्रह है?",qe:"Which planet is Venus from the Sun?",o:{"A":"First","B":"Second","C":"Third","D":"Fourth"},a:"B"},
+{qh:"15. 'Ephemeral' का सबसे उपयुक्त अर्थ क्या है?",qe:"What is most appropriate meaning of 'Ephemeral'?",o:{"A":"Long-lasting","B":"Existing for a very short time","C":"Extremely large","D":"Very expensive"},a:"B"},
+{qh:"16. 'Transient' का सबसे निकटतम अर्थ क्या है?",qe:"What is closest meaning of 'Transient'?",o:{"A":"Permanent","B":"Temporary","C":"Ancient","D":"Eternal"},a:"B"},
+{qh:"17. 'Ephemeral' का antonym कौन-सा है?",qe:"Which is antonym of 'Ephemeral'?",o:{"A":"Brief","B":"Temporary","C":"Permanent","D":"Short-lived"},a:"C"},
+{qh:"18. साइमन कमीशन की नियुक्ति किस ब्रिटिश सरकार के समय हुई थी?",qe:"During whose British govt was Simon Commission appointed?",o:{"A":"Stanley Baldwin","B":"Ramsay MacDonald","C":"Winston Churchill","D":"Clement Attlee"},a:"A"},
+{qh:"19. साइमन कमीशन भारत आने का मुख्य उद्देश्य क्या था?",qe:"What was main purpose of Simon Commission's visit?",o:{"A":"आर्थिक सुधार","B":"संवैधानिक सुधारों की समीक्षा","C":"सैन्य प्रशिक्षण","D":"शिक्षा सुधार"},a:"B"},
+{qh:"20. साइमन कमीशन किस वर्ष भारत पहुँचा था?",qe:"In which year did Simon Commission arrive in India?",o:{"A":"1926","B":"1927","C":"1928","D":"1930"},a:"C"},
+{qh:"21. साइमन कमीशन के आगमन पर किस प्रकार का विरोध हुआ?",qe:"What protest occurred against Simon Commission?",o:{"A":"Simon Go Back","B":"Do or Die","C":"Vande Mataram only","D":"Quit India"},a:"A"},
+{qh:"22. साइमन कमीशन के सभी सदस्य किस देश से थे?",qe:"Members of Simon Commission were from which country?",o:{"A":"India","B":"Britain","C":"France","D":"USA"},a:"B"},
+{qh:"26. लाला लाजपत राय की मृत्यु के बाद किस क्रांतिकारी कार्रवाई से संबंध है?",qe:"Which revolutionary action is associated with death of Lala Lajpat Rai?",o:{"A":"Saunders assassination","B":"Kakori case","C":"Chittagong Armoury Raid","D":"Alipore Bomb Case"},a:"A"},
+{qh:"27. 'The old warehouse was destroyed by the massive fire.' यह किस Voice में है?",qe:"The sentence is in which voice?",o:{"A":"Active Voice","B":"Passive Voice","C":"Direct Speech","D":"Imperative Voice"},a:"B"},
+{qh:"28. Active object Passive में क्या बनता है?",qe:"What does object of active become in passive?",o:{"A":"Subject","B":"Adverb","C":"Conjunction","D":"Preposition"},a:"A"},
+{qh:"29. 'The massive fire destroyed the old warehouse.' में subject कौन है?",qe:"What is subject in sentence?",o:{"A":"Old warehouse","B":"Destroyed","C":"Massive fire","D":"The"},a:"C"},
+{qh:"30. 'The massive fire destroyed the old warehouse.' में main verb?",qe:"What is main verb?",o:{"A":"Massive","B":"Fire","C":"Destroyed","D":"Warehouse"},a:"C"},
+{qh:"31. pH scale सामान्यतः किस सीमा में मानी जाती है?",qe:"What is commonly considered range of pH scale?",o:{"A":"0–7","B":"1–10","C":"0–14","D":"7–21"},a:"C"},
+{qh:"32. pH = 7 किस प्रकार के विलयन को दर्शाता है?",qe:"What does pH = 7 indicate?",o:{"A":"Acidic solution","B":"Basic solution","C":"Neutral solution","D":"Strongly acidic solution"},a:"C"},
+{qh:"33. pH = 3 वाला विलयन कैसा होगा?",qe:"Nature of solution having pH=3?",o:{"A":"Acidic","B":"Basic","C":"Neutral","D":"Alkaline gas"},a:"A"},
+{qh:"34. pH = 10 वाला विलयन कैसा होगा?",qe:"Nature of solution having pH=10?",o:{"A":"Acidic","B":"Basic","C":"Neutral","D":"Pure water"},a:"B"},
+{qh:"35. pH scale में H किसे दर्शाता है?",qe:"In pH, what does H represent?",o:{"A":"Hydrogen","B":"Helium","C":"Heat","D":"Hydrocarbon"},a:"A"},
+{qh:"36. 'Vacuum' का हिंदी अर्थ क्या है?",qe:"What is Hindi meaning of Vacuum?",o:{"A":"दबाव / Pressure","B":"निर्वात / Empty space","C":"ताप / Temperature","D":"घनत्व / Density"},a:"B"},
+{qh:"37. 'Vacuum' में लगातार कौन-से दो vowels आते हैं?",qe:"Which two vowels occur consecutively in Vacuum?",o:{"A":"AA","B":"UU","C":"AU","D":"OU"},a:"B"},
+{qh:"38. National Science Day किस महीने में मनाया जाता है?",qe:"In which month is National Science Day observed?",o:{"A":"January","B":"February","C":"March","D":"May"},a:"B"},
+{qh:"39. National Science Day किस वैज्ञानिक के योगदान से संबंधित है?",qe:"National Science Day associated with which scientist?",o:{"A":"C. V. Raman","B":"Homi Bhabha","C":"Vikram Sarabhai","D":"S. N. Bose"},a:"A"},
+{qh:"40. रमन प्रभाव किस घटना से संबंधित है?",qe:"Raman Effect is related to which phenomenon?",o:{"A":"प्रकाश का प्रकीर्णन / Scattering of light","B":"ध्वनि का परावर्तन","C":"गुरुत्वाकर्षण","D":"विद्युत धारा"},a:"A"},
+{qh:"41. सी. वी. रमन Nobel मिलने के समय किस देश के वैज्ञानिक थे?",qe:"C.V. Raman was scientist of which country when he got Nobel?",o:{"A":"India","B":"Britain","C":"USA","D":"France"},a:"A"},
+{qh:"42. सी. वी. रमन को Nobel Prize किस वर्ष मिला?",qe:"In which year did C.V. Raman receive Nobel Prize?",o:{"A":"1928","B":"1929","C":"1930","D":"1931"},a:"C"},
+{qh:"43. रमन प्रभाव की खोज किस वर्ष हुई?",qe:"In which year was Raman Effect discovered?",o:{"A":"1926","B":"1928","C":"1930","D":"1932"},a:"B"},
+{qh:"44. National Technology Day किस ऐतिहासिक घटना से जुड़ा है?",qe:"National Technology Day is associated with which event?",o:{"A":"Pokhran nuclear tests","B":"Raman Effect","C":"Green Revolution","D":"First satellite launch"},a:"A"},
+{qh:"45. National Technology Day किस महीने में मनाया जाता है?",qe:"In which month is National Technology Day observed?",o:{"A":"February","B":"March","C":"May","D":"August"},a:"C"},
+{qh:"46. 11 मई को National Technology Day क्यों मनाया जाता है?",qe:"Why is National Technology Day observed on 11 May?",o:{"A":"भारतीय परमाणु परीक्षणों की सफलता","B":"रमन प्रभाव की खोज","C":"संविधान लागू","D":"अंतरिक्ष मिशन"},a:"A"},
+{qh:"47. कौन-सा ग्रह सूर्य के सबसे निकट है?",qe:"Which planet is closest to Sun?",o:{"A":"Venus","B":"Earth","C":"Mercury","D":"Mars"},a:"C"},
+{qh:"48. कौन-सा ग्रह अत्यधिक greenhouse effect के लिए जाना जाता है?",qe:"Which planet is known for extreme greenhouse effect?",o:{"A":"Mercury","B":"Venus","C":"Mars","D":"Jupiter"},a:"B"},
+{qh:"49. 'Short-lived' किस शब्द का synonym है?",qe:"Short-lived is synonym of which word?",o:{"A":"Ephemeral","B":"Eternal","C":"Permanent","D":"Durable"},a:"A"},
+{qh:"50. कौन-सा शब्द 'Permanent' का antonym है?",qe:"Which is antonym of Permanent?",o:{"A":"Lasting","B":"Durable","C":"Transient","D":"Eternal"},a:"C"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim();
+  let ok=true;
+  if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return;
+  localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){
+  if(passInput.value==="MGE@77"){
+    passScreen.style.display='none'; mainTest.style.display='block';
+    tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);
+    render();
+  }else{passErr.style.display='block';}
+}
+function render(){
+  let q=testData.questions[cur];
+  qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h;
+  let attempted=Object.keys(answers).length;
+  attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});
+  pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();}
+function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  let attempted=Object.keys(answers).length;
+  if(attempted<5 && time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Kya sach me submit karna hai?`))return;}
+  clearInterval(tInt);
+  let cor=0,wro=0,skip=0;
+  testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  let finalMarks = cor*1 - wro*0.25;
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  finalScoreNeg.innerText=`Final Score: ${finalMarks.toFixed(2)} / 50 ( ${cor}×1 - ${wro}×0.25 )`;
+  scoreMsg.innerText=finalMarks>=40?"Excellent! Topper Ho 🔥":finalMarks>=30?"Bahut Badhiya! 🚀":finalMarks>=18?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex';
+  buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let status=u==undefined?"Not Attempted":correct?"Correct":"Wrong";
+    let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong"; let icon=u==undefined?"⚠️":correct?"✅":"❌";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#2563eb">Q ${i+1}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div>
+    <div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div>
+    <div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;
+    for(let k in q.o){
+      let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt";
+      html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct Answer':''} ${k==u && k!=q.a?'❌ Your Answer':''}</div>`;
+    }
+    html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;
+  });
+  reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block'; reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
+{qh:"23. साइमन कमीशन में भारतीय प्रतिनिधित्व न होने की विशेषता?",qe:"What was feature regarding Indian representation?",o:{"A":"It had no Indian member.","B":"It had only one Indian member.","C":"It had three Indian members.","D":"It had five Indian members."},a:"A"},
+{qh:"24. लाला लाजपत राय किस उपनाम से प्रसिद्ध थे?",qe:"Lala Lajpat Rai was popularly known as:",o:{"A":"Punjab Kesari","B":"Lokmanya","C":"Frontier Gandhi","D":"Deshbandhu"},a:"A"},
+{qh:"25. लाला लाजपत राय किस आंदोलन में लाठीचार्ज में घायल हुए?",qe:"During which protest was Lala Lajpat Rai injured?",o:{"A":"साइमन कमीशन विरोध","B":"Quit India Movement","C":"Champaran Satyagraha","D":"Dandi March"},a:"A"},
