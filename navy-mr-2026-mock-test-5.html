@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Indian Navy MR - Mock Test 05 | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #0ea5e9}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text);transition:0.2s}
+.options label:hover{border-color:#0ea5e9}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#0ea5e9;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important}
+.p.ans{background:#10b981!important;color:#fff!important}
+.p.rev{background:#fbbf24!important;color:#000!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #0ea5e9;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #0ea5e9;margin:8px 0;text-align:center;font-weight:700;font-size:15px}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #0c4a6e, #0ea5e9);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #fff;box-shadow:0 0 30px rgba(14,165,233,0.4)}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;line-height:1.4} #qEn{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="header">
+<b style="color:#38bdf8;letter-spacing:0.5px">🇮🇳 NAVY MR TEST 05</b>
+<div style="display:flex;gap:8px;align-items:center">
+<div class="timer">⏱️ <span id="timer">30:00</span></div>
+<button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24">🌙</button>
+</div>
+</div>
+<div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#38bdf8">👋 NAVY MR TEST 05</h2><p style="color:#94a3b8;font-size:12px;margin:12px 0">50 Q | Science+Math+G.K. | 30 Min</p><input id="stuName" placeholder="पूरा नाम *"><div id="nameErr" class="err-msg">❌ नाम भरें</div><input id="stuCity" placeholder="जिला / शहर *"><div id="cityErr" class="err-msg">❌ जिला भरें</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#0ea5e9;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#fff">Continue & Unlock Test →</button></div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:#fff">🔥 TEST 05 LOCKED 🔥</h2><input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #fff;border-radius:8px;text-align:center;font-weight:900;margin-top:12px"><button onclick="checkPass()" style="width:100%;padding:13px;background:#fff;color:#0c4a6e;border:none;border-radius:8px;font-weight:900;margin-top:12px">UNLOCK & START</button><p id="passErr" style="color:#fff;display:none;margin-top:10px;font-weight:800">❌ wrong Password!</p></div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #0ea5e9"><b>🇮🇳 Indian Navy Agniveer MR | MOCK TEST 05 | Moderate Level</b><br><small style="color:var(--muted)">Science & Math 25 + GA 25 | <span id="attemptInfo">0/50 Attempted</span> | Negative 0.25</small></div>
+<div class="q-card"><b style="color:#0ea5e9;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
+<div class="p-card"><b style="font-size:14px">Palette - 50 Q</b><div class="p-grid" id="pGrid"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. विटामिन A की कमी से कौन-सा रोग?",qe:"Deficiency of Vitamin A disease?",o:{"A":"बेरी-बेरी / Beri-Beri","B":"रतौंधी / Night Blindness","C":"स्कर्वी / Scurvy","D":"रिकेट्स / Rickets"},a:"B"},
+{qh:"Q2. बल (Force) की SI इकाई क्या है?",qe:"SI unit of Force?",o:{"A":"जूल / Joule","B":"पास्कल / Pascal","C":"न्यूटन / Newton","D":"वाट / Watt"},a:"C"},
+{qh:"Q3. चिप्स के पैकेट में कौन-सी गैस भरी जाती है?",qe:"Gas filled in chips packets?",o:{"A":"ऑक्सीजन / Oxygen","B":"हाइड्रोजन / Hydrogen","C":"कार्बन डाइऑक्साइड","D":"नाइट्रोजन / Nitrogen"},a:"D"},
+{qh:"Q4. भूकंप की तीव्रता मापने का यंत्र?",qe:"Instrument to measure earthquake intensity?",o:{"A":"बैरोमीटर / Barometer","B":"सीस्मोग्राफ / Seismograph","C":"लैक्टोमीटर","D":"हाइड्रोमीटर"},a:"B"},
+{qh:"Q5. साधारण नमक का रासायनिक सूत्र?",qe:"Chemical formula of common salt?",o:{"A":"Na2CO3","B":"NaOH","C":"NaCl","D":"NaHCO3"},a:"C"},
+{qh:"Q6. मानव नेत्र में किस प्रकार का लेंस?",qe:"Lens present in human eye?",o:{"A":"अवतल / Concave","B":"उत्तल / Convex","C":"बेलनाकार / Cylindrical","D":"समतल / Plane"},a:"B"},
+{qh:"Q7. रक्त को शुद्ध करने का कार्य कौन करता है?",qe:"Which organ purifies blood?",o:{"A":"फेफड़े / Lungs","B":"हृदय / Heart","C":"गुर्दे / Kidneys","D":"यकृत / Liver"},a:"C"},
+{qh:"Q8. त्वरण (Acceleration) की SI इकाई?",qe:"SI unit of Acceleration?",o:{"A":"m/s","B":"m/s²","C":"km/h","D":"m²/s"},a:"B"},
+{qh:"Q9. कांसा (Bronze) किन धातुओं का मिश्रण?",qe:"Bronze is alloy of?",o:{"A":"तांबा+जस्ता / Copper+Zinc","B":"लोहा+कार्बन","C":"सीसा+टिन","D":"तांबा+टिन / Copper+Tin"},a:"D"},
+{qh:"Q10. ब्रह्मांड में सबसे हल्की गैस?",qe:"Lightest gas in universe?",o:{"A":"हीलियम / Helium","B":"ऑक्सीजन","C":"हाइड्रोजन / Hydrogen","D":"नाइट्रोजन"},a:"C"},
+{qh:"Q11. 400 का 25% + 200 का 10% =?",qe:"25% of 400 + 10% of 200?",o:{"A":"110","B":"120","C":"130","D":"150"},a:"B"},
+{qh:"Q12. किसी संख्या का 3/5 भाग 60 है, संख्या क्या?",qe:"If 3/5 of a number is 60, number?",o:{"A":"80","B":"90","C":"100","D":"120"},a:"C"},
+{qh:"Q13. आयत लंबाई 12cm चौड़ाई 8cm, परिमाप?",qe:"Rectangle 12x8 perimeter?",o:{"A":"20 cm","B":"40 cm","C":"48 cm","D":"96 cm"},a:"B"},
+{qh:"Q14. ₹880 में बेचने पर 10% लाभ, क्रय मूल्य?",qe:"Selling 880 at 10% profit, CP?",o:{"A":"₹750","B":"₹800","C":"₹820","D":"₹850"},a:"B"},
+{qh:"Q15. sin 45° का मान?",qe:"Value of sin 45°?",o:{"A":"1/2","B":"√3/2","C":"1/√2","D":"1"},a:"C"},
+{qh:"Q16. श्रृंखला: 1,4,9,16,?",qe:"Series: 1,4,9,16,?",o:{"A":"20","B":"24","C":"25","D":"36"},a:"C"},
+{qh:"Q17. 10,20,30,40,50 का औसत?",qe:"Average of 10,20,30,40,50?",o:{"A":"25","B":"30","C":"35","D":"40"},a:"B"},
+{qh:"Q18. बेलन (Cylinder) के आयतन का सूत्र?",qe:"Volume formula of cylinder?",o:{"A":"πr²","B":"2πrh","C":"πr²h","D":"1/3 πr²h"},a:"C"},
+{qh:"Q19. 54 km/h को m/s में बदलें",qe:"Convert 54 km/h to m/s",o:{"A":"10 m/s","B":"15 m/s","C":"18 m/s","D":"20 m/s"},a:"B"},
+{qh:"Q20. 14 और 21 का LCM?",qe:"LCM of 14 and 21?",o:{"A":"7","B":"28","C":"42","D":"84"},a:"C"},
+{qh:"Q21. A:B आयु 2:3, योग 50, A की आयु?",qe:"Age ratio 2:3 sum 50, A's age?",o:{"A":"15 years","B":"20 years","C":"25 years","D":"30 years"},a:"B"},
+{qh:"Q22. A 20 दिन, B 30 दिन, दोनों मिलकर?",qe:"A 20 days, B 30 days, together?",o:{"A":"10 days","B":"12 days","C":"15 days","D":"25 days"},a:"B"},
+{qh:"Q23. 19 का वर्ग (Square)?",qe:"Square of 19?",o:{"A":"324","B":"342","C":"361","D":"381"},a:"C"},
+{qh:"Q24. सूर्य के सबसे निकट ग्रह?",qe:"Closest planet to Sun?",o:{"A":"शुक्र / Venus","B":"मंगल / Mars","C":"बुध / Mercury","D":"पृथ्वी / Earth"},a:"C"},
+{qh:"Q25. मानव शरीर की सबसे छोटी हड्डी?",qe:"Smallest bone in human body?",o:{"A":"फीमर / Femur","B":"टिबिया / Tibia","C":"स्टेपीज़ / Stapes","D":"रेडियस / Radius"},a:"C"},
+{qh:"Q26. बक्सर का युद्ध किस वर्ष लड़ा गया?",qe:"Battle of Buxar year?",o:{"A":"1757","B":"1761","C":"1764","D":"1857"},a:"C"},
+{qh:"Q27. मौलिक कर्तव्य किस देश से लिए गए?",qe:"Fundamental Duties borrowed from?",o:{"A":"USA","B":"Britain","C":"Ireland","D":"रूस / Russia (USSR)"},a:"D"},
+{qh:"Q28. विश्व का सबसे बड़ा महासागर?",qe:"Largest ocean in world?",o:{"A":"अटलांटिक / Atlantic","B":"हिंद / Indian","C":"प्रशांत / Pacific","D":"आर्कटिक / Arctic"},a:"C"},
+{qh:"Q29. हॉकी टीम में मैदान पर कितने खिलाड़ी?",qe:"Players on field in Hockey team?",o:{"A":"9","B":"10","C":"11","D":"12"},a:"C"},
+{qh:"Q30. पूर्वी नौसेना कमान मुख्यालय कहाँ?",qe:"Eastern Naval Command HQ?",o:{"A":"विशाखापट्टनम / Visakhapatnam","B":"कोच्चि / Kochi","C":"मुंबई / Mumbai","D":"चेन्नई / Chennai"},a:"A"},
+{qh:"Q31. फ्रांस की राजधानी क्या है?",qe:"Capital of France?",o:{"A":"लंदन / London","B":"पेरिस / Paris","C":"बर्लिन / Berlin","D":"मैड्रिड / Madrid"},a:"B"},
+{qh:"Q32. सौरमंडल का सबसे छोटा ग्रह?",qe:"Smallest planet in Solar System?",o:{"A":"मंगल / Mars","B":"शुक्र / Venus","C":"बुध / Mercury","D":"प्लूटो / Pluto"},a:"C"},
+{qh:"Q33. गुप्त साम्राज्य का संस्थापक कौन?",qe:"Founder of Gupta Empire?",o:{"A":"चंद्रगुप्त प्रथम","B":"समुद्रगुप्त","C":"श्रीगुप्त / Sri Gupta","D":"स्कंदगुप्त"},a:"C"},
+{qh:"Q34. राज्यपाल बनने की न्यूनतम आयु?",qe:"Minimum age for Governor?",o:{"A":"25 years","B":"30 years","C":"35 years","D":"40 years"},a:"C"},
+{qh:"Q35. कथकली किस राज्य का नृत्य?",qe:"Kathakali classical dance of?",o:{"A":"तमिलनाडु","B":"केरल / Kerala","C":"आंध्र प्रदेश","D":"उत्तर प्रदेश"},a:"B"},
+{qh:"Q36. NDA कहाँ स्थित है?",qe:"NDA located at?",o:{"A":"देहरादून / Dehradun","B":"खड़कवासला / Khadakwasla","C":"चेन्नई","D":"वेलिंगटन"},a:"B"},
+{qh:"Q37. भारत का सर्वोच्च नागरिक सम्मान?",qe:"Highest civilian award in India?",o:{"A":"पद्म विभूषण","B":"परम वीर चक्र","C":"भारत रत्न / Bharat Ratna","D":"अशोक चक्र"},a:"C"},
+{qh:"Q38. UNESCO मुख्यालय कहाँ?",qe:"UNESCO HQ?",o:{"A":"जिनेवा / Geneva","B":"न्यूयॉर्क","C":"वाशिंगटन","D":"पेरिस / Paris"},a:"D"},
+{qh:"Q39. नोबेल जीतने वाले प्रथम भारतीय?",qe:"First Indian Nobel winner?",o:{"A":"सी. वी. रमन","B":"मदर टेरेसा","C":"रवीन्द्रनाथ टैगोर","D":"हरगोबिंद खुराना"},a:"C"},
+{qh:"Q40. My Experiments with Truth किसने लिखी?",qe:"Who wrote My Experiments with Truth?",o:{"A":"नेहरू","B":"भगत सिंह","C":"महात्मा गांधी / Gandhi","D":"सुभाष चंद्र बोस"},a:"C"},
+{qh:"Q41. भारत का सबसे ऊँचा जलप्रपात?",qe:"Highest waterfall in India?",o:{"A":"कुंचिकल / Kunchikal Falls","B":"जोग / Jog Falls","C":"शिवसमुद्रम","D":"धुआंधार"},a:"A"},
+{qh:"Q42. वित्त आयोग का प्रावधान किस अनुच्छेद में?",qe:"Finance Commission Article?",o:{"A":"Article 112","B":"Article 280","C":"Article 324","D":"Article 352"},a:"B"},
+{qh:"Q43. तराइन का प्रथम युद्ध किस वर्ष?",qe:"First Battle of Tarain year?",o:{"A":"1191","B":"1192","C":"1526","D":"1761"},a:"A"},
+{qh:"Q44. Navy Commander के समकक्ष Army में कौन?",qe:"Equivalent to Navy Commander in Army?",o:{"A":"मेजर / Major","B":"लेफ्टिनेंट कर्नल / Lt Colonel","C":"कर्नल / Colonel","D":"ब्रिगेडियर"},a:"B"},
+{qh:"Q45. Bulls Eye शब्द किस खेल में?",qe:"Bulls Eye term used in?",o:{"A":"मुक्केबाजी / Boxing","B":"तीरंदाजी / Archery-Shooting","C":"गोल्फ / Golf","D":"बास्केटबॉल"},a:"B"},
+{qh:"Q46. अंतर्राष्ट्रीय योग दिवस कब?",qe:"International Yoga Day when?",o:{"A":"5 June","B":"11 July","C":"21 June","D":"29 August"},a:"C"},
+{qh:"Q47. कितने राज्य समुद्र तट से लगे हैं?",qe:"How many states share coastline?",o:{"A":"7","B":"8","C":"9","D":"10"},a:"C"},
+{qh:"Q48. दांडी मार्च किस वर्ष शुरू?",qe:"Dandi March started in?",o:{"A":"1920","B":"1930","C":"1942","D":"1947"},a:"B"},
+{qh:"Q49. मूल संविधान में कितने अनुच्छेद थे?",qe:"Articles in Original Constitution?",o:{"A":"395","B":"448","C":"370","D":"412"},a:"A"},
+{qh:"Q50. झीलों का शहर किसे कहा जाता है?",qe:"City of Lakes?",o:{"A":"जयपुर / Jaipur","B":"जोधपुर","C":"उदयपुर / Udaipur","D":"शिमला"},a:"C"}
+]};
+let cur=0,answers={},reviews=new Set(),time=30*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();let ok=true;if(n.length<3){nameErr.style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{nameErr.style.display='none';stuName.style.borderColor='#22c55e';}if(c.length<2){cityErr.style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{cityErr.style.display='none';stuCity.style.borderColor='#22c55e';}if(!ok)return;localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute!");},1000);render();}else{passErr.style.display='block';}}
+function render(){let q=testData.questions[cur];qNo.innerText=cur+1;qHi.innerText=q.qh;qEn.innerText=q.qe;let h="";for(let k in q.o){let sel=answers[cur]==k;h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}optBox.innerHTML=h;attemptInfo.innerText=`${Object.keys(answers).length}/50 Attempted`;let pg="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});pGrid.innerHTML=pg;}
+function selAns(k){answers[cur]=k;render();}function clearAns(){delete answers[cur];render();}function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}function prevQ(){if(cur>0){cur--;render();}}function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){let at=Object.keys(answers).length;if(at<5 && time>60){if(!confirm(`⚠️ Sirf ${at} kiye! Submit?`))return;}clearInterval(tInt);let cor=0,wro=0,skip=0;testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++;else if(answers[i]==q.a)cor++;else wro++;});let finalMarks=cor*1 - wro*0.25;document.getElementById('sCor').innerText=cor;document.getElementById('sWro').innerText=wro;document.getElementById('sSkip').innerText=skip;document.getElementById('sBig').innerText=cor;document.getElementById('finalScoreNeg').innerText=`Final: ${finalMarks.toFixed(2)} / 50 ( ${cor}x1 - ${wro}x0.25 )`;document.getElementById('scoreMsg').innerText=finalMarks>=40?"Excellent! Topper 🔥":finalMarks>=30?"Bahut Badhiya! 🚀":finalMarks>=18?"Theek Hai 💪":"Practice Jaruri Hai 📚";document.getElementById('stuInfoShow').innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;document.getElementById('scoreOverlay').style.display='flex';buildReview();}
+function buildReview(){let html="";testData.questions.forEach((q,i)=>{let u=answers[i];let correct=u==q.a;let status=u==undefined?"Not Attempted":correct?"Correct":"Wrong";let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><b style="color:#0ea5e9">Q ${i+1}</b><span class="badge ${badgeClass}">${status}</span></div><div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div><div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;for(let k in q.o){let cls="opt-item";if(k==q.a)cls+=" correct-opt";else if(k==u && u!=q.a)cls+=" wrong-opt";html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️':''}</div>`;}html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px"><b>Your:</b> ${u||'Not Attempted'} | <b>Correct:</b> ${q.a}</div></div>`;});document.getElementById('reviewList').innerHTML=html;}
+function openReview(){document.getElementById('reviewPage').style.display='block';}function closeReview(){document.getElementById('reviewPage').style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||"";stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)">
+<div class="score-card"><div style="text-align:center"><div style="background:#e0f2fe;color:#0c4a6e;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">NAVY MR TEST 05 SCORECARD</div><div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div><div style="font-size:48px;font-weight:900;color:#0ea5e9"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /50</span></div><div style="color:var(--muted);font-size:12px" id="stuInfoShow"></div><div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div></div><button onclick="openReview()" style="width:100%;background:#0f172a;color:#38bdf8;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #0ea5e9">📝 View Detailed Analysis</button><button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px">🔄 Retake</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto"><div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #0ea5e9;margin-bottom:12px"><b>📝 Detailed Analysis - 50 Q</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800">✕ Close</button></div><div id="reviewList"></div></div></div>
+</body>
+</html>
