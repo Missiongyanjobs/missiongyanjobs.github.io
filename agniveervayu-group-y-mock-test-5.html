@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>AGNIVEERVAYU GROUP Y - Mock Test 05 | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text);transition:0.2s}
+.options label:hover{border-color:#fbbf24}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+body.dark.options label.sel{background:#14532d!important;color:#86efac!important;border-color:#22c55e!important}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px;transition:0.2s}
+.btn:active{transform:scale(0.97)}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#1d4ed8;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #451a03, #d97706);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #fbbf24;box-shadow:0 0 30px rgba(251,191,36,0.3)}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+body.dark.opt-item.correct-opt{background:#14532d!important;border-color:#22c55e!important;color:#bbf7d0!important}
+body.dark.opt-item.wrong-opt{background:#450a0a!important;border-color:#ef4444!important;color:#fecaca!important}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;line-height:1.4} #qEn{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="header">
+<b style="color:#fbbf24;letter-spacing:0.5px">✈️ GROUP Y TEST 05</b>
+<div style="display:flex;gap:8px;align-items:center">
+<div class="timer">⏱️ <span id="timer">45:00</span></div>
+<button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24;font-size:16px">🌙</button>
+</div>
+</div>
+<div class="overlay" id="loginScreen">
+<div class="login-box">
+<h2 style="color:#fbbf24;margin-bottom:4px">👋 GROUP Y TEST 05</h2>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:14px">50 Q | 45 Min | Negative 0.25</p>
+<input id="stuName" placeholder="अपना पूरा नाम *">
+<div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div>
+<input id="stuCity" placeholder="अपना जिला / शहर *">
+<div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button>
+</div>
+</div>
+<div class="overlay" id="passScreen" style="display:none">
+<div class="pass-box">
+<h2 style="color:#fbbf24;margin-bottom:6px">🔥 TEST 05 LOCKED 🔥</h2>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #fbbf24;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:#fbbf24;color:#451a03;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START NOW</button>
+<p id="passErr" style="color:#fbbf24;display:none;margin-top:10px;font-weight:800">❌ wrong Password!</p>
+</div>
+</div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #fbbf24"><b>✈️ Agniveervayu Group Y | TEST - 05 | 50 Q</b><br><small style="color:var(--muted)">English 20 + RAGA 30 | <span id="attemptInfo">0/50 Attempted</span> | Negative 0.25</small></div>
+<div class="q-card">
+<b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b>
+<div id="qHi"></div>
+<div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px">
+<button class="btn btn-g" onclick="prevQ()">← Prev</button>
+<button class="btn btn-g" onclick="clearAns()">Clear</button>
+<button class="btn btn-y" onclick="markRev()">☆ Review</button>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn btn-b" onclick="saveNext()">Save & Next →</button>
+<button class="btn btn-gr" onclick="submitTest()">Submit</button>
+</div>
+</div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Palette - 50 Q</b><small style="color:var(--muted)">Green=Answered</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<script>
+const testData={questions:[
+{qh:"Q1. 'Lethargic' का सही समानार्थी चुनिए",qe:"Synonym of Lethargic",o:{"A":"Energetic","B":"Sluggish / सुस्त","C":"Brilliant","D":"Active"},a:"B"},
+{qh:"Q2. 'Lucid' का विलोम चुनिए",qe:"Antonym of Lucid",o:{"A":"Clear","B":"Transparent","C":"Obscure / अस्पष्ट","D":"Logical"},a:"C"},
+{qh:"Q3. He was accused ___ stealing money.",qe:"Preposition",o:{"A":"of","B":"for","C":"with","D":"by"},a:"A"},
+{qh:"Q4. सही वर्तनी वाला शब्द चुनिए",qe:"Correct spelling",o:{"A":"Burocracy","B":"Bureaucracy","C":"Bureucracy","D":"Bureacracy"},a:"B"},
+{qh:"Q5. Error: If I had known about meeting, I would attend it.",qe:"Identify error",o:{"A":"If I had known","B":"about the meeting,","C":"I would attend","D":"it."},a:"C"},
+{qh:"Q6. Passive: Who taught you English?",qe:"Passive voice",o:{"A":"By who were you taught English?","B":"By whom were you taught English?","C":"By whom was you taught English?","D":"English is taught by whom?"},a:"B"},
+{qh:"Q7. He said to his friend, Let us go for a walk.",qe:"Indirect speech",o:{"A":"He told his friend to go","B":"He proposed to his friend that they should go for a walk.","C":"He asked his friend to let them go","D":"He said that they will go"},a:"B"},
+{qh:"Q8. Man is ___ mortal.",qe:"Article",o:{"A":"a","B":"an","C":"the","D":"No article"},a:"D"},
+{qh:"Q9. Idiom To bite the dust का अर्थ?",qe:"Meaning of idiom",o:{"A":"To eat dirt","B":"To fail or be defeated","C":"To clean the house","D":"To win a race"},a:"B"},
+{qh:"Q10. Neither the principal nor the teachers ___ present.",qe:"Verb form",o:{"A":"was","B":"were","C":"has","D":"is"},a:"B"},
+{qh:"Q11. Synonym of Diligent",qe:"Synonym Diligent",o:{"A":"Lazy","B":"Industrious / मेहनती","C":"Careless","D":"Inactive"},a:"B"},
+{qh:"Q12. Antonym of Frugal",qe:"Antonym Frugal",o:{"A":"Economical","B":"Extravagant / खर्चीला","C":"Miserly","D":"Cheap"},a:"B"},
+{qh:"Q13. Hardly had he left ___ it started raining.",qe:"Fill blank",o:{"A":"than","B":"when","C":"then","D":"that"},a:"B"},
+{qh:"Q14. Meeting was called ___ due to weather.",qe:"Phrasal verb",o:{"A":"out","B":"in","C":"off / रद्द","D":"up"},a:"C"},
+{qh:"Q15. A person who loves mankind",qe:"One word",o:{"A":"Misanthrope","B":"Anthropologist","C":"Philanthropist","D":"Mercenary"},a:"C"},
+{qh:"Q16. Passive: They are laughing at the beggar.",qe:"Passive",o:{"A":"The beggar is laughed at by them.","B":"The beggar is being laughed at by them.","C":"The beggar was being laughed at","D":"The beggar is being laughed by them."},a:"B"},
+{qh:"Q17. Correct spelling",qe:"Spelling",o:{"A":"Mischievous","B":"Mischeivous","C":"Mischivous","D":"Mischevous"},a:"A"},
+{qh:"Q18. Error: The scenery of Kashmir are very charming.",qe:"Identify error",o:{"A":"The scenery","B":"of Kashmir","C":"are","D":"very charming."},a:"C"},
+{qh:"Q19. Meaning of A bed of roses",qe:"Idiom",o:{"A":"A comfortable and easy situation","B":"A place full of flowers","C":"A difficult path","D":"A temporary joy"},a:"A"},
+{qh:"Q20. He is junior ___ me in service.",qe:"Preposition",o:{"A":"than","B":"from","C":"to","D":"by"},a:"C"},
+{qh:"Q21. Series: 2,3,10,39,172,?",qe:"Find next number",o:{"A":"645","B":"720","C":"885","D":"945"},a:"C"},
+{qh:"Q22. SYSTEM=SYSMET, NEARER=AENRER then FRACTION?",qe:"Coding",o:{"A":"CARFNOIT","B":"ARFCNOIT","C":"CARFIONT","D":"FRACNOIT"},a:"A"},
+{qh:"Q23. Rahul facing South turns 135° ACW then 180° CW, direction now?",qe:"Direction test",o:{"A":"North-East","B":"North-West","C":"South-East","D":"South-West"},a:"D"},
+{qh:"Q24. Her mother's brother is only son of my mother's father. Relation?",qe:"Blood relation",o:{"A":"Mother / माँ","B":"Sister / बहन","C":"Aunt / Mother or Aunt","D":"Grandmother"},a:"C"},
+{qh:"Q25. Odd one out - Volume:Litre, Time:Seconds, Resistance:Ohm, Pressure:Barometer",qe:"Odd one out",o:{"A":"Volume : Litre","B":"Time : Seconds","C":"Resistance : Ohm","D":"Pressure : Barometer"},a:"D"},
+{qh:"Q26. All birds are tall. Some tall are hens. Conclusion I Some birds are hens II Some hens are tall",qe:"Syllogism",o:{"A":"Only I follows","B":"Only II follows","C":"Both I and II","D":"Neither I nor II"},a:"B"},
+{qh:"Q27. Alphabet series WFB, TGD, QHG,?",qe:"Series",o:{"A":"NIL","B":"NIK","C":"NJK","D":"OIK"},a:"B"},
+{qh:"Q28. Angle between hands at 8:20?",qe:"Clock angle",o:{"A":"120°","B":"130°","C":"140°","D":"150°"},a:"B"},
+{qh:"Q29. Analogy 4:69 :: 11:?",qe:"Analogy",o:{"A":"1336","B":"1341","C":"1000","D":"1441"},a:"A"},
+{qh:"Q30. 45 students, Ayush 15th from top, rank from bottom?",qe:"Ranking",o:{"A":"30","B":"31","C":"32","D":"29"},a:"B"},
+{qh:"Q31. Venn for Year, Month, Week",qe:"Venn diagram",o:{"A":"Three separate","B":"Three intersecting","C":"One inside another inside third","D":"Two inside larger"},a:"C"},
+{qh:"Q32. Shopkeeper uses 900g instead of 1kg at CP, profit %?",qe:"Profit",o:{"A":"10%","B":"11 1/9%","C":"12%","D":"9 1/11%"},a:"B"},
+{qh:"Q33. A twice efficient as B, together 14 days, A alone?",qe:"Work",o:{"A":"21 days","B":"28 days","C":"42 days","D":"35 days"},a:"A"},
+{qh:"Q34. Radius increased 20%, area increase?",qe:"Circle area",o:{"A":"20%","B":"40%","C":"44%","D":"48%"},a:"C"},
+{qh:"Q35. 0.05 x 0.09 =?",qe:"Maths",o:{"A":"0.045","B":"0.0045","C":"0.00045","D":"4.5"},a:"B"},
+{qh:"Q36. Ages ratio A:B 3:4, after 4 years 4:5, B present age?",qe:"Age",o:{"A":"12 years","B":"16 years","C":"20 years","D":"24 years"},a:"B"},
+{qh:"Q37. 200 meters in 24 sec, speed km/h?",qe:"Speed",o:{"A":"20","B":"24","C":"28.5","D":"30"},a:"D"},
+{qh:"Q38. Avg weight 8 men +1.5kg when 65kg replaced, new weight?",qe:"Average",o:{"A":"70 kg","B":"74 kg","C":"76 kg","D":"77 kg"},a:"D"},
+{qh:"Q39. Money doubles in 8 years SI, becomes 4 times in?",qe:"Simple Interest",o:{"A":"16 years","B":"24 years","C":"32 years","D":"12 years"},a:"B"},
+{qh:"Q40. sqrt(0.000441) =?",qe:"Square root",o:{"A":"0.21","B":"0.021","C":"0.0021","D":"2.1"},a:"B"},
+{qh:"Q41. Which Article called Heart and Soul by Ambedkar?",qe:"Constitution",o:{"A":"Article 14","B":"Article 19","C":"Article 32","D":"Article 44"},a:"C"},
+{qh:"Q42. Escape velocity for Earth approx?",qe:"Science",o:{"A":"9.8 km/s","B":"11.2 km/s","C":"15.6 km/s","D":"22.4 km/s"},a:"B"},
+{qh:"Q43. Highest peak in South India?",qe:"GK",o:{"A":"Doddabetta","B":"Anamudi","C":"Mahendragiri","D":"Kodaikanal"},a:"B"},
+{qh:"Q44. Supreme Commander of Indian Armed Forces?",qe:"GK",o:{"A":"Prime Minister","B":"CDS","C":"President / राष्ट्रपति","D":"Defence Minister"},a:"C"},
+{qh:"Q45. Nibble in computer =?",qe:"Computer",o:{"A":"2 bits","B":"4 bits","C":"8 bits","D":"16 bits"},a:"B"},
+{qh:"Q46. Deficiency of Vitamin B1 causes?",qe:"Biology",o:{"A":"Scurvy","B":"Beriberi","C":"Rickets","D":"Night Blindness"},a:"B"},
+{qh:"Q47. Giddha folk dance of which state?",qe:"Folk dance",o:{"A":"Punjab","B":"Haryana","C":"Gujarat","D":"Rajasthan"},a:"A"},
+{qh:"Q48. ISRO headquarters located in?",qe:"ISRO",o:{"A":"New Delhi","B":"Mumbai","C":"Bengaluru","D":"Sriharikota"},a:"C"},
+{qh:"Q49. Who wrote Discovery of India?",qe:"Book",o:{"A":"Mahatma Gandhi","B":"Rabindranath Tagore","C":"Subhash Chandra Bose","D":"Jawaharlal Nehru"},a:"D"},
+{qh:"Q50. Ozone layer protects us from?",qe:"Science",o:{"A":"Infrared rays","B":"Ultraviolet (UV) rays","C":"X-rays","D":"Cosmic rays"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim();
+  let ok=true;
+  if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return;
+  localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){
+  if(passInput.value==="MGE@77"){
+    passScreen.style.display='none'; mainTest.style.display='block';
+    tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute!");},1000);
+    render();
+  }else{passErr.style.display='block';}
+}
+function render(){
+  let q=testData.questions[cur];
+  qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h;
+  attemptInfo.innerText=`${Object.keys(answers).length}/${testData.questions.length} Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});
+  pGrid.innerHTML=pg;
+}
+function selAns(k){answers[cur]=k; render();}
+function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  let at=Object.keys(answers).length; if(at<5 && time>60){if(!confirm(`⚠️ Sirf ${at} kiye! Submit?`))return;}
+  clearInterval(tInt); let cor=0,wro=0,skip=0; testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++; else if(answers[i]==q.a)cor++; else wro++;});
+  let finalMarks=cor*1 - wro*0.25;
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  finalScoreNeg.innerText=`Final Score: ${finalMarks.toFixed(2)} / 50 ( ${cor}x1 - ${wro}x0.25 )`;
+  scoreMsg.innerText=finalMarks>=40?"Excellent! Topper 🔥":finalMarks>=30?"Bahut Badhiya! 🚀":finalMarks>=18?"Theek Hai 💪":"Practice Jaruri Hai 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex'; buildReview();
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((q,i)=>{
+    let u=answers[i]; let correct=u==q.a; let status=u==undefined?"Not Attempted":correct?"Correct":"Wrong";
+    let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong"; let icon=u==undefined?"⚠️":correct?"✅":"❌";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#2563eb">Q ${i+1}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div>
+    <div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div>
+    <div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;
+    for(let k in q.o){
+      let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt";
+      html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u && k!=q.a?'❌ Your':''}</div>`;
+    }
+    html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a}</span></div></div>`;
+  });
+  reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block'; reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)">
+<div class="score-card">
+<div style="text-align:center">
+<div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">GROUP Y TEST 05 SCORECARD</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#1d4ed8;line-height:1"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /50</span></div>
+<div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div>
+<div style="font-size:13px;font-weight:800;margin-top:8px" id="finalScoreNeg"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0">
+<div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div>
+<div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div>
+<div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div>
+</div>
+<button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px;cursor:pointer">📝 View Detailed Analysis</button>
+<button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button>
+</div>
+</div>
+<div class="review-page" id="reviewPage">
+<div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px;z-index:10">
+<b style="font-size:15px">📝 Analysis - 50 Q</b>
+<button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button>
+</div>
+<div id="reviewList"></div>
+</div>
+</div>
+</body>
+</html>
