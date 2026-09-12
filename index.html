@@ -12,7 +12,6 @@
         .header-left {display: flex; align-items: center; gap: 18px;}
         .logo-img {height: 65px; width: 65px; border-radius: 50%; border: 3px solid #fbbf24; background: #0f172a;}
         .header-text h1 {font-size: 26px; font-weight: 900; color: #fbbf24;}
-        .header-text p{font-size:13px;color:#cbd5e1}
         .news-ticker {background: #0f172a; color: #fff; padding: 10px 0; font-weight: 700; overflow: hidden; white-space: nowrap; border-bottom: 3px solid #fbbf24;}
         .box {background: #fff; border: 2px solid #B91C1C; border-radius: 8px; overflow: hidden;}
         .box-title {background: linear-gradient(90deg, #B91C1C, #dc2626, #B91C1C); color: white; padding: 14px; font-weight: 800; font-size: 19px; text-align: center;}
@@ -26,34 +25,34 @@
         .footer {background: #0f172a; color: #e2e8f0; text-align: center; padding: 30px 20px; border-top: 4px solid #fbbf24;}
         .footer a {color: #fbbf24; text-decoration: none; font-weight: 600; margin: 0 8px;}
         .airforce-wrapper{grid-column: 1 / -1; background:#fff; border:2px solid #B91C1C; border-radius:12px; overflow:hidden; margin-bottom:20px; box-shadow:0 6px 18px rgba(220,38,38,0.15);}
-        .airforce-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; align-items:flex-start;}
+        .airforce-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .airforce-grid::-webkit-scrollbar{height:10px} .airforce-grid::-webkit-scrollbar-thumb{background:#dc2626; border-radius:10px} .airforce-grid::-webkit-scrollbar-track{background:#fee2e2;}
-        .airforce-card{min-width:325px; max-width:325px; flex:0 0 auto; scroll-snap-align:start; background:linear-gradient(145deg, #7f1d1d, #dc2626); padding:18px; border-radius:14px; text-align:left; border:2.5px solid #fbbf24; box-shadow:0 6px 18px rgba(0,0,0,0.4); display:flex; flex-direction:column; min-height:250px; height:auto; position:relative;}
-        .airforce-card h3{font-size:14px !important; font-weight:900 !important; color:#FFFF00 !important; line-height:1.3; margin-bottom:8px;}
-        .airforce-card .test-title{font-size:16px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.3; margin-bottom:6px;}
-        .airforce-card .test-desc{font-size:12.5px !important; font-weight:700 !important; color:#fefce8 !important; line-height:1.4; min-height:32px;}
+        .airforce-card{min-width:325px; max-width:325px; flex:0 0 auto; scroll-snap-align:start; background:linear-gradient(145deg, #7f1d1d, #dc2626); padding:18px; border-radius:14px; text-align:left; border:2.5px solid #fbbf24; box-shadow:0 6px 18px rgba(0,0,0,0.4); display:flex; flex-direction:column; justify-content:space-between; min-height:265px; position:relative;}
+        .airforce-card h3{font-size:15px !important; font-weight:900 !important; color:#FFFF00 !important; line-height:1.3; margin-bottom:10px;}
+        .airforce-card .test-title{font-size:17px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.3; margin-bottom:8px;}
+        .airforce-card .test-desc{font-size:13.5px !important; font-weight:800 !important; color:#fefce8 !important; line-height:1.4; min-height:40px;}
         .groupy-wrapper{grid-column: 1 / -1; background:#fff; border:2.5px solid #d97706; border-radius:12px; overflow:hidden; margin-bottom:20px; box-shadow:0 8px 24px rgba(217,119,6,0.2);}
         .groupy-title{background:linear-gradient(90deg,#451a03 0%,#92400e 30%,#d97706 50%,#92400e 70%,#451a03 100%); color:white; padding:15px; font-weight:900; font-size:19px; text-align:center; letter-spacing:0.6px; border-bottom:3px solid #fbbf24;}
-        .groupy-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; align-items:flex-start;}
+        .groupy-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .groupy-grid::-webkit-scrollbar{height:10px} .groupy-grid::-webkit-scrollbar-thumb{background:#d97706; border-radius:10px} .groupy-grid::-webkit-scrollbar-track{background:#fef3c7;}
-        .groupy-card{min-width:340px; max-width:340px; flex:0 0 auto; scroll-snap-align:start; background:linear-gradient(145deg,#451a03 0%,#7c2d12 20%,#92400e 60%,#d97706 100%); padding:19px; border-radius:15px; text-align:left; border:2.5px solid #fbbf24; box-shadow:0 8px 22px rgba(124,45,18,0.45); display:flex; flex-direction:column; min-height:260px; height:auto; position:relative;}
-        .groupy-card h3{font-size:14px !important; font-weight:900 !important; color:#fde68a !important; line-height:1.3; margin-bottom:6px;}
-        .groupy-card .test-title{font-size:16px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.35; margin-bottom:6px;}
-        .groupy-card .test-desc{font-size:12px !important; font-weight:700 !important; color:#fef3c7 !important; line-height:1.45; min-height:18px;}
-        .groupy-card .test-meta{font-size:11px !important; font-weight:800 !important; color:#fde047 !important; margin-top:6px; line-height:1.4; background:rgba(0,0,0,0.35); padding:5px 8px; border-radius:6px; border:1px solid rgba(251,191,36,0.3);}
+        .groupy-card{min-width:340px; max-width:340px; flex:0 0 auto; scroll-snap-align:start; background:linear-gradient(145deg,#451a03 0%,#7c2d12 20%,#92400e 60%,#d97706 100%); padding:19px; border-radius:15px; text-align:left; border:2.5px solid #fbbf24; box-shadow:0 8px 22px rgba(124,45,18,0.45); display:flex; flex-direction:column; justify-content:space-between; min-height:295px; position:relative;}
+        .groupy-card h3{font-size:14px !important; font-weight:900 !important; color:#fde68a !important; line-height:1.3; margin-bottom:9px;}
+        .groupy-card .test-title{font-size:17px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.35; margin-bottom:8px;}
+        .groupy-card .test-desc{font-size:13px !important; font-weight:700 !important; color:#fef3c7 !important; line-height:1.45; min-height:20px;}
+        .groupy-card .test-meta{font-size:12px !important; font-weight:800 !important; color:#fde047 !important; margin-top:8px; line-height:1.4; background:rgba(0,0,0,0.35); padding:6px 9px; border-radius:6px; border:1px solid rgba(251,191,36,0.3);}
         .navy-wrapper{grid-column: 1 / -1; background:#fff; border:2.5px solid #0b3d91; border-radius:12px; overflow:hidden; margin-bottom:20px; box-shadow:0 8px 24px rgba(11,61,145,0.2);}
         .navy-title{background:linear-gradient(90deg,#020617 0%,#0b3d91 30%,#1d4ed8 50%,#0b3d91 70%,#020617 100%); color:white; padding:15px; font-weight:900; font-size:19px; text-align:center; letter-spacing:0.6px; border-bottom:3px solid #38bdf8;}
-        .navy-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; align-items:flex-start;}
+        .navy-grid{ display:flex; gap:16px; overflow-x:auto; padding:16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .navy-grid::-webkit-scrollbar{height:10px} .navy-grid::-webkit-scrollbar-thumb{background:#0b3d91; border-radius:10px} .navy-grid::-webkit-scrollbar-track{background:#dbeafe;}
-        .navy-card{min-width:340px; max-width:340px; flex:0 0 auto; scroll-snap-align:start; background:linear-gradient(145deg,#020617 0%,#0f172a 20%,#1e3a8a 60%,#2563eb 100%); padding:19px; border-radius:15px; text-align:left; border:2.5px solid #38bdf8; box-shadow:0 8px 22px rgba(11,61,145,0.45); display:flex; flex-direction:column; min-height:260px; height:auto; position:relative;}
-        .navy-card h3{font-size:14px !important; font-weight:900 !important; color:#7dd3fc !important; line-height:1.3; margin-bottom:6px;}
-        .navy-card .test-title{font-size:16px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.35; margin-bottom:6px;}
-        .navy-card .test-desc{font-size:12px !important; font-weight:700 !important; color:#e0f2fe !important; line-height:1.45; min-height:18px;}
-        .navy-card .test-meta{font-size:11px !important; font-weight:800 !important; color:#fde047 !important; margin-top:6px; line-height:1.4; background:rgba(0,0,0,0.3); padding:5px 8px; border-radius:6px; border:1px solid rgba(56,189,248,0.3);}
-        .pro-badge{position:absolute; top:8px; right:8px; background:yellow; color:#7f1d1d; font-size:9px; font-weight:900; padding:3px 9px; border-radius:20px; z-index:2;}
-        .navy-badge{position:absolute; top:8px; right:8px; background:#38bdf8; color:#020617; font-size:9px; font-weight:900; padding:3px 9px; border-radius:20px; z-index:2;}
-        .groupy-badge{position:absolute; top:8px; right:8px; background:#fbbf24; color:#451a03; font-size:9px; font-weight:900; padding:3px 9px; border-radius:20px; z-index:2;}
-        @media (max-width: 600px) {.airforce-card,.navy-card,.groupy-card{min-width:290px; max-width:290px;}}
+        .navy-card{min-width:340px; max-width:340px; flex:0 0 auto; scroll-snap-align:start; background:linear-gradient(145deg,#020617 0%,#0f172a 20%,#1e3a8a 60%,#2563eb 100%); padding:19px; border-radius:15px; text-align:left; border:2.5px solid #38bdf8; box-shadow:0 8px 22px rgba(11,61,145,0.45); display:flex; flex-direction:column; justify-content:space-between; min-height:295px; position:relative;}
+        .navy-card h3{font-size:14px !important; font-weight:900 !important; color:#7dd3fc !important; line-height:1.3; margin-bottom:9px;}
+        .navy-card .test-title{font-size:17px !important; font-weight:900 !important; color:#FFFFFF !important; line-height:1.35; margin-bottom:8px;}
+        .navy-card .test-desc{font-size:13px !important; font-weight:700 !important; color:#e0f2fe !important; line-height:1.45; min-height:20px;}
+        .navy-card .test-meta{font-size:12px !important; font-weight:800 !important; color:#fde047 !important; margin-top:8px; line-height:1.4; background:rgba(0,0,0,0.3); padding:6px 9px; border-radius:6px; border:1px solid rgba(56,189,248,0.3);}
+        .pro-badge{position:absolute; top:9px; right:9px; background:yellow; color:#7f1d1d; font-size:10px; font-weight:900; padding:4px 10px; border-radius:20px; z-index:2;}
+        .navy-badge{position:absolute; top:9px; right:9px; background:#38bdf8; color:#020617; font-size:10px; font-weight:900; padding:4px 10px; border-radius:20px; z-index:2;}
+        .groupy-badge{position:absolute; top:9px; right:9px; background:#fbbf24; color:#451a03; font-size:10px; font-weight:900; padding:4px 10px; border-radius:20px; z-index:2;}
+        @media (max-width: 600px) {.airforce-card,.navy-card,.groupy-card{min-width:300px; max-width:300px;}}
     </style>
 </head>
 <body>
@@ -61,7 +60,7 @@
         <div class="header-left"><img src="logo.png" alt="Mission Gyan Jobs" class="logo-img" /><div class="header-text"><h1>MISSION GYAN JOBS</h1><p>Latest Sarkari Naukri + Offline Forms 2026</p></div></div>
         <a href="offline-forms.html" class="offline-btn" style="background:#fbbf24; color:#0f172a; padding:13px 24px; border-radius:10px; text-decoration:none; font-weight:900;">📄 Offline Forms</a>
     </header>
-    <div class="news-ticker"><marquee behavior="scroll" direction="left" scrollamount="6"><span>🔥 AIR FORCE NON-CBT 22 Tests Live | ✈️ GROUP Y 05 Tests Live | ⚓ NAVY MR 05 Tests Live - 50Q 30Min 🔥</span></marquee></div>
+    <div class="news-ticker"><marquee behavior="scroll" direction="left" scrollamount="6"><span>🔥 AIR FORCE NON-CBT 21 Tests Live | ✈️ GROUP Y 03 Tests Live | ⚓ NAVY MR 04 Tests Live - 50Q 30Min 🔥</span></marquee></div>
     <div class="container">
         <div class="grid">
             <div class="box"><div class="box-title">📌 Latest Jobs</div><div class="box-content"><ul>
@@ -69,66 +68,180 @@
                 <li><a href="uptet-2026.html">UPTET 2026 Primary & Junior Level – Apply Online <span class="new-badge">New</span></a></li>
                 <li><a href="allahabad-hc-ro-aro-ca-2026.html">Allahabad HC RO/ARO/CA 2026 – 543 Posts <span class="new-badge">New</span></a></li>
                 <li><a href="rssb-cet-graduate-level-2026.html">RSSB Graduate Level CET 2026 – Patwari, VDO Posts <span class="new-badge">New</span></a></li>
+                <li><a href="jhtet-2026.html">JHTET 2026 Jharkhand TET – Apply Online <span class="new-badge">New</span></a></li>
             </ul></div></div>
             <div class="box"><div class="box-title">📊 Result</div><div class="box-content"><ul>
                 <li><a href="upsc-civil-services-2026.html">UPSC CSE Prelims 2026 Result – Check Now <span class="new-badge">New</span></a></li>
                 <li><a href="https://ssc.gov.in/" target="_blank">SSC Delhi Police Constable 2025 Result – Check Now</a></li>
+                <li><a href="#">SSC CGL 2026 Result – Coming Soon</a></li>
+                <li><a href="#">IBPS PO 2026 Result – Coming Soon</a></li>
             </ul></div></div>
             <div class="box"><div class="box-title">🎫 Admit Card</div><div class="box-content"><ul>
                 <li><a href="https://ssc.gov.in/" target="_blank">SSC CGL 2026 Tier-1 Admit Card – Coming Soon</a></li>
                 <li><a href="https://ibps.in/" target="_blank">IBPS RRB PO / Clerk 2026 Admit Card – Coming Soon</a></li>
+                <li><a href="https://upsconline.nic.in/" target="_blank">UPSC EPFO 2026 Admit Card – Coming Soon</a></li>
+                <li><a href="#">SSC Selection Post Phase XIV 2026 Admit Card – Coming Soon</a></li>
+                <li><a href="https://csirnet.nta.ac.in/" target="_blank">CSIR NET 2026 Admit Card – Coming Soon</a></li>
+            </ul></div></div>
+            <div class="box"><div class="box-title">🔑 Answer Key</div><div class="box-content"><ul>
+                <li><a href="ssc-cgl-tier2-answer-key-2026.html">SSC CGL Tier-II Final Answer Key 2026 <span class="new-badge">New</span></a></li>
+                <li><a href="rrb-ntpc-10-2-answer-key-2026.html">RRB NTPC 10+2 UG Answer Key 2026 <span class="new-badge">New</span></a></li>
+                <li><a href="upsc-iss-answer-key-2026.html">UPSC ISS Answer Key 2026 – Statistics I & II <span class="new-badge">New</span></a></li>
+                <li><a href="#">CTET December 2025 Answer Key <span class="new-badge">Coming Soon</span></a></li>
+                <li><a href="#">Rajasthan Police Constable 2025 Answer Key <span class="new-badge">Coming Soon</span></a></li>
+            </ul></div></div>
+            <div class="box"><div class="box-title">📖 Syllabus</div><div class="box-content"><ul>
+                <li><a href="rssb-cet-12th-level-syllabus-2026.html">Rajasthan RSSB 10+2 Senior Secondary CET Syllabus 2026 <span class="new-badge">New</span></a></li>
+                <li><a href="rssb-cet-graduate-level-syllabus-2026.html">RSSB Graduate Level CET Syllabus 2026 <span class="new-badge">New</span></a></li>
+                <li><a href="uptet-syllabus-2026.html">UPTET 2026 Syllabus – Paper I & II <span class="new-badge">New</span></a></li>
+                <li><a href="allahabad-hc-ro-aro-syllabus-2026.html">Allahabad High Court RO, ARO, Computer Assistant Syllabus 2026 <span class="new-badge">New</span></a></li>
+                <li><a href="jhtet-syllabus-2026.html">Jharkhand Teacher Eligibility Test JHTET Syllabus 2026 <span class="new-badge">New</span></a></li>
+            </ul></div></div>
+            <div class="box box-full"><div class="box-title">🏛️ Rajasthan State Jobs</div><div class="box-content"><ul>
+                <li><a href="rajasthan-cet-12th-level-2026.html">Rajasthan CET 12th Level 2026 – Vanpal, Constable, LDC, Junior Assistant <span class="new-badge">New</span></a></li>
+                <li><a href="rssb-cet-graduate-level-2026.html">RSSB Graduate Level CET 2026 – Patwari, VDO, Accountant <span class="new-badge">New</span></a></li>
+                <li><a href="#">Rajasthan Police Constable Recruitment 2026 – 4000+ Posts <span class="new-badge">Coming Soon</span></a></li>
+                <li><a href="#">RPSC RAS 2026 – Apply Online, Notification <span class="new-badge">Coming Soon</span></a></li>
+                <li><a href="#">Rajasthan Patwari Recruitment 2026 – 3000+ Posts <span class="new-badge">Coming Soon</span></a></li>
+                <li><a href="#">REET Level 1 & 2 Recruitment 2026 – Apply Online <span class="new-badge">Coming Soon</span></a></li>
             </ul></div></div>
 
             <div class="airforce-wrapper">
-                <div class="box-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (22) 🔥</div>
+                <div class="box-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (21) 🔥</div>
                 <div class="airforce-grid">
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 1 - Free 25 Q</p><p class="test-desc">Complete GK | 25 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-1.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 2 - Free 30 Q</p><p class="test-desc">Complete GK | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-2.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 3 - Free 30 Q</p><p class="test-desc">Complete GK | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-3.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 4 - Free 30 Q</p><p class="test-desc">Latest Current + Static GK | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-4.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 5 - Free 30 Q</p><p class="test-desc">States, Capitals & Awards | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-5.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 6 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-6.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 7 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-7.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 8 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-8.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 9 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-9.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">VERIFIED</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 10 - Free 30 Q</p><p class="test-desc">Gandhi | Lonar | IAF Motto | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-10.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">VERIFIED</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 11 - Free 30 Q</p><p class="test-desc">Rupiya | UP | INS Vikrant | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-11.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge" style="background:#22c55e; color:white;">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 12 - Free 30 Q</p><p class="test-desc">First CDS | Wular | Konark | Garuda</p></div><a href="airforce-noncbt-2027-mock-test-12.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 13 - Free 30 Q</p><p class="test-desc">Constitution | Article 32 | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-13.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 14 - Free 30 Q</p><p class="test-desc">Science | pH | Vacuum | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-14.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 15 - Free 30 Q</p><p class="test-desc">Venus | Ephemeral | Science | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-15.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 16 - English + GK 30 Q</p><p class="test-desc">Simon Commission | Lala Lajpat | Voice</p></div><a href="airforce-noncbt-2027-mock-test-16.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 17 - English + GK 30 Q</p><p class="test-desc">Constituent Assembly | Raman | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-17.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card" style="border-color:yellow;"><span class="pro-badge" style="background:yellow; color:#7f1d1d;">LATEST</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">English+GK Mock Test 18 - 30 Q</p><p class="test-desc">Tense | Article | Uber Cup | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-18.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card" style="border-color:yellow;"><span class="pro-badge" style="background:#22c55e; color:white;">LATEST</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">English+GK Mock Test 19 - 30 Q</p><p class="test-desc">Wular | Konark | Garuda | Siachen</p></div><a href="airforce-noncbt-2027-mock-test-19.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card" style="border-color:yellow;"><span class="pro-badge" style="background:#22c55e; color:white;">NEW 2026</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 20 - English + GK 30 Q</p><p class="test-desc">Pollution | Asian Games 2026 | CEC</p></div><a href="airforce-noncbt-2027-mock-test-20.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card" style="border-color:yellow; box-shadow:0 0 18px rgba(255,255,0,0.4);"><span class="pro-badge" style="background:#22c55e; color:white;">NEW 2026</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 21 - English + GK 30 Q</p><p class="test-desc">Water Boils | Guidance | Pink City</p></div><a href="airforce-noncbt-2027-mock-test-21.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
-                    <div class="airforce-card" style="border-color:yellow; box-shadow:0 0 18px rgba(255,255,0,0.4);"><span class="pro-badge" style="background:#22c55e; color:white;">NEW 2026</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 22 - English + GK 30 Q</p><p class="test-desc">Accommodation | Surya Kiran | Art 17</p></div><a href="airforce-noncbt-2027-mock-test-22.html" style="background:yellow; color:#7f1d1d; padding:11px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 1 - Free 25 Q</p><p class="test-desc">Complete GK | 25 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-1.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 2 - Free 30 Q</p><p class="test-desc">Complete GK | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-2.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 3 - Free 30 Q</p><p class="test-desc">Complete GK | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-3.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 4 - Free 30 Q</p><p class="test-desc">Latest Current + Static GK | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-4.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 5 - Free 30 Q</p><p class="test-desc">States, Capitals & Awards | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-5.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 6 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-6.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 7 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-7.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">PRO</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 8 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-8.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 9 - Free 30 Q</p><p class="test-desc">GK + English | 30 Questions | 20 Minutes</p></div><a href="airforce-noncbt-2027-mock-test-9.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                </div>
+                <div class="airforce-grid" style="padding-top:0;">
+                    <div class="airforce-card"><span class="pro-badge">VERIFIED</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 10 - Free 30 Q</p><p class="test-desc">Gandhi | Lonar | IAF Motto | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-10.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge">VERIFIED</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 11 - Free 30 Q</p><p class="test-desc">Rupiya | UP | INS Vikrant | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-11.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card"><span class="pro-badge" style="background:#22c55e; color:white;">NEW</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">GK Mock Test 12 - Free 30 Q</p><p class="test-desc">First CDS | Wular | Konark                     <div class="airforce-card" style="border-color:yellow;"><span class="pro-badge" style="background:yellow; color:#7f1d1d;">LATEST</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">English+GK Mock Test 18 - 30 Q</p><p class="test-desc">Tense | Article | Uber Cup | 20 Min</p></div><a href="airforce-noncbt-2027-mock-test-18.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card" style="border-color:yellow;"><span class="pro-badge" style="background:#22c55e; color:white;">LATEST</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">English+GK Mock Test 19 - 30 Q</p><p class="test-desc">Wular | Konark | Garuda | Siachen</p></div><a href="airforce-noncbt-2027-mock-test-19.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card" style="border-color:yellow;"><span class="pro-badge" style="background:#22c55e; color:white;">NEW 2026</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 20 - English + GK 30 Q</p><p class="test-desc">Pollution | Asian Games 2026 | CEC</p></div><a href="airforce-noncbt-2027-mock-test-20.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+                    <div class="airforce-card" style="border-color:yellow; box-shadow:0 0 20px rgba(255,255,0,0.5);"><span class="pro-badge" style="background:#22c55e; color:white;">NEW 2026</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 21 - English + GK 30 Q</p><p class="test-desc">Water Boils | Guidance | Pink City | Narmada Dam</p></div><a href="airforce-noncbt-2027-mock-test-21.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
                 </div>
             </div>
-
+<div class="airforce-card" style="border-color:yellow; box-shadow:0 0 20px rgba(255,255,0,0.5);"><span class="pro-badge" style="background:#22c55e; color:white;">NEW 2026</span><div><h3>🔥 AIR FORCE NON-CBT 01/2027 🔥</h3><p class="test-title">Mock Test 22 - English + GK 30 Q</p><p class="test-desc">Accommodation | Surya Kiran | Anaimudi | Art 17</p></div><a href="airforce-noncbt-2027-mock-test-22.html" style="background:yellow; color:#7f1d1d; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW</a></div>
+            <!-- ✈️ GROUP Y - 03 TESTS - FIXED NO NESTING -->
             <div class="groupy-wrapper">
-                <div class="groupy-title">✈️ AGNIVEERVAYU GROUP Y - ALL MOCK TESTS (05) 🔥</div>
+                <div class="groupy-title">✈️ AGNIVEERVAYU GROUP Y - ALL MOCK TESTS (03) 🔥</div>
                 <div class="groupy-grid">
-                    <div class="groupy-card"><span class="groupy-badge">LIVE</span><div><h3>✈️ AGNIVEERVAYU GROUP Y</h3><p class="test-title">Mock Test – 01</p><p class="test-desc">English + Reasoning + Maths + GK</p><p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p></div><a href="agniveervayu-group-y-mock-test-1.html" style="background:#fbbf24; color:#451a03; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="groupy-card"><span class="groupy-badge">NEW</span><div><h3>✈️ AGNIVEERVAYU GROUP Y</h3><p class="test-title">Mock Test – 02</p><p class="test-desc">English + Reasoning + Maths + GK</p><p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p></div><a href="agniveervayu-group-y-mock-test-2.html" style="background:#fbbf24; color:#451a03; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="groupy-card"><span class="groupy-badge" style="background:#22c55e; color:white;">LATEST</span><div><h3>✈️ AGNIVEERVAYU GROUP Y</h3><p class="test-title">Mock Test – 03</p><p class="test-desc">English + Reasoning + Maths + GK</p><p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p></div><a href="agniveervayu-group-y-mock-test-3.html" style="background:#fbbf24; color:#451a03; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="groupy-card"><span class="groupy-badge" style="background:#22c55e; color:white;">NEW</span><div><h3>✈️ AGNIVEERVAYU GROUP Y</h3><p class="test-title">Mock Test – 04 - 50 Q</p><p class="test-desc">Constitution + Grammar + Science | pH, Vacuum</p><p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p></div><a href="agniveervayu-group-y-mock-test-4.html" style="background:#fbbf24; color:#451a03; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="groupy-card"><span class="groupy-badge" style="background:#22c55e; color:white;">NEW</span><div><h3>✈️ AGNIVEERVAYU GROUP Y</h3><p class="test-title">Mock Test – 05 - 50 Q</p><p class="test-desc">English 20 + RAGA 30 | Lethargic, Clock, Venn</p><p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p></div><a href="agniveervayu-group-y-mock-test-5.html" style="background:#fbbf24; color:#451a03; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
+                    <div class="groupy-card">
+                        <span class="groupy-badge">LIVE</span>
+                        <div>
+                            <h3>✈️ AGNIVEERVAYU GROUP Y</h3>
+                            <p class="test-title">Mock Test – 01</p>
+                            <p class="test-desc">English + Reasoning + Maths + GK</p>
+                            <p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="agniveervayu-group-y-mock-test-1.html" style="background:#fbbf24; color:#451a03; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
+                    <div class="groupy-card">
+                        <span class="groupy-badge">NEW</span>
+                        <div>
+                            <h3>✈️ AGNIVEERVAYU GROUP Y</h3>
+                            <p class="test-title">Mock Test – 02</p>
+                            <p class="test-desc">English + Reasoning + Maths + GK</p>
+                            <p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="agniveervayu-group-y-mock-test-2.html" style="background:#fbbf24; color:#451a03; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
+                    <div class="groupy-card">
+                        <span class="groupy-badge" style="background:#22c55e; color:white;">LATEST</span>
+                        <div>
+                            <h3>✈️ AGNIVEERVAYU GROUP Y</h3>
+                            <p class="test-title">Mock Test – 03</p>
+                            <p class="test-desc">English + Reasoning + Maths + GK</p>
+                            <p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="agniveervayu-group-y-mock-test-3.html" style="background:#fbbf24; color:#451a03; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
                 </div>
             </div>
-
+<div class="groupy-card">
+    <span class="groupy-badge" style="background:#22c55e; color:white;">NEW</span>
+    <div>
+        <h3>✈️ AGNIVEERVAYU GROUP Y</h3>
+        <p class="test-title">Mock Test – 04 - 50 Q</p>
+        <p class="test-desc">Constitution + Grammar + Science | pH, Vacuum</p>
+        <p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p>
+    </div>
+    <a href="agniveervayu-group-y-mock-test-4.html" style="background:#fbbf24; color:#451a03; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+</div>
+<div class="groupy-card">
+    <span class="groupy-badge" style="background:#22c55e; color:white;">NEW</span>
+    <div>
+        <h3>✈️ AGNIVEERVAYU GROUP Y</h3>
+        <p class="test-title">Mock Test – 05 - 50 Q</p>
+        <p class="test-desc">English 20 + RAGA 30 | Lethargic, Clock, Venn</p>
+        <p class="test-meta">50 Questions | 45 Minutes | Negative 0.25</p>
+    </div>
+    <a href="agniveervayu-group-y-mock-test-5.html" style="background:#fbbf24; color:#451a03; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+</div>
+            <!-- 🇮🇳 NAVY MR - 04 TESTS - FIXED -->
             <div class="navy-wrapper">
-                <div class="navy-title">🇮🇳 INDIAN NAVY AGNIVEER MR - ALL MOCK TESTS (05) ⚓</div>
+                <div class="navy-title">🇮🇳 INDIAN NAVY AGNIVEER MR - ALL MOCK TESTS (04) ⚓</div>
                 <div class="navy-grid">
-                    <div class="navy-card"><span class="navy-badge">LIVE</span><div><h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3><p class="test-title">Mock Test – 01</p><p class="test-desc">Science + Maths + General Awareness</p><p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p></div><a href="navy-mr-2026-mock-test-1.html" style="background:#38bdf8; color:#020617; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="navy-card"><span class="navy-badge">NEW</span><div><h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3><p class="test-title">Mock Test – 02</p><p class="test-desc">Science + Maths + General Awareness</p><p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p></div><a href="navy-mr-2026-mock-test-2.html" style="background:#38bdf8; color:#020617; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="navy-card"><span class="navy-badge" style="background:yellow; color:#020617;">LATEST</span><div><h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3><p class="test-title">Mock Test – 03</p><p class="test-desc">Science + Maths + General Awareness</p><p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p></div><a href="navy-mr-2026-mock-test-3.html" style="background:#38bdf8; color:#020617; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="navy-card"><span class="navy-badge" style="background:#22c55e; color:white;">NEW</span><div><h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3><p class="test-title">Mock Test – 04</p><p class="test-desc">Science + Maths + General Awareness</p><p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p></div><a href="navy-mr-2026-mock-test-4.html" style="background:#38bdf8; color:#020617; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
-                    <div class="navy-card" style="border-color:#38bdf8; box-shadow:0 0 18px rgba(56,189,248,0.4);"><span class="navy-badge" style="background:#22c55e; color:white;">NEW</span><div><h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3><p class="test-title">Mock Test – 05 (Moderate)</p><p class="test-desc">Science 10 + Math 15 + GA 25 | Night Blindness</p><p class="test-meta">50 Q | 30 Min | Negative 0.25</p></div><a href="indian-navy-mr-mock-test-05.html" style="background:#38bdf8; color:#020617; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:14px; display:block; text-align:center; margin-top:12px; border:2px solid white;">START NOW →</a></div>
+                    <div class="navy-card">
+                        <span class="navy-badge">LIVE</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3>
+                            <p class="test-title">Mock Test – 01</p>
+                            <p class="test-desc">Science + Maths + General Awareness</p>
+                            <p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="navy-mr-2026-mock-test-1.html" style="background:#38bdf8; color:#020617; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
+                    <div class="navy-card">
+                        <span class="navy-badge">NEW</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3>
+                            <p class="test-title">Mock Test – 02</p>
+                            <p class="test-desc">Science + Maths + General Awareness</p>
+                            <p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="navy-mr-2026-mock-test-2.html" style="background:#38bdf8; color:#020617; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
+                    <div class="navy-card">
+                        <span class="navy-badge" style="background:yellow; color:#020617;">LATEST</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3>
+                            <p class="test-title">Mock Test – 03</p>
+                            <p class="test-desc">Science + Maths + General Awareness</p>
+                            <p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="navy-mr-2026-mock-test-3.html" style="background:#38bdf8; color:#020617; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
+                    <div class="navy-card">
+                        <span class="navy-badge" style="background:#22c55e; color:white;">NEW</span>
+                        <div>
+                            <h3>🇮🇳 INDIAN NAVY AGNIVEER MR</h3>
+                            <p class="test-title">Mock Test – 04</p>
+                            <p class="test-desc">Science + Maths + General Awareness</p>
+                            <p class="test-meta">50 Questions | 30 Minutes | Negative 0.25</p>
+                        </div>
+                        <a href="navy-mr-2026-mock-test-4.html" style="background:#38bdf8; color:#020617; padding:14px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px; border:2px solid white;">START NOW →</a>
+                    </div>
                 </div>
             </div>
-
+<div class="navy-mr-card" style="border:2px solid #0ea5e9; box-shadow:0 0 20px rgba(14,165,233,0.3); border-radius:16px; padding:16px; background:#0f172a; color:#fff;">
+    <span style="background:#0ea5e9; color:white; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:900;">NEW</span>
+    <div style="margin-top:8px;">
+        <h3 style="color:#38bdf8; margin:0;">🇮🇳 INDIAN NAVY MR</h3>
+        <p style="font-weight:800; margin:4px 0;">Mock Test – 05 (Moderate Level)</p>
+        <p style="color:#94a3b8; font-size:13px;">Science 10 + Math 15 + GA 25 | Night Blindness, Seismograph</p>
+        <p style="color:#94a3b8; font-size:12px;">50 Q | 30 Min | Negative 0.25</p>
+    </div>
+    <a href="indian-navy-mr-mock-test-05.html" style="background:#0ea5e9; color:#fff; padding:13px 20px; border-radius:10px; text-decoration:none; font-weight:900; font-size:15px; display:block; text-align:center; margin-top:14px;">START NOW →</a>
+</div>
+            <div class="box about-box box-full"><div class="box-title">ℹ️ About Mission Gyan Jobs</div><div class="box-content"><p><strong>Mission Gyan Jobs</strong> is India's No.1 website for all <strong>Sarkari Naukri</strong>, Result, Admit Card, Answer Key updates.</p></div></div>
         </div>
     </div>
     <footer class="footer">
