@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Air Force Non-CBT 01/2027 - TEST 27 | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text)}
+.options label:hover{border-color:#fbbf24}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#1d4ed8;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #7f1d1d, #dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:17px;line-height:1.4} #qEn{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#fbbf24">✈️ MISSION GYAN JOBS</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">20:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24;font-size:16px">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#fbbf24">👋 welcome student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Enter your name and district; only then will the test begin.</p><input id="stuName" placeholder="अपना पूरा नाम *"><div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div><input id="stuCity" placeholder="अपना जिला / शहर *"><div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button></div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:yellow">🔥 TEST 27 LOCKED 🔥</h2><p style="color:white;font-size:13px;margin-bottom:12px">Enter the password first.</p><input type="password" id="passInput" placeholder="Password " style="width:100%;padding:13px;border:3px solid yellow;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none"><button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ wrong Password!</p></div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #fbbf24"><b>✈️ Air Force Non-CBT 01/2027 | TEST - 27</b><br><small style="color:var(--muted)">Active/Passive + Direct/Indirect + Question Tag | Tricky Rules | <span id="attemptInfo">0/30 Attempted</span></small></div>
+<div class="q-card"><b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 30</b><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit Test</button></div></div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)"><div class="score-card"><div style="text-align:center"><div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">SCORECARD</div><div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div><div style="font-size:48px;font-weight:900;color:#1d4ed8"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /30</span></div><div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small style="color:#065f46">Correct</small></div><div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small style="color:#991b1b">Wrong</small></div><div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small style="color:#92400e">Skipped</small></div></div><button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px;cursor:pointer">📝 View Detailed Analysis (with Tricky Rules)</button><button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto"><div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px"><b>📝 Detailed Analysis - TEST 27</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. By the time you reach the station, the train _____.",qe:"Future Perfect - Choose correct tense",o:{"A":"will leave","B":"would leave","C":"will have left","D":"left"},a:"C"},
+{qh:"Q2. This is _____ useful book for the Air Force exam.",qe:"Article - Useful starts with consonant sound /yu/",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"A"},
+{qh:"Q3. Find the error: Each of the students / have / completed / the assignment.",qe:"Each of = Singular Verb Rule",o:{"A":"Each of the students","B":"have","C":"completed","D":"the assignment"},a:"B"},
+{qh:"Q4. I congratulated him _____ his brilliant success.",qe:"Fixed Preposition - Congratulate",o:{"A":"for","B":"at","C":"on","D":"with"},a:"C"},
+{qh:"Q5. A number of students _____ playing in the field. (Tricky)",qe:"A number of = Plural verb",o:{"A":"is","B":"are","C":"has","D":"was"},a:"B"},
+{qh:"Q6. Antonym of Ample (प्रचुर)",qe:"Antonym of Ample",o:{"A":"Plenty","B":"Meager","C":"Enough","D":"Broad"},a:"B"},
+{qh:"Q7. A person who lives at the same time as another.",qe:"One-word substitution",o:{"A":"Contemporary","B":"Colleague","C":"Patriot","D":"Optimist"},a:"A"},
+{qh:"Q8. At the eleventh hour",qe:"Idiom meaning",o:{"A":"At 11 o'clock","B":"At the very last moment","C":"To be very late","D":"To wake up early"},a:"B"},
+{qh:"Q9. There is no time to lose. (Tricky Infinitive)",qe:"Passive Voice of Infinitive sentence",o:{"A":"There is no time to be lost.","B":"Time is not to be lost.","C":"There is no time to lost.","D":"There has no time to be lost."},a:"A"},
+{qh:"Q10. He said to me, 'Do you know my brother?'",qe:"Indirect Speech - Yes/No Question",o:{"A":"He asked me if I know his brother.","B":"He told me that I knew his brother.","C":"He asked me if I knew his brother.","D":"He asked me that did I know his brother."},a:"C"},
+{qh:"Q11. Unless you work hard, you _____ the exam.",qe:"Unless = If not, negative future",o:{"A":"will pass","B":"will not pass","C":"would pass","D":"pass"},a:"B"},
+{qh:"Q12. One must _____ oneself to the new environment.",qe:"Adopt / Adapt / Adept",o:{"A":"adopt","B":"adept","C":"adapt","D":"addapt"},a:"C"},
+{qh:"Q13. Synonym of Lucid",qe:"Synonym of Lucid",o:{"A":"Confusing","B":"Clear","C":"Dark","D":"Hard"},a:"B"},
+{qh:"Q14. Correctly spelt word",qe:"Spelling - Embarrass",o:{"A":"Embarass","B":"Embarrass","C":"Emmbarrass","D":"Embaras"},a:"B"},
+{qh:"Q15. Few people knew the answer, _____? (Tricky)",qe:"Question Tag - Few = Negative, V2 = did",o:{"A":"didn't they?","B":"did they?","C":"don't they?","D":"do they?"},a:"B"},
+{qh:"Q16. भारत की पहली स्वदेशी परमाणु पनडुब्बी कौन-सी है? Which is India's first indigenously built nuclear submarine?",qe:"First indigenous nuclear submarine",o:{"A":"INS Vikramaditya","B":"INS Arihant","C":"INS Kalvari","D":"INS Chakra"},a:"B"},
+{qh:"Q17. विश्व की सबसे बड़ी ताजे पानी की झील कौन-सी है? Which is largest freshwater lake in world?",qe:"Largest freshwater lake in world",o:{"A":"Lake Superior","B":"Lake Baikal","C":"Caspian Sea","D":"Lake Victoria"},a:"A"},
+{qh:"Q18. पानीपत का द्वितीय युद्ध किस वर्ष लड़ा गया? Second Battle of Panipat year?",qe:"Second Battle of Panipat year",o:{"A":"1526","B":"1556","C":"1576","D":"1761"},a:"B"},
+{qh:"Q19. मानव शरीर में संक्रमण से लड़ने में कौन-सी कोशिकाएँ मदद करती हैं? Which cells help fighting infection?",qe:"Cells fighting infection in human body",o:{"A":"RBCs","B":"WBCs","C":"Platelets","D":"Plasma"},a:"B"},
+{qh:"Q20. भारतीय संविधान का अनुच्छेद 368 किससे संबंधित है? Article 368 related to?",qe:"Article 368 of Indian Constitution related to",o:{"A":"National Emergency","B":"Constitutional Amendment Procedure","C":"Fundamental Duties","D":"Election Commission"},a:"B"},
+{qh:"Q21. 'ऐशेज' क्रिकेट सीरीज किन दो देशों के बीच खेली जाती है? Ashes series between?",qe:"Ashes cricket series played between which two countries",o:{"A":"India and Pakistan","B":"Australia and South Africa","C":"England and Australia","D":"New Zealand and England"},a:"C"},
+{qh:"Q22. प्रसिद्ध पुस्तक 'अ सूटेबल बॉय' के लेखक कौन हैं? Author of 'A Suitable Boy'?",qe:"Author of famous book A Suitable Boy",o:{"A":"Salman Rushdie","B":"Vikram Seth","C":"Amitav Ghosh","D":"Arundhati Roy"},a:"B"},
+{qh:"Q23. 'इंटरपोल' का मुख्यालय कहाँ स्थित है? Where is HQ of INTERPOL?",qe:"Headquarters of INTERPOL",o:{"A":"Lyon, France","B":"Geneva, Switzerland","C":"Washington D.C.","D":"London, UK"},a:"A"},
+{qh:"Q24. हमारे सौरमंडल का सबसे गर्म ग्रह कौन-सा है? Which is hottest planet in solar system?",qe:"Hottest planet in solar system",o:{"A":"Mercury","B":"Venus","C":"Mars","D":"Jupiter"},a:"B"},
+{qh:"Q25. 'मिस वर्ल्ड' का खिताब जीतने वाली प्रथम भारतीय महिला कौन थीं? First Indian woman to win Miss World?",qe:"First Indian woman to win Miss World title",o:{"A":"Sushmita Sen","B":"Aishwarya Rai","C":"Reita Faria","D":"Priyanka Chopra"},a:"C"},
+{qh:"Q26. 'कलिंग पुरस्कार' किस क्षेत्र में दिया जाता है? Kalinga Prize given in which field?",qe:"Kalinga Prize is given in which field",o:{"A":"Literature","B":"Sports","C":"Science Popularization","D":"Cinema"},a:"C"},
+{qh:"Q27. बांग्लादेश की आधिकारिक मुद्रा क्या है? Official currency of Bangladesh?",qe:"Official currency of Bangladesh",o:{"A":"Rupee","B":"Taka","C":"Renminbi","D":"Kyat"},a:"B"},
+{qh:"Q28. 'विश्व स्वास्थ्य दिवस' कब मनाया जाता है? When is World Health Day celebrated?",qe:"World Health Day celebrated",o:{"A":"7 April","B":"1 December","C":"21 June","D":"10 December"},a:"A"},
+{qh:"Q29. भारत के किस राज्य में सबसे अधिक वन क्षेत्र है? Which state has maximum forest cover in India?",qe:"Which state in India has maximum forest cover",o:{"A":"Mizoram","B":"Arunachal Pradesh","C":"Madhya Pradesh","D":"Chhattisgarh"},a:"C"},
+{qh:"Q30. प्रसिद्ध ऐतिहासिक स्मारक 'चारमीनार' कहाँ स्थित है? Where is Charminar located?",qe:"Famous monument Charminar located",o:{"A":"Lucknow","B":"Delhi","C":"Agra","D":"Hyderabad"},a:"D"}
+]};
+let cur=0,answers={},reviews=new Set(),time=20*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();let ok=true;if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}if(!ok)return;localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);render();}else{passErr.style.display='block';}}
+function render(){let q=testData.questions[cur];qNo.innerText=cur+1;qHi.innerText=q.qh;qEn.innerText=q.qe;let h="";for(let k in q.o){let sel=answers[cur]==k;h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}optBox.innerHTML=h;let attempted=Object.keys(answers).length;attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;let pg="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});pGrid.innerHTML=pg;}
+function selAns(k){answers[cur]=k;render();}
+function clearAns(){delete answers[cur];render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){let attempted=Object.keys(answers).length;if(attempted<5&&time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Kya sach me submit karna hai?`))return;}clearInterval(tInt);let cor=0,wro=0,skip=0;testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++;else if(answers[i]==q.a)cor++;else wro++;});sCor.innerText=cor;sWro.innerText=wro;sSkip.innerText=skip;sBig.innerText=cor;scoreMsg.innerText=cor>=24?"Excellent! Topper Ho 🔥":cor>=18?"Bahut Badhiya! 🚀":cor>=10?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;scoreOverlay.style.display='flex';buildReview();}
+function buildReview(){let html="";const tricks={1:"<b>Rule:</b> By the time + Present, main clause Future Perfect - will have + V3",2:"<b>Rule:</b> Useful = /yu/ sound → 'a' useful, not 'an'. Tricky Article.",3:"<b>Rule:</b> Each of / Either of / Neither of + Plural Noun + Singular Verb → has",4:"<b>Rule:</b> Congratulate ON, prevented FROM",5:"<b>Rule:</b> A number of = are, The number of = is",9:"<b>Rule:</b> There is no time to + V1 → to be + V3",10:"<b>Rule:</b> Do you know? Yes/No Q → if + Past (said to Past)",15:"<b>Rule:</b> Few = Negative → Positive Tag. Past → did they?"};testData.questions.forEach((q,i)=>{let u=answers[i];let correct=u==q.a;let status=u==undefined?"Not Attempted":correct?"Correct":"Wrong";let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";let icon=u==undefined?"⚠️":correct?"✅":"❌";html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#2563eb">Q ${i+1}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div><div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div><div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;for(let k in q.o){let cls="opt-item";if(k==q.a)cls+=" correct-opt";else if(k==u&&u!=q.a)cls+=" wrong-opt";html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u&&k!=q.a?'❌ Your':''}</div>`;}if(tricks[i+1]){html+=`<div style="margin-top:10px;padding:10px;background:#fef3c7;border:1px solid #fbbf24;border-radius:8px;font-size:12px;color:#92400e">💡 ${tricks[i+1]}</div>`}html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;});reviewList.innerHTML=html;}
+function openReview(){reviewPage.style.display='block';reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||"";stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
