@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Agniveervayu Group Y 2026 - Mock Test SET 8 | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #a78bfa}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text)}
+.options label:hover{border-color:#a78bfa}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#7c3aed;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #a78bfa;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #a78bfa;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #4c1d95, #7c3aed);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #c4b5fd}
+.score-card{width:100%;max-width:460px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:16px;line-height:1.5} #qEn{font-size:13px;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#c4b5fd">✈️ MISSION GYAN JOBS - GROUP Y</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">45:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#c4b5fd;font-size:16px">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#c4b5fd">👋 welcome student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Enter your name and district; only then will the test begin.</p><input id="stuName" placeholder="अपना पूरा नाम *"><div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div><input id="stuCity" placeholder="अपना जिला / शहर *"><div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#a78bfa;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button></div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:white">🔥 TEST 8 LOCKED 🔥</h2><p style="color:#ede9fe;font-size:13px;margin-bottom:12px">Enter the password first.</p><input type="password" id="passInput" placeholder="Password " style="width:100%;padding:13px;border:3px solid #c4b5fd;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none"><button onclick="checkPass()" style="width:100%;padding:13px;background:#c4b5fd;color:#4c1d95;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ wrong Password!</p></div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #a78bfa"><b>✈️ Agniveervayu Group Y | MOCK TEST – SET 8</b><br><small style="color:var(--muted)">English 20 (Only English) + RAGA 30 (Bilingual) | 50 Marks | Negative 0.25 | <span id="attemptInfo">0/50 Attempted</span></small></div>
+<div class="q-card"><b style="color:#7c3aed;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit Test</button></div></div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)"><div class="score-card"><div style="text-align:center"><div style="background:#ede9fe;color:#5b21b6;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">SCORECARD - NEGATIVE 0.25</div><div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div><div style="font-size:40px;font-weight:900;color:#7c3aed;line-height:1"><span id="sBig">0</span><span style="font-size:16px;color:var(--muted)"> /50 Marks</span></div><div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div><div style="margin-top:8px;font-size:12px;color:var(--muted)" id="sFormula"></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:10px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:10px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:10px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div><div style="background:#ede9fe;padding:10px;border-radius:12px;text-align:center"><b id="sPer" style="font-size:18px;color:#5b21b6">0%</b><br><small>Score %</small></div></div><button onclick="openReview()" style="width:100%;background:#0f172a;color:#c4b5fd;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #a78bfa;font-size:14px;cursor:pointer">📝 View Detailed Analysis</button><button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto"><div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #a78bfa;margin-bottom:12px"><b>📝 Detailed Analysis - SET 8</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. Choose the correct synonym of 'Lethal'.",qe:"English Only - Lethal = Deadly",o:{"A":"Harmless","B":"Deadly","C":"Healthy","D":"Weak"},a:"B"},
+{qh:"Q2. Choose the antonym of 'Shallow'.",qe:"English Only - Antonym Shallow",o:{"A":"Deep","B":"High","C":"Long","D":"Wide"},a:"A"},
+{qh:"Q3. Fill with suitable preposition: He is blind ___ one eye.",qe:"English Only - blind in one eye",o:{"A":"of","B":"with","C":"in","D":"by"},a:"C"},
+{qh:"Q4. Choose correctly spelt word.",qe:"English Only - Occasion",o:{"A":"Ocasion","B":"Occasion","C":"Occassion","D":"Ocassion"},a:"B"},
+{qh:"Q5. Identify error: The police has arrested the thief who broke into the house.",qe:"English Only - police is plural -> have",o:{"A":"The police has","B":"arrested the thief","C":"who broke","D":"into the house."},a:"A"},
+{qh:"Q6. Choose correct passive voice: She is singing a beautiful song.",qe:"English Only - is singing -> is being sung",o:{"A":"A beautiful song is sung by her.","B":"A beautiful song has been sung by her.","C":"A beautiful song is being sung by her.","D":"A beautiful song was being sung by her."},a:"C"},
+{qh:"Q7. Choose correct indirect speech: He said, 'I have passed the examination.'",qe:"English Only - has passed -> had passed",o:{"A":"He said that he has passed the examination.","B":"He said that he had passed the examination.","C":"He told that he have passed the examination.","D":"He asked if he had passed the examination."},a:"B"},
+{qh:"Q8. Choose correct article: My brother is studying in ___ European university.",qe:"English Only - European = a (yu sound)",o:{"A":"a","B":"an","C":"the","D":"No article"},a:"A"},
+{qh:"Q9. What is meaning of idiom 'Through thick and thin'?",qe:"English Only - Under all circumstances",o:{"A":"To be very thin","B":"Under all circumstances","C":"To pass through a forest","D":"To make a difficult decision"},a:"B"},
+{qh:"Q10. Fill with correct verb: Mathematics ___ a very difficult subject.",qe:"English Only - Mathematics is singular",o:{"A":"is","B":"are","C":"has","D":"were"},a:"A"},
+{qh:"Q11. Choose synonym of 'Hazardous'.",qe:"English Only - Hazardous = Dangerous",o:{"A":"Safe","B":"Dangerous","C":"Secure","D":"Smooth"},a:"B"},
+{qh:"Q12. Choose antonym of 'Scarcity'.",qe:"English Only - Scarcity -> Abundance",o:{"A":"Shortage","B":"Poverty","C":"Abundance","D":"Lack"},a:"C"},
+{qh:"Q13. Fill with conjunction: Not only did he win the race, ___ he broke the record.",qe:"English Only - Not only...but also",o:{"A":"and also","B":"but also","C":"as well as","D":"yet"},a:"B"},
+{qh:"Q14. Fill with phrasal verb: We should look ___ our parents in old age.",qe:"English Only - look after = take care",o:{"A":"at","B":"for","C":"after","D":"into"},a:"C"},
+{qh:"Q15. One word: A book written by an unknown author",qe:"English Only - Anonymous",o:{"A":"Anonymous","B":"Unanimous","C":"Famous","D":"Contemporary"},a:"A"},
+{qh:"Q16. Change into passive: Open the window.",qe:"English Only - Let + be + V3",o:{"A":"The window should be opened.","B":"Let the window be opened.","C":"You are ordered to open window.","D":"Window is opened."},a:"B"},
+{qh:"Q17. Choose correct spelling:",qe:"English Only - Separate",o:{"A":"Seprate","B":"Separate","C":"Seperate","D":"Saperate"},a:"B"},
+{qh:"Q18. Identify error: One of the boy in the class has won the first prize.",qe:"English Only - One of + plural boys",o:{"A":"One of","B":"the boy","C":"in the class","D":"has won the first prize."},a:"B"},
+{qh:"Q19. Choose meaning of 'To hit the nail on the head'.",qe:"English Only - exactly right thing",o:{"A":"To say or do exactly the right thing","B":"To hit someone with a hammer","C":"To destroy something","D":"To make a loud noise"},a:"A"},
+{qh:"Q20. Fill with correct word: By this time tomorrow, I ___ my work.",qe:"English Only - By this time tomorrow = will have finished",o:{"A":"will finish","B":"finished","C":"will have finished","D":"had finished"},a:"C"},
+{qh:"Q21. Find next number in series: 5, 16, 51, 158,?",qe:"सीरीज: 5,16,51,158,? Logic x3+1",o:{"A":"475","B":"479","C":"481","D":"485"},a:"A"},
+{qh:"Q22. If APPLE is coded as 50, then how will MANGO be coded? यदि APPLE को 50 लिखा जाता है तो MANGO को क्या लिखा जाएगा?",qe:"Coding: Sum of place values APPLE=50",o:{"A":"45","B":"48","C":"50","D":"52"},a:"C"},
+{qh:"Q23. A man walks 5 km North, turns right 3 km, again right 5 km. How far from start? एक आदमी उत्तर की ओर 5 किमी चलता है, फिर दाईं ओर 3 किमी, फिर दाईं ओर 5 किमी। प्रारंभिक बिंदु से कितनी दूर?",qe:"North 5km → East 3km → South 5km = 3km from start",o:{"A":"3 km","B":"5 km","C":"8 km","D":"10 km"},a:"A"},
+{qh:"Q24. Pointing to a boy, man says He is son of my father's only son. Relation? एक लड़के की ओर इशारा करते हुए कहता है वह मेरे पिता के इकलौते बेटे का बेटा है। संबंध?",qe:"My father's only son = me, son's son = my son",o:{"A":"Brother / भाई","B":"Nephew / भतीजा","C":"Son / पुत्र","D":"Uncle / चाचा"},a:"C"},
+{qh:"Q25. Find odd one out. विषम ज्ञात कीजिए:",qe:"Apple, Banana, Mango fruit, Potato vegetable",o:{"A":"Apple / सेब","B":"Banana / केला","C":"Mango / आम","D":"Potato / आलू"},a:"D"},
+{qh:"Q26. Statement: All pens are books. All books are bags. Conclusion I. All pens are bags II. Some bags are pens. कथन: सभी पेन किताबें हैं। सभी किताबें बैग हैं। निष्कर्ष I. सभी पेन बैग हैं। II. कुछ बैग पेन हैं।",qe:"Syllogism: All pens→books→bags",o:{"A":"Only I follows","B":"Only II follows","C":"Both I and II follow","D":"Neither I nor II follows"},a:"C"},
+{qh:"Q27. If today is Sunday, what day will it be after 60 days? यदि आज रविवार है तो 60 दिनों के बाद कौन सा दिन होगा?",qe:"60 mod 7 =4 days, Sunday+4=Thursday",o:{"A":"Wednesday","B":"Thursday","C":"Friday","D":"Saturday"},a:"B"},
+{qh:"Q28. What will be angle between hands of a clock at 2:30? 2:30 बजे घड़ी की सुइयों के बीच कोण?",qe:"Angle = |30H -5.5M| = |60-165|=105°",o:{"A":"95°","B":"100°","C":"105°","D":"110°"},a:"C"},
+{qh:"Q29. Complete analogy: Virat Kohli:Cricket :: Mary Kom:? विराट कोहली:क्रिकेट :: मैरी कॉम:?",qe:"Virat Kohli:Cricket :: Mary Kom:?",o:{"A":"Wrestling","B":"Boxing","C":"Weightlifting","D":"Badminton"},a:"B"},
+{qh:"Q30. Which Venn diagram represents Earth, Sea, Sun? पृथ्वी, समुद्र और सूर्य के बीच संबंध?",qe:"Sea inside Earth, Sun separate",o:{"A":"One inside another, third separate","B":"Three separate","C":"Three intersecting","D":"Two inside larger"},a:"A"},
+{qh:"Q31. 30% of a number is 150. What is number? किसी संख्या का 30% 150 है वह संख्या क्या है?",qe:"x*30/100=150 => x=500",o:{"A":"400","B":"450","C":"500","D":"600"},a:"C"},
+{qh:"Q32. Shopkeeper buys fan ₹400 sells ₹500 profit %? दुकानदार ₹400 में पंखा खरीदता ₹500 में बेचता लाभ%?",qe:"Profit 100 on 400 =25%",o:{"A":"15%","B":"20%","C":"25%","D":"30%"},a:"C"},
+{qh:"Q33. A 15 days B 30 days together days? A 15 दिन B 30 दिन साथ में?",qe:"Together = 15*30/(15+30)=10 days",o:{"A":"10 days","B":"12 days","C":"15 days","D":"20 days"},a:"A"},
+{qh:"Q34. Ratio ages Ram and Shyam 3:4 sum 35 Ram present age? राम और श्याम आयु अनुपात 3:4 योग 35 राम की आयु?",qe:"3x+4x=35 x=5 Ram=15",o:{"A":"15 years","B":"20 years","C":"21 years","D":"12 years"},a:"A"},
+{qh:"Q35. Train 200m passes pole in 10 sec speed km/h? 200m ट्रेन 10 sec में खंभा पार करे गति?",qe:"Speed 200/10=20m/s=72km/h",o:{"A":"54 km/h","B":"60 km/h","C":"72 km/h","D":"90 km/h"},a:"C"},
+{qh:"Q36. What is average of first 10 natural numbers? प्रथम 10 प्राकृत संख्याओं का औसत?",qe:"Avg first 10 natural = (n+1)/2=5.5",o:{"A":"5","B":"5.5","C":"6","D":"6.5"},a:"B"},
+{qh:"Q37. Find SI on ₹1000 at 5% for 4 years. ₹1000 पर 5% से 4 वर्ष का SI?",qe:"SI =1000*5*4/100=200",o:{"A":"₹150","B":"₹200","C":"₹250","D":"₹300"},a:"B"},
+{qh:"Q38. Evaluate: 15 + 5 x 2 - 10 ÷ 2 मान ज्ञात करें",qe:"BODMAS 15+10-5=20",o:{"A":"15","B":"20","C":"25","D":"10"},a:"B"},
+{qh:"Q39. Which is highest dam in India? भारत का सबसे ऊँचा बाँध?",qe:"Highest dam India - Tehri",o:{"A":"Bhakra Nangal","B":"Hirakud","C":"Tehri Dam","D":"Sardar Sarovar"},a:"C"},
+{qh:"Q40. Fundamental Duties borrowed from which country? मौलिक कर्तव्य किस देश से लिए गए?",qe:"Fundamental Duties borrowed from USSR",o:{"A":"USA","B":"UK","C":"USSR","D":"Ireland"},a:"C"},
+{qh:"Q41. Quit India Movement started in which year? भारत छोड़ो आंदोलन किस वर्ष शुरू?",qe:"Quit India Movement year",o:{"A":"1930","B":"1942","C":"1945","D":"1947"},a:"B"},
+{qh:"Q42. Which gas commonly used in electric bulbs? विद्युत बल्बों में कौन सी गैस?",qe:"Gas used in electric bulbs - Argon",o:{"A":"Oxygen","B":"Hydrogen","C":"Argon","D":"Carbon dioxide"},a:"C"},
+{qh:"Q43. What is SI unit of Work? कार्य की SI इकाई?",qe:"SI unit of Work - Joule",o:{"A":"Newton","B":"Watt","C":"Joule","D":"Pascal"},a:"C"},
+{qh:"Q44. Durand Cup associated with which sport? डूरंड कप किस खेल से संबंधित?",qe:"Durand Cup sport",o:{"A":"Cricket","B":"Football","C":"Hockey","D":"Tennis"},a:"B"},
+{qh:"Q45. Which is highest wartime gallantry award in India? भारत में युद्धकाल का सर्वोच्च वीरता पुरस्कार?",qe:"Highest wartime gallantry award",o:{"A":"Ashok Chakra","B":"Maha Vir Chakra","C":"Param Vir Chakra","D":"Kirti Chakra"},a:"C"},
+{qh:"Q46. In computers, what does ROM stand for? कंप्यूटर में ROM का पूर्ण रूप?",qe:"ROM full form",o:{"A":"Random Only Memory","B":"Read Only Memory","C":"Read Open Memory","D":"Run Only Memory"},a:"B"},
+{qh:"Q47. Which city known as Pink City of India? भारत के गुलाबी शहर के रूप में किसे जाना जाता है?",qe:"Pink City India - Jaipur",o:{"A":"Jodhpur","B":"Udaipur","C":"Jaipur","D":"Bikaner"},a:"C"},
+{qh:"Q48. What is chemical name of Vitamin A? विटामिन A का रासायनिक नाम?",qe:"Chemical name Vitamin A - Retinol",o:{"A":"Retinol","B":"Thiamine","C":"Ascorbic Acid","D":"Calciferol"},a:"A"},
+{qh:"Q49. International Women's Day celebrated on: अंतर्राष्ट्रीय महिला दिवस कब?",qe:"International Women's Day",o:{"A":"15 August","B":"5 September","C":"8 March","D":"1 December"},a:"C"},
+{qh:"Q50. What is currency of Bangladesh? बांग्लादेश की मुद्रा क्या है?",qe:"Currency of Bangladesh - Taka",o:{"A":"Rupee","B":"Taka","C":"Yuan","D":"Ringgit"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();let ok=true;if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}if(!ok)return;localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);render();}else{passErr.style.display='block';}}
+function render(){let q=testData.questions[cur];qNo.innerText=cur+1;qHi.innerText=q.qh;qEn.innerText=q.qe;let h="";for(let k in q.o){let sel=answers[cur]==k;h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}optBox.innerHTML=h;let attempted=Object.keys(answers).length;attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;let pg="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});pGrid.innerHTML=pg;}
+function selAns(k){answers[cur]=k;render();}
+function clearAns(){delete answers[cur];render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){let attempted=Object.keys(answers).length;if(attempted<10&&time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Submit karna hai?`))return;}clearInterval(tInt);let cor=0,wro=0,skip=0;testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++;else if(answers[i]==q.a)cor++;else wro++;});let finalMarks=cor*1 - wro*0.25;let per=(finalMarks/50*100).toFixed(1);sCor.innerText=cor;sWro.innerText=wro;sSkip.innerText=skip;sBig.innerText=finalMarks.toFixed(2);sPer.innerText=per+"%";sFormula.innerText=`Formula: ${cor} x 1 - ${wro} x 0.25 = ${finalMarks.toFixed(2)}`;scoreMsg.innerText=finalMarks>=40?"Excellent! Group Y Topper 🔥":finalMarks>=30?"Bahut Badhiya! 🚀":finalMarks>=15?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;scoreOverlay.style.display='flex';buildReview();}
+function buildReview(){let html="";testData.questions.forEach((q,i)=>{let u=answers[i];let correct=u==q.a;let status=u==undefined?"Not Attempted":correct?"Correct (+1)":"Wrong (-0.25)";let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";let icon=u==undefined?"⚠️":correct?"✅":"❌";html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#7c3aed">Q ${i+1} ${i<20?'[English]':'[RAGA]'}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div><div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div><div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;for(let k in q.o){let cls="opt-item";if(k==q.a)cls+=" correct-opt";else if(k==u&&u!=q.a)cls+=" wrong-opt";html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u&&k!=q.a?'❌ Your':''}</div>`;}html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;});reviewList.innerHTML=html;}
+function openReview(){reviewPage.style.display='block';reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||"";stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
