@@ -21,6 +21,20 @@
 .news-ticker{overflow:hidden;white-space:nowrap;background:#fff;border-bottom:1px solid #dbe4f0;font-size:13px;font-weight:800}.news-ticker marquee{padding:9px 0}
 .container{width:min(1240px,94%);margin:0 auto;padding:20px 0 45px}
 @media(max-width:600px){.grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+.airforce-wrapper{margin-top:22px;padding:18px;border:1px solid #dce5f0;border-radius:20px;background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.08)}
+.airforce-title{padding:15px 18px;border-radius:14px;background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);color:#fff;text-align:center;font-size:20px;font-weight:900;border:1px solid rgba(255,255,255,0.15)}
+.airforce-subtitle{margin:9px 0 15px;color:#64748b;text-align:center;font-size:12px;font-weight:700}
+.airforce-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.airforce-card{position:relative;min-height:210px;display:flex;flex-direction:column;padding:20px 16px 16px;border:1px solid #e2e8f0;border-radius:16px;background:#fff;box-shadow:0 2px 8px rgba(15,23,42,.04);overflow:hidden;transition:all .25s}
+.airforce-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#dc2626,#f87171)}
+.airforce-card:hover{transform:translateY(-6px);box-shadow:0 18px 35px rgba(15,23,42,.10);border-color:#cbd5e1}
+.pro-badge{position:absolute;top:12px;right:12px;padding:4px 8px;border-radius:6px;background:#f8fafc;border:1px solid #e2e8f0;color:#334155;font-size:8px;font-weight:900;animation:pulseBadge 1.8s infinite}
+.test-number{display:inline-flex;width:max-content;margin-bottom:12px;padding:5px 9px;border-radius:999px;background:#fef2f2;border:1px solid #fee2e2;color:#b91c1c;font-size:9px;font-weight:900}
+.airforce-card h3{color:#0f172a;font-size:16px;line-height:1.35;font-weight:800}
+.airforce-card p{display:inline-flex;margin-top:10px;padding:5px 10px;background:#f8fafc;border:1px solid #f1f5f9;border-radius:999px;color:#475569;font-size:10px;font-weight:700}
+.start-btn{width:100%;display:inline-flex;justify-content:center;align-items:center;margin-top:16px;padding:11px;background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff !important;font-size:12px;font-weight:900;border-radius:10px}
+@keyframes pulseBadge{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
+@media(max-width:1050px){.airforce-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.airforce-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
 </style>
 </head>
 <body>
@@ -31,11 +45,11 @@
     </div>
     <a href="offline-forms.html" class="offline-btn">📄 Offline Forms</a>
 </header>
-<div class="news-ticker"><marquee>🔥 AIR FORCE NON-CBT 25 Tests Live | ✈️ GROUP Y 07 Tests | ⚓ NAVY MR 07 Tests Live 🔥</marquee></div>
+<div class="news-ticker"><marquee>🔥 AIR FORCE NON-CBT 28 Tests Live | ✈️ GROUP Y 12 Tests Live | ⚓ NAVY MR 07 Tests Live 🔥</marquee></div>
 <main class="container">
 <section class="premium-hero"><div class="hero-content"><span class="hero-tag">🎯 EXAM PREPARATION PLATFORM</span><h2>Sarkari Jobs, Results & Mock Tests</h2><p>Air Force, Group Y, Navy MR aur Government Job updates ke saath preparation ko next level par le jao.</p></div></section>
 <nav class="quick-nav"><a href="#latest-jobs">💼 Latest Jobs</a><a href="#results">📊 Results</a><a href="#admit-card">🎫 Admit Card</a><a href="#airforce-tests">✈️ Air Force</a><a href="#group-y-tests">🛡️ Group Y</a><a href="#navy-tests">⚓ Navy MR</a></nav>
-<section class="stats-grid"><div class="stat-card"><span class="stat-number">25</span><span class="stat-label">Air Force Tests</span></div><div class="stat-card"><span class="stat-number">07</span><span class="stat-label">Group Y Tests</span></div><div class="stat-card"><span class="stat-number">07</span><span class="stat-label">Navy MR Tests</span></div><div class="stat-card"><span class="stat-number">39</span><span class="stat-label">Total Mock Tests</span></div></section>
+<section class="stats-grid"><div class="stat-card"><span class="stat-number">28</span><span class="stat-label">Air Force Tests</span></div><div class="stat-card"><span class="stat-number">12</span><span class="stat-label">Group Y Tests</span></div><div class="stat-card"><span class="stat-number">07</span><span class="stat-label">Navy MR Tests</span></div><div class="stat-card"><span class="stat-number">47</span><span class="stat-label">Total Mock Tests</span></div></section>
 <section class="search-panel"><div class="search-wrap"><input type="search" id="siteSearch" class="search-input" placeholder="🔎 Search Jobs, Result, Mock Test..."><button type="button" id="clearSearch" class="clear-search">Clear</button></div></section>
 <div id="noResults" style="display:none;margin:12px 0;padding:14px;border-radius:12px;background:#fff4e5;color:#8a4b00;text-align:center;font-weight:700">😕 Koi result nahi mila.</div>
 <div class="grid">
@@ -46,7 +60,7 @@
 <section class="box" id="admit-card"><div class="box-title">🎫 Admit Card</div><div class="box-content"><ul><li><a href="https://ssc.gov.in/" target="_blank">SSC CGL 2026 Tier-1 Admit Card</a></li><li><a href="https://ibps.in/" target="_blank">IBPS RRB PO / Clerk 2026 Admit Card</a></li></ul></div></section>
 </div>
 <section class="airforce-wrapper" id="airforce-tests">
-    <div class="airforce-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (25) 🔥</div>
+    <div class="airforce-title">🔥 AIR FORCE NON-CBT 01/2027 - ALL MOCK TESTS (28) 🔥</div>
     <div class="airforce-subtitle">✈️ Complete Exam Practice Series | English + GK | Latest Pattern</div>
     <div class="airforce-grid">
         <a href="airforce-noncbt-2027-mock-test-1.html" class="airforce-card"><span class="pro-badge">FREE</span><div class="test-number">TEST 01</div><h3>Air Force Non-CBT 01/2027 Mock Test - 01</h3><p>50 Most Important Questions | Complete Practice</p><span class="start-btn">Start Test →</span></a>
@@ -74,29 +88,13 @@
         <a href="airforce-noncbt-2027-mock-test-23.html" class="airforce-card"><span class="pro-badge" style="background:#dcfce7;color:#065f46;border-color:#bbf7d0">NEW</span><div class="test-number">TEST 23</div><h3>Air Force Non-CBT 01/2027 Mock Test - 23</h3><p>English + GK | 30 Qs | Latest Pattern</p><span class="start-btn">Start Test →</span></a>
         <a href="airforce-noncbt-2027-mock-test-24.html" class="airforce-card"><span class="pro-badge" style="background:#dcfce7;color:#065f46;border-color:#bbf7d0">NEW • TRICKY</span><div class="test-number">TEST 24</div><h3>Air Force Non-CBT 01/2027 Mock Test - 24</h3><p>English 15 + GK 15 | 30 Qs | Tricky Rules Included</p><span class="start-btn">Start Test →</span></a>
         <a href="airforce-noncbt-2027-mock-test-25.html" class="airforce-card"><span class="pro-badge" style="background:#fef3c7;color:#92400e;border-color:#fbbf24">NEW • TRICKY 2</span><div class="test-number">TEST 25</div><h3>Air Force Non-CBT 01/2027 Mock Test - 25</h3><p>English 15 + GK 15 | 30 Qs | Most Repeated</p><span class="start-btn">Start Test →</span></a>
-  <a href="airforce-noncbt-2027-mock-test-26.html" class="airforce-card"><span class="pro-badge">NEW</span><div class="test-number">TEST 26</div><h3>Air Force Non-CBT 01/2027 Mock Test - 26</h3><p>50 Important Questions | If I Were Rule + Lest Should | Tricky Pattern</p><span class="start-btn">Start Test →</span></a> 
-<a href="airforce-noncbt-2027-mock-test-27.html" class="airforce-card"><span class="pro-badge">NEW</span><div class="test-number">TEST 27</div><h3>Air Force Non-CBT 01/2027 Mock Test - 27</h3><p>30 Qs | Useful Article | Each of | A number of | Few Tag | Fresh GK</p><span class="start-btn">Start Test →</span></a>
-<a href="airforce-noncbt-2027-mock-test-28.html" class="airforce-card"><span class="pro-badge">NEW</span><div class="test-number">TEST 28</div><h3>Air Force Non-CBT 01/2027 Mock Test - 28</h3><p>30 Qs | Honorary Article | Wages of Sin | Forbade | Nothing Tag | IAF Motto</p><span class="start-btn">Start Test →</span></a>
- </div>
+        <a href="airforce-noncbt-2027-mock-test-26.html" class="airforce-card"><span class="pro-badge">NEW</span><div class="test-number">TEST 26</div><h3>Air Force Non-CBT 01/2027 Mock Test - 26</h3><p>50 Important Questions | If I Were Rule + Lest Should | Tricky Pattern</p><span class="start-btn">Start Test →</span></a> 
+        <a href="airforce-noncbt-2027-mock-test-27.html" class="airforce-card"><span class="pro-badge">NEW</span><div class="test-number">TEST 27</div><h3>Air Force Non-CBT 01/2027 Mock Test - 27</h3><p>30 Qs | Useful Article | Each of | A number of | Few Tag | Fresh GK</p><span class="start-btn">Start Test →</span></a>
+        <a href="airforce-noncbt-2027-mock-test-28.html" class="airforce-card"><span class="pro-badge">NEW</span><div class="test-number">TEST 28</div><h3>Air Force Non-CBT 01/2027 Mock Test - 28</h3><p>30 Qs | Honorary Article | Wages of Sin | Forbade | Nothing Tag | IAF Motto</p><span class="start-btn">Start Test →</span></a>
+    </div>
 </section>
-<style>
-.airforce-wrapper{margin-top:22px;padding:18px;border:1px solid #dce5f0;border-radius:20px;background:#fff;box-shadow:0 10px 28px rgba(15,23,42,.08)}
-.airforce-title{padding:15px 18px;border-radius:14px;background:linear-gradient(135deg,#020617,#0f172a,#1e3a8a);color:#fff;text-align:center;font-size:20px;font-weight:900;border:1px solid rgba(255,255,255,0.15)}
-.airforce-subtitle{margin:9px 0 15px;color:#64748b;text-align:center;font-size:12px;font-weight:700}
-.airforce-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
-.airforce-card{position:relative;min-height:210px;display:flex;flex-direction:column;padding:20px 16px 16px;border:1px solid #e2e8f0;border-radius:16px;background:#fff;box-shadow:0 2px 8px rgba(15,23,42,.04);overflow:hidden;transition:all .25s}
-.airforce-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#dc2626,#f87171)}
-.airforce-card:hover{transform:translateY(-6px);box-shadow:0 18px 35px rgba(15,23,42,.10);border-color:#cbd5e1}
-.pro-badge{position:absolute;top:12px;right:12px;padding:4px 8px;border-radius:6px;background:#f8fafc;border:1px solid #e2e8f0;color:#334155;font-size:8px;font-weight:900;animation:pulseBadge 1.8s infinite}
-.test-number{display:inline-flex;width:max-content;margin-bottom:12px;padding:5px 9px;border-radius:999px;background:#fef2f2;border:1px solid #fee2e2;color:#b91c1c;font-size:9px;font-weight:900}
-.airforce-card h3{color:#0f172a;font-size:16px;line-height:1.35;font-weight:800}
-.airforce-card p{display:inline-flex;margin-top:10px;padding:5px 10px;background:#f8fafc;border:1px solid #f1f5f9;border-radius:999px;color:#475569;font-size:10px;font-weight:700}
-.start-btn{width:100%;display:inline-flex;justify-content:center;align-items:center;margin-top:16px;padding:11px;background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff !important;font-size:12px;font-weight:900;border-radius:10px}
-@keyframes pulseBadge{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
-@media(max-width:1050px){.airforce-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.airforce-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
-</style>
 <section class="groupy-wrapper" id="group-y-tests">
-    <div class="groupy-title">✈️ AGNIVEERVAYU GROUP Y - ALL MOCK TESTS (07) 🔥</div>
+    <div class="groupy-title">✈️ AGNIVEERVAYU GROUP Y - ALL MOCK TESTS (12) 🔥</div>
     <div class="groupy-subtitle">🛡️ Complete Practice Series | 50 Questions | 45 Minutes | Negative 0.25</div>
     <div class="groupy-grid">
         <a href="agniveervayu-group-y-mock-test-1.html" class="groupy-card"><span class="groupy-badge">TEST 01</span><div class="groupy-icon">✈️</div><h3>Agniveervayu Group Y Mock Test - 01</h3><p>50 Questions | 45 Minutes | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
@@ -104,19 +102,14 @@
         <a href="agniveervayu-group-y-mock-test-3.html" class="groupy-card"><span class="groupy-badge">TEST 03</span><div class="groupy-icon">✈️</div><h3>Agniveervayu Group Y Mock Test - 03</h3><p>50 Questions | 45 Minutes | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
         <a href="agniveervayu-group-y-mock-test-4.html" class="groupy-card"><span class="groupy-badge">TEST 04</span><div class="groupy-icon">✈️</div><h3>Agniveervayu Group Y Mock Test - 04</h3><p>50 Questions | 45 Minutes | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
         <a href="agniveervayu-group-y-mock-test-5.html" class="groupy-card"><span class="groupy-badge">TEST 05</span><div class="groupy-icon">✈️</div><h3>Agniveervayu Group Y Mock Test - 05</h3><p>50 Questions | 45 Minutes | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
-        <a href="agniveervayu-group-y-mock-test-06.html" class="groupy-card"><span class="groupy-badge" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">NEW</span><div class="groupy-icon">✈️</div><h3>Agniveervayu Group Y Mock Test - SET 6</h3><p>English 20 + RAGA 30 | 50 Qs | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
+        <a href="agniveervayu-group-y-mock-test-6.html" class="groupy-card"><span class="groupy-badge" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">NEW</span><div class="groupy-icon">✈️</div><h3>Agniveervayu Group Y Mock Test - SET 6</h3><p>English 20 + RAGA 30 | 50 Qs | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
         <a href="agniveervayu-group-y-mock-test-7.html" class="groupy-card"><span class="groupy-badge" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">NEW • SET 7</span><div class="groupy-icon">✈️</div><h3>Group Y Mock Test - SET 7</h3><p>English 20 + RAGA 30 | 50 Qs | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
-  <a href="agniveervayu-group-y-mock-test-8.html" class="airforce-y-card"><span class="pro-badge" style="background:#a78bfa">GROUP Y</span><div class="test-number">TEST 8</div><h3>Agniveervayu Group Y Mock Test - SET 8</h3><p>English 20 + RAGA 30 | 50 Marks | Negative 0.25</p><span class="start-btn" style="background:#7c3aed">Start Test →</span></a>
- 
-<a href="agniveervayu-group-y-mock-test-9.html" class="test-card group-y">
-  <div class="badge">GROUP Y - SET 8</div>
-  <h4>Mock Test - SET 9 (Lethal Series)</h4>
-  <span>English 20 + RAGA 30 | 50 Marks</span>
-</a>
-<a href="agniveervayu-group-y-mock-test-10.html" class="airforce-y-card"><span class="pro-badge" style="background:#a78bfa">GROUP Y - ADVANCED</span><div class="test-number">TEST 10</div><h3>Agniveervayu Group Y Mock Test - SET 10</h3><p>Subjunctive + Advanced Grammar | Circular Sitting | HCF Pairs | NISAR | 50 Qs</p><span class="start-btn" style="background:#7c3aed">Start Test →</span></a>
-<a href="agniveervayu-group-y-mock-test-11.html" class="airforce-y-card"><span class="pro-badge" style="background:#a78bfa">GROUP Y - SET 11</span><div class="test-number">TEST 11</div><h3>Agniveervayu Group Y Mock Test - SET 11 (Tenacious Series)</h3><p>Tenacious • Fickle • Scenery | 127 Series | Wular Lake | 50 Qs</p><span class="start-btn" style="background:#7c3aed">Start Test →</span></a>
-<a href="agniveervayu-group-y-mock-test-12.html" class="airforce-y-card"><span class="pro-badge" style="background:#a78bfa">GROUP Y - SET 12</span><div class="test-number">TEST 12</div><h3>Agniveervayu Group Y Mock Test - SET 12 (Ephemeral Series)</h3><p>Ephemeral • Mitigate • Privilege | 2,3,8,27,112 | 9.09% Height | Parsec | 50 Qs</p><span class="start-btn" style="background:#7c3aed">Start Test →</span></a>
- </div>
+        <a href="agniveervayu-group-y-mock-test-8.html" class="groupy-card"><span class="groupy-badge" style="background:#dcfce7;color:#065f46;border-color:#bbf7d0">NEW • SET 8</span><div class="groupy-icon">✈️</div><h3>Group Y Mock Test - SET 8 (Lethal Series)</h3><p>Lethal • European Article | 50 Qs | 45 Min | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
+        <a href="agniveervayu-group-y-mock-test-9.html" class="groupy-card"><span class="groupy-badge" style="background:#fef3c7;color:#92400e;border-color:#fbbf24">NEW • SET 9</span><div class="groupy-icon">✈️</div><h3>Group Y Mock Test - SET 9</h3><p>English 20 + RAGA 30 | 50 Qs | 45 Min | Negative 0.25</p><span class="groupy-start">Start Test →</span></a>
+        <a href="agniveervayu-group-y-mock-test-10.html" class="groupy-card"><span class="groupy-badge" style="background:#ede9fe;color:#5b21b6;border-color:#c4b5fd">NEW • ADVANCED</span><div class="groupy-icon">🚀</div><h3>Group Y Mock Test - SET 10 (Advanced)</h3><p>Subjunctive • Circular Sitting • HCF Pairs • NISAR • 50 Qs</p><span class="groupy-start">Start Test →</span></a>
+        <a href="agniveervayu-group-y-mock-test-11.html" class="groupy-card"><span class="groupy-badge" style="background:#e0f2fe;color:#0369a1;border-color:#7dd3fc">NEW • SET 11</span><div class="groupy-icon">🎯</div><h3>Group Y Mock Test - SET 11 (Tenacious)</h3><p>Tenacious • Scenery | 127 Series | Wular Lake | 50 Qs</p><span class="groupy-start">Start Test →</span></a>
+        <a href="agniveervayu-group-y-mock-test-12.html" class="groupy-card"><span class="groupy-badge" style="background:#fee2e2;color:#991b1b;border-color:#fecaca">NEW • SET 12</span><div class="groupy-icon">🔥</div><h3>Group Y Mock Test - SET 12 (Ephemeral)</h3><p>Ephemeral • Privilege | 2,3,8,27,112 | 9.09% | Parsec | 50 Qs</p><span class="groupy-start">Start Test →</span></a>
+    </div>
 </section>
 
 <section class="navy-wrapper" id="navy-tests">
