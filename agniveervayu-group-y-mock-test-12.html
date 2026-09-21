@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Agniveervayu Group Y 2026 - Mock Test SET 12 | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #a78bfa}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text)}
+.options label:hover{border-color:#a78bfa}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#7c3aed;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #a78bfa;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #a78bfa;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #4c1d95, #7c3aed);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #c4b5fd}
+.score-card{width:100%;max-width:460px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:16px;line-height:1.5} #qEn{font-size:13px;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#c4b5fd">✈️ MISSION GYAN JOBS - GROUP Y</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">45:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#c4b5fd;font-size:16px">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#c4b5fd">👋 welcome student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Enter your name and district; only then will the test begin.</p><input id="stuName" placeholder="अपना पूरा नाम *"><div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div><input id="stuCity" placeholder="अपना जिला / शहर *"><div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#a78bfa;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button></div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:white">🔥 TEST 12 LOCKED 🔥</h2><p style="color:#ede9fe;font-size:13px;margin-bottom:12px">Enter the password first.</p><input type="password" id="passInput" placeholder="Password " style="width:100%;padding:13px;border:3px solid #c4b5fd;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none"><button onclick="checkPass()" style="width:100%;padding:13px;background:#c4b5fd;color:#4c1d95;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START TEST NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ wrong Password!</p></div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #a78bfa"><b>✈️ Agniveervayu Group Y | MOCK TEST – SET 12</b><br><small style="color:var(--muted)">English 20 (Only English) + RAGA 30 (Bilingual) | 50 Marks | Negative 0.25 | <span id="attemptInfo">0/50 Attempted</span></small></div>
+<div class="q-card"><b style="color:#7c3aed;font-size:13px">QUESTION <span id="qNo">1</span> / 50</b><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit Test</button></div></div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)"><div class="score-card"><div style="text-align:center"><div style="background:#ede9fe;color:#5b21b6;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">SCORECARD - NEGATIVE 0.25</div><div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div><div style="font-size:40px;font-weight:900;color:#7c3aed;line-height:1"><span id="sBig">0</span><span style="font-size:16px;color:var(--muted)"> /50 Marks</span></div><div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div><div style="margin-top:8px;font-size:12px;color:var(--muted)" id="sFormula"></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:10px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:10px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:10px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div><div style="background:#ede9fe;padding:10px;border-radius:12px;text-align:center"><b id="sPer" style="font-size:18px;color:#5b21b6">0%</b><br><small>Score %</small></div></div><button onclick="openReview()" style="width:100%;background:#0f172a;color:#c4b5fd;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #a78bfa;font-size:14px;cursor:pointer">📝 View Detailed Analysis</button><button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto"><div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #a78bfa;margin-bottom:12px"><b>📝 Detailed Analysis - SET 12</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. Choose correct synonym of 'Ephemeral'.",qe:"English Only - Ephemeral = Transient",o:{"A":"Permanent","B":"Transient (Short-lived)","C":"Endless","D":"Strong"},a:"B"},
+{qh:"Q2. Choose antonym of 'Mitigate'.",qe:"English Only - Mitigate vs Aggravate",o:{"A":"Relieve","B":"Soothe","C":"Aggravate","D":"Calm"},a:"C"},
+{qh:"Q3. Fill with preposition: All citizens must comply _____ new traffic rules.",qe:"English Only - comply with",o:{"A":"by","B":"to","C":"with","D":"for"},a:"C"},
+{qh:"Q4. Choose correctly spelt word.",qe:"English Only - Privilege",o:{"A":"Priviledge","B":"Privelege","C":"Privilege","D":"Prevelege"},a:"C"},
+{qh:"Q5. Identify error: No sooner had the match started when it began to rain heavily.",qe:"English Only - No sooner...than not when",o:{"A":"No sooner had","B":"the match started","C":"when it began","D":"to rain heavily."},a:"C"},
+{qh:"Q6. Choose correct passive voice: One should keep one's promises.",qe:"English Only - Promises should be kept (one removed)",o:{"A":"Promises should be kept by one.","B":"One's promises should be kept.","C":"Promises should be kept.","D":"Promises must keep by one."},a:"C"},
+{qh:"Q7. Choose correct indirect speech: He said to me, Do you know the way to station?",qe:"English Only - He asked me if I knew the way",o:{"A":"He told me that I knew the way","B":"He asked me if I know the way","C":"He asked me if I knew the way","D":"He said to me if I knew the way"},a:"C"},
+{qh:"Q8. Choose correct article: My sister plays _____ piano very well.",qe:"English Only - plays the piano",o:{"A":"a","B":"an","C":"the","D":"No article"},a:"C"},
+{qh:"Q9. What is meaning of idiom 'To bite the bullet'?",qe:"English Only - To bite the bullet = face difficult bravely",o:{"A":"To eat something very hard","B":"To face a difficult or unpleasant situation bravely","C":"To fight with a soldier","D":"To show anger"},a:"B"},
+{qh:"Q10. Fill with correct verb: Neither of the two brothers _____ passed the physical test.",qe:"English Only - Neither of + singular has",o:{"A":"has","B":"have","C":"is","D":"are"},a:"A"},
+{qh:"Q11. Choose synonym of 'Furtive'.",qe:"English Only - Furtive = Secretive",o:{"A":"Secretive","B":"Open","C":"Generous","D":"Proud"},a:"A"},
+{qh:"Q12. Choose antonym of 'Barren'.",qe:"English Only - Barren vs Fertile",o:{"A":"Empty","B":"Fertile","C":"Harsh","D":"Dry"},a:"B"},
+{qh:"Q13. Fill with conjunction: Work hard, lest you _____ fail in final exam.",qe:"English Only - lest you should fail",o:{"A":"would","B":"will","C":"can","D":"should"},a:"D"},
+{qh:"Q14. Fill with phrasal verb: The sports event was put _____ due to heavy snowfall.",qe:"English Only - put off = postpone",o:{"A":"up","B":"off","C":"out","D":"on"},a:"B"},
+{qh:"Q15. One word: A person who cannot be corrected or reformed",qe:"English Only - Incorrigible",o:{"A":"Infallible","B":"Invincible","C":"Incorrigible","D":"Illiterate"},a:"C"},
+{qh:"Q16. Change into passive: Did they catch the thief?",qe:"English Only - Did they catch -> Was the thief caught?",o:{"A":"Was the thief caught by them?","B":"Is the thief caught by them?","C":"Had the thief been caught by them?","D":"The thief was caught by them?"},a:"A"},
+{qh:"Q17. Choose correct spelling:",qe:"English Only - Harassment single r double s",o:{"A":"Harrassment","B":"Harassment","C":"Harasment","D":"Harrasment"},a:"B"},
+{qh:"Q18. Identify error: He is senior than me in the air force service.",qe:"English Only - senior to not than",o:{"A":"He is senior","B":"than me","C":"in the","D":"air force service."},a:"B"},
+{qh:"Q19. Choose meaning of 'To burn the midnight oil'.",qe:"English Only - To burn midnight oil = work late night",o:{"A":"To waste oil","B":"To work or study late into the night","C":"To set something on fire","D":"To sleep late"},a:"B"},
+{qh:"Q20. Fill with correct word: I am looking forward to _____ you soon.",qe:"English Only - looking forward to + gerund meeting",o:{"A":"meet","B":"meeting","C":"met","D":"have met"},a:"B"},
+{qh:"Q21. दी गई संख्या श्रृंखला में अगला पद ज्ञात कीजिए: 2,3,8,27,112,?",qe:"Series Tricky: x1+1, x2+2, x3+3, x4+4, x5+5 =>112*5+5=565",o:{"A":"226","B":"339","C":"452","D":"565"},a:"D"},
+{qh:"Q22. यदि CAT को 24 और DOG को 26 लिखा जाता है तो HORSE को कैसे लिखा जाएगा? If CAT=24 DOG=26 then HORSE=?",qe:"CAT=3+1+20=24 DOG=4+15+7=26 HORSE=8+15+18+19+5=65",o:{"A":"60","B":"65","C":"68","D":"70"},a:"B"},
+{qh:"Q23. एक व्यक्ति उत्तर की ओर 10m चलता है फिर बाईं ओर 10m फिर बाईं ओर 10m अंत में दाईं ओर 10m। प्रारंभिक बिंदु से कितनी दूर?",qe:"North 10 -> Left West 10 -> Left South 10 -> Right West 10 =20m West",o:{"A":"10 मीटर","B":"20 मीटर","C":"30 मीटर","D":"0 मीटर"},a:"B"},
+{qh:"Q24. एक लड़की की ओर इशारा करते हुए लड़के ने कहा वह मेरी दादी के इकलौते बच्चे की बेटी है। लड़की उस लड़के से किस प्रकार संबंधित है?",qe:"Grandmother's only child = father, father's daughter = sister",o:{"A":"चचेरी बहन","B":"बहन","C":"बुआ","D":"माता"},a:"B"},
+{qh:"Q25. विषम (Odd One Out) चुनिए: 121,169,1331,289",qe:"121=11^2,169=13^2,289=17^2 squares, 1331=11^3 cube",o:{"A":"121","B":"169","C":"1331","D":"289"},a:"C"},
+{qh:"Q26. कथन: सभी पेन पेंसिल हैं। कोई भी पेंसिल इरेज़र नहीं है। निष्कर्ष I. कोई भी पेन इरेज़र नहीं है II. कुछ पेंसिल पेन हैं।",qe:"All pens are pencils. No pencil is eraser. Conclusion",o:{"A":"केवल I अनुसरण करता है","B":"केवल II अनुसरण करता है","C":"I और II दोनों अनुसरण करते हैं","D":"न तो I और न ही II"},a:"C"},
+{qh:"Q27. यदि आज सोमवार है तो 61 दिनों के बाद सप्ताह का कौन सा दिन होगा?",qe:"Today Monday after 61 days =61 mod7=5 days Saturday",o:{"A":"शनिवार","B":"रविवार","C":"शुक्रवार","D":"बुधवार"},a:"A"},
+{qh:"Q28. 4:10 बजे घड़ी की घंटे और मिनट की सुइयों के बीच कोण क्या होगा?",qe:"Angle 4:10 =|30*4-5.5*10|=65°",o:{"A":"60°","B":"65°","C":"70°","D":"75°"},a:"B"},
+{qh:"Q29. समरूपता पूर्ण करें: Eye (आँख) : Ophthalmologist :: Bones (हड्डियाँ) :?",qe:"Eye:Ophthalmologist :: Bones:Orthopedist",o:{"A":"Cardiologist","B":"Dermatologist","C":"Orthopedist","D":"Neurologist"},a:"C"},
+{qh:"Q30. कौन सा वेन आरेख महिलाओं, माताओं और डॉक्टरों के बीच संबंध दर्शाता है?",qe:"Females, Mothers, Doctors Venn: Mothers inside Females, Doctors intersect",o:{"A":"एक के अंदर दूसरा तीसरा दोनों को काटता","B":"तीनों प्रतिच्छेदी","C":"एक बड़े के अंदर दो अलग","D":"तीन अलग-अलग"},a:"A"},
+{qh:"Q31. यदि A की ऊँचाई B से 10% अधिक है तो B की ऊँचाई A से कितने % कम है?",qe:"A 10% more than B then B less than A =10/110*100=9.09%",o:{"A":"10%","B":"9.09%","C":"11.11%","D":"12%"},a:"B"},
+{qh:"Q32. एक बेईमान दुकानदार 12 वस्तुओं का CP, 10 वस्तुओं के SP के बराबर रखता है लाभ %?",qe:"12CP=10SP =>SP/CP=12/10 profit 20%",o:{"A":"15%","B":"20%","C":"25%","D":"16.66%"},a:"B"},
+{qh:"Q33. A किसी काम को 12 दिनों में कर सकता है B, A से 60% अधिक कुशल है B अकेले कितने दिनों में पूरा करेगा?",qe:"A 12 days B 60% more efficient efficiency 100:160 time 8:5 =>7.5 days",o:{"A":"6 दिन","B":"7.5 दिन","C":"8 दिन","D":"9 दिन"},a:"B"},
+{qh:"Q34. 5 संख्याओं का औसत 10 है एक नई संख्या जोड़ने पर नया औसत 12 हो जाता है नई संख्या क्या है?",qe:"5 numbers avg10 total50 6 numbers avg12 total72 new number 22",o:{"A":"18","B":"20","C":"22","D":"24"},a:"C"},
+{qh:"Q35. एक आदमी 5 km/h से ऑफिस जाता तो 10 min लेट 6 km/h से जाता तो 5 min जल्दी घर से ऑफिस दूरी?",qe:"Distance =S1*S2/(S1~S2)*time diff/60 =5*6/1*15/60=7.5km",o:{"A":"5 किमी","B":"6 किमी","C":"7.5 किमी","D":"10 किमी"},a:"C"},
+{qh:"Q36. साधारण ब्याज की किस दर से धनराशि 10 वर्षों में 3 गुनी हो जाएगी?",qe:"Rate = (n-1)/T*100 =2/10*100=20%",o:{"A":"10%","B":"15%","C":"20%","D":"25%"},a:"C"},
+{qh:"Q37. दो संख्याएँ 3:4 अनुपात में दोनों में 5 जोड़ने पर नया अनुपात 4:5 हो जाता है वे संख्याएँ?",qe:"3x and 4x, 3x+5/4x+5=4/5 =>15x+25=16x+20 x=5 numbers 15 and 20",o:{"A":"10 और 15","B":"15 और 20","C":"12 और 16","D":"18 और 24"},a:"B"},
+{qh:"Q38. मान ज्ञात करें: (0.064-0.027)/(0.16+0.12+0.09)",qe:"(0.4^3-0.3^3)/(0.4^2+0.4*0.3+0.3^2)=0.4-0.3=0.1",o:{"A":"0.1","B":"0.2","C":"0.3","D":"0.7"},a:"A"},
+{qh:"Q39. भारत के किसी राज्य की पहली महिला मुख्यमंत्री कौन थीं?",qe:"First woman Chief Minister of Indian state",o:{"A":"सरोजिनी नायडू","B":"सुचेता कृपलानी","C":"इंदिरा गांधी","D":"मायावती"},a:"B"},
+{qh:"Q40. निम्न में से किसे लाफिंग गैस के रूप में जाना जाता है?",qe:"Laughing gas",o:{"A":"नाइट्रस ऑक्साइड","B":"नाइट्रोजन डाइऑक्साइड","C":"नाइट्रिक ऑक्साइड","D":"कार्बन मोनोऑक्साइड"},a:"A"},
+{qh:"Q41. डॉ. बी. आर. अंबेडकर ने संविधान के किस अनुच्छेद को संविधान का हृदय और आत्मा कहा था?",qe:"Heart and soul of Constitution Article",o:{"A":"अनुच्छेद 14","B":"अनुच्छेद 19","C":"अनुच्छेद 32","D":"अनुच्छेद 44"},a:"C"},
+{qh:"Q42. पारसेक किसकी इकाई है?",qe:"Parsec unit of",o:{"A":"समय","B":"दूरी","C":"प्रकाश की तीव्रता","D":"ध्वनि"},a:"B"},
+{qh:"Q43. यूनेस्को का मुख्यालय कहाँ स्थित है?",qe:"UNESCO headquarters",o:{"A":"न्यूयॉर्क","B":"जेनेवा","C":"पेरिस","D":"रोम"},a:"C"},
+{qh:"Q44. हमारे पड़ोसी देश भूटान की राजधानी क्या है?",qe:"Capital of Bhutan",o:{"A":"काठमांडू","B":"ढाका","C":"थिम्पू","D":"काबुल"},a:"C"},
+{qh:"Q45. मानव शरीर की सबसे लंबी हड्डी कौन सी है?",qe:"Longest bone in human body",o:{"A":"स्टेप्स","B":"फीमर","C":"टिबिया","D":"रेडियस"},a:"B"},
+{qh:"Q46. हल्दीघाटी का प्रसिद्ध युद्ध किस वर्ष लड़ा गया था?",qe:"Battle of Haldighati year",o:{"A":"1526","B":"1556","C":"1576","D":"1761"},a:"C"},
+{qh:"Q47. राइडर कप किस खेल से संबंधित है?",qe:"Ryder Cup associated sport",o:{"A":"गोल्फ","B":"टेनिस","C":"पोलो","D":"बैडमिंटन"},a:"A"},
+{qh:"Q48. रूस की मुद्रा क्या है?",qe:"Currency of Russia",o:{"A":"डॉलर","B":"यूरो","C":"रूबल","D":"युआन"},a:"C"},
+{qh:"Q49. भारत में शांति काल का सर्वोच्च वीरता पुरस्कार कौन सा है?",qe:"Highest peacetime gallantry award India",o:{"A":"परमवीर चक्र","B":"महावीर चक्र","C":"अशोक चक्र","D":"कीर्ति चक्र"},a:"C"},
+{qh:"Q50. राष्ट्रीय खेल दिवस हर साल भारत में कब मनाया जाता है?",qe:"National Sports Day India",o:{"A":"12 जनवरी","B":"29 अगस्त","C":"5 सितंबर","D":"28 फरवरी"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();let ok=true;if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}if(!ok)return;localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);render();}else{passErr.style.display='block';}}
+function render(){let q=testData.questions[cur];qNo.innerText=cur+1;qHi.innerText=q.qh;qEn.innerText=q.qe;let h="";for(let k in q.o){let sel=answers[cur]==k;h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}optBox.innerHTML=h;let attempted=Object.keys(answers).length;attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;let pg="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});pGrid.innerHTML=pg;}
+function selAns(k){answers[cur]=k;render();}
+function clearAns(){delete answers[cur];render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){let attempted=Object.keys(answers).length;if(attempted<10&&time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Submit karna hai?`))return;}clearInterval(tInt);let cor=0,wro=0,skip=0;testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++;else if(answers[i]==q.a)cor++;else wro++;});let finalMarks=cor*1 - wro*0.25;let per=(finalMarks/50*100).toFixed(1);sCor.innerText=cor;sWro.innerText=wro;sSkip.innerText=skip;sBig.innerText=finalMarks.toFixed(2);sPer.innerText=per+"%";sFormula.innerText=`Formula: ${cor} x 1 - ${wro} x 0.25 = ${finalMarks.toFixed(2)}`;scoreMsg.innerText=finalMarks>=40?"Excellent! Group Y Topper 🔥":finalMarks>=30?"Bahut Badhiya! 🚀":finalMarks>=15?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;scoreOverlay.style.display='flex';buildReview();}
+function buildReview(){let html="";testData.questions.forEach((q,i)=>{let u=answers[i];let correct=u==q.a;let status=u==undefined?"Not Attempted":correct?"Correct (+1)":"Wrong (-0.25)";let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";let icon=u==undefined?"⚠️":correct?"✅":"❌";html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#7c3aed">Q ${i+1} ${i<20?'[English]':'[RAGA]'}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div><div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div><div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;for(let k in q.o){let cls="opt-item";if(k==q.a)cls+=" correct-opt";else if(k==u&&u!=q.a)cls+=" wrong-opt";html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u&&k!=q.a?'❌ Your':''}</div>`;}html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;});reviewList.innerHTML=html;}
+function openReview(){reviewPage.style.display='block';reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||"";stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
