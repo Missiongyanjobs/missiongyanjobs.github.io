@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Air Force Non-CBT 01/2027 - Mock Test 33 | Mission Gyan Jobs</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #ef4444}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text)}
+.options label:hover{border-color:#ef4444}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#dc2626;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #ef4444;text-align:center;color:#fff}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #ef4444;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #991b1b, #dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid #fecaca}
+.score-card{width:100%;max-width:460px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+#qHi{font-size:16px;line-height:1.5} #qEn{font-size:12px;color:var(--muted);margin-top:4px;font-style:italic}
+</style>
+</head>
+<body>
+<div class="header"><b style="color:#fecaca">✈️ AIR FORCE NON-CBT 01/2027 - TEST 33</b><div style="display:flex;gap:8px;align-items:center"><div class="timer">⏱️ <span id="timer">30:00</span></div><button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fecaca;font-size:16px">🌙</button></div></div>
+<div class="overlay" id="loginScreen"><div class="login-box"><h2 style="color:#fecaca">👋 welcome student</h2><p style="color:#94a3b8;font-size:12px;margin-bottom:14px">Enter your name and district to start Test 33.</p><input id="stuName" placeholder="Apna pura naam *"><div id="nameErr" class="err-msg">❌ Naam bhare</div><input id="stuCity" placeholder="Apna jila / city *"><div id="cityErr" class="err-msg">❌ Jila bhare</div><button onclick="doLogin()" style="width:100%;padding:13px;background:#ef4444;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#fff;font-size:15px;cursor:pointer">Continue & Unlock →</button></div></div>
+<div class="overlay" id="passScreen" style="display:none"><div class="pass-box"><h2 style="color:white">🔥 TEST 33 LOCKED 🔥</h2><p style="color:#fee2e2;font-size:13px;margin-bottom:12px">Enter password to unlock</p><input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid #fecaca;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none"><button onclick="checkPass()" style="width:100%;padding:13px;background:#fecaca;color:#991b1b;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START NOW</button><p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ wrong Password!</p></div></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #ef4444"><b>✈️ AIR FORCE NON-CBT 01/2027 | TEST 33 | Tricky Rules Series</b><br><small style="color:var(--muted)">15 GK + 15 English | 30 Marks | Negative 0.25 | <span id="attemptInfo">0/30 Attempted</span></small></div>
+<div class="q-card"><b style="color:#dc2626;font-size:13px">QUESTION <span id="qNo">1</span> / 30</b><div id="qHi"></div><div id="qEn"></div><div id="optBox" class="options"></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px"><button class="btn btn-g" onclick="prevQ()">← Prev</button><button class="btn btn-g" onclick="clearAns()">Clear</button><button class="btn btn-y" onclick="markRev()">☆ Review</button></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-b" onclick="saveNext()">Save & Next →</button><button class="btn btn-gr" onclick="submitTest()">Submit</button></div></div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)"><div class="score-card"><div style="text-align:center"><div style="background:#fee2e2;color:#991b1b;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block">SCORECARD - NEGATIVE 0.25</div><div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div><div style="font-size:40px;font-weight:900;color:#dc2626;line-height:1"><span id="sBig">0</span><span style="font-size:16px;color:var(--muted)"> /30 Marks</span></div><div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div><div style="margin-top:8px;font-size:12px;color:var(--muted)" id="sFormula"></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin:16px 0"><div style="background:#dcfce7;padding:10px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small>Correct</small></div><div style="background:#fee2e2;padding:10px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small>Wrong</small></div><div style="background:#fef3c7;padding:10px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small>Skipped</small></div><div style="background:#ede9fe;padding:10px;border-radius:12px;text-align:center"><b id="sPer" style="font-size:18px;color:#5b21b6">0%</b><br><small>Score %</small></div></div><button onclick="openReview()" style="width:100%;background:#0f172a;color:#fecaca;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #ef4444;font-size:14px;cursor:pointer">📝 View Detailed Analysis + Tricky Rules</button><button onclick="location.reload()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button></div></div>
+<div class="review-page" id="reviewPage"><div style="max-width:860px;margin:auto"><div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #ef4444;margin-bottom:12px"><b>📝 Detailed Analysis - TEST 33</b><button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button></div><div id="reviewList"></div></div></div>
+<script>
+const testData={questions:[
+{qh:"Q1. ऑस्कर पुरस्कार जीतने वाले प्रथम भारतीय कौन थे? Who was the first Indian to win an Oscar?",qe:"First Indian to win Oscar - Bhanu Athaiya (Costume Design Gandhi 1983)",o:{"A":"सत्यजीत रे / Satyajit Ray","B":"ए. आर. रहमान / A. R. Rahman","C":"भानु अथैया / Bhanu Athaiya","D":"रसूल पूकुट्टी / Resul Pookutty"},a:"C"},
+{qh:"Q2. प्रायद्वीपीय भारत की सबसे लंबी नदी कौन-सी है? Longest river of Peninsular India?",qe:"Peninsular longest - Godavari 1465 km",o:{"A":"कृष्णा / Krishna","B":"कावेरी / Kaveri","C":"गोदावरी / Godavari","D":"नर्मदा / Narmada"},a:"C"},
+{qh:"Q3. भारतीय संविधान का अनुच्छेद 360 किससे संबंधित है? Article 360 related to?",qe:"Article 360 Financial Emergency",o:{"A":"राष्ट्रीय आपातकाल / National Emergency","B":"वित्तीय आपातकाल / Financial Emergency","C":"राष्ट्रपति शासन / President's Rule","D":"संविधान संशोधन / Amendment"},a:"B"},
+{qh:"Q4. WHO का मुख्यालय कहाँ है? Where is WHO headquarters?",qe:"WHO HQ Geneva Switzerland",o:{"A":"न्यूयॉर्क / New York","B":"पेरिस / Paris","C":"जिनेवा / Geneva","D":"लंदन / London"},a:"C"},
+{qh:"Q5. भूकंप की तरंगों को रिकॉर्ड करने का उपकरण? Instrument to record earthquake waves?",qe:"Seismograph records earthquake waves",o:{"A":"बैरोमीटर / Barometer","B":"सीस्मोग्राफ / Seismograph","C":"हाइग्रोमीटर / Hygrometer","D":"अल्टीमीटर / Altimeter"},a:"B"},
+{qh:"Q6. पानीपत का प्रथम युद्ध किस वर्ष? First Battle of Panipat year?",qe:"First Panipat 1526 Babur vs Ibrahim Lodi",o:{"A":"1526","B":"1556","C":"1576","D":"1761"},a:"A"},
+{qh:"Q7. 'माई एक्सपेरिमेंट्स विद ट्रुथ' के लेखक? Author of My Experiments with Truth?",qe:"My Experiments with Truth - Mahatma Gandhi",o:{"A":"जवाहरलाल नेहरू / Nehru","B":"ए. पी. जे. अब्दुल कलाम / Kalam","C":"महात्मा गांधी / Mahatma Gandhi","D":"भगत सिंह / Bhagat Singh"},a:"C"},
+{qh:"Q8. किस ग्रह को 'लाल ग्रह' कहा जाता है? Which planet is Red Planet?",qe:"Red Planet - Mars",o:{"A":"शुक्र / Venus","B":"मंगल / Mars","C":"बृहस्पति / Jupiter","D":"शनि / Saturn"},a:"B"},
+{qh:"Q9. कमरे के तापमान पर तरल अवस्था में धातु? Only liquid metal at room temp?",qe:"Liquid metal at room temp - Mercury (Hg)",o:{"A":"पारा / मरकरी / Mercury","B":"ब्रोमीन / Bromine","C":"गैलियम / Gallium","D":"सीसा / Lead"},a:"A"},
+{qh:"Q10. 2011 जनगणना में सबसे कम जनसंख्या घनत्व वाला राज्य? Lowest density as per 2011?",qe:"Lowest density Arunachal Pradesh 17 per sq km",o:{"A":"सिक्किम / Sikkim","B":"मिजोरम / Mizoram","C":"अरुणाचल प्रदेश / Arunachal","D":"गोवा / Goa"},a:"C"},
+{qh:"Q11. ऑस्ट्रेलिया की राजधानी क्या है? Capital of Australia?",qe:"Capital of Australia Canberra not Sydney",o:{"A":"सिडनी / Sydney","B":"मेलबर्न / Melbourne","C":"कैनबरा / Canberra","D":"पर्थ / Perth"},a:"C"},
+{qh:"Q12. जापान की मुद्रा क्या है? Currency of Japan?",qe:"Japan currency Yen",o:{"A":"युआन / Yuan","B":"येन / Yen","C":"वोन / Won","D":"रूबल / Ruble"},a:"B"},
+{qh:"Q13. ISRO का मुख्यालय कहाँ है? Where is ISRO HQ?",qe:"ISRO HQ Bengaluru",o:{"A":"श्रीहरिकोटा / Sriharikota","B":"नई दिल्ली / New Delhi","C":"तिरुवनंतपुरम / Thiruvananthapuram","D":"बेंगलुरु / Bengaluru"},a:"D"},
+{qh:"Q14. विटामिन A की कमी से कौन-सा रोग? Disease due to Vitamin A deficiency?",qe:"Vitamin A deficiency Night Blindness",o:{"A":"बेरी-बेरी / Beri-Beri","B":"रतौंधी / Night Blindness","C":"स्कर्वी / Scurvy","D":"रिकेट्स / Rickets"},a:"B"},
+{qh:"Q15. 'हॉर्नबिल महोत्सव' किस राज्य में? Hornbill Festival in which state?",qe:"Hornbill Festival Nagaland",o:{"A":"असम / Assam","B":"मणिपुर / Manipur","C":"नागालैंड / Nagaland","D":"मेघालय / Meghalaya"},a:"C"},
+{qh:"Q16. Tense: By the time the police arrive, the thieves _____ away.",qe:"By the time future + future perfect will have run",o:{"A":"will run","B":"will have run","C":"would run","D":"run"},a:"B"},
+{qh:"Q17. Article: My elder brother is an M.A., but I am _____ B.A.",qe:"M.A. = an (vowel sound), B.A. = a (consonant sound Bee)",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"A"},
+{qh:"Q18. Error: Each of the boys / have / done / their work properly.",qe:"Each is singular so has, not have",o:{"A":"Each of the boys","B":"have","C":"done","D":"their work properly"},a:"B"},
+{qh:"Q19. Preposition: He is very good _____ Mathematics.",qe:"good at subject, good in class",o:{"A":"in","B":"at","C":"with","D":"for"},a:"B"},
+{qh:"Q20. Verb: Economics _____ a very interesting subject.",qe:"Economics subject singular is",o:{"A":"is","B":"are","C":"has","D":"were"},a:"A"},
+{qh:"Q21. Antonym of Opaque",qe:"Opaque vs Transparent",o:{"A":"Dark","B":"Transparent","C":"Dull","D":"Hard"},a:"B"},
+{qh:"Q22. One-word: A supposed cure for all diseases",qe:"Panacea cure for all",o:{"A":"Antibiotic","B":"Panacea","C":"Antidote","D":"Elixir"},a:"B"},
+{qh:"Q23. Idiom: To add fuel to the fire",qe:"To add fuel = make bad situation worse",o:{"A":"To make a fire burn brighter","B":"To make a bad situation worse","C":"To cook food","D":"To calm someone down"},a:"B"},
+{qh:"Q24. Passive: There is nothing to say.",qe:"There is nothing to be said - fixed",o:{"A":"Nothing is to be said there.","B":"There is nothing to be said.","C":"Nothing is said there.","D":"There is nothing to say by anyone."},a:"B"},
+{qh:"Q25. Indirect: He said to his friends, Let us go out for a walk.",qe:"Let us = proposed that they should go",o:{"A":"He asked his friends to go out","B":"He proposed to his friends that they should go out","C":"He told that let them go","D":"He advised to let us go"},a:"B"},
+{qh:"Q26. Conjunction: He is both intelligent _____ hardworking.",qe:"Both and pair",o:{"A":"as well as","B":"but also","C":"and","D":"with"},a:"C"},
+{qh:"Q27. Word: The train is _____ for New Delhi.",qe:"bound for destination",o:{"A":"bound","B":"bounce","C":"bind","D":"baund"},a:"A"},
+{qh:"Q28. Synonym of Candid",qe:"Candid = Frank",o:{"A":"Deceitful","B":"Frank","C":"Secretive","D":"Clever"},a:"B"},
+{qh:"Q29. Correct spelling",qe:"Accommodation double c double m",o:{"A":"Accomodation","B":"Acommodation","C":"Accommodation","D":"Acomodation"},a:"C"},
+{qh:"Q30. Tag: She hardly ever speaks to me, _____?",qe:"hardly is negative so positive tag does she",o:{"A":"doesn't she?","B":"does she?","C":"isn't she?","D":"didn't she?"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=30*60,tInt;
+function doLogin(){let n=stuName.value.trim(),c=stuCity.value.trim();let ok=true;if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}if(!ok)return;localStorage.setItem("mgj_name",n);localStorage.setItem("mgj_city",c);loginScreen.style.display='none';passScreen.style.display='flex';}
+function checkPass(){if(passInput.value==="MGE@77"){passScreen.style.display='none';mainTest.style.display='block';tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);render();}else{passErr.style.display='block';}}
+function render(){let q=testData.questions[cur];qNo.innerText=cur+1;qHi.innerText=q.qh;qEn.innerText=q.qe;let h="";for(let k in q.o){let sel=answers[cur]==k;h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}optBox.innerHTML=h;let attempted=Object.keys(answers).length;attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;let pg="";testData.questions.forEach((_,i)=>{let cl="p";if(i==cur)cl+=" cur";else if(reviews.has(i))cl+=" rev";else if(answers[i]!=undefined)cl+=" ans";pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});pGrid.innerHTML=pg;}
+function selAns(k){answers[cur]=k;render();}
+function clearAns(){delete answers[cur];render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){let attempted=Object.keys(answers).length;if(attempted<8&&time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Submit karna hai?`))return;}clearInterval(tInt);let cor=0,wro=0,skip=0;testData.questions.forEach((q,i)=>{if(answers[i]==undefined)skip++;else if(answers[i]==q.a)cor++;else wro++;});let finalMarks=cor*1 - wro*0.25;let per=(finalMarks/30*100).toFixed(1);sCor.innerText=cor;sWro.innerText=wro;sSkip.innerText=skip;sBig.innerText=finalMarks.toFixed(2);sPer.innerText=per+"%";sFormula.innerText=`Formula: ${cor} x 1 - ${wro} x 0.25 = ${finalMarks.toFixed(2)}`;scoreMsg.innerText=finalMarks>=24?"Excellent! IAF Topper 🔥":finalMarks>=18?"Bahut Badhiya! 🚀":finalMarks>=10?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;scoreOverlay.style.display='flex';buildReview();}
+function buildReview(){let html="";testData.questions.forEach((q,i)=>{let u=answers[i];let correct=u==q.a;let status=u==undefined?"Not Attempted":correct?"Correct (+1)":"Wrong (-0.25)";let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong";let icon=u==undefined?"⚠️":correct?"✅":"❌";html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#dc2626">Q ${i+1} ${i<15?'[GK]':'[English]'}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div><div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div><div style="color:var(--muted);font-size:12px;margin-bottom:10px;font-style:italic">${q.qe}</div>`;for(let k in q.o){let cls="opt-item";if(k==q.a)cls+=" correct-opt";else if(k==u&&u!=q.a)cls+=" wrong-opt";html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct':''} ${k==u&&k!=q.a?'❌ Your':''}</div>`;}html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;});reviewList.innerHTML=html;}
+function openReview(){reviewPage.style.display='block';reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+stuName.value=localStorage.getItem("mgj_name")||"";stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
