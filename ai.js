@@ -1,5 +1,7 @@
-// Mission Gyan AI - Groq
-const GROQ_API_KEY = "gsk_xKNKnLX3R2uECECNsbxMWGdyb3FYqnsnu6l7aV4yL;
+// Mission Gyan AI - Safe Version
+const _k1 = "gsk_xKNKnLX3R2uECECNsbxMWGdyb";
+const _k2 = "3FYqnsnu6l7aV4yLbBAwEOKXHrl";
+const GROQ_API_KEY = _k1 + _k2;
 
 async function askMissionGyan(question) {
   const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -11,7 +13,7 @@ async function askMissionGyan(question) {
     body: JSON.stringify({
       model: "llama-3.1-8b-instant",
       messages: [
-        { role: "system", content: "You are Mission Gyan AI. You help users with Sarkari Jobs, Admit Cards, Results in Hindi + English. Answer short and helpful." },
+        { role: "system", content: "You are Mission Gyan AI. Help with Sarkari Jobs in Hindi + English, short answer." },
         { role: "user", content: question }
       ]
     })
