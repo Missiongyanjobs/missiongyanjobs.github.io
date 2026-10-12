@@ -35,10 +35,10 @@
 .start-btn{width:100%;display:inline-flex;justify-content:center;align-items:center;margin-top:16px;padding:11px;background:linear-gradient(135deg,#dc2626,#991b1b);color:#fff !important;font-size:12px;font-weight:900;border-radius:10px}
 @keyframes pulseBadge{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
 @media(max-width:1050px){.airforce-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.airforce-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
-.ai-box{margin-bottom:18px;padding:16px;border:1px solid #dbeafe;border-radius:15px;background:linear-gradient(180deg,#ffffff,#f0f7ff);box-shadow:0 8px 22px rgba(15,23,42,.07);display:none}
+.ai-box{margin-bottom:18px;padding:16px;border:2px dashed #0b4ea2;border-radius:15px;background:linear-gradient(180deg,#ffffff,#f0f7ff);box-shadow:0 8px 22px rgba(15,23,42,.07)}
 .ai-box h3{font-size:14px;font-weight:900;color:#0b2a5b;margin-bottom:8px}
 .ai-box p{font-size:13px;color:#334155;line-height:1.6;white-space:pre-wrap}
-.ai-loader{font-size:12px;font-weight:800;color:#0b4ea2;animation:pulseBadge 1s infinite}
+.ai-loader{font-size:12px;font-weight:800;color:#0b4ea2}
 </style>
 </head>
 <body>
@@ -54,9 +54,9 @@
 <section class="premium-hero"><div class="hero-content"><span class="hero-tag">🎯 EXAM PREPARATION PLATFORM</span><h2>Sarkari Jobs, Results & Mock Tests</h2><p>Air Force, Group Y, Navy MR aur Government Job updates ke saath preparation ko next level par le jao.</p></div></section>
 <nav class="quick-nav"><a href="#latest-jobs">💼 Latest Jobs</a><a href="#results">📊 Results</a><a href="#admit-card">🎫 Admit Card</a><a href="#airforce-tests">✈️ Air Force</a><a href="#group-y-tests">🛡️ Group Y</a><a href="#navy-tests">⚓ Navy MR</a></nav>
 <section class="stats-grid"><div class="stat-card"><span class="stat-number">28</span><span class="stat-label">Air Force Tests</span></div><div class="stat-card"><span class="stat-number">12</span><span class="stat-label">Group Y Tests</span></div><div class="stat-card"><span class="stat-number">07</span><span class="stat-label">Navy MR Tests</span></div><div class="stat-card"><span class="stat-number">47</span><span class="stat-label">Total Mock Tests</span></div></section>
-<section class="search-panel"><div class="search-wrap"><input type="search" id="siteSearch" class="search-input" placeholder="🔎 Search Jobs, Result, Mock Test..."><button type="button" id="clearSearch" class="clear-search">Clear</button></div></section>
+<section class="search-panel"><div class="search-wrap"><input type="search" id="siteSearch" class="search-input" placeholder="🔎 AI se pucho: SSC CPO age?"><button type="button" onclick="runAISearch()" class="clear-search" style="background:#dc2626;">🤖 AI</button><button type="button" id="clearSearch" class="clear-search">Clear</button></div></section>
 <div id="noResults" style="display:none;margin:12px 0;padding:14px;border-radius:12px;background:#fff4e5;color:#8a4b00;text-align:center;font-weight:700">😕 Koi result nahi mila.</div>
-<div id="aiBox" class="ai-box"><h3>🤖 Mission Gyan AI Answer:</h3><p id="aiResult"></p></div>
+<div id="aiBox" class="ai-box"><h3>🤖 Mission Gyan AI - Yahan jawab aayega</h3><p id="aiResult" style="color:#64748b;">Upar search me kuch likho jaise "Air Force age limit" aur AI button dabao ya Enter dabao.</p></div>
 <div class="grid">
 <section class="box" id="latest-jobs"><div class="box-title">💼 Latest Jobs</div><div class="box-content"><ul>
 <li><a href="indian-coast-guard-cgept-01-2027-02-2027-recruitment-2026.html" style="color:#b71c1c;font-weight:900">🔥 Indian Coast Guard Navik GD & Yantrik Recruitment 2026 – 365 Posts – CGEPT 01/2027 & 02/2027 – Last Date 21 Oct <span style="background:#dcfce7;color:#065f46;border:1px solid #bbf7d0;padding:2px 6px;border-radius:4px;font-size:9px;margin-left:5px">NEW</span></a></li>
@@ -218,7 +218,7 @@
         if(query !== "" && visibleCount === 0){noResults.style.display = "block";}else{noResults.style.display = "none";}
     }
     searchInput.addEventListener("input",performSearch);
-    clearSearch.addEventListener("click",function(){searchInput.value="";performSearch();searchInput.focus();document.getElementById("aiBox").style.display="none";});
+    clearSearch.addEventListener("click",function(){searchInput.value="";performSearch();searchInput.focus();document.getElementById("aiResult").innerText="Upar search me kuch likho jaise Air Force age limit aur AI button dabao.";});
     searchInput.addEventListener("keydown",function(event){if(event.key === "Escape"){searchInput.value="";performSearch();} if(event.key === "Enter"){runAISearch();}});
     const backToTop = document.getElementById("backToTop");
     function toggleBackToTop(){if(window.scrollY > 450){backToTop.style.display = "block";}else{backToTop.style.display = "none";}}
@@ -231,17 +231,17 @@
 <script>
 async function runAISearch(){
   let q = document.getElementById("siteSearch").value.trim();
-  if(q.length < 3) return;
+  if(q.length < 3){alert("Kam se kam 3 akshar likho"); return;}
   let box = document.getElementById("aiBox");
   let res = document.getElementById("aiResult");
   box.style.display = "block";
-  res.innerHTML = '<span class="ai-loader">AI soch raha hai... 🤔</span>';
+  res.innerHTML = '<span class="ai-loader">🤖 AI soch raha hai... 2 second</span>';
   box.scrollIntoView({behavior:"smooth", block:"center"});
   try {
     let ans = await askMissionGyan(q);
     res.innerText = ans;
   } catch(e){
-    res.innerText = "AI busy hai, thodi der baad try karo. Error: " + e.message;
+    res.innerText = "AI error: " + e.message + " - Check karo ai.js me key sahi hai ya nahi";
   }
 }
 </script>
