@@ -1,6 +1,6 @@
 // Mission Gyan AI - Safe Version
-const _k1 = "gsk_XiRr4myOnFEHMbRoTNSdWGdyb3F";
-const _k2 = "Yk5FS1KnLYHeImtJCc8bSSf6S";
+const _k1 ="gsk_XiRr4myOnFEHMbRoTNSdWGdyb3F";
+const _k2 ="Yk5FS1KnLYHeImtJCc8bSSf6S";
 const GROQ_API_KEY = _k1 + _k2;
 
 async function askMissionGyan(question) {
