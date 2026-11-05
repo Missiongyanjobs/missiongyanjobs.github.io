@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
-<title>Mission Gyan Exams - ICG Navik (DB/GD) Mock Test</title>
+<title>Mission Gyan Exams - ICG Navik (DB/GD) Mock Test 01</title>
 <style>
 :root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
 body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
@@ -78,9 +78,8 @@ body.dark .badge-correct{background:#14532d;color:#86efac}body.dark .badge-wrong
 <p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
 </div>
 </div>
-<div class="container”
- id="mainTest" style="display:none">
-<div class="info-card" style="border-left:5px solid #fbbf24"><b>⚓ ICG Navik (DB/GD) Section I | Full Mock Test</b><br><small style="color:var(--muted)">Maths 20 + Science 10 + English 15 + Reasoning 10 + GK 5 | <span id="attemptInfo">0/60 Attempted</span></small></div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #fbbf24"><b>⚓ ICG Navik (DB/GD) Section I | Full Mock Test - 01</b><br><small style="color:var(--muted)">Maths 20 + Science 10 + English 15 + Reasoning 10 + GK 5 | <span id="attemptInfo">0/60 Attempted</span></small></div>
 <div class="q-card">
 <b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 60</b>
 <div id="qHi"></div>
@@ -125,59 +124,92 @@ body.dark .badge-correct{background:#14532d;color:#86efac}body.dark .badge-wrong
 </div>
 </div>
 <script>
+const _pCode=[77,71,69,64,49,50,51];
+function getPass(){return String.fromCharCode.apply(null,_pCode);}
+document.addEventListener('contextmenu',e=>{if(document.getElementById('mainTest').style.display!=='none') e.preventDefault();});
 const testData={questions:[
-{qh:"0.008 का घनमूल (Cube root) क्या होगा?",qe:"What will be the cube root of 0.008?",o:{"A":"0.2","B":"0.02","C":"0.002","D":"0.4"},a:"A"},
-{qh:"एक आयत की लंबाई 10% बढ़ाई गई और चौड़ाई 10% घटाई गई। उसके क्षेत्रफल में कितने प्रतिशत का परिवर्तन होगा?",qe:"Length of rectangle increased 10% and breadth decreased 10%. What % change in area?",o:{"A":"1% वृद्धि","B":"1% कमी","C":"कोई परिवर्तन नहीं","D":"2% कमी"},a:"B"},
-{qh:"यदि x + 1/x = 5 है, तो x² + 1/x² का मान ज्ञात करें।",qe:"If x + 1/x = 5, find value of x² + 1/x².",o:{"A":"25","B":"23","C":"27","D":"21"},a:"B"},
-{qh:"12 पुरुष किसी कार्य को 8 दिन में पूरा कर सकते हैं। उसी कार्य को 16 पुरुष कितने दिन में पूरा करेंगे?",qe:"12 men can complete work in 8 days. In how many days 16 men will complete?",o:{"A":"4 दिन","B":"5 दिन","C":"6 दिन","D":"7 दिन"},a:"C"},
-{qh:"72 किमी/घंटा की गति से चल रही एक 200 मीटर लंबी ट्रेन एक खंभे को पार करने में कितना समय लेगी?",qe:"A 200m train at 72 km/h, time to cross a pole?",o:{"A":"10 सेकंड","B":"12 सेकंड","C":"15 सेकंड","D":"20 सेकंड"},a:"A"},
-{qh:"₹5000 पर 8% वार्षिक दर से 2 वर्ष का साधारण ब्याज (SI) क्या होगा?",qe:"What is SI on Rs 5000 at 8% for 2 years?",o:{"A":"₹800","B":"₹400","C":"₹600","D":"₹1000"},a:"A"},
-{qh:"दो संख्याओं का अनुपात 3:4 है और उनका HCF 5 है। उनका LCM क्या होगा?",qe:"Ratio of two numbers 3:4 and HCF 5. What is LCM?",o:{"A":"15","B":"20","C":"60","D":"45"},a:"C"},
-{qh:"एक समकोण त्रिभुज का आधार 8 सेमी और लंब 6 सेमी है। इसका कर्ण (Hypotenuse) ज्ञात करें।",qe:"Right triangle base 8cm perp 6cm. Find hypotenuse.",o:{"A":"10 सेमी","B":"12 सेमी","C":"14 सेमी","D":"16 सेमी"},a:"A"},
-{qh:"यदि sin θ = 4/5, तो cos θ का मान क्या होगा?",qe:"If sin θ = 4/5, then cos θ?",o:{"A":"3/5","B":"5/3","C":"4/3","D":"3/4"},a:"A"},
-{qh:"प्रथम 5 अभाज्य संख्याओं (Prime numbers) का औसत क्या है?",qe:"Average of first 5 prime numbers?",o:{"A":"5.6","B":"3.6","C":"4.5","D":"6.5"},a:"A"},
-{qh:"₹400 की एक वस्तु को 15% छूट पर बेचा जाता है। विक्रय मूल्य क्या होगा?",qe:"An item Rs 400 sold at 15% discount. Selling price?",o:{"A":"₹360","B":"₹340","C":"₹320","D":"₹350"},a:"B"},
-{qh:"एक वृत्त की परिधि 88 सेमी है। उसकी त्रिज्या क्या होगी? (π=22/7)",qe:"Circumference 88cm. What is radius? (π=22/7)",o:{"A":"7 सेमी","B":"14 सेमी","C":"21 सेमी","D":"28 सेमी"},a:"B"},
-{qh:"एक व्यक्ति ने ₹1500 में एक साइकिल खरीदी और ₹1800 में बेच दी। उसका लाभ प्रतिशत क्या है?",qe:"Person bought cycle Rs1500 sold Rs1800. Profit %?",o:{"A":"15%","B":"20%","C":"25%","D":"18%"},a:"B"},
-{qh:"45 ÷ 5 × 3 + 2 - 1 का सरलीकरण करें।",qe:"Simplify 45 ÷ 5 × 3 + 2 - 1",o:{"A":"28","B":"18","C":"26","D":"24"},a:"A"},
-{qh:"एक समबाहु त्रिभुज की भुजा 4 सेमी है। इसका क्षेत्रफल क्या होगा?",qe:"Side of equilateral triangle 4cm. Area?",o:{"A":"4√3 सेमी²","B":"8√3 सेमी²","C":"16√3 सेमी²","D":"2√3 सेमी²"},a:"A"},
-{qh:"पिता और पुत्र की आयु का अनुपात 4:1 है। 5 वर्ष बाद उनकी आयु का योग 60 वर्ष होगा। पिता की वर्तमान आयु क्या है?",qe:"Father son ratio 4:1. After 5 years sum 60. Father present age?",o:{"A":"36 वर्ष","B":"40 वर्ष","C":"44 वर्ष","D":"32 वर्ष"},a:"B"},
-{qh:"log₁₀ 1000 का मान क्या होगा?",qe:"What is value of log10 1000?",o:{"A":"1","B":"2","C":"3","D":"10"},a:"C"},
-{qh:"एक गोले का आयतन 288π सेमी³ है। इसकी त्रिज्या ज्ञात करें।",qe:"Volume of sphere 288π cm³. Find radius.",o:{"A":"3 सेमी","B":"4 सेमी","C":"6 सेमी","D":"8 सेमी"},a:"C"},
-{qh:"30, 40 और 60 का चतुर्थानुपाती (Fourth proportional) क्या होगा?",qe:"Fourth proportional of 30, 40, 60?",o:{"A":"80","B":"90","C":"100","D":"120"},a:"A"},
-{qh:"यदि एक पासा फेंका जाता है, तो सम संख्या आने की प्रायिकता क्या है?",qe:"If a dice thrown, probability of even number?",o:{"A":"1/3","B":"1/2","C":"1/6","D":"2/3"},a:"B"},
-{qh:"बल (Force) का CGS मात्रक क्या है?",qe:"What is CGS unit of Force?",o:{"A":"न्यूटन","B":"डाइन","C":"जूल","D":"वाट"},a:"B"},
-{qh:"मानव शरीर की सबसे बड़ी ग्रंथि कौन सी है?",qe:"Which is largest gland of human body?",o:{"A":"यकृत (Liver)","B":"अग्नाशय","C":"पीयूष","D":"थायरॉइड"},a:"A"},
-{qh:"निकट दृष्टि दोष (Myopia) को दूर करने के लिए किस लेंस का उपयोग किया जाता है?",qe:"Which lens used to correct Myopia?",o:{"A":"उत्तल","B":"अवतल","C":"बेलनाकार","D":"बाइफोकल"},a:"B"},
-{qh:"कार्य करने की दर को क्या कहते हैं?",qe:"Rate of doing work is called?",o:{"A":"ऊर्जा","B":"शक्ति (Power)","C":"आवेग","D":"संवेग"},a:"B"},
-{qh:"निम्नलिखित में से कौन सी एक नोबल गैस नहीं है?",qe:"Which of following is NOT a noble gas?",o:{"A":"हीलियम","B":"नियॉन","C":"आर्गन","D":"नाइट्रोजन"},a:"D"},
-{qh:"लोहे पर जंग लगना किस प्रकार का परिवर्तन है?",qe:"Rusting of iron is what type of change?",o:{"A":"भौतिक","B":"रासायनिक","C":"जैविक","D":"इनमें से कोई नहीं"},a:"B"},
-{qh:"गुरुत्वीय त्वरण (g) का मान पृथ्वी पर अधिकतम कहाँ होता है?",qe:"Where is value of g maximum on earth?",o:{"A":"भूमध्य रेखा पर","B":"ध्रुवों पर","C":"केंद्र पर","D":"पहाड़ों पर"},a:"B"},
-{qh:"ध्वनि तरंगें किस प्रकार की तरंगें होती हैं?",qe:"What type of waves are sound waves?",o:{"A":"अनुप्रस्थ","B":"अनुदैर्ध्य","C":"विद्युत चुम्बकीय","D":"स्थिर"},a:"B"},
-{qh:"एल्युमिनियम का मुख्य अयस्क कौन सा है?",qe:"Main ore of Aluminium?",o:{"A":"हेमेटाइट","B":"बॉक्साइट","C":"मैग्नेटाइट","D":"गैलेना"},a:"B"},
-{qh:"शुद्ध जल का pH मान कितना होता है?",qe:"What is pH of pure water?",o:{"A":"5","B":"6","C":"7","D":"8"},a:"C"},
-{qh:"Fill in the blank: He is _____ honest man.",qe:"He is _____ honest man.",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"B"},
-{qh:"Choose the correct Preposition: The cat jumped _____ the table.",qe:"The cat jumped _____ the table.",o:{"A":"on","B":"upon","C":"at","D":"in"},a:"B"},
-{qh:"Change the Voice: Open the door.",qe:"Voice: Open the door.",o:{"A":"The door must be opened.","B":"Let the door be opened.","C":"The door is opened.","D":"The door should open."},a:"B"},
-{qh:"Change the Narration: She said to him, Are you okay?",qe:"She said to him, Are you okay?",o:{"A":"She told him that he was okay.","B":"She asked him if he was okay.","C":"She asked him whether are you okay.","D":"She said to him if he is okay."},a:"B"},
-{qh:"Synonym of 'BRAVE':",qe:"Synonym of BRAVE",o:{"A":"Coward","B":"Timid","C":"Valiant","D":"Weak"},a:"C"},
-{qh:"Antonym of 'OPTIMIST':",qe:"Antonym of OPTIMIST",o:{"A":"Pessimist","B":"Positive","C":"Realist","D":"Creator"},a:"A"},
-{qh:"Find the Error: (A) One of my friend / (B) is going / (C) to London.",qe:"Error: One of my friend / is going / to London.",o:{"A":"A (friends होगा)","B":"B","C":"C","D":"No error"},a:"A"},
-{qh:"Find the Error: (A) I have been / (B) knowing him / (C) for ten years.",qe:"Error: I have been / knowing him / for ten years.",o:{"A":"A","B":"B (have known होगा)","C":"C","D":"No error"},a:"B"},
-{qh:"Choose the correct one word: A person who does not believe in God.",qe:"One word: A person who does not believe in God.",o:{"A":"Theist","B":"Atheist","C":"Agnostic","D":"Ascetic"},a:"B"},
-{qh:"Choose the correctly spelt word:",qe:"Correctly spelt word",o:{"A":"Vacuum","B":"Vaccum","C":"Vacum","D":"Vaccuum"},a:"A"},
-{qh:"Fill in the blank (Tense): The train _____ before I reached the station.",qe:"The train _____ before I reached.",o:{"A":"left","B":"has left","C":"had left","D":"was leaving"},a:"C"},
-{qh:"Meaning of the Idiom: To spill the beans",qe:"Idiom: To spill the beans",o:{"A":"To drop something","B":"To reveal a secret","C":"To cook food","D":"To get angry"},a:"B"},
-{qh:"Identify the Adjective: The quick brown fox jumps over the lazy dog.",qe:"Adjective: The quick brown fox...",o:{"A":"jumps","B":"over","C":"quick","D":"fox"},a:"C"},
-{qh:"Fill in the blank with suitable Pronoun: Neither Ram nor his friends brought _____ bags.",qe:"Pronoun: Neither Ram nor his friends...",o:{"A":"his","B":"their","C":"them","D":"its"},a:"B"},
-{qh:"Choose the correct Phrasal Verb: The firemen managed to _____ the fire.",qe:"Phrasal Verb: The firemen managed to _____ the fire.",o:{"A":"put off","B":"put out","C":"put on","D":"put up"},a:"B"},
-{qh:"श्रृंखला पूरी करें: 5, 11, 19, 29, ?",qe:"Series: 5, 11, 19, 29, ?",o:{"A":"39","B":"41","C":"43","D":"45"},a:"B"},
-{qh:"विषम चुनें (Odd one out): गिटार, वायलिन, बांसुरी, सितार",qe:"Odd one: Guitar, Violin, Flute, Sitar",o:{"A":"गिटार","B":"वायलिन","C":"बांसुरी","D":"सितार"},a:"C"},
-{qh:"यदि 'MIND' को 'KGLB' लिखा जाता है, तो 'DIAGRAM' को क्या लिखा जाएगा?",qe:"If MIND=KGLB, then DIAGRAM=? (-2 pattern)",o:{"A":"BGYEPYK","B":"BGYFPYK","C":"BGXEPYK","D":"BGYEPYJ"},a:"A"},
-{qh:"A, B का भाई है। C, B की बहन है। D, A का पिता है। C का D से क्या संबंध है?",qe:"A is brother of B. C is sister of B. D is father of A. Relation C to D?",o:{"A":"भतीजी","B":"पुत्री","C":"पत्नी","D":"बहन"},a:"B"},
-{qh:"एक आदमी दक्षिण की ओर 30 मीटर चलता है, फिर बाएं मुड़कर 20 मीटर, फिर दाएं मुड़कर 30 मीटर। वह अब किस दिशा की ओर सम्मुख है?",qe:"Man goes South 30m, left 20m, right 30m. Facing?",o:{"A":"उत्तर","B":"दक्षिण","C":"पूर्व","D":"पश्चिम"},a:"B"},
-{qh:"सादृश्यता: कुत्ता : भौंकना :: शेर : ?",qe:"Analogy: Dog:Bark :: Lion:?",o:{"A":"दहाड़ना","B":"रंभाना","C":"फुफकारना","D":"मीमियाना"},a:"A"},
-{qh:"यदि 8 × 4 = 32, 6 × 3 = 18, तो 7 × 5 = ?",qe:"If 8×4=32, 6×3=18, then 7×5=?",o:{"A":"30","B":"35","C":"40"  attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;
+{qh:"Q1. 0.008 का घनमूल (Cube root) क्या होगा?",qe:"What will be the cube root of 0.008?",o:{"A":"0.2","B":"0.02","C":"0.002","D":"0.4"},a:"A"},
+{qh:"Q2. एक आयत की लंबाई 10% बढ़ाई गई और चौड़ाई 10% घटाई गई। उसके क्षेत्रफल में कितने प्रतिशत का परिवर्तन होगा?",qe:"Length of rectangle increased 10% and breadth decreased 10%. What % change in area?",o:{"A":"1% वृद्धि","B":"1% कमी","C":"कोई परिवर्तन नहीं","D":"2% कमी"},a:"B"},
+{qh:"Q3. यदि x + 1/x = 5 है, तो x² + 1/x² का मान ज्ञात करें।",qe:"If x + 1/x = 5, find value of x² + 1/x².",o:{"A":"25","B":"23","C":"27","D":"21"},a:"B"},
+{qh:"Q4. 12 पुरुष किसी कार्य को 8 दिन में पूरा कर सकते हैं। उसी कार्य को 16 पुरुष कितने दिन में पूरा करेंगे?",qe:"12 men can complete work in 8 days. In how many days 16 men will complete?",o:{"A":"4 दिन","B":"5 दिन","C":"6 दिन","D":"7 दिन"},a:"C"},
+{qh:"Q5. 72 किमी/घंटा की गति से चल रही एक 200 मीटर लंबी ट्रेन एक खंभे को पार करने में कितना समय लेगी?",qe:"A 200m train at 72 km/h, time to cross a pole?",o:{"A":"10 सेकंड","B":"12 सेकंड","C":"15 सेकंड","D":"20 सेकंड"},a:"A"},
+{qh:"Q6. ₹5000 पर 8% वार्षिक दर से 2 वर्ष का साधारण ब्याज (SI) क्या होगा?",qe:"What is SI on Rs 5000 at 8% for 2 years?",o:{"A":"₹800","B":"₹400","C":"₹600","D":"₹1000"},a:"A"},
+{qh:"Q7. दो संख्याओं का अनुपात 3:4 है और उनका HCF 5 है। उनका LCM क्या होगा?",qe:"Ratio of two numbers 3:4 and HCF 5. What is LCM?",o:{"A":"15","B":"20","C":"60","D":"45"},a:"C"},
+{qh:"Q8. एक समकोण त्रिभुज का आधार 8 सेमी और लंब 6 सेमी है। इसका कर्ण (Hypotenuse) ज्ञात करें।",qe:"Right triangle base 8cm perp 6cm. Find hypotenuse.",o:{"A":"10 सेमी","B":"12 सेमी","C":"14 सेमी","D":"16 सेमी"},a:"A"},
+{qh:"Q9. यदि sin θ = 4/5, तो cos θ का मान क्या होगा?",qe:"If sin θ = 4/5, then cos θ?",o:{"A":"3/5","B":"5/3","C":"4/3","D":"3/4"},a:"A"},
+{qh:"Q10. प्रथम 5 अभाज्य संख्याओं (Prime numbers) का औसत क्या है?",qe:"Average of first 5 prime numbers?",o:{"A":"5.6","B":"3.6","C":"4.5","D":"6.5"},a:"A"},
+{qh:"Q11. ₹400 की एक वस्तु को 15% छूट पर बेचा जाता है। विक्रय मूल्य क्या होगा?",qe:"An item Rs 400 sold at 15% discount. Selling price?",o:{"A":"₹360","B":"₹340","C":"₹320","D":"₹350"},a:"B"},
+{qh:"Q12. एक वृत्त की परिधि 88 सेमी है। उसकी त्रिज्या क्या होगी? (π=22/7)",qe:"Circumference 88cm. What is radius? (π=22/7)",o:{"A":"7 सेमी","B":"14 सेमी","C":"21 सेमी","D":"28 सेमी"},a:"B"},
+{qh:"Q13. एक व्यक्ति ने ₹1500 में एक साइकिल खरीदी और ₹1800 में बेच दी। उसका लाभ प्रतिशत क्या है?",qe:"Person bought cycle Rs1500 sold Rs1800. Profit %?",o:{"A":"15%","B":"20%","C":"25%","D":"18%"},a:"B"},
+{qh:"Q14. 45 ÷ 5 × 3 + 2 - 1 का सरलीकरण करें।",qe:"Simplify 45 ÷ 5 × 3 + 2 - 1",o:{"A":"28","B":"18","C":"26","D":"24"},a:"A"},
+{qh:"Q15. एक समबाहु त्रिभुज की भुजा 4 सेमी है। इसका क्षेत्रफल क्या होगा?",qe:"Side of equilateral triangle 4cm. Area?",o:{"A":"4√3 सेमी²","B":"8√3 सेमी²","C":"16√3 सेमी²","D":"2√3 सेमी²"},a:"A"},
+{qh:"Q16. पिता और पुत्र की आयु का अनुपात 4:1 है। 5 वर्ष बाद उनकी आयु का योग 60 वर्ष होगा। पिता की वर्तमान आयु क्या है?",qe:"Father son ratio 4:1. After 5 years sum 60. Father present age?",o:{"A":"36 वर्ष","B":"40 वर्ष","C":"44 वर्ष","D":"32 वर्ष"},a:"B"},
+{qh:"Q17. log₁₀ 1000 का मान क्या होगा?",qe:"What is value of log10 1000?",o:{"A":"1","B":"2","C":"3","D":"10"},a:"C"},
+{qh:"Q18. एक गोले का आयतन 288π सेमी³ है। इसकी त्रिज्या ज्ञात करें।",qe:"Volume of sphere 288π cm³. Find radius.",o:{"A":"3 सेमी","B":"4 सेमी","C":"6 सेमी","D":"8 सेमी"},a:"C"},
+{qh:"Q19. 30, 40 और 60 का चतुर्थानुपाती (Fourth proportional) क्या होगा?",qe:"Fourth proportional of 30, 40, 60?",o:{"A":"80","B":"90","C":"100","D":"120"},a:"A"},
+{qh:"Q20. यदि एक पासा फेंका जाता है, तो सम संख्या आने की प्रायिकता क्या है?",qe:"If a dice thrown, probability of even number?",o:{"A":"1/3","B":"1/2","C":"1/6","D":"2/3"},a:"B"},
+{qh:"Q21. बल (Force) का CGS मात्रक क्या है?",qe:"What is CGS unit of Force?",o:{"A":"न्यूटन","B":"डाइन","C":"जूल","D":"वाट"},a:"B"},
+{qh:"Q22. मानव शरीर की सबसे बड़ी ग्रंथि कौन सी है?",qe:"Which is largest gland of human body?",o:{"A":"यकृत (Liver)","B":"अग्नाशय","C":"पीयूष","D":"थायरॉइड"},a:"A"},
+{qh:"Q23. निकट दृष्टि दोष (Myopia) को दूर करने के लिए किस लेंस का उपयोग किया जाता है?",qe:"Which lens used to correct Myopia?",o:{"A":"उत्तल","B":"अवतल","C":"बेलनाकार","D":"बाइफोकल"},a:"B"},
+{qh:"Q24. कार्य करने की दर को क्या कहते हैं?",qe:"Rate of doing work is called?",o:{"A":"ऊर्जा","B":"शक्ति (Power)","C":"आवेग","D":"संवेग"},a:"B"},
+{qh:"Q25. निम्नलिखित में से कौन सी एक नोबल गैस नहीं है?",qe:"Which of following is NOT a noble gas?",o:{"A":"हीलियम","B":"नियॉन","C":"आर्गन","D":"नाइट्रोजन"},a:"D"},
+{qh:"Q26. लोहे पर जंग लगना किस प्रकार का परिवर्तन है?",qe:"Rusting of iron is what type of change?",o:{"A":"भौतिक","B":"रासायनिक","C":"जैविक","D":"इनमें से कोई नहीं"},a:"B"},
+{qh:"Q27. गुरुत्वीय त्वरण (g) का मान पृथ्वी पर अधिकतम कहाँ होता है?",qe:"Where is value of g maximum on earth?",o:{"A":"भूमध्य रेखा पर","B":"ध्रुवों पर","C":"केंद्र पर","D":"पहाड़ों पर"},a:"B"},
+{qh:"Q28. ध्वनि तरंगें किस प्रकार की तरंगें होती हैं?",qe:"What type of waves are sound waves?",o:{"A":"अनुप्रस्थ","B":"अनुदैर्ध्य","C":"विद्युत चुम्बकीय","D":"स्थिर"},a:"B"},
+{qh:"Q29. एल्युमिनियम का मुख्य अयस्क कौन सा है?",qe:"Main ore of Aluminium?",o:{"A":"हेमेटाइट","B":"बॉक्साइट","C":"मैग्नेटाइट","D":"गैलेना"},a:"B"},
+{qh:"Q30. शुद्ध जल का pH मान कितना होता है?",qe:"What is pH of pure water?",o:{"A":"5","B":"6","C":"7","D":"8"},a:"C"},
+{qh:"Q31. Fill in the blank: He is _____ honest man.",qe:"He is _____ honest man.",o:{"A":"a","B":"an","C":"the","D":"no article"},a:"B"},
+{qh:"Q32. Choose the correct Preposition: The cat jumped _____ the table.",qe:"The cat jumped _____ the table.",o:{"A":"on","B":"upon","C":"at","D":"in"},a:"B"},
+{qh:"Q33. Change the Voice: Open the door.",qe:"Voice: Open the door.",o:{"A":"The door must be opened.","B":"Let the door be opened.","C":"The door is opened.","D":"The door should open."},a:"B"},
+{qh:"Q34. Change the Narration: She said to him, Are you okay?",qe:"She said to him, Are you okay?",o:{"A":"She told him that he was okay.","B":"She asked him if he was okay.","C":"She asked him whether are you okay.","D":"She said to him if he is okay."},a:"B"},
+{qh:"Q35. Synonym of 'BRAVE':",qe:"Synonym of BRAVE",o:{"A":"Coward","B":"Timid","C":"Valiant","D":"Weak"},a:"C"},
+{qh:"Q36. Antonym of 'OPTIMIST':",qe:"Antonym of OPTIMIST",o:{"A":"Pessimist","B":"Positive","C":"Realist","D":"Creator"},a:"A"},
+{qh:"Q37. Find the Error: (A) One of my friend / (B) is going / (C) to London.",qe:"Error: One of my friend / is going / to London.",o:{"A":"A (friends होगा)","B":"B","C":"C","D":"No error"},a:"A"},
+{qh:"Q38. Find the Error: (A) I have been / (B) knowing him / (C) for ten years.",qe:"Error: I have been / knowing him / for ten years.",o:{"A":"A","B":"B (have known होगा)","C":"C","D":"No error"},a:"B"},
+{qh:"Q39. Choose the correct one word: A person who does not believe in God.",qe:"One word: A person who does not believe in God.",o:{"A":"Theist","B":"Atheist","C":"Agnostic","D":"Ascetic"},a:"B"},
+{qh:"Q40. Choose the correctly spelt word:",qe:"Correctly spelt word",o:{"A":"Vacuum","B":"Vaccum","C":"Vacum","D":"Vaccuum"},a:"A"},
+{qh:"Q41. Fill in the blank (Tense): The train _____ before I reached the station.",qe:"The train _____ before I reached.",o:{"A":"left","B":"has left","C":"had left","D":"was leaving"},a:"C"},
+{qh:"Q42. Meaning of the Idiom: To spill the beans",qe:"Idiom: To spill the beans",o:{"A":"To drop something","B":"To reveal a secret","C":"To cook food","D":"To get angry"},a:"B"},
+{qh:"Q43. Identify the Adjective: The quick brown fox jumps over the lazy dog.",qe:"Adjective: The quick brown fox...",o:{"A":"jumps","B":"over","C":"quick","D":"fox"},a:"C"},
+{qh:"Q44. Fill in the blank with suitable Pronoun: Neither Ram nor his friends brought _____ bags.",qe:"Pronoun: Neither Ram nor his friends...",o:{"A":"his","B":"their","C":"them","D":"its"},a:"B"},
+{qh:"Q45. Choose the correct Phrasal Verb: The firemen managed to _____ the fire.",qe:"Phrasal Verb: The firemen managed to _____ the fire.",o:{"A":"put off","B":"put out","C":"put on","D":"put up"},a:"B"},
+{qh:"Q46. श्रृंखला पूरी करें: 5, 11, 19, 29, ?",qe:"Series: 5, 11, 19, 29, ?",o:{"A":"39","B":"41","C":"43","D":"45"},a:"B"},
+{qh:"Q47. विषम चुनें (Odd one out): गिटार, वायलिन, बांसुरी, सितार",qe:"Odd one: Guitar, Violin, Flute, Sitar",o:{"A":"गिटार","B":"वायलिन","C":"बांसुरी","D":"सितार"},a:"C"},
+{qh:"Q48. यदि 'MIND' को 'KGLB' लिखा जाता है, तो 'DIAGRAM' को क्या लिखा जाएगा?",qe:"If MIND=KGLB, then DIAGRAM=? (-2 pattern)",o:{"A":"BGYEPYK","B":"BGYFPYK","C":"BGXEPYK","D":"BGYEPYJ"},a:"A"},
+{qh:"Q49. A, B का भाई है। C, B की बहन है। D, A का पिता है। C का D से क्या संबंध है?",qe:"A is brother of B. C is sister of B. D is father of A. Relation C to D?",o:{"A":"भतीजी","B":"पुत्री","C":"पत्नी","D":"बहन"},a:"B"},
+{qh:"Q50. एक आदमी दक्षिण की ओर 30 मीटर चलता है, फिर बाएं मुड़कर 20 मीटर, फिर दाएं मुड़कर 30 मीटर। वह अब किस दिशा की ओर सम्मुख है?",qe:"Man goes South 30m, left 20m, right 30m. Facing?",o:{"A":"उत्तर","B":"दक्षिण","C":"पूर्व","D":"पश्चिम"},a:"B"},
+{qh:"Q51. सादृश्यता: कुत्ता : भौंकना :: शेर : ?",qe:"Analogy: Dog:Bark :: Lion:?",o:{"A":"दहाड़ना","B":"रंभाना","C":"फुफकारना","D":"मीमियाना"},a:"A"},
+{qh:"Q52. यदि 8 × 4 = 32, 6 × 3 = 18, तो 7 × 5 = ?",qe:"If 8x4=32, 6x3=18, then 7x5=?",o:{"A":"30","B":"35","C":"40","D":"45"},a:"B"},
+{qh:"Q53. यदि CAT को 24 लिखा जाता है (C=3,A=1,T=20, योग=24), तो DOG को क्या लिखा जाएगा?",qe:"If CAT=24 (sum), then DOG=?",o:{"A":"26","B":"24","C":"28","D":"30"},a:"A"},
+{qh:"Q54. श्रृंखला: 2, 6, 12, 20, 30, ?",qe:"Series: 2, 6, 12, 20, 30, ?",o:{"A":"40","B":"42","C":"44","D":"48"},a:"B"},
+{qh:"Q55. मोहन, सोहन से लंबा है, सोहन, रोहन से लंबा है। सबसे छोटा कौन है?",qe:"Mohan taller than Sohan, Sohan taller than Rohan. Shortest?",o:{"A":"मोहन","B":"सोहन","C":"रोहन","D":"तीनों बराबर"},a:"C"},
+{qh:"Q56. भारतीय तटरक्षक बल (ICG) की स्थापना किस वर्ष हुई थी?",qe:"In which year Indian Coast Guard established?",o:{"A":"1976","B":"1977","C":"1978","D":"1980"},a:"C"},
+{qh:"Q57. भारतीय तटरक्षक बल का आदर्श वाक्य (Motto) क्या है?",qe:"What is motto of Indian Coast Guard?",o:{"A":"वयम् रक्षामः","B":"सत्यमेव जयते","C":"सेवा परमो धर्मः","D":"नभः स्पृशं दीप्तम्"},a:"A"},
+{qh:"Q58. भारत का सबसे लंबा समुद्र तट (Coastline) किस राज्य में है?",qe:"Which state has longest coastline in India?",o:{"A":"महाराष्ट्र","B":"गुजरात","C":"तमिलनाडु","D":"आंध्र प्रदेश"},a:"B"},
+{qh:"Q59. भारतीय तटरक्षक बल का मुख्यालय कहाँ स्थित है?",qe:"Where is HQ of Indian Coast Guard?",o:{"A":"मुंबई","B":"चेन्नई","C":"नई दिल्ली","D":"कोच्चि"},a:"C"},
+{qh:"Q60. भारत में 'राष्ट्रीय समुद्री दिवस' कब मनाया जाता है?",qe:"When is National Maritime Day in India?",o:{"A":"5 अप्रैल","B":"4 दिसंबर","C":"1 फरवरी","D":"15 अगस्त"},a:"A"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt;
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim(); let ok=true;
+  if(n.length<3){nameErr.style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{nameErr.style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){cityErr.style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{cityErr.style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return; localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){
+  if(passInput.value===getPass()){
+    passScreen.style.display='none'; mainTest.style.display='block';
+    tInt=setInterval(()=>{time--;let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;if(time<=0){clearInterval(tInt);submitTest();}},1000);
+    render();
+  }else{passErr.style.display='block';}
+}
+function render(){
+  let q=testData.questions[cur]; qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe;
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h;
+  let attempted=Object.keys(answers).length;
+  attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;
   let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});
   pGrid.innerHTML=pg;
 }
