@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Mission Gyan Exams - ICG Navik Set 4</title>
+<style>
+:root{--bg:#f1f5f9;--card:#ffffff;--text:#0f172a;--border:#e2e8f0;--muted:#64748b}
+body.dark{--bg:#020617;--card:#1e293b;--text:#f1f5f9;--border:#334155;--muted:#94a3b8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,Arial}
+body{background:var(--bg);color:var(--text);transition:all 0.3s ease;line-height:1.5}
+.header{position:sticky;top:0;z-index:100;background:#0f172a;color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #fbbf24}
+.timer{border:2px solid #fecaca;background:#fef2f2;color:#dc2626;padding:6px 14px;border-radius:20px;font-weight:900;font-size:14px}
+.container{max-width:860px;margin:12px auto;padding:0 10px}
+.q-card,.info-card,.p-card,.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 6px 16px rgba(0,0,0,0.06);color:var(--text)}
+.options label{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:9px 0;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-weight:500;background:var(--card);color:var(--text);transition:0.2s}
+.options label:hover{border-color:#fbbf24}
+.options label.sel{border-color:#16a34a!important;background:#dcfce7!important;color:#065f46!important;font-weight:700}
+body.dark .options label.sel{background:#14532d!important;color:#86efac!important;border-color:#22c55e!important}
+.circle{width:32px;height:32px;min-width:32px;border-radius:50%;border:2px solid #94a3b8;background:var(--bg);display:grid;place-items:center;font-weight:900;font-size:14px}
+.btn{padding:12px 10px;border:none;border-radius:10px;font-weight:800;cursor:pointer;font-size:13px;transition:0.2s}
+.btn:active{transform:scale(0.97)}
+.btn-g{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+.btn-y{background:#fef3c7;color:#92400e;border:1px solid #fbbf24}
+.btn-b{background:#1d4ed8;color:#fff;flex:1.6}
+.btn-gr{background:#16a34a;color:#fff;flex:1}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:12px}
+.p{height:40px;background:var(--bg);border:1px solid var(--border);border-radius:9px;display:grid;place-items:center;font-weight:800;cursor:pointer;font-size:14px;color:var(--text)}
+.p.cur{background:#ef4444!important;color:#fff!important;border-color:#ef4444!important;transform:scale(1.1)}
+.p.ans{background:#10b981!important;color:#fff!important;border-color:#10b981!important}
+.p.rev{background:#fbbf24!important;color:#000!important;border-color:#fbbf24!important}
+.overlay{position:fixed;inset:0;display:flex;justify-content:center;align-items:center;z-index:9999;padding:16px;overflow-y:auto}
+#loginScreen{background:rgba(2,6,23,0.92);backdrop-filter:blur(8px)}
+.login-box{width:100%;max-width:400px;background:#0f172a;padding:24px;border-radius:20px;border:2px solid #fbbf24;text-align:center;color:#fff;box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.login-box input{width:100%;padding:13px;border-radius:10px;border:2px solid #fbbf24;margin:8px 0;text-align:center;font-weight:700;font-size:15px;outline:none}
+.err-msg{color:#f87171;font-size:12px;font-weight:700;margin-top:4px;display:none;text-align:left}
+#passScreen{background:rgba(0,0,0,0.96);backdrop-filter:blur(10px)}
+.pass-box{background:linear-gradient(180deg, #7f1d1d, #dc2626);padding:30px;border-radius:18px;text-align:center;width:100%;max-width:400px;border:3px solid yellow;box-shadow:0 0 30px rgba(255,255,0,0.3)}
+.score-card{width:100%;max-width:440px;background:var(--card);border-radius:24px;padding:22px;color:var(--text);max-height:95vh;overflow-y:auto;border:1px solid var(--border)}
+.review-page{position:fixed;inset:0;background:var(--bg);z-index:10000;overflow-y:auto;padding:12px;display:none}
+.opt-item{padding:11px 12px;border:2px solid var(--border);border-radius:10px;margin:6px 0;display:flex;gap:10px;align-items:center;background:var(--card);color:var(--text);font-size:14px}
+.opt-item.correct-opt{background:#dcfce7!important;border-color:#16a34a!important;color:#065f46!important;font-weight:700}
+.opt-item.wrong-opt{background:#fee2e2!important;border-color:#ef4444!important;color:#991b1b!important;font-weight:700}
+body.dark .opt-item.correct-opt{background:#14532d!important;border-color:#22c55e!important;color:#bbf7d0!important}
+body.dark .opt-item.wrong-opt{background:#450a0a!important;border-color:#ef4444!important;color:#fecaca!important}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:900;display:inline-block}
+.badge-correct{background:#dcfce7;color:#065f46}.badge-wrong{background:#fee2e2;color:#991b1b}.badge-skip{background:#fef3c7;color:#92400e}
+body.dark .badge-correct{background:#14532d;color:#86efac}body.dark .badge-wrong{background:#7f1d1d;color:#fecaca}body.dark .badge-skip{background:#78350f;color:#fde68a}
+#qHi{font-size:17px;line-height:1.4} #qEn{font-size:13px;color:var(--muted)}
+.sec-badge{background:#fbbf24;color:#000;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:900}
+</style>
+</head>
+<body>
+<div class="header">
+<b style="color:#fbbf24;letter-spacing:0.5px">⚓ MISSION GYAN EXAMS</b>
+<div style="display:flex;gap:8px;align-items:center">
+<div class="timer">⏱️ <span id="timer">45:00</span></div>
+<button onclick="document.body.classList.toggle('dark')" style="width:38px;height:38px;border-radius:50%;border:2px solid #334155;background:#1e293b;color:#fbbf24;font-size:16px">🌙</button>
+</div>
+</div>
+<div class="overlay" id="loginScreen">
+<div class="login-box">
+<h2 style="color:#fbbf24;margin-bottom:4px">👋 Welcome ICG Aspirant</h2>
+<p style="color:#94a3b8;font-size:12px;margin-bottom:14px">SET 4 | Enter your name and district; only then will the test begin.</p>
+<input id="stuName" placeholder="अपना पूरा नाम *">
+<div id="nameErr" class="err-msg">❌ कृपया अपना नाम भरें</div>
+<input id="stuCity" placeholder="अपना जिला / शहर *">
+<div id="cityErr" class="err-msg">❌ कृपया अपना जिला भरें</div>
+<button onclick="doLogin()" style="width:100%;padding:13px;background:#fbbf24;border:none;border-radius:12px;font-weight:900;margin-top:14px;color:#000;font-size:15px;cursor:pointer">Continue & Unlock Test →</button>
+<p style="font-size:10px;color:#64748b;margin-top:10px">🔒 Secure Test by Mission Gyan Exams</p>
+</div>
+</div>
+<div class="overlay" id="passScreen" style="display:none">
+<div class="pass-box">
+<h2 style="color:yellow;margin-bottom:6px">🔥 TEST LOCKED - SET 4 🔥</h2>
+<p style="color:white;font-size:13px;margin-bottom:12px">Enter the password first.</p>
+<input type="password" id="passInput" placeholder="Password" style="width:100%;padding:13px;border:3px solid yellow;border-radius:8px;text-align:center;font-weight:900;font-size:15px;outline:none">
+<button onclick="checkPass()" style="width:100%;padding:13px;background:yellow;color:#8B0000;border:none;border-radius:8px;font-weight:900;margin-top:12px;font-size:15px;cursor:pointer">UNLOCK & START TEST NOW</button>
+<p id="passErr" style="color:yellow;display:none;margin-top:10px;font-weight:800">❌ Wrong Password!</p>
+</div>
+</div>
+<div class="container" id="mainTest" style="display:none">
+<div class="info-card" style="border-left:5px solid #fbbf24"><b>⚓ ICG Navik (DB/GD) Section I | SET 4 Full Mock Test</b><br><small style="color:var(--muted)">Maths 20 + Science 10 + English 15 + Reasoning 10 + GK 5 | <span id="attemptInfo">0/60 Attempted</span> | No Negative Marking | Correct = +1, Wrong = 0</small></div>
+<div class="q-card">
+<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#2563eb;font-size:13px">QUESTION <span id="qNo">1</span> / 60</b><span class="sec-badge" id="secBadge">MATHS</span></div>
+<div id="qHi"></div>
+<div id="qEn"></div>
+<div id="optBox" class="options"></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px">
+<button class="btn btn-g" onclick="prevQ()">← Prev</button>
+<button class="btn btn-g" onclick="clearAns()">Clear</button>
+<button class="btn btn-y" onclick="markRev()">☆ Review</button>
+</div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn btn-b" onclick="saveNext()">Save & Next →</button>
+<button class="btn btn-gr" onclick="submitTest()">Submit Test</button>
+</div>
+</div>
+<div class="p-card"><div style="display:flex;justify-content:space-between"><b style="font-size:14px">Question Palette</b><small style="color:var(--muted)" id="paletteInfo">Green=Answered, Yellow=Review</small></div><div class="p-grid" id="pGrid"></div></div>
+</div>
+<div class="overlay" id="scoreOverlay" style="display:none;background:rgba(2,6,23,0.90);backdrop-filter:blur(6px)">
+<div class="score-card">
+<div style="text-align:center">
+<div style="background:#dbeafe;color:#1d4ed8;font-weight:900;font-size:11px;padding:6px 14px;border-radius:20px;display:inline-block;letter-spacing:0.5px">SCORECARD - SET 4 | ICG Pattern (No Negative)</div>
+<div id="scoreMsg" style="font-size:22px;font-weight:900;margin:10px 0"></div>
+<div style="font-size:48px;font-weight:900;color:#1d4ed8;line-height:1"><span id="sBig">0</span><span style="font-size:18px;color:var(--muted)"> /60</span></div>
+<div style="color:var(--muted);font-size:12px;margin-top:4px" id="stuInfoShow"></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:16px 0">
+<div style="background:#dcfce7;padding:12px;border-radius:12px;text-align:center"><b id="sCor" style="font-size:18px;color:#065f46">0</b><br><small style="color:#065f46">Correct (+1)</small></div>
+<div style="background:#fee2e2;padding:12px;border-radius:12px;text-align:center"><b id="sWro" style="font-size:18px;color:#991b1b">0</b><br><small style="color:#991b1b">Wrong (0)</small></div>
+<div style="background:#fef3c7;padding:12px;border-radius:12px;text-align:center"><b id="sSkip" style="font-size:18px;color:#92400e">0</b><br><small style="color:#92400e">Skipped</small></div>
+</div>
+<button onclick="openReview()" style="width:100%;background:#0f172a;color:#fbbf24;padding:15px;border:none;border-radius:12px;font-weight:900;border:2px solid #fbbf24;font-size:14px;cursor:pointer">📝 View Detailed Analysis - Sahi / Galat Dekho</button>
+<button onclick="retake()" style="width:100%;background:var(--bg);color:var(--text);padding:13px;border:1px solid var(--border);border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer">🔄 Retake Test</button>
+</div>
+</div>
+<div class="review-page" id="reviewPage">
+<div style="max-width:860px;margin:auto">
+<div style="position:sticky;top:0;background:var(--card);padding:14px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;border:2px solid #fbbf24;margin-bottom:12px;z-index:10;box-shadow:0 8px 20px rgba(0,0,0,0.15)">
+<b style="font-size:15px">📝 Detailed Analysis - SET 4</b>
+<button onclick="closeReview()" style="background:#ef4444;color:white;border:none;padding:9px 16px;border-radius:8px;font-weight:800;cursor:pointer">✕ Close</button>
+</div>
+<div id="reviewList"></div>
+</div>
+</div>
+<script>
+const _pCode=[77,71,69,64,49,50,51];
+function getPass(){return String.fromCharCode.apply(null,_pCode);}
+document.addEventListener('contextmenu',e=>{if(document.getElementById('mainTest').style.display!=='none') e.preventDefault();});
+document.addEventListener('copy',e=>{if(document.getElementById('mainTest').style.display!=='none') e.preventDefault();});
+const testData={questions:[
+{qh:"कोई धनराशि साधारण ब्याज (SI) की किस दर से 8 वर्ष में दोगुनी हो जाएगी?",qe:"At what SI rate will a sum double in 8 years?",sec:"MATHS",o:{"A":"10%","B":"12.5%","C":"15%","D":"20%"},a:"B"},
+{qh:"A किसी काम को 6 दिनों में और B उसी काम को 8 दिनों में कर सकता है। दोनों मिलकर उस काम को कितने दिनों में पूरा करेंगे?",qe:"A does work in 6 days, B in 8 days. Together in how many days?",sec:"MATHS",o:{"A":"3 3/7 दिन","B":"3 1/2 दिन","C":"4 दिन","D":"4 1/2 दिन"},a:"A"},
+{qh:"यदि किसी वस्तु का क्रय मूल्य (CP), उसके विक्रय मूल्य (SP) का 4/5 है, तो लाभ प्रतिशत (Profit %) क्या होगा?",qe:"If CP is 4/5 of SP, Profit %?",sec:"MATHS",o:{"A":"15%","B":"20%","C":"25%","D":"30%"},a:"C"},
+{qh:"एक आयत (Rectangle) की लंबाई 15 सेमी और चौड़ाई 8 सेमी है। इसके विकर्ण (Diagonal) की लंबाई ज्ञात करें।",qe:"Rectangle length 15cm breadth 8cm. Find diagonal.",sec:"MATHS",o:{"A":"17 सेमी","B":"19 सेमी","C":"21 सेमी","D":"23 सेमी"},a:"A"},
+{qh:"यदि x + y = 10 और x - y = 4 है, तो xy का मान क्या होगा?",qe:"If x+y=10 and x-y=4, find xy.",sec:"MATHS",o:{"A":"20","B":"21","C":"24","D":"25"},a:"B"},
+{qh:"3 के प्रथम 5 गुणजों (Multiples) का औसत (Average) क्या होगा?",qe:"Average of first 5 multiples of 3?",sec:"MATHS",o:{"A":"6","B":"9","C":"12","D":"15"},a:"B"},
+{qh:"सरलीकरण (Simplification) करें: 50 - [20 + {10 - (5 - 2)}] = ?",qe:"Simplify: 50 - [20 + {10 - (5 - 2)}] = ?",sec:"MATHS",o:{"A":"21","B":"23","C":"25","D":"27"},a:"B"},
+{qh:"एक शंकु (Cone) के आधार की त्रिज्या 7 सेमी और ऊंचाई 12 सेमी है। इसका आयतन (Volume) क्या होगा? (π = 22/7)",qe:"Cone radius 7cm height 12cm. Volume? (π=22/7)",sec:"MATHS",o:{"A":"616 सेमी³","B":"1232 सेमी³","C":"462 सेमी³","D":"308 सेमी³"},a:"A"},
+{qh:"sin² 45° + cos² 45° का मान क्या होगा?",qe:"Value of sin² 45° + cos² 45°?",sec:"MATHS",o:{"A":"0","B":"1/2","C":"1","D":"2"},a:"C"},
+{qh:"यदि A : B = 2 : 3 और B : C = 3 : 4 है, तो A : C का अनुपात क्या होगा?",qe:"If A:B=2:3 and B:C=3:4, then A:C?",sec:"MATHS",o:{"A":"1 : 2","B":"2 : 3","C":"3 : 4","D":"1 : 4"},a:"A"},
+{qh:"एक पिता की आयु उसके पुत्र की आयु की 3 गुनी है। 5 वर्ष पहले पिता की आयु पुत्र की आयु की 4 गुनी थी। पुत्र की वर्तमान आयु क्या है?",qe:"Father age 3 times son. 5 years ago father 4 times son. Son present age?",sec:"MATHS",o:{"A":"10 वर्ष","B":"15 वर्ष","C":"20 वर्ष","D":"25 वर्ष"},a:"B"},
+{qh:"यदि किसी संख्या का 15%, 45 के बराबर है, तो वह संख्या क्या है?",qe:"15% of a number is 45. Number?",sec:"MATHS",o:{"A":"250","B":"300","C":"350","D":"400"},a:"B"},
+{qh:"दो संख्याओं का अनुपात 3:5 है और उनका लघुत्तम समापवर्त्य (LCM) 225 है। उनमें से छोटी संख्या ज्ञात करें।",qe:"Ratio of two numbers 3:5, LCM 225. Find smaller number.",sec:"MATHS",o:{"A":"30","B":"45","C":"60","D":"75"},a:"B"},
+{qh:"150 मीटर लंबी एक ट्रेन एक खंभे को 10 सेकंड में पार करती है। ट्रेन की गति किमी/घंटा (km/h) में क्या है?",qe:"150m train crosses pole in 10 sec. Speed in km/h?",sec:"MATHS",o:{"A":"45 किमी/घंटा","B":"50 किमी/घंटा","C":"54 किमी/घंटा","D":"60 किमी/घंटा"},a:"C"},
+{qh:"प्रथम 10 विषम प्राकृत संख्याओं (Odd natural numbers) का योग क्या होगा?",qe:"Sum of first 10 odd natural numbers?",sec:"MATHS",o:{"A":"90","B":"100","C":"110","D":"120"},a:"B"},
+{qh:"40 लीटर के एक मिश्रण में दूध और पानी का अनुपात 3:1 है। इस मिश्रण में कितना पानी (लीटर में) और मिलाया जाए कि नया अनुपात 2:1 हो जाए?",qe:"40 litre mixture milk:water 3:1. How much water added to make ratio 2:1?",sec:"MATHS",o:{"A":"5 लीटर","B":"10 लीटर","C":"15 लीटर","D":"20 लीटर"},a:"A"},
+{qh:"एक षट्भुज (Hexagon) के सभी अंतःकोणों (Interior angles) का योग कितना होता है?",qe:"Sum of interior angles of Hexagon?",sec:"MATHS",o:{"A":"540°","B":"720°","C":"900°","D":"1080°"},a:"B"},
+{qh:"दो पासे (Dice) एक साथ उछाले जाते हैं। दोनों पासों पर आने वाले अंकों का योग 7 होने की प्रायिकता (Probability) क्या है?",qe:"Two dice thrown. Probability sum is 7?",sec:"MATHS",o:{"A":"1/6","B":"1/12","C":"1/36","D":"1/3"},a:"A"},
+{qh:"√0.0004 का मान क्या होगा?",qe:"Value of √0.0004?",sec:"MATHS",o:{"A":"0.002","B":"0.02","C":"0.2","D":"0.04"},a:"B"},
+{qh:"शांत जल में नाव की गति 8 किमी/घंटा है और धारा की गति 3 किमी/घंटा है। धारा की दिशा (Downstream) में नाव की गति क्या होगी?",qe:"Boat speed in still water 8 km/h, stream 3 km/h. Downstream speed?",sec:"MATHS",o:{"A":"5 किमी/घंटा","B":"8 किमी/घंटा","C":"11 किमी/घंटा","D":"14 किमी/घंटा"},a:"C"},
+{qh:"'प्रकाश वर्ष' (Light Year) किसकी इकाई है?",qe:"Light Year is unit of?",sec:"SCIENCE",o:{"A":"समय (Time)","B":"दूरी (Distance)","C":"प्रकाश की तीव्रता (Intensity of light)","D":"द्रव्यमान (Mass)"},a:"B"},
+{qh:"'लॉफिंग गैस' (Laughing Gas) का रासायनिक नाम क्या है?",qe:"Chemical name of Laughing Gas?",sec:"SCIENCE",o:{"A":"नाइट्रोजन डाइऑक्साइड","B":"नाइट्रस ऑक्साइड","C":"नाइट्रिक ऑक्साइड","D":"अमोनियम नाइट्रेट"},a:"B"},
+{qh:"किस रक्त समूह (Blood Group) को 'सार्वभौमिक दाता' (Universal Donor) कहा जाता है?",qe:"Which Blood Group is Universal Donor?",sec:"SCIENCE",o:{"A":"A","B":"B","C":"AB","D":"O"},a:"D"},
+{qh:"गतिज ऊर्जा (Kinetic Energy) का सूत्र क्या होता है?",qe:"Formula of Kinetic Energy?",sec:"SCIENCE",o:{"A":"mgh","B":"1/2 mv²","C":"ma","D":"1/2 mgh"},a:"B"},
+{qh:"निम्नलिखित में से किस धातु को किरोसिन (मिट्टी के तेल) में डुबो कर रखा जाता है?",qe:"Which metal is kept in Kerosene?",sec:"SCIENCE",o:{"A":"मैग्नीशियम","B":"सोडियम (Sodium)","C":"कैल्शियम","D":"एल्युमीनियम"},a:"B"},
+{qh:"कौन सा विटामिन जल में घुलनशील (Water-soluble) है?",qe:"Which vitamin is Water-soluble?",sec:"SCIENCE",o:{"A":"विटामिन A","B":"विटामिन C","C":"विटामिन D","D":"विटामिन K"},a:"B"},
+{qh:"प्रत्यावर्ती धारा (AC) को दिष्ट धारा (DC) में बदलने वाले उपकरण को क्या कहते हैं?",qe:"Device to convert AC to DC?",sec:"SCIENCE",o:{"A":"ट्रांसफार्मर","B":"जनरेटर","C":"रेक्टिफायर (Rectifier)","D":"मोटर"},a:"C"},
+{qh:"दाब (Pressure) की SI इकाई क्या है?",qe:"SI unit of Pressure?",sec:"SCIENCE",o:{"A":"जूल (Joule)","B":"न्यूटन (Newton)","C":"पास्कल (Pascal)","D":"वाट (Watt)"},a:"C"},
+{qh:"लाल रक्त कणिकाओं (RBC) का जीवनकाल लगभग कितने दिनों का होता है?",qe:"Lifespan of RBC?",sec:"SCIENCE",o:{"A":"60 दिन","B":"90 दिन","C":"120 दिन","D":"150 दिन"},a:"C"},
+{qh:"रॉकेट का प्रक्षेपण न्यूटन के किस नियम पर आधारित है?",qe:"Rocket launching is based on which Newton's Law?",sec:"SCIENCE",o:{"A":"प्रथम नियम","B":"द्वितीय नियम","C":"तृतीय नियम","D":"गुरुत्वाकर्षण नियम"},a:"C"},
+{qh:"Fill in the blank: _____ sun rises in the east.",qe:"Fill: _____ sun rises in the east.",sec:"ENGLISH",o:{"A":"A","B":"An","C":"The","D":"No article"},a:"C"},
+{qh:"Choose the correct Preposition: He died _____ malaria.",qe:"Preposition: He died _____ malaria.",sec:"ENGLISH",o:{"A":"from","B":"of","C":"with","D":"by"},a:"B"},
+{qh:"Change the Voice: They have completed the work.",qe:"Voice: They have completed the work.",sec:"ENGLISH",o:{"A":"The work is completed by them.","B":"The work has been completed by them.","C":"The work was completed by them.","D":"The work had been completed by them."},a:"B"},
+{qh:"Change the Narration: He said, 'I am reading a book.'",qe:"Narration: He said, 'I am reading a book.'",sec:"ENGLISH",o:{"A":"He said that he was reading a book.","B":"He said that he is reading a book.","C":"He told that he was reading a book.","D":"He asked if he was reading a book."},a:"A"},
+{qh:"Synonym of 'PROHIBIT':",qe:"Synonym of PROHIBIT",sec:"ENGLISH",o:{"A":"Allow","B":"Forbid","C":"Support","D":"Promote"},a:"B"},
+{qh:"Antonym of 'BARREN':",qe:"Antonym of BARREN",sec:"ENGLISH",o:{"A":"Empty","B":"Fertile","C":"Dry","D":"Rough"},a:"B"},
+{qh:"Find the Error: (A) Mathematics / (B) are a / (C) difficult subject. / (D) No error.",qe:"Error: Mathematics / are a / difficult subject.",sec:"ENGLISH",o:{"A":"A","B":"B (is होगा)","C":"C","D":"No error"},a:"B"},
+{qh:"Find the Error: (A) I am looking / (B) forward to / (C) meet you. / (D) No error.",qe:"Error: I am looking / forward to / meet you.",sec:"ENGLISH",o:{"A":"A","B":"B","C":"C (meeting होगा)","D":"No error"},a:"C"},
+{qh:"Choose the correct one word: A list of books.",qe:"One word: A list of books.",sec:"ENGLISH",o:{"A":"Library","B":"Catalogue","C":"Index","D":"Dictionary"},a:"B"},
+{qh:"Choose the correctly spelt word:",qe:"Correctly spelt word",sec:"ENGLISH",o:{"A":"Leiftenant","B":"Leutenant","C":"Lieutenant","D":"Lieutanant"},a:"C"},
+{qh:"Fill in the blank (Tense): By this time tomorrow, I _____ home.",qe:"Tense: By this time tomorrow, I _____ home.",sec:"ENGLISH",o:{"A":"will reach","B":"reached","C":"had reached","D":"will have reached"},a:"D"},
+{qh:"Meaning of the Idiom: A bed of roses",qe:"Idiom: A bed of roses",sec:"ENGLISH",o:{"A":"A flower bed","B":"A difficult situation","C":"A comfortable and easy situation","D":"A painful experience"},a:"C"},
+{qh:"Identify the Adjective: This book is _____ than that one.",qe:"Adjective: This book is _____ than that one.",sec:"ENGLISH",o:{"A":"good","B":"better","C":"best","D":"more good"},a:"B"},
+{qh:"Fill in the blank with suitable Pronoun: The boy _____ stole my purse was caught.",qe:"Pronoun: The boy _____ stole my purse was caught.",sec:"ENGLISH",o:{"A":"which","B":"who","C":"whom","D":"whose"},a:"B"},
+{qh:"Choose the correct Phrasal Verb: Never give _____ hope.",qe:"Phrasal Verb: Never give _____ hope.",sec:"ENGLISH",o:{"A":"in","B":"out","C":"away","D":"up"},a:"D"},
+{qh:"श्रृंखला पूरी करें: 5, 12, 26, 54, ?",qe:"Series: 5, 12, 26, 54, ?",sec:"REASONING",o:{"A":"108","B":"110","C":"112","D":"116"},a:"B"},
+{qh:"विषम चुनें (Odd one out):",qe:"Odd one out",sec:"REASONING",o:{"A":"आँख (Eye)","B":"कान (Ear)","C":"नाक (Nose)","D":"हृदय (Heart)"},a:"D"},
+{qh:"यदि किसी कूट भाषा में 'BOOK' को 43 लिखा जाता है, तो 'READ' को क्या लिखा जाएगा? (A=1, B=2...)",qe:"If BOOK=43, then READ=?",sec:"REASONING",o:{"A":"26","B":"28","C":"30","D":"32"},a:"B"},
+{qh:"एक लड़के की ओर इशारा करते हुए एक महिला ने कहा, 'वह मेरी माता की इकलौती पुत्री का पुत्र है।' वह महिला उस लड़के की क्या लगती है?",qe:"Woman pointing to boy: He is son of my mother's only daughter. Relation?",sec:"REASONING",o:{"A":"चाची","B":"बहन","C":"माँ","D":"नानी"},a:"C"},
+{qh:"एक आदमी उत्तर दिशा (North) की ओर 5 किमी चलता है, फिर दाएँ मुड़कर 3 किमी चलता है, और फिर से दाएँ मुड़कर 5 किमी चलता है। वह अपने प्रारंभिक बिंदु से कितनी दूरी पर है?",qe:"Man walks North 5km, right 3km, right 5km. Distance from start?",sec:"REASONING",o:{"A":"2 किमी","B":"3 किमी","C":"5 किमी","D":"8 किमी"},a:"B"},
+{qh:"सादृश्यता (Analogy): पक्षी (Bird) : पंख (Wing) :: मछली (Fish) : ?",qe:"Analogy: Bird : Wing :: Fish : ?",sec:"REASONING",o:{"A":"पूँछ (Tail)","B":"पानी (Water)","C":"गलफड़े (Gills)","D":"मीनपक्ष (Fin)"},a:"D"},
+{qh:"यदि 'L' का अर्थ '+', 'M' का अर्थ '-', 'N' का अर्थ '×', और 'P' का अर्थ '÷' है, तो 10 N 5 P 1 L 5 M 2 = ?",qe:"If L=+, M=-, N=x, P=÷, then 10 N 5 P 1 L 5 M 2 = ?",sec:"REASONING",o:{"A":"50","B":"53","C":"55","D":"60"},a:"B"},
+{qh:"शब्दों को तार्किक क्रम में व्यवस्थित करें: 1. पुलिस 2. सजा (Punishment) 3. अपराध (Crime) 4. न्यायाधीश (Judge) 5. फैसला (Judgment)",qe:"Logical order: 1.Police 2.Punishment 3.Crime 4.Judge 5.Judgment",sec:"REASONING",o:{"A":"3, 1, 4, 5, 2","B":"1, 3, 4, 2, 5","C":"3, 1, 2, 4, 5","D":"1, 2, 3, 4, 5"},a:"A"},
+{qh:"लुप्त अक्षर ज्ञात करें: A, Z, B, Y, C, X, D, ?",qe:"Missing letter: A, Z, B, Y, C, X, D, ?",sec:"REASONING",o:{"A":"V","B":"W","C":"U","D":"T"},a:"B"},
+{qh:"वेन आरेख (Venn Diagram): 'पेशेवर (Professionals), डॉक्टर (Doctors), और वकील (Lawyers)' के बीच सही संबंध क्या है?",qe:"Venn: Professionals, Doctors, Lawyers relation?",sec:"REASONING",o:{"A":"तीनों अलग-अलग वृत्त","B":"एक बड़े वृत्त के अंदर दो अलग-अलग छोटे वृत्त","C":"एक के अंदर एक वृत्त","D":"तीनों आपस में आंशिक रूप से जुड़े हुए"},a:"B"},
+{qh:"भारत का सर्वोच्च नागरिक सम्मान (Highest Civilian Award) कौन सा है?",qe:"Highest Civilian Award of India?",sec:"GK",o:{"A":"पद्म विभूषण","B":"भारत रत्न","C":"अशोक चक्र","D":"परमवीर चक्र"},a:"B"},
+{qh:"गुजरात (Gujarat) की राजधानी क्या है?",qe:"Capital of Gujarat?",sec:"GK",o:{"A":"अहमदाबाद","B":"सूरत","C":"गांधीनगर","D":"राजकोट"},a:"C"},
+{qh:"'डिस्कवरी ऑफ इंडिया' (Discovery of India) पुस्तक के लेखक कौन हैं?",qe:"Author of Discovery of India?",sec:"GK",o:{"A":"महात्मा गांधी","B":"सुभाष चंद्र बोस","C":"जवाहरलाल नेहरू","D":"सरदार वल्लभभाई पटेल"},a:"C"},
+{qh:"स्वतंत्र भारत के प्रथम राष्ट्रपति (First President) कौन थे?",qe:"First President of Independent India?",sec:"GK",o:{"A":"डॉ. सर्वपल्ली राधाकृष्णन","B":"डॉ. राजेंद्र प्रसाद","C":"पंडित जवाहरलाल नेहरू","D":"सी. राजगोपालाचारी"},a:"B"},
+{qh:"'डेविस कप' (Davis Cup) किस खेल से संबंधित है?",qe:"Davis Cup related to which sport?",sec:"GK",o:{"A":"बैडमिंटन","B":"टेनिस (Tennis)","C":"गोल्फ","D":"फुटबॉल"},a:"B"}
+]};
+let cur=0,answers={},reviews=new Set(),time=45*60,tInt,order=[];
+function saveState(){try{localStorage.setItem("mgj_state4",JSON.stringify({cur,answers,reviews:[...reviews],time,order}));}catch(e){}}
+function loadState(){try{let s=JSON.parse(localStorage.getItem("mgj_state4")||"null"); if(s&&s.order&&s.order.length===60){cur=s.cur||0;answers=s.answers||{};reviews=new Set(s.reviews||[]);time=s.time||45*60;order=s.order;return true;}}catch(e){} return false;}
+function makeOrder(){order=Array.from({length:60},(_,i)=>i); for(let i=order.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1)); let t=order[i];order[i]=order[j];order[j]=t;} }
+function doLogin(){
+  let n=stuName.value.trim(), c=stuCity.value.trim();
+  let ok=true;
+  if(n.length<3){document.getElementById('nameErr').style.display='block';stuName.style.borderColor='#ef4444';ok=false;}else{document.getElementById('nameErr').style.display='none';stuName.style.borderColor='#22c55e';}
+  if(c.length<2){document.getElementById('cityErr').style.display='block';stuCity.style.borderColor='#ef4444';ok=false;}else{document.getElementById('cityErr').style.display='none';stuCity.style.borderColor='#22c55e';}
+  if(!ok) return;
+  localStorage.setItem("mgj_name",n); localStorage.setItem("mgj_city",c);
+  loginScreen.style.display='none'; passScreen.style.display='flex';
+}
+function checkPass(){
+  if(passInput.value===getPass()){
+    passScreen.style.display='none'; mainTest.style.display='block';
+    if(!loadState()){ makeOrder(); }
+    startTimer(); render();
+  }else{passErr.style.display='block';}
+}
+function startTimer(){
+  if(tInt) clearInterval(tInt);
+  updateTimerText();
+  tInt=setInterval(()=>{time--; updateTimerText(); saveState(); if(time<=0){clearInterval(tInt);submitTest();} if(time==60)alert("⚠️ Last 1 Minute Left!");},1000);
+}
+function updateTimerText(){let m=Math.floor(time/60),s=time%60;timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;}
+function getQ(){return testData.questions[order[cur]];}
+function render(){
+  let q=getQ();
+  qNo.innerText=cur+1; qHi.innerText=q.qh; qEn.innerText=q.qe; secBadge.innerText=q.sec||"";
+  let h=""; for(let k in q.o){let sel=answers[cur]==k; h+=`<label class="${sel?'sel':''}" onclick="selAns('${k}')"><div class="circle">${k}</div><div>${q.o[k]}</div></label>`}
+  optBox.innerHTML=h;
+  let attempted=Object.keys(answers).length;
+  attemptInfo.innerText=`${attempted}/${testData.questions.length} Attempted`;
+  let pg=""; testData.questions.forEach((_,i)=>{let cl="p"; if(i==cur)cl+=" cur"; else if(reviews.has(i))cl+=" rev"; else if(answers[i]!=undefined)cl+=" ans"; pg+=`<div class="${cl}" onclick="jumpQ(${i})">${i+1}</div>`});
+  pGrid.innerHTML=pg; saveState();
+}
+function selAns(k){answers[cur]=k; render();}
+function clearAns(){delete answers[cur]; render();}
+function markRev(){if(reviews.has(cur))reviews.delete(cur);else reviews.add(cur);render();}
+function saveNext(){if(cur<testData.questions.length-1){cur++;render();window.scrollTo({top:0,behavior:'smooth'});}else submitTest();}
+function prevQ(){if(cur>0){cur--;render();}}
+function jumpQ(i){cur=i;render();window.scrollTo({top:0,behavior:'smooth'});}
+function submitTest(){
+  let attempted=Object.keys(answers).length;
+  if(attempted<5 && time>60){if(!confirm(`⚠️ Aapne sirf ${attempted} questions kiye hain! Kya sach me submit karna hai?`))return;}
+  clearInterval(tInt);
+  let cor=0,wro=0,skip=0;
+  testData.questions.forEach((_,pos)=>{
+    let realIdx=order[pos]; let q=testData.questions[realIdx]; let u=answers[pos];
+    if(u==undefined)skip++; else if(u==q.a)cor++; else wro++;
+  });
+  sCor.innerText=cor; sWro.innerText=wro; sSkip.innerText=skip; sBig.innerText=cor;
+  scoreMsg.innerText=cor>=48?"Excellent! Topper Ho 🔥":cor>=36?"Bahut Badhiya! 🚀":cor>=20?"Theek Hai, Aur Mehnat Karo 💪":"Practice Jaruri Hai 📚";
+  stuInfoShow.innerText=`${localStorage.getItem("mgj_name")} | ${localStorage.getItem("mgj_city")} | ${new Date().toLocaleDateString()}`;
+  scoreOverlay.style.display='flex';
+  buildReview();
+  localStorage.removeItem("mgj_state4");
+}
+function buildReview(){
+  let html=""; testData.questions.forEach((_,pos)=>{
+    let realIdx=order[pos]; let q=testData.questions[realIdx];
+    let u=answers[pos]; let correct=u==q.a; let status=u==undefined?"Not Attempted":correct?"Correct":"Wrong";
+    let badgeClass=u==undefined?"badge-skip":correct?"badge-correct":"badge-wrong"; let icon=u==undefined?"⚠️":correct?"✅":"❌";
+    html+=`<div class="review-card" style="border-left:6px solid ${correct?'#16a34a':u==undefined?'#fbbf24':'#ef4444'}">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><b style="color:#2563eb">Q ${pos+1} • ${q.sec}</b><span class="badge ${badgeClass}">${icon} ${status}</span></div>
+    <div style="font-weight:700;font-size:15px;margin-bottom:4px">${q.qh}</div>
+    <div style="color:var(--muted);font-size:12px;margin-bottom:10px">${q.qe}</div>`;
+    for(let k in q.o){
+      let cls="opt-item"; if(k==q.a)cls+=" correct-opt"; else if(k==u && u!=q.a)cls+=" wrong-opt";
+      html+=`<div class="${cls}"><b>${k}.</b> ${q.o[k]} ${k==q.a?'✔️ Correct Answer':''} ${k==u && k!=q.a?'❌ Your Answer':''}</div>`;
+    }
+    html+=`<div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:8px;font-size:12px;display:flex;justify-content:space-between"><span><b>Your:</b> ${u||'Not Attempted'}</span><span><b>Correct:</b> ${q.a} (${q.o[q.a]})</span></div></div>`;
+  });
+  reviewList.innerHTML=html;
+}
+function openReview(){reviewPage.style.display='block'; reviewPage.scrollTop=0;}
+function closeReview(){reviewPage.style.display='none';}
+function retake(){localStorage.removeItem("mgj_state4"); location.reload();}
+stuName.value=localStorage.getItem("mgj_name")||""; stuCity.value=localStorage.getItem("mgj_city")||"";
+</script>
+</body>
+</html>
